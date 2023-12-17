@@ -134,9 +134,9 @@ A header for SHA512 verification has the following layout:
 | Address (hex)    | Length (hex) | Data
 |------------------|--------------|-----------------------------------------------------------------
 | 0x00000000       | 0x0C         | ASCII "DLK6E6010001" without trailing \0
-| 0x0000000C       | 0x04         | Constant 0x00 0x00 0x3A 0xB5 (differs in different FW versions)
+| 0x0000000C       | 0x04         | Constant 0x00 0x00 0xC8 0x62 (differs in different FW versions)
 | 0x00000010       | 0x0C         | Hex 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x01 0x00
-| 0x0000001C       | 0x04         | Constant 0x4E 0xCC 0xD1 0x0B (differs in different FW versions)
+| 0x0000001C       | 0x04         | Constant 0x6A 0x28 0xEE 0x0B (differs in different FW versions)
 | 0x00000020       | 0x04         | Erase start address of the partition (little endian format)
 | 0x00000024       | 0x04         | Erase length of the partition (little endian format)
 | 0x00000028       | 0x04         | Write start address of the partition (little endian format)
@@ -145,9 +145,9 @@ A header for SHA512 verification has the following layout:
 | 0x00000040       | 0x02         | Firware header ID: 0x42 0x48
 | 0x00000042       | 0x02         | Firware header major version: 0x02 0x00
 | 0x00000044       | 0x02         | Firware header minior version: 0x00 0x00
-| 0x00000046       | 0x02         | Firware SID: 0x09 0x00
+| 0x00000046       | 0x02         | Firware SID: 0x08 0x00
 | 0x00000048       | 0x02         | Firware image info type: 0x00 0x00
 | 0x0000004A       | 0x02         | Unknown, set to 0x00 0x00
-| 0x0000004C       | 0x02         | FM fmid: 0x60 0x6E. Has to be match the "fmid" of the device.
+| 0x0000004C       | 0x02         | FM fmid: 0x61 0x6E. Has to be match the "fmid" of the device.
 | 0x0000004E       | 0x02         | Header checksum. It must be set to that the sum of all words in the firware equals 0xFFFF. An overflow will increase the  checksum by 1.
  
