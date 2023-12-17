@@ -1,7 +1,12 @@
 # D-Link M32 (EAGLE PRO AI AX3200 Mesh-System)
 ## OEM Firmware Layout
 
-The following example is based on M32_REVA_FIRMWARE_v1.00B34.bin where the firmware is "packed" multiple times with additional verification and decryption information.
+The following example is based on M32-REVA_1.03.01_HOTFIX.enc.bin where the firmware is "packed" multiple times with additional verification and decryption information. All required data for verification and decryption are included in the GPL package from D-Link in the foler ```BPI-R2/meta-myproject/recipes-dlink/imgcrypto/files/919251a1_dlink-fw-encdec-keys-native.tar.gz/git/M32```:
+- Key.pub: The public key for SHA512 verification
+- Key.firmware: The key do decrypt the firmware
+
+Additionally, there are:
+- Key.pri: To sign images
 
 ### Overall Firmware Signature
 First of all, the OEM firmware starts with 16 bytes header and ends with 256 bytes signature for SHA512 signature verification.
@@ -10,6 +15,29 @@ First of all, the OEM firmware starts with 16 bytes header and ends with 256 byt
 | 0x00000000       | 0x10         | Header for SHA512 verification of the image, details [below](#sha512-verification-header).
 | 0x00000010       | variable     | Encrypted firmware data
 | variable         | 0x100        | The signature for the SHA512 verification.
+
+Example script for verification:
+- Remove the SHA512 verification header from the original firmware file:
+ ```
+ dd if=M32-REVA_1.03.01_HOTFIX.enc.bin of=Firmware.tmp1 bs=1 skip=16
+```
+- Extract the SHA512 signature from the firmware:
+```
+dd if=Firmware.tmp1 of=Firmware.tmp1.sig bs=1 count=256 skip=$(( $(stat -c %s Firmware.tmp1) - 256))
+```
+- Remove the SHA512 signature from the firmware:
+```
+dd if=Firmware.tmp1 of=Firmware.tmp2 bs=1 count=$(( $(stat -c %s Firmware.tmp1) - 256))
+```
+- Create digest for verification:
+```
+openssl dgst -sha512 -binary -out Firmware.tmp2.dgst Firmware.tmp2
+```
+- Verify image:
+```
+openssl dgst -verify Key.pub -sha512 -binary -signature Firmware.tmp1.sig Firmware.tmp2.dgst
+```
+- This should result in output ```Verified OK``` now Firmware.tmp2 contains the encrypted data.
 
 #### Encrypted Firmware data
 When removing the SHA512 header and signature from the firmware image, you get the encrypted firmware image wich starts with a header again.
