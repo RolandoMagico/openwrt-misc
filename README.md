@@ -1,7 +1,7 @@
-# D-Link M32 (EAGLE PRO AI AX3200 Smart Router)
+# D-Link M30 (AQUILA PRO AI AX3000 Smart Mesh Router)
 ## OEM Firmware Layout
 
-The following example is based on R32A1_FW103B01.bin where the firmware is "packed" multiple times with additional verification and decryption information. All required data for verification and decryption are included in the M32 GPL package from D-Link in the foler ```BPI-R2/meta-myproject/recipes-dlink/imgcrypto/files/919251a1_dlink-fw-encdec-keys-native.tar.gz/git/R32```:
+The following example is based on M30A1_FW101B05(0725091522).bin where the firmware is "packed" multiple times with additional verification and decryption information. All required data for verification and decryption are included in the M32 GPL package from D-Link in the foler ```BPI-R2/meta-myproject/recipes-dlink/imgcrypto/files/919251a1_dlink-fw-encdec-keys-native.tar.gz/git/M30```:
 - Key.pub: The public key for SHA512 verification
 - Key.firmware: The key do decrypt the firmware
 
@@ -133,7 +133,7 @@ A header for SHA512 verification has the following layout:
 
 | Address (hex)    | Length (hex) | Data
 |------------------|--------------|-----------------------------------------------------------------
-| 0x00000000       | 0x0C         | ASCII "DLK6E6015001" without trailing \0
+| 0x00000000       | 0x0C         | ASCII "DLK6E6010001" without trailing \0
 | 0x0000000C       | 0x04         | Constant 0x00 0x00 0x3A 0xB5 (differs in different FW versions)
 | 0x00000010       | 0x0C         | Hex 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x01 0x00
 | 0x0000001C       | 0x04         | Constant 0x4E 0xCC 0xD1 0x0B (differs in different FW versions)
