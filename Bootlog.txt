@@ -1,0 +1,1428 @@
+
+U-Boot SPL ELX-v1.0.4 (Sep 11 2020 - 10:16:00 +0800)
+Trying to boot from NAND
+
+Initializing NMBM ...
+Signature found at block 1023 [0x07fe0000]
+First info table with writecount 0 found in block 960
+Second info table with writecount 0 found in block 963
+NMBM has been successfully attached
+
+
+-Boot ELX-v1.0.4 (Sep 11 2020 - 10:16:00 +0800)
+
+CPU:   MediaTek MT7621AT ver 1, eco 3
+Clocks: CPU: 880MHz, DDR: 1200MHz, Bus: 220MHz, XTAL: 40MHz
+Model: MediaTek MT7621 reference board (NAND)
+DRAM:  256 MiB
+NAND:  128 MiB
+
+Initializing NMBM ...
+Signature found at block 1023 [0x07fe0000]
+First info table with writecount 0 found in block 960
+Second info table with writecount 0 found in block 963
+NMBM has been successfully attached
+
+Loading Environment from NMBM... OK
+In:    uartlite0@1e000c00
+Out:   uartlite0@1e000c00
+Err:   uartlite0@1e000c00
+Net:   eth0: eth@1e100000 using MAC Address - a8:63:7d:2f:05:a8
+Hit any key to stop autoboot:  0
+gpio: pin 7 (gpio 7) value is 0
+
+  *** U-Boot Boot Menu ***
+
+     1. Startup system (Default)
+     2. Upgrade firmware
+     3. Upgrade bootloader
+     4. Upgrade bootloader (advanced mode)
+     5. Load image and run
+     0. U-Boot console
+
+
+  Press UP/DOWN to move, ENTER to select
+Loading legacy image at offset 0x180000 to memory 0x80010000, size 0x56aa9c ...
+Automatic boot of image at addr 0x80010000 ...
+## Booting kernel from Legacy Image at 80010000 ...
+   Image Name:   Linux Kernel Image
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    5679708 Bytes = 5.4 MiB
+   Load Address: 81001000
+   Entry Point:  81009ec0
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+Linux version 4.4.198 (root@leslie-OptiPlex-390) (gcc version 5.4.0 (LEDE GCC 5.4.0 unknown) ) #3 SMP Mon Jan 11 10:38:51 CST 2021
+SoC Type: MediaTek MT7621 ver:1 eco:3
+bootconsole [early0] enabled
+CPU0 revision is: 0001992f (MIPS 1004Kc)
+MIPS: machine is MediaTek MT7621 RFB (802.11ax,NAND)
+Determined physical RAM map:
+ memory: 10000000 @ 00000000 (usable)
+Initrd not found or empty - disabling initrd
+Zone ranges:
+  DMA      [mem 0x0000000000000000-0x0000000000ffffff]
+  Normal   [mem 0x0000000001000000-0x000000000fffffff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000000000000-0x000000000fffffff]
+Initmem setup node 0 [mem 0x0000000000000000-0x000000000fffffff]
+VPE topology {2,2} total 4
+Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+PERCPU: Embedded 10 pages/cpu @82958000 s8576 r8192 d24192 u40960
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 65024
+Kernel command line: console=ttyS0,115200 rootfstype=squashfs,jffs2
+PID hash table entries: 1024 (order: 0, 4096 bytes)
+Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+Writing ErrCtl register=00010280
+Readback ErrCtl register=00010280
+Memory: 235816K/262144K available (7005K kernel code, 4019K rwdata, 1680K rodata, 10900K init, 218K bss, 26328K reserved, 0K cma-reserved)
+SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+Hierarchical RCU implementation.
+NR_IRQS:256
+clocksource: GIC: mask: 0xffffffffffffffff max_cycles: 0xcaf478abb4, max_idle_ns: 440795247997 ns
+clocksource: MIPS: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 4343773742 ns
+sched_clock: 32 bits at 440MHz, resolution 2ns, wraps every 4880645118ns
+Calibrating delay loop... 586.13 BogoMIPS (lpj=2930688)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+CPU1 revision is: 0001992f (MIPS 1004Kc)
+Synchronize counters for CPU 1: done.
+Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+CPU2 revision is: 0001992f (MIPS 1004Kc)
+Synchronize counters for CPU 2: done.
+Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+CPU3 revision is: 0001992f (MIPS 1004Kc)
+Synchronize counters for CPU 3: done.
+Brought up 4 CPUs
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+futex hash table entries: 1024 (order: 3, 32768 bytes)
+pinctrl core: initialized pinctrl subsystem
+NET: Registered protocol family 16
+*********      mediatek_gpio_init  **********
+mt7621_gpio 1e000600.gpio: registering 32 gpios
+mt7621_gpio 1e000600.gpio: registering 32 gpios
+mt7621_gpio 1e000600.gpio: registering 32 gpios
+============ platform_device_register ---- edx_led_device ----  rtk_register_leds_gpio ========
+mt7621-pci 1e140000.pcie: Failed to get gpio for PCIe1
+mt7621-pci 1e140000.pcie: Failed to get gpio for PCIe2
+PCIe port 2 link down
+PCI coherence region base: 0x60000000, mask/settings: 0xf0000002
+PCI host bridge to bus 0000:00
+pci_bus 0000:00: root bus resource [mem 0x60000000-0x6fffffff]
+pci_bus 0000:00: root bus resource [io  0x1e160000-0x1e16ffff]
+pci_bus 0000:00: root bus resource [??? 0x00000000 flags 0x0]
+pci_bus 0000:00: No busn resource found for root bus, will use [bus 00-ff]
+pci 0000:00:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:00:01.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:00:00.0: BAR 9: assigned [mem 0x60000000-0x601fffff pref]
+pci 0000:00:01.0: BAR 9: assigned [mem 0x60200000-0x603fffff pref]
+pci 0000:00:00.0: BAR 1: assigned [mem 0x60400000-0x6040ffff]
+pci 0000:00:01.0: BAR 1: assigned [mem 0x60410000-0x6041ffff]
+pci 0000:01:00.0: BAR 0: assigned [mem 0x60000000-0x600fffff 64bit pref]
+pci 0000:01:00.0: BAR 2: assigned [mem 0x60100000-0x60103fff 64bit pref]
+pci 0000:01:00.0: BAR 4: assigned [mem 0x60104000-0x60104fff 64bit pref]
+pci 0000:00:00.0: PCI bridge to [bus 01]
+pci 0000:00:00.0:   bridge window [mem 0x60000000-0x601fffff pref]
+pci 0000:02:00.0: BAR 0: assigned [mem 0x60200000-0x602fffff 64bit pref]
+pci 0000:02:00.0: BAR 2: assigned [mem 0x60300000-0x60303fff 64bit pref]
+pci 0000:02:00.0: BAR 4: assigned [mem 0x60304000-0x60304fff 64bit pref]
+pci 0000:00:01.0: PCI bridge to [bus 02]
+pci 0000:00:01.0:   bridge window [mem 0x60200000-0x603fffff pref]
+clocksource: Switched to clocksource GIC
+NET: Registered protocol family 2
+TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+TCP bind hash table entries: 2048 (order: 2, 16384 bytes)
+TCP: Hash tables configured (established 2048 bind 2048)
+UDP hash table entries: 256 (order: 1, 8192 bytes)
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+NET: Registered protocol family 1
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.
+io scheduler noop registered
+io scheduler deadline registered (default)
+Serial: 8250/16550 driver, 3 ports, IRQ sharing disabled
+console [ttyS0] disabled
+1e000c00.uartlite: ttyS0 at MMIO 0x1e000c00 (irq = 33, base_baud = 3125000) is a 16550A
+console [ttyS0] enabled
+console [ttyS0] enabled
+bootconsole [early0] disabled
+bootconsole [early0] disabled
+1e000d00.uartfull: ttyS1 at MMIO 0x1e000d00 (irq = 34, base_baud = 3125000) is a 16550A
+loop: module loaded
+libphy: Fixed MDIO Bus: probed
+libphy: mdio: probed
+mtk_soc_eth 1e100000.ethernet: generated random MAC address b6:8c:a0:ec:b3:03
+mtk_soc_eth 1e100000.ethernet: connected mac 0 to PHY at fixed-0:00 [uid=00000000, driver=Generic PHY]
+mtk_soc_eth 1e100000.ethernet eth0: mediatek frame engine at 0xbe100000, irq 10
+mtk_soc_eth 1e100000.ethernet: generated random MAC address 36:ee:8a:ae:e4:5e
+mtk_soc_eth 1e100000.ethernet: connected mac 1 to PHY at fixed-0:01 [uid=00000000, driver=Generic PHY]
+mtk_soc_eth 1e100000.ethernet eth1: mediatek frame engine at 0xbe100000, irq 10
+register mt_drv
+<--mt7916_hif_init()
+Rx[0] Ring: total 24576 bytes allocated
+Rx[1] Ring: total 16384 bytes allocated
+<-- pci_alloc_tx_rx_ring_mem, Status=0
+
+
+=== pAd = c0301000, size = 11274784 ===
+
+<-- RTMPAllocAdapterBlock, Status=0
+PCI CSRBaseAddress =0xc0200000, csr_addr=0xc0200000!
+RTMPInitPCIeDevice():device_id=0x7915
+mt7915_init()-->
+Use the default iPAiLNA bin image!
+<--mt7915_init()
+get_wdev_by_idx: invalid idx(0)
+get_wdev_by_idx: invalid idx(0)
+get_wdev_by_idx: invalid idx(0)
+get_wdev_by_idx: invalid idx(0)
+Rx[0] Ring: total 24576 bytes allocated
+Rx[1] Ring: total 24576 bytes allocated
+Rx[2] Ring: total 8192 bytes allocated
+Rx[3] Ring: total 16384 bytes allocated
+Rx[4] Ring: total 8192 bytes allocated
+<-- pci_alloc_tx_rx_ring_mem, Status=0
+get_wdev_by_idx: invalid idx(0)
+get_wdev_by_idx: invalid idx(0)
+get_wdev_by_idx: invalid idx(0)
+Registered button device:reset, gpio:6,code:408,index:10
+Registered button device:wps, gpio:4,code:529,index:11
+mt7621_wdt 1e000100.wdt: Initialized
+Registered led device: power_led
+Registered led device: diag
+Registered led device: strength0
+Registered led device: strength0_1
+Registered led device: strength1
+Registered led device: strength1_1
+Registered led device: sys_led
+NET: Registered protocol family 10
+NET: Registered protocol family 17
+bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this.
+Bridge firewalling registered
+mtkmips-pinmux pinctrl: spi is already enabled
+mtk-nand 1e003000.nand: Error applying setting, reverse things back
+nand: device found, Manufacturer ID: 0xc2, Chip ID: 0xf1
+nand: Macronix MX30LF1G18AC
+nand: 128 MiB, SLC, erase size: 128 KiB, page size: 2048, OOB size: 64
+Scanning device for bad blocks
+nmbm nmbm: Signature found at block 1023 [0x07fe0000]
+nmbm nmbm: First info table with writecount 0 found in block 960
+nmbm nmbm: Second info table with writecount 0 found in block 963
+nmbm nmbm: NMBM has been successfully attached
+8 ofpart partitions found on MTD device nmbm
+Creating 8 MTD partitions on "nmbm":
+0x000000000000-0x000000080000 : "Bootloader"
+0x000000080000-0x000000100000 : "Config"
+0x000000100000-0x000000180000 : "Factory"
+0x000000180000-0x000003580000 : "Kernel"
+no rootfs found after FIT image in "Kernel"
+2 uimage-fw partitions found on MTD device Kernel
+0x000000180000-0x000000700000 : "kernel"
+0x000000700000-0x000003580000 : "user"
+0x000003580000-0x000003980000 : "manufacture"
+0x000003980000-0x000004000000 : "storage"
+0x000004000000-0x000007800000 : "Reserve"
+0x000000000000-0x000007800000 : "ALL"
+mt753x gsw: Switch is MediaTek MT7530 rev 1
+libphy: mt753x_mdio: probed
+hctosys: unable to open rtc device (rtc0)
+Freeing unused kernel memory: 10900K
+This architecture does not have kernel memory protection.
+System Init version: 1.1 date: 1
+Setting up file systems ...
+proc: unrecognized mount option "defaults" or missing value
+Setting up /mnt/tmpfs directory with tmpfs/16384KB
+Setting up FLASH storage partition ...
+jffs2: notice: (474) jffs2_build_xattr_subsystem: complete building xattr subsystem, 0 of xdatum (0 unchecked, 0 orphan) and 0 of xref (0 dead, 0 orphan) found.
+Setting up /apps directory ...apps is in FLASH ...
+Create Mediatek e2p file from factory partition ...
+Setting up loopback device ...
+FINISHED
+Start Normal Operation Mode ...
+************************************************************************
+*                                ---ELX---                             *
+************************************************************************
+
+KernelApp version: 0.0.2 build date: 2021/01/11 build time: 10:27:04
+ln: /sbin/./start_all: File exists
+Share memory created:  keyid 6888 shm_id 0 size 321(KB)
+Warning: dbox_destroy_share_memory p_dbox_cfg is NULL!
+__create_share_mem keyid 6888 shm_id 0
+__create_share_mem keyid 6888 shm_id 0
+IPv6: ADDRCONF(NETDEV_UP): br0: link is not ready
+device eth0 entered promiscuous mode
+br0: port 1(eth0) entered forwarding state
+br0: port 1(eth0) entered forwarding state
+
+
+********************
+Initialize Radio_(24G) setting ...
+rd[0]==1
+OK
+
+
+Configuring Ralink WiFi device ...Wlan is in
+ AP Mode
+CMD[ifconfig ra0 down]
+CMD[ifconfig ra1 down]
+ifconfig: SIOCGIFFLAGS: No such device
+CMD[ifconfig ra2 down]
+ifconfig: SIOCGIFFLAGS: No such device
+CMD[ifconfig rax0 down]
+ifconfig: SIOCGIFFLAGS: No such device
+CMD[ifconfig rax1 down]
+ifconfig: SIOCGIFFLAGS: No such device
+CMD[ifconfig rax2 down]
+ifconfig: SIOCGIrandom: udhcpc: uninitialized urandom read (4 bytes read, 126 bits of entropy available)
+FFLAGS: No such device
+CMD[ifconfig apcli0 down]
+ifconfig: SIOCGIFFLAGS: No such device
+CMD[ifconfig apclix0 down]
+ifconfig: SIOCGIFFLAGS: No such device
+CMD[insmod ]
+CMD[echo '====================CE(EU)====================']
+random: nonblocking pool is initialized
+
+
+********************
+Initialize Radio_(5G) setting ...
+rd[1]==2
+OK
+Configuring 5G radio setting ...
+
+
+Configuring Ralink WiFi device ...Wlan is in
+ AP Mode
+CMD[ifconfig ra0 down]
+CMD[ifconfig ra1 down]
+ifconfig: SIOCGIFFLAGS: No such device
+CMD[ifconfig ra2 down]
+ifconfig: SIOCGIFFLAGS: No such device
+CMD[ifconfig rax0 down]
+ifconfig: SIOCGIFFLAGS: No such device
+CMD[ifconfig rax1 down]
+ifconfig: SIOCGIFFLAGS: No such device
+CMD[ifconfig rax2 down]
+ifconfig: SIOCGIFFLAGS: No such device
+CMD[ifconfig apcli0 down]
+ifconfig: SIOCGIFFLAGS: No such device
+CMD[ifconfig apclix0 down]
+ifconfig: SIOCGIFFLAGS: No such device
+CMD[insmod /lib/modules/4.4.198/kernel/mt_wifi.ko]
+insmod: can't read '/lib/modules/4.4.198/kernel/mt_wifi.ko': No such file or directory
+CMD[echo '====================CE(EU)====================']
+
+
+Bring up Mediatek 24G WiFi device ...Wlan is in
+CMD[/sbin/xcontrol  2>/dev/null &]
+CMD[ifconfig ra0 0.0.0.0 up]
+ra0: ===> main_virtual_if_open
+get_wdev_by_idx: invalid idx(0)
+RTMP_COM_IoctlHandle -> CMD_RTPRIV_IOCTL_VIRTUAL_INF_INIT
+get_wdev_by_idx: invalid idx(0)
+get_wdev_by_idx: invalid idx(0)
+get_wdev_by_idx: invalid idx(0)
+load l1profile succeed!
+mt_service_open: wlan service opens successfully!
+[multi_profile_merge_5g_only] DBDC_MODE=1
+multi-profile merge success, en:1,pf1_num:1,pf2_num:1,total:2
+Open file "/etc/wireless/mediatek/DBDC_card0.dat" to store DBDC cfg! (23)
+Write file "/etc/wireless/mediatek/DBDC_card0.dat" success (size=3454)!
+BssidNum=2
+Pf2MbssIdxMap:
+ 0  1
+MacAddress1 = 00:00:00:00:00:00
+E2pAccessMode=2
+SSID[0]=dlink-05A8, EdcaIdx=0
+SSID[1]=dlink-05A8, EdcaIdx=0
+RTMPSetProfileParameters(): DBDC Mode=1, eDBDC_mode = 1
+cfg_mode=16
+cfg_mode=16
+cfg_mode=16
+wmode_band_equal(): Band Equal!
+cfg_mode=17
+cfg_mode=17
+cfg_mode=17
+BandSteering=1
+BndStrgBssIdx=1;1
+[TxPower] BAND0: 100, BAND1: 100
+[SKUenable] BAND0: 1, BAND1: 1
+[SkuTableIdx]: 1
+[PERCENTAGEenable] BAND0: 0, BAND1: 0
+[BFBACKOFFenable] BAND0: 1, BAND1: 1
+profile: FragThreshold[0]=2346
+profile: FragThreshold[1]=2346
+APEdca0
+Valid=1
+APAifsn[0]=3
+APAifsn[1]=7
+APAifsn[2]=1
+APAifsn[3]=1
+APEdca1
+Valid=1
+APAifsn[0]=3
+APAifsn[1]=7
+APAifsn[2]=1
+APAifsn[3]=1
+APEdca2
+APEdca3
+BSSAifsn[0]=3
+BSSAifsn[1]=7
+BSSAifsn[2]=2
+BSSAifsn[3]=2
+BSSAifsn[0]=3
+BSSAifsn[1]=7
+BSSAifsn[2]=2
+BSSAifsn[3]=2
+APSDCapable[0]=1
+APSDCapable[1]=1
+default ApCliAPSDCapable[0]=1
+default ApCliAPSDCapable[1]=1
+DfsZeroWait Support=0/0
+DfsZeroWaitCacTime=255/255
+read_itxbf: ITxBfEn = 0
+read_itxbf: BSSID[0]
+read_itxbf: MBSS[0] ITxBfEn = 0
+read_itxbf: ITxBfEn = 0
+read_itxbf: BSSID[1]
+read_itxbf: MBSS[1] ITxBfEn = 0
+read_itxbf: Common.ITxBfEn = 0
+read_etxbf: ETxBfEnCond = 1
+read_etxbf: BSSID[0]
+read_etxbf: MBSS[0] ETxBfEnCond = 1
+read_etxbf: ETxBfEnCond = 1
+read_etxbf: BSSID[1]
+read_etxbf: MBSS[1] ETxBfEnCond = 1
+MBSS[0] MuMimoDlEnable = 1
+MBSS[1] MuMimoDlEnable = 1
+MBSS[0] MuMimoUlEnable = 1
+MBSS[1] MuMimoUlEnable = 1
+[PMF]Set_PMFMFPC_Proc:: apidx=0, Desired MFPC=1
+[PMF]Set_PMFMFPC_Proc:: apidx=1, Desired MFPC=1
+[PMF]Set_PMFMFPR_Proc:: apidx=0, Desired MFPR=0
+[PMF]Set_PMFMFPR_Proc:: apidx=1, Desired MFPR=0
+[PMF]Set_PMFSHA256_Proc:: apidx=0, Desired PMFSHA256=0
+[PMF]Set_PMFSHA256_Proc:: apidx=1, Desired PMFSHA256=0
+[PMF]Set_ApCliPMFMFPC_Proc:: Desired MFPC=1
+[PMF]Set_ApCliPMFMFPC_Proc:: Security is not WPA2/WPA2PSK AES
+[PMF]Set_ApCliPMFMFPC_Proc:: MFPC=0, MFPR=0, SHA256=0
+[PMF]Set_ApCliPMFMFPC_Proc:: Desired MFPC=1
+[PMF]Set_ApCliPMFMFPC_Proc:: Security is not WPA2/WPA2PSK AES
+[PMF]Set_ApCliPMFMFPC_Proc:: MFPC=0, MFPR=0, SHA256=0
+[PMF]Set_ApCliPMFMFPR_Proc:: Desired MFPR=0
+[PMF]Set_ApCliPMFMFPR_Proc:: Security is not WPA2/WPA2PSK AES
+[PMF]Set_ApCliPMFMFPR_Proc:: MFPC=0, MFPR=0, SHA256=0
+[PMF]Set_ApCliPMFMFPR_Proc:: Desired MFPR=0
+[PMF]Set_ApCliPMFMFPR_Proc:: Security is not WPA2/WPA2PSK AES
+[PMF]Set_ApCliPMFMFPR_Proc:: MFPC=0, MFPR=0, SHA256=0
+[PMF]Set_ApCliPMFSHA256_Proc:: Desired PMFSHA256=0
+[PMF]Set_ApCliPMFSHA256_Proc:: Desired PMFSHA256=0
+HT_BAWinSize: wdev[0]: (TX=256, RX=256)
+HT_BAWinSize: wdev[1]: (TX=256, RX=256)
+HT: WDEV[0] Ext Channel = BELOW
+HT: WDEV[1] Ext Channel = ABOVE
+HT: greenap_cap = 0
+ChipID=7915, TWTSupport in profile=1
+ICapMode = 0
+WtcSetMaxStaNum: MaxStaNum:284, BssidNum:2, WdsNum:0, MSTANum:1, MaxNumChipRept:0, MinMcastWcid:285
+Top Init Done!
+Use dev_alloc_skb
+token_tx_two_queues_init(): ct sw token(0) number = 2048
+token_tx_two_queues_init(): token que(0) inited done!id_head/tail=0/2048
+token_tx_two_queues_init(): 8d4a0604,8d4a0604
+token_tx_two_queues_init(): ct sw token(1) number = 6144
+token_tx_two_queues_init(): token que(1) inited done!id_head/tail=0/6144
+token_tx_two_queues_init(): 8d4a06ac,8d4a06ac
+TxRing[0]: attr:0, total 2048 entry initialized
+TxRing[1]: attr:0, total 2048 entry initialized
+TxRing[2]: attr:0, total 2048 entry initialized
+RX[0] DESC a0d78000 size = 24576
+RX[1] DESC a0d5c000 size = 16384
+RX[2] DESC a0ee0000 size = 24576
+RX[3] DESC a0ee8000 size = 24576
+RX[4] DESC a0eda000 size = 8192
+RX[5] DESC a0edc000 size = 16384
+RX[6] DESC a0f20000 size = 8192
+-->TX_RING_0[0xd9330]: Attr:0, Base=0xd70000, Cnt=2048!
+-->TX_RING_1[0xd5420]: Attr:0, Base=0xec8000, Cnt=2048!
+-->TX_RING_2[0xd5430]: Attr:0, Base=0xed0000, Cnt=2048!
+-->TX_RING_3[0xd5400]: Attr:3, Base=0xebe000, Cnt=128!
+-->TX_RING_4[0xd5410]: Attr:2, Base=0xebf000, Cnt=256!
+-->TX_RING_5[0xd5440]: Attr:1, Base=0xed8000, Cnt=256!
+-->RX_RING0[0xd8510]: Base=0xd78000, Cnt=1536
+-->RX_RING1[0xd9520]: Base=0xd5c000, Cnt=1024
+-->RX_RING2[0xd4500]: Base=0xee0000, Cnt=1536
+-->RX_RING3[0xd4510]: Base=0xee8000, Cnt=10
+-->RX_RING4[0xd5500]: Base=0xeda000, Cnt=512
+-->RX_RING5[0xd5510]: Base=0xedc000, Cnt=1024
+-->RX_RING6[0xd5520]: Base=0xf20000, Cnt=512
+Hif Init Done!
+pci_driver_own_by_port: success to clear p=0 fw own, from(1): 1 is interrupt mode, 2 is polling mode.
+pci_driver_own_by_port: success to clear p=1 fw own, from(1): 1 is interrupt mode, 2 is polling mode.
+fw_prepare():using E2 ROM patch
+fw_prepare():using E2 RAM
+Parsing patch header
+        Built date: 20200506152445a
+
+        Platform: ALPS
+        HW/SW version: 0x8a108a10
+        Patch version: 0xffffffff
+        Section num: 0x2, subsys: 0x4
+        Section 0: type = 0x30002, offset = 0xe0, size = 0xfc80
+        Target address: 0x200000, length: 0xfc80
+        Section 1: type = 0x30002, offset = 0xfd60, size = 0x13540
+        Target address: 0xe000f000, length: 0x13540
+Patch SEM Status = 2
+patch is not ready && get semaphore success
+Start address = 0x200000, DL length = 64640, Data mode = 0x80000000
+EventGenericEventHandler: CMD Success
+MtCmdAddressLenReq:(ret = 0)
+Start address = 0xe000f000, DL length = 79168, Data mode = 0x80000000
+EventGenericEventHandler: CMD Success
+MtCmdAddressLenReq:(ret = 0)
+MtCmdPatchFinishReq
+EventGenericEventHandler: CMD Success
+Patch SEM Status = 3
+release patch semaphore
+ WfMcuHwInit: Before NICLoadFirmware, check ICapMode = 0
+Parsing CPU 0 fw tailer
+        Chip ID: 0x0b
+        Eco version: 0x01
+        Region number: 0x07
+        Format version: 0x02
+        Format flag: 0x01
+        Ram version: ____000000
+        Built date: 20200506152529
+        Common crc: 0x2c67a785
+Parsing tailer region 0
+        Decomp crc: 0x0
+        Decomp size: 0x0
+        Decomp block size: 0x0
+        Target address: 0x21fc00
+        Download size: 108544
+        Feature set: 0x20
+Parsing tailer region 1
+        Decomp crc: 0x0
+        Decomp size: 0x0
+        Decomp block size: 0x0
+        Target address: 0x31dc00
+        Download size: 205824
+        Feature set: 0x00
+Parsing tailer region 2
+        Decomp crc: 0x0
+        Decomp size: 0x0
+        Decomp block size: 0x0
+        Target address: 0x417400
+        Download size: 31744
+        Feature set: 0x00
+Parsing tailer region 3
+        Decomp crc: 0x0
+        Decomp size: 0x0
+        Decomp block size: 0x0
+        Target address: 0xe0022800
+        Download size: 389120
+        Feature set: 0x00
+Parsing tailer region 4
+        Decomp crc: 0x0
+        Decomp size: 0x0
+        Decomp block size: 0x0
+        Target address: 0xe0081800
+        Download size: 354304
+        Feature set: 0x00
+Parsing tailer region 5
+        Decomp crc: 0x0
+        Decomp size: 0x0
+        Decomp block size: 0x0
+        Target address: 0x23a400
+        Download size: 89088
+        Feature set: 0x00
+Parsing tailer region 6
+        Decomp crc: 0x0
+        Decomp size: 0x0
+        Decomp block size: 0x0
+        Target address: 0x400000
+        Download size: 81920
+        Feature set: 0x00
+        Release info: header tag = 0, total length = 72
+        tag 1, padding length = 3, tag length = 65
+        payload: t-neptune-MP-AX1800-2007-MT7915_WIFI_RAM_REBB_2007-20200506152412
+Start address = 0x21fc00, DL length = 108544, Data mode = 0x80000000
+EventGenericEventHandler: CMD Success
+MtCmdAddressLenReq:(ret = 0)
+Start address = 0x31dc00, DL length = 205824, Data mode = 0x80000000
+EventGenericEventHandler: CMD Success
+MtCmdAddressLenReq:(ret = 0)
+Start address = 0x417400, DL length = 31744, Data mode = 0x80000000
+EventGenericEventHandler: CMD Success
+MtCmdAddressLenReq:(ret = 0)
+Start address = 0xe0022800, DL length = 389120, Data mode = 0x80000000
+EventGenericEventHandler: CMD Success
+MtCmdAddressLenReq:(ret = 0)
+Start address = 0xe0081800, DL length = 354304, Data mode = 0x80000000
+EventGenericEventHandler: CMD Success
+MtCmdAddressLenReq:(ret = 0)
+Start address = 0x23a400, DL length = 89088, Data mode = 0x80000000
+EventGenericEventHandler: CMD Success
+MtCmdAddressLenReq:(ret = 0)
+Start address = 0x400000, DL length = 81920, Data mode = 0x80000000
+EventGenericEventHandler: CMD Success
+MtCmdAddressLenReq:(ret = 0)
+MtCmdFwStartReq: override = 0x1, address = 0x21fc00
+EventGenericEventHandler: CMD Success
+Parsing CPU 1 fw tailer
+        Chip ID: 0x00
+        Eco version: 0x01
+        Region number: 0x03
+        Format version: 0x02
+        Format flag: 0x01
+        Ram version: DEV_000000
+        Built date: 20200506152549
+        Common crc: 0xf020288f
+Parsing tailer region 0
+        Decomp crc: 0x0
+        Decomp size: 0x0
+        Decomp block size: 0x0
+        Target address: 0x10200000
+        Download size: 83200
+        Feature set: 0x00
+Parsing tailer region 1
+        Decomp crc: 0x0
+        Decomp size: 0x0
+        Decomp block size: 0x0
+        Target address: 0x10300000
+        Download size: 17920
+        Feature set: 0x00
+Parsing tailer region 2
+        Decomp crc: 0x0
+        Decomp size: 0x0
+        Decomp block size: 0x0
+        Target address: 0xe0000000
+        Download size: 1952
+        Feature set: 0x00
+        Release info: header tag = 0, total length = 0
+Start address = 0x10200000, DL length = 83200, Data mode = 0x80000010
+EventGenericEventHandler: CMD Success
+MtCmdAddressLenReq:(ret = 0)
+Start address = 0x10300000, DL length = 17920, Data mode = 0x80000010
+EventGenericEventHandler: CMD Success
+MtCmdAddressLenReq:(ret = 0)
+Start address = 0xe0000000, DL length = 1952, Data mode = 0x80000010
+EventGenericEventHandler: CMD Success
+MtCmdAddressLenReq:(ret = 0)
+MtCmdFwStartReq: override = 0x4, address = 0x0
+EventGenericEventHandler: CMD Success
+MCU Init Done!
+efuse_probe: efuse = 10000012
+RtmpChipOpsEepromHook::e2p_type=2, inf_Type=5
+RtmpEepromGetDefault::e2p_dafault=1
+RtmpChipOpsEepromHook: E2P type(2), E2pAccessMode = 2, E2P default = 1
+NVM is FLASH mode. dev_idx [0] FLASH OFFSET [0x0]
+rtmp_nv_init(): EEPROM Size[131072]
+[EEPROMImage - PreCalImageInfo - PreCalImage - TxDPDImage]
+[0x8c100000 - 0x8c100e00 - 0x8c100e10 - 0x8c10d220]
+validFlashEepromID(): eeFlashId=7915, pAd->ChipID=7915
+[d-die version:1]
+[a-die version:2]
+
+NICReadEEPROMParameters: EEPROM 0x62 7
+NICReadEEPROMParameters: Group Pre-Cal finished, load Group Pre-Cal data
+NICReadEEPROMParameters: DPD 5G Pre-Cal finished!
+NICReadEEPROMParameters: DPD 2G Pre-Cal finished!
+Country Region from e2p = 0
+antenna_default_reset() todo
+antenna_default_reset() value = 0x2424, TxPath = 4, RxPath = 4
+RTMPReadTxPwrPerRate(458): Don't Support this now!
+rc_radio_init(): DBDC MODE=1, ConcurrentBand=2
+rc_radio_init(): radio_ctrl=8e3916bc,Band=0,rfcap=3,channel=1,PhyMode=2 extCha=0xf
+rc_radio_init(): radio_ctrl=8e391a10,Band=1,rfcap=3,channel=1,PhyMode=2 extCha=0xf
+rcUpdateBandForBFMU     PhyCtrl[0].RadioCtrl.IsBfBand = 1
+rcUpdateBandForBFMU     PhyCtrl[1].RadioCtrl.IsBfBand = 1
+TxBfModuleEnCtrl:u1BfNum = 2, u1BfBitmap = 3, u1BfSelBand[0] = 0
+ucAction = 0, ucBandIdx = 0, ucSmthIntlBypass = 0
+ucAction = 0, ucBandIdx = 1, ucSmthIntlBypass = 0
+AntCfgInit(2702): Not support for HIF_MT yet!
+mt7915_check_RF_lock_down: RFlockDown Enable: 0
+MtReadPwrLimitTable: sku table idx: 1
+mt7915_check_RF_lock_down: RFlockDown Enable: 0
+MtReadPwrLimitTable: sku table idx: 1
+EEPROM Init Done!
+mac_init()-->
+init_mac_cr()-->
+<--mac_init()
+CmdRxHdrTransBLUpdateRsp::EventExtCmdResult.u4Status = 0x0
+CmdRxHdrTransBLUpdateRsp::EventExtCmdResult.u4Status = 0x0
+CmdRxHdrTransBLUpdateRsp::EventExtCmdResult.u4Status = 0x0
+MAC Init Done!
+BBPInit():BBP Initialization.....
+        Band 0: valid=1, isDBDC=0, Band=2, CBW=1, CentCh/PrimCh=1/1, prim_ch_idx=0, txStream=2
+        Band 1: valid=0, isDBDC=0, Band=0, CBW=0, CentCh/PrimCh=0/0, prim_ch_idx=0, txStream=0
+BBPInit() todo
+PHY Init Done!
+tx_pwr_comp_init():NotSupportYet!
+Set_SCSEnable_Proc(): BandIdx=0, SCSEnable=1
+MtCmdSetMacTxRx:(ret = 0)
+MtCmdSetMacTxRx:(ret = 0)
+ap_ftkd> Initialize FT KDP Module...
+Main bssid = 00:00:00:00:00:00
+MtCmdSetMacTxRx:(ret = 0)
+MtCmdSetMacTxRx:(ret = 0)
+<==== mt_wifi_init, Status=0
+TxBfModuleEnCtrl:u1BfNum = 2, u1BfBitmap = 3, u1BfSelBand[0] = 0
+HeraInitStbcPriority: u1BandIdx = 0, u1StbcPriority = 0
+HeraConfigStbcPriority: u1BandIdx = 0, u1Operation=1, u1StbcPriority = 0
+CmdHeraStbcPriorityCtrl: u1BandIdx=0, u1Operation=1, u1StbcPriority=0
+HeraInitStbcPriority: u1BandIdx = 1, u1StbcPriority = 0
+HeraConfigStbcPriority: u1BandIdx = 1, u1Operation=1, u1StbcPriority = 0
+CmdHeraStbcPriorityCtrl: u1BandIdx=1, u1Operation=1, u1StbcPriority=0
+Register MBSSID IF 1 (rax0)
+MSTA_Init (2) ---> ApCli
+Register MSTA IF (apcli0) , pAd->MSTANum = 1
+Caller: SetCommonHT+0x100/0x170
+
+phy_mode=78, ch=11, wdev_type=2
+ht_cap: ht_cap->HtCapInfo,
+ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=1
+ht_cap: ht_cap->HtCapParm,
+mdpu_density=0, ampdu_factor=3
+Register MSTA IF (apclix0) , pAd->MSTANum = 2
+Caller: SetCommonHT+0x100/0x170
+
+phy_mode=177, ch=36, wdev_type=2
+ht_cap: ht_cap->HtCapInfo,
+ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=1
+ht_cap: ht_cap->HtCapParm,
+mdpu_density=0, ampdu_factor=3
+mt_service_init: wlan service inits successfully!
+WtcSetMaxStaNum: MaxStaNum:282, BssidNum:2, WdsNum:0, MSTANum:2, MaxNumChipRept:0, MinMcastWcid:284
+RedInit: set CR4/N9 RED Enable to 1.
+RedInit: RED Initiailize Done.
+cp_support_is_enabled: set Driver CP_SUPPORT to Mode 2.
+RTMP_COM_IoctlHandle -> CMD_RTPRIV_IOCTL_VIRTUAL_INF_UP
+wifi_sys_open(), wdev idx = 0
+rcUpdateBandForBFMU     PhyCtrl[0].RadioCtrl.IsBfBand = 1
+rcUpdateBandForBFMU     PhyCtrl[1].RadioCtrl.IsBfBand = 1
+TxBfModuleEnCtrl:u1BfNum = 2, u1BfBitmap = 3, u1BfSelBand[0] = 0
+ucAction = 0, ucBandIdx = 0, ucSmthIntlBypass = 0
+ucAction = 0, ucBandIdx = 1, ucSmthIntlBypass = 0
+BuildChannelList() BandIdx = 0, PhyMode = 78, ChListNum = 13:
+phy_oper_init(): operate TxStream = 2, RxStream = 2
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 11,control_ch2=0, central_chl = 9 DBDCIdx= 0, Band= 0
+BW = 1,TXStream = 2, RXStream = 2, scan(0)
+MtCmdSetTxRxPath: control_chl = 11,control_ch2=0, central_chl = 9, BW = 1,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(0), Channel_Band = 0
+Caller: wlan_operate_init+0x104/0x118
+
+phy_mode=78, ch=11, wdev_type=1
+ht_cap: ht_cap->HtCapInfo,
+ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=1
+ht_cap: ht_cap->HtCapParm,
+mdpu_density=5, ampdu_factor=3
+wdev_attr_update(): wdevId0 = a8:63:7d:2f:05:a9
+AP inf up for ra_0(func_idx) OmacIdx=0
+AsicRadioOnOffCtrl(): DbdcIdx=0 RadioOn
+BndStrg_Init()
+ApAutoChannelAtBootUp----------------->
+ApAutoChannelAtBootUp: AutoChannelBootup[0] = 0
+MtCmdSetMacTxRx:(ret = 0)
+MtCmdSetMacTxRx:(ret = 0)
+ ap_run_at_boot() : ACS is disable !!
+[PMF]APPMFInit:: Security is not WPA2/WPA2PSK AES
+[PMF]APPMFInit:: apidx=0, MFPC=0, MFPR=0, SHA256=0
+Caller: SetCommonHT+0x100/0x170
+
+phy_mode=78, ch=11, wdev_type=1
+ht_cap: ht_cap->HtCapInfo,
+ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=1
+ht_cap: ht_cap->HtCapParm,
+mdpu_density=5, ampdu_factor=3
+Enable 20/40 BSSCoex Channel Scan(BssCoex=1)
+MtCmdSetMacTxRx:(ret = 0)
+MtCmdSetMacTxRx:(ret = 0)
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 4,control_ch2=0, central_chl = 4 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 4,control_ch2=0, central_chl = 4, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+AP OBSS SYNC - BBP R4 to 20MHz.l
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 5,control_ch2=0, central_chl = 5 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 5,control_ch2=0, central_chl = 5, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+AP OBSS SYNC - BBP R4 to 20MHz.l
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 6,control_ch2=0, central_chl = 6 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 6,control_ch2=0, central_chl = 6, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+AP OBSS SYNC - BBP R4 to 20MHz.l
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 7,control_ch2=0, central_chl = 7 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 7,control_ch2=0, central_chl = 7, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+AP OBSS SYNC - BBP R4 to 20MHz.l
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 8,control_ch2=0, central_chl = 8 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 8,control_ch2=0, central_chl = 8, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+AP OBSS SYNC - BBP R4 to 20MHz.l
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 9,control_ch2=0, central_chl = 9 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 9,control_ch2=0, central_chl = 9, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+AP OBSS SYNC - BBP R4 to 20MHz.l
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 10,control_ch2=0, central_chl = 10 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 10,control_ch2=0, central_chl = 10, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+AP OBSS SYNC - BBP R4 to 20MHz.l
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 11,control_ch2=0, central_chl = 11 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 11,control_ch2=0, central_chl = 11, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+AP OBSS SYNC - BBP R4 to 20MHz.l
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 12,control_ch2=0, central_chl = 12 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 12,control_ch2=0, central_chl = 12, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+AP OBSS SYNC - BBP R4 to 20MHz.l
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 13,control_ch2=0, central_chl = 13 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 13,control_ch2=0, central_chl = 13, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+AP OBSS SYNC - BBP R4 to 20MHz.l
+Channel[Idx=3, Ch=4].bEffectedChannel=0x0!
+Channel[Idx=4, Ch=5].bEffectedChannel=0x0!
+Channel[Idx=5, Ch=6].bEffectedChannel=0x2!
+needFallBack=TRUE due to OP/OT!
+Channel[Idx=6, Ch=7].bEffectedChannel=0x1!
+Channel[Idx=7, Ch=8].bEffectedChannel=0x0!
+Channel[Idx=8, Ch=9].bEffectedChannel=0x0!
+Channel[Idx=9, Ch=10].bEffectedChannel=0x0!
+Channel[Idx=10, Ch=11].bEffectedChannel=0x2!
+Channel[Idx=11, Ch=12].bEffectedChannel=0x0!
+Channel[Idx=12, Ch=13].bEffectedChannel=0x0!
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 11,control_ch2=0, central_chl = 9 DBDCIdx= 0, Band= 0
+BW = 1,TXStream = 2, RXStream = 2, scan(0)
+MtCmdSetTxRxPath: control_chl = 11,control_ch2=0, central_chl = 9, BW = 1,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(0), Channel_Band = 0
+wifi_sys_linkup(), wdev idx = 0
+wtc_acquire_groupkey_wcid: Found a non-occupied wtbl_idx:287 for WDEV_TYPE:1
+ LinkToOmacIdx = 0, LinkToWdevType = 1
+TRTableInsertMcastEntry:band0 group_idx[0]=0
+(bssUpdateChannel), ucPrimCh=11, ucCentChSeg0=9, ucCentChSeg1=0, BW=1, ucHetbRU26Disable=0, ucHetbAllDisable=1
+bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO), CmdBssInfoBmcRate.u2BcTransmit= 0, CmdBssInfoBmcRate.u2McTransmit = 8320
+UpdateBeaconHandler, BCN_UPDATE_INIT, OmacIdx = 0
+MtCmdTxPowerSKUCtrl: tx_pwr_sku_en: 1, BandIdx: 0
+MtCmdTxBfBackoffCtrl: fgTxBFBackoffEn: 1, BandIdx: 0
+MtCmdTxPowerPercentCtrl: fgTxPowerPercentEn: 0, BandIdx: 0
+BndStrg_SetInfFlags(): BSS(A8:63:7D:2F:05:A9) set 2G Inf ra0 ready.
+set muru_update_he_cfg()!!!!
+SrMbssInit: Spatial Reuse initialize via profile.
+PrintSrCmd:
+u1CmdSubId = f, u1ArgNum = 0, u1DbdcIdx = 0, u1Status = 0
+u1DropTaIdx = 0, u1StaIdx = 0, u4Value = 1
+PrintSrCmd:
+u1CmdSubId = 13, u1ArgNum = 0, u1DbdcIdx = 0, u1Status = 0
+u1DropTaIdx = 0, u1StaIdx = 0, u4Value = 0
+PrintSrCmd:
+u1CmdSubId = 10, u1ArgNum = 0, u1DbdcIdx = 0, u1Status = 0
+u1DropTaIdx = 0, u1StaIdx = 0, u4Value = 1
+apidx 0 for WscUUIDInit
+Generate UUID for apidx(0)
+CMD[brctl addif br0 ra0]
+device ra0 entered promiscuous mode
+br0: port 2(ra0) entered forwarding state
+br0: port 2(ra0) entered forwarding state
+
+
+Bring up Mediatek 5G WiFi device ...Wlan is in
+CMD[ifconfig rax0 0.0.0.0 up]
+rax0: ===> mbss_virtual_if_open
+RTMP_COM_IoctlHandle -> CMD_RTPRIV_IOCTL_VIRTUAL_INF_INIT
+RTMP_COM_IoctlHandle -> CMD_RTPRIV_IOCTL_VIRTUAL_INF_UP
+wifi_sys_open(), wdev idx = 1
+rcUpdateBandForBFMU     PhyCtrl[0].RadioCtrl.IsBfBand = 1
+rcUpdateBandForBFMU     PhyCtrl[1].RadioCtrl.IsBfBand = 1
+TxBfModuleEnCtrl:u1BfNum = 2, u1BfBitmap = 3, u1BfSelBand[0] = 0
+ucAction = 0, ucBandIdx = 0, ucSmthIntlBypass = 0
+ucAction = 0, ucBandIdx = 1, ucSmthIntlBypass = 0
+BuildChannelList() BandIdx = 1, PhyMode = 177, ChListNum = 16:
+DfsBuildChannelList(): Done
+phy_oper_init(): operate TxStream = 2, RxStream = 2
+ [RadarStateCheck] RD_NORMAL_MODE
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 36,control_ch2=0, central_chl = 42 DBDCIdx= 1, Band= 1
+BW = 2,TXStream = 2, RXStream = 2, scan(0)
+MtCmdSetTxRxPath: control_chl = 36,control_ch2=0, central_chl = 42, BW = 2,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(0), Channel_Band = 1
+Caller: wlan_operate_init+0x104/0x118
+
+phy_mode=177, ch=36, wdev_type=1
+ht_cap: ht_cap->HtCapInfo,
+ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=1
+ht_cap: ht_cap->HtCapParm,
+mdpu_density=5, ampdu_factor=3
+wdev_attr_update(): wdevId1 = a8:63:7d:2f:05:ac
+AP inf up for ra_1(func_idx) OmacIdx=0
+AsicRadioOnOffCtrl(): DbdcIdx=1 RadioOn
+BndStrg_Init()
+ApAutoChannelAtBootUp----------------->
+ApAutoChannelAtBootUp: AutoChannelBootup[1] = 0
+MtCmdSetMacTxRx:(ret = 0)
+MtCmdSetMacTxRx:(ret = 0)
+ ap_run_at_boot() : ACS is disable !!
+[PMF]APPMFInit:: Security is not WPA2/WPA2PSK AES
+[PMF]APPMFInit:: apidx=1, MFPC=0, MFPR=0, SHA256=0
+Caller: SetCommonHT+0x100/0x170
+
+phy_mode=177, ch=36, wdev_type=1
+ht_cap: ht_cap->HtCapInfo,
+ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=1
+ht_cap: ht_cap->HtCapParm,
+mdpu_density=5, ampdu_factor=3
+Enable 20/40 BSSCoex Channel Scan(BssCoex=1)
+wifi_sys_linkup(), wdev idx = 1
+wtc_acquire_groupkey_wcid: Found a non-occupied wtbl_idx:286 for WDEV_TYPE:1
+ LinkToOmacIdx = 0, LinkToWdevType = 1
+TRTableInsertMcastEntry:band1 group_idx[1]=1
+(bssUpdateChannel), ucPrimCh=36, ucCentChSeg0=42, ucCentChSeg1=0, BW=2, ucHetbRU26Disable=0, ucHetbAllDisable=1
+bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO), CmdBssInfoBmcRate.u2BcTransmit= 8192, CmdBssInfoBmcRate.u2McTransmit = 8320
+UpdateBeaconHandler, BCN_UPDATE_INIT, OmacIdx = 0
+MtCmdTxPowerSKUCtrl: tx_pwr_sku_en: 1, BandIdx: 1
+MtCmdTxBfBackoffCtrl: fgTxBFBackoffEn: 1, BandIdx: 1
+MtCmdTxPowerPercentCtrl: fgTxPowerPercentEn: 0, BandIdx: 1
+BndStrg_SetInfFlags(): BSS(A8:63:7D:2F:05:AC) set 5G Inf rax0 ready.
+set muru_update_he_cfg()!!!!
+SrMbssInit: Spatial Reuse initialize via profile.
+PrintSrCmd:
+u1CmdSubId = f, u1ArgNum = 0, u1DbdcIdx = 1, u1Status = 0
+u1DropTaIdx = 0, u1StaIdx = 0, u4Value = 1
+PrintSrCmd:
+u1CmdSubId = 13, u1ArgNum = 0, u1DbdcIdx = 1, u1Status = 0
+u1DropTaIdx = 0, u1StaIdx = 0, u4Value = 0
+PrintSrCmd:
+u1CmdSubId = 10, u1ArgNum = 0, u1DbdcIdx = 1, u1Status = 0
+u1DropTaIdx = 0, u1StaIdx = 0, u4Value = 1
+apidx 1 for WscUUIDInit
+Generate UUID for apidx(1)
+CMD[brctl addif br0 rax0]
+device rax0 entered promiscuous mode
+br0: port 3(rax0) entered forwarding state
+br0: port 3(rax0) entered forwarding state
+
+Setting Mediatek 24g command ...
+CMD[iwpriv ra0 set WscConfMode=7]
+CMD[iwpriv ra0 set RadioOn=1]
+==>Set_RadioOn_Proc (ON) equal to current state, ignore!!! (wdev_idx 0)
+CMD[iwpriv ra0 set WscMaxPinAttack=5]
+CMD[iwpriv ra0 set HtMIMOPS=3]
+Caller: SetCommonHT+0x100/0x170
+
+phy_mode=78, ch=11, wdev_type=1
+ht_cap: ht_cap->HtCapInfo,
+ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=1
+ht_cap: ht_cap->HtCapParm,
+mdpu_density=5, ampdu_factor=3
+
+Setting Mediatek 5g command ...
+CMD[iwpriv rax0 set WscConfMode=7]
+CMD[iwpriv rax0 set RadioOn=1]
+==>Set_RadioOn_Proc (ON) equal to current state, ignore!!! (wdev_idx 1)
+CMD[iwpriv rax0 set WscMaxPinAttack=5]
+CMD[iwpriv rax0 set HtMIMOPS=3]
+Caller: SetCommonHT+0x100/0x170
+
+phy_mode=177, ch=36, wdev_type=1
+ht_cap: ht_cap->HtCapInfo,
+ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=1
+ht_cap: ht_cap->HtCapParm,
+mdpu_density=5, ampdu_factor=3
+==================================================
+======Start excute universal repeater procesapcli0: ===> msta_virtual_if_open
+s=====
+========RTMP_COM_IoctlHandle -> CMD_RTPRIV_IOCTL_VIRTUAL_INF_INIT
+================RTMP_COM_IoctlHandle -> CMD_RTPRIV_IOCTL_VIRTUAL_INF_UP
+================wifi_sys_open(), wdev idx = 2
+==========
+CMD[rcUpdateBandForBFMU PhyCtrl[0].RadioCtrl.IsBfBand = 1
+ifconfig apcli0 rcUpdateBandForBFMU     PhyCtrl[1].RadioCtrl.IsBfBand = 1
+up]
+TxBfModuleEnCtrl:u1BfNum = 2, u1BfBitmap = 3, u1BfSelBand[0] = 0
+ucAction = 0, ucBandIdx = 0, ucSmthIntlBypass = 0
+ucAction = 0, ucBandIdx = 1, ucSmthIntlBypass = 0
+phy_oper_init(): operate TxStream = 2, RxStream = 2
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 11,control_ch2=0, central_chl = 9 DBDCIdx= 0, Band= 0
+BW = 1,TXStream = 2, RXStream = 2, scan(0)
+MtCmdSetTxRxPath: control_chl = 11,control_ch2=0, central_chl = 9, BW = 1,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(0), Channel_Band = 0
+Caller: wlan_operate_init+0x104/0x118
+
+phy_mode=78, ch=11, wdev_type=2
+ht_cap: ht_cap->HtCapInfo,
+ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=1
+ht_cap: ht_cap->HtCapParm,
+mdpu_density=0, ampdu_factor=3
+wdev_attr_update(): wdevId2 = ae:63:7d:2f:05:a9
+Caller: SetCommonHT+0x100/0x170
+
+phy_mode=78, ch=11, wdev_type=2
+ht_cap: ht_cap->HtCapInfo,
+ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=1
+ht_cap: ht_cap->HtCapParm,
+mdpu_density=0, ampdu_factor=3
+MSTA interface up for apcli0 func_idx=0 OmacIdx=1
+IPv6: ADDRCONF(NETDEV_UP): apcli0: link is not ready
+CMD[ifconfig apclix0 up]
+apclix0: ===> msta_virtual_if_open
+RTMP_COM_IoctlHandle -> CMD_RTPRIV_IOCTL_VIRTUAL_INF_INIT
+RTMP_COM_IoctlHandle -> CMD_RTPRIV_IOCTL_VIRTUAL_INF_UP
+wifi_sys_open(), wdev idx = 3
+rcUpdateBandForBFMU     PhyCtrl[0].RadioCtrl.IsBfBand = 1
+rcUpdateBandForBFMU     PhyCtrl[1].RadioCtrl.IsBfBand = 1
+TxBfModuleEnCtrl:u1BfNum = 2, u1BfBitmap = 3, u1BfSelBand[0] = 0
+ucAction = 0, ucBandIdx = 0, ucSmthIntlBypass = 0
+ucAction = 0, ucBandIdx = 1, ucSmthIntlBypass = 0
+phy_oper_init(): operate TxStream = 2, RxStream = 2
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 36,control_ch2=0, central_chl = 42 DBDCIdx= 1, Band= 1
+BW = 2,TXStream = 2, RXStream = 2, scan(0)
+MtCmdSetTxRxPath: control_chl = 36,control_ch2=0, central_chl = 42, BW = 2,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(0), Channel_Band = 1
+Caller: wlan_operate_init+0x104/0x118
+
+phy_mode=177, ch=36, wdev_type=2
+ht_cap: ht_cap->HtCapInfo,
+ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=1
+ht_cap: ht_cap->HtCapParm,
+mdpu_density=0, ampdu_factor=3
+wdev_attr_update(): wdevId3 = a2:63:7d:2f:05:a9
+Caller: SetCommonHT+0x100/0x170
+
+phy_mode=177, ch=36, wdev_type=2
+ht_cap: ht_cap->HtCapInfo,
+ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=1
+ht_cap: ht_cap->HtCapParm,
+mdpu_density=0, ampdu_factor=3
+MSTA interface up for apcli1 func_idx=1 OmacIdx=1
+IPv6: ADDRCONF(NETDEV_UP): apclix0: link is not ready
+CMD[brctl addif br0 apcli0]
+device apcli0 entered promiscuous mode
+br0: port 4(apcli0) entered forwarding state
+br0: port 4(apcli0) entered forwarding state
+CMD[brctl addif br0 apclix0]
+device apclix0 entered promiscuous mode
+br0: port 5(apclix0) entered forwarding state
+br0: port 5(apclix0) entered forwarding state
+br0: port 4(apcli0) entered disabled state
+br0: port 5(apclix0) entered disabled state
+br0: port 1(eth0) entered forwarding state
+CMD[iwpriv ra0 set SiteSurvey=]
+SYNC - sync_fsm_scan_req_action:[1196] LAST_CH: 0, BAND: 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:a9), Reason 0x10
+  AP Beacon OFF!!!
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:ac), Reason 0x10
+  AP Beacon OFF!!!
+MtCmdChannelSwitch: control_chl = 1,control_ch2=0, central_chl = 1 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 1,control_ch2=0, central_chl = 1, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 2,control_ch2=0, central_chl = 2 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 2,control_ch2=0, central_chl = 2, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 3,control_ch2=0, central_chl = 3 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 3,control_ch2=0, central_chl = 3, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 4,control_ch2=0, central_chl = 4 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 4,control_ch2=0, central_chl = 4, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 5,control_ch2=0, central_chl = 5 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 5,control_ch2=0, central_chl = 5, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 6,control_ch2=0, central_chl = 6 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 6,control_ch2=0, central_chl = 6, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 7,control_ch2=0, central_chl = 7 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 7,control_ch2=0, central_chl = 7, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 8,control_ch2=0, central_chl = 8 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 8,control_ch2=0, central_chl = 8, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 9,control_ch2=0, central_chl = 9 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 9,control_ch2=0, central_chl = 9, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:a9), Reason 0x10
+  AP Beacon OFF!!!
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:ac), Reason 0x10
+  AP Beacon OFF!!!
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 10,control_ch2=0, central_chl = 10 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 10,control_ch2=0, central_chl = 10, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 11,control_ch2=0, central_chl = 11 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 11,control_ch2=0, central_chl = 11, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 12,control_ch2=0, central_chl = 12 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 12,control_ch2=0, central_chl = 12, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 13,control_ch2=0, central_chl = 13 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 13,control_ch2=0, central_chl = 13, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 11,control_ch2=0, central_chl = 9 DBDCIdx= 0, Band= 0
+BW = 1,TXStream = 2, RXStream = 2, scan(0)
+MtCmdSetTxRxPath: control_chl = 11,control_ch2=0, central_chl = 9, BW = 1,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(0), Channel_Band = 0
+scan_ch_restore - End of SCAN(TYPE: 128, BandIdx: 0), restore to BW(1) channel 9, Total BSS[11]
+br0: port 2(ra0) entered forwarding state
+br0: port 3(rax0) entered forwarding state
+CMD[iwpriv rax0 set SiteSurvey=]
+SYNC - sync_fsm_scan_req_action:[1196] LAST_CH: 0, BAND: 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:a9), Reason 0x10
+  AP Beacon OFF!!!
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:ac), Reason 0x10
+  AP Beacon OFF!!!
+MtCmdChannelSwitch: control_chl = 36,control_ch2=0, central_chl = 36 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 36,control_ch2=0, central_chl = 36, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 40,control_ch2=0, central_chl = 40 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 40,control_ch2=0, central_chl = 40, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 44,control_ch2=0, central_chl = 44 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 44,control_ch2=0, central_chl = 44, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 48,control_ch2=0, central_chl = 48 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 48,control_ch2=0, central_chl = 48, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 52,control_ch2=0, central_chl = 52 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 52,control_ch2=0, central_chl = 52, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 56,control_ch2=0, central_chl = 56 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 56,control_ch2=0, central_chl = 56, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 60,control_ch2=0, central_chl = 60 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 60,control_ch2=0, central_chl = 60, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 64,control_ch2=0, central_chl = 64 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 64,control_ch2=0, central_chl = 64, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 100,control_ch2=0, central_chl = 100 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 100,control_ch2=0, central_chl = 100, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:a9), Reason 0x10
+  AP Beacon OFF!!!
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:ac), Reason 0x10
+  AP Beacon OFF!!!
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 104,control_ch2=0, central_chl = 104 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 104,control_ch2=0, central_chl = 104, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 108,control_ch2=0, central_chl = 108 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 108,control_ch2=0, central_chl = 108, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 112,control_ch2=0, central_chl = 112 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 112,control_ch2=0, central_chl = 112, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 116,control_ch2=0, central_chl = 116 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 116,control_ch2=0, central_chl = 116, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 132,control_ch2=0, central_chl = 132 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 132,control_ch2=0, central_chl = 132, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 136,control_ch2=0, central_chl = 136 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 136,control_ch2=0, central_chl = 136, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 140,control_ch2=0, central_chl = 140 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 140,control_ch2=0, central_chl = 140, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 36,control_ch2=0, central_chl = 42 DBDCIdx= 1, Band= 1
+BW = 2,TXStream = 2, RXStream = 2, scan(0)
+MtCmdSetTxRxPath: control_chl = 36,control_ch2=0, central_chl = 42, BW = 2,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(0), Channel_Band = 1
+scan_ch_restore - End of SCAN(TYPE: 128, BandIdx: 1), restore to BW(2) channel 42, Total BSS[10]
+CMD[iwpriv apcli0 set ApCliEnable=0]
+I/F(apcli0) Set_ApCli_Enable_Proc::(enable = 0)
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 11,control_ch2=0, central_chl = 9 DBDCIdx= 0, Band= 0
+BW = 1,TXStream = 2, RXStream = 2, scan(0)
+MtCmdSetTxRxPath: control_chl = 11,control_ch2=0, central_chl = 9, BW = 1,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(0), Channel_Band = 0
+CMD[iwpriv apcli0 set ApCliAutoConnect=0]
+CMD[iwpriv apcli0 set ApCliAuthMode=OPEN]
+CMD[iwpriv apcli0 set ApCliEncrypType=NONE]
+CMD[iwpriv apcli0 set ApCliWPAPSK=]
+CMD[iwpriv apcli0 set ApCliSsid=]
+CMD[iwpriv apcli0 set ApCliAutoConnect=1]
+I/F(apcli0) Set_ApCli_Enable_Proc::(enable = 0)
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 11,control_ch2=0, central_chl = 9 DBDCIdx= 0, Band= 0
+BW = 1,TXStream = 2, RXStream = 2, scan(0)
+MtCmdSetTxRxPath: control_chl = 11,control_ch2=0, central_chl = 9, BW = 1,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(0), Channel_Band = 0
+SYNC - sync_fsm_scan_req_action:[1196] LAST_CH: 0, BAND: 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:a9), Reason 0x10
+  AP Beacon OFF!!!
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:ac), Reason 0x10
+  AP Beacon OFF!!!
+MtCmdChannelSwitch: control_chl = 1,control_ch2=0, central_chl = 1 DBDCIdx= 0, Band= 0
+CMD[iwpriv apcliBW = 0,TXStream = 2, RXStream = 2, scan(1)
+x0 set ApCliEnable=0]
+MtCmdSetTxRxPath: control_chl = 1,control_ch2=0, central_chl = 1, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+I/F(apcli1) Set_ApCli_Enable_Proc::(enable = 0)
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 36,control_ch2=0, central_chl = 42 DBDCIdx= 1, Band= 1
+BW = 2,TXStream = 2, RXStream = 2, scan(0)
+MtCmdSetTxRxPath: control_chl = 36,control_ch2=0, central_chl = 42, BW = 2,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(0), Channel_Band = 1
+CMD[iwpriv apclix0 set ApCliAutoConnect=0]
+CMD[iwpriv apclix0 set ApCliAuthMode=OPEN]
+CMD[iwpriv apclix0 set ApCliEncrypType=NONE]
+CMD[iwpriv apclix0 set ApCliWPAPSK=]
+CMD[iwpriv apclix0 set ApCliSsid=]
+CMD[iwpriv apclix0 set ApCliAutoConnect=1]
+I/F(apcli1) Set_ApCli_Enable_Proc::(enable = 0)
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 36,control_ch2=0, central_chl = 42 DBDCIdx= 1, Band= 1
+BW = 2,TXStream = 2, RXStream = 2, scan(0)
+MtCmdSetTxRxPath: control_chl = 36,control_ch2=0, central_chl = 42, BW = 2,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(0), Channel_Band = 1
+SYNC - sync_fsm_scan_req_action:[1196] LAST_CH: 0, BAND: 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:a9), Reason 0x10
+  AP Beacon OFF!!!
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:ac), Reason 0x10
+  AP Beacon OFF!!!
+MtCmdChannelSwitch: control_chl = 36,control_ch2=0, central_chl = 36 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+ApCliSsid= ApCliAuthMode=OPEN ApCliEncrypType=NOMtCmdSetTxRxPath: control_chl = 36,control_ch2=0, central_chl = 36, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+
+===============MtCmdChannelSwitch: control_chl = 2,control_ch2=0, central_chl = 2 DBDCIdx= 0, Band= 0
+================BW = 0,TXStream = 2, RXStream = 2, scan(1)
+===================
+=======End excute universalMtCmdSetTxRxPath: control_chl = 2,control_ch2=0, central_chl = 2, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+ repeater process======
+==================================================
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 40,control_ch2=0, central_chl = 40 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 40,control_ch2=0, central_chl = 40, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 3,control_ch2=0, central_chl = 3 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 3,control_ch2=0, central_chl = 3, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 44,control_ch2=0, central_chl = 44 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 44,control_ch2=0, central_chl = 44, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 4,control_ch2=0, central_chl = 4 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 4,control_ch2=0, central_chl = 4, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+dsc_write_proc: buf value is : lan add eth0
+
+dsc_write_proc: buf value is : lan add ra0
+
+dsc_write_proc: buf value is : lan add ra1
+
+dsc_write_proc: buf value is : lan add ra2
+
+dsc_write_proc: buf value is : lan add rax0
+
+dsc_write_proc: buf value is : lan add rax1
+
+dsc_write_proc: buf value is : lan add rax2
+
+cp: can't stat '/etc/resolv.conf': No such file or directory
+cat: can't open '/tmp/resolv.conf': No such file or directory
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 48,control_ch2=0, central_chl = 48 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 48,control_ch2=0, central_chl = 48, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 5,control_ch2=0, central_chl = 5 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 5,control_ch2=0, central_chl = 5, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 52,control_ch2=0, central_chl = 52 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 52,control_ch2=0, central_chl = 52, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 6,control_ch2=0, central_chl = 6 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 6,control_ch2=0, central_chl = 6, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 56,control_ch2=0, central_chl = 56 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 56,control_ch2=0, central_chl = 56, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 7,control_ch2=0, central_chl = 7 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 7,control_ch2=0, central_chl = 7, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 60,control_ch2=0, central_chl = 60 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 60,control_ch2=0, central_chl = 60, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 8,control_ch2=0, central_chl = 8 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 8,control_ch2=0, central_chl = 8, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+ip6_tables: (C) 2000-2006 Netfilter Core Team
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 64,control_ch2=0, central_chl = 64 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:a9), Reason 0x10
+  AP Beacon OFF!!!
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:ac), Reason 0x10
+  AP Beacon OFF!!!
+MtCmdSetTxRxPath: control_chl = 64,control_ch2=0, central_chl = 64, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 9,control_ch2=0, central_chl = 9 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 9,control_ch2=0, central_chl = 9, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 100,control_ch2=0, central_chl = 100 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 100,control_ch2=0, central_chl = 100, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 10,control_ch2=0, central_chl = 10 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 10,control_ch2=0, central_chl = 10, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 104,control_ch2=0, central_chl = 104 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 104,control_ch2=0, central_chl = 104, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 11,control_ch2=0, central_chl = 11 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 11,control_ch2=0, central_chl = 11, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 108,control_ch2=0, central_chl = 108 DBDCIdx= 1, Band= 1
+Err: read_to_bufBW = 0,TXStream = 2, RXStream = 2, scan(1)
+ failed to open file /proc/755/status!
+Err: read_to_bufMtCmdSetTxRxPath: control_chl = 108,control_ch2=0, central_chl = 108, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+ failed to open mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+file /proc/756/sMtCmdChannelSwitch: control_chl = 12,control_ch2=0, central_chl = 12 DBDCIdx= 0, Band= 0
+tatus!
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 12,control_ch2=0, central_chl = 12, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+killall: wapp: nMtCmdChannelSwitch: control_chl = 112,control_ch2=0, central_chl = 112 DBDCIdx= 1, Band= 1
+o process killedBW = 0,TXStream = 2, RXStream = 2, scan(1)
+
+MtCmdSetTxRxPath: control_chl = 112,control_ch2=0, central_chl = 112, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 13,control_ch2=0, central_chl = 13 DBDCIdx= 0, Band= 0
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 13,control_ch2=0, central_chl = 13, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(1), Channel_Band = 0
+Enable GAS service for MBSSID[0]
+Unknow Parameter:8
+Unknow Parameter:0
+Unknow Parameter:1
+Unknow Parameter:2
+Unknow Parameter:3
+Enable GAS service for MBSSID[1]
+Unknow Parameter:8
+Unknow Parameter:0
+Unknow Parameter:1
+Unknow Parameter:2
+Unknow Parameter:3
+Set_AP_VENDOR_SPECIFIC_IE: Unknown OUIType = 16
+Set_AP_VENDOR_SPECIFIC_IE: Unknown OUIType = 9
+set_wapp_cmm_ie: Unknown IE(EID = 111)
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:a9), Reason 0x10
+  AP Beacon OFF!!!
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:a9), Reason 0x10
+  AP Beacon OFF!!!
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 116,control_ch2=0, central_chl = 116 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 116,control_ch2=0, central_chl = 116, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+set_wapp_cmm_ie: Unknown IE(EID = 110)
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 11,control_ch2=0, central_chl = 9 DBDCIdx= 0, Band= 0
+BW = 1,TXStream = 2, RXStream = 2, scan(0)
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:a9), Reason 0x10
+  AP Beacon OFF!!!
+MtCmdSetTxRxPath: control_chl = 11,control_ch2=0, central_chl = 9, BW = 1,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(0), Channel_Band = 0
+scan_ch_restore - End of SCAN(TYPE: 0, BandIdx: 0), restore to BW(1) channel 9, Total BSS[13]
+I/F(apcli0) Set_ApCli_Enable_Proc::(enable = 1)
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:a9), Reason 0x10
+  AP Beacon OFF!!!
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 11,control_ch2=0, central_chl = 9 DBDCIdx= 0, Band= 0
+BW = 1,TXStream = 2, RXStream = 2, scan(0)
+__create_share_mMtCmdSetTxRxPath: control_chl = 11,control_ch2=0, central_chl = 9, BW = 1,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =0,  scan(0), Channel_Band = 0
+em keyid 6888 shm_id 0
+CMD[rm -mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+rf /usr/sbin/dliSet_AP_VENDOR_SPECIFIC_IE: Unknown OUIType = 16
+nkmesh/scripts/nSet_AP_VENDOR_SPECIFIC_IE: Unknown OUIType = 9
+bHnapNewConfFileset_wapp_cmm_ie: Unknown IE(EID = 111)
+.txt*]
+set_wapp_cmm_ie: Unknown IE(EID = 110)
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:ac), Reason 0x10
+  AP Beacon OFF!!!
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:ac), Reason 0x10
+  AP Beacon OFF!!!
+Set_Fh_Bss_Proc ra0 wdev->MAPCfg.DevOwnRole 0x0
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:ac), Reason 0x10
+  AP Beacon OFF!!!
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:ac), Reason 0x10
+  AP Beacon OFF!!!
+Set_Fh_Bss_Proc ra0 wdev->MAPCfg.DevOwnRole 0x20
+MtCmdChannelSwitch: control_chl = 132,control_ch2=0, central_chl = 132 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:a9), Reason 0x10
+  AP Beacon OFF!!!
+ExtEventBeaconLostHandler::FW EVENT (a8:63:7d:2f:05:a9), Reason 0x10
+  AP Beacon OFF!!!
+Set_Fh_Bss_Proc rax0 wdev->MAPCfg.DevOwnRole 0x0
+MtCmdSetTxRxPath: control_chl = 132,control_ch2=0, central_chl = 132, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+Set_Fh_Bss_Proc rax0 wdev->MAPCfg.DevOwnRole 0x20
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 136,control_ch2=0, central_chl = 136 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 136,control_ch2=0, central_chl = 136, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 140,control_ch2=0, central_chl = 140 DBDCIdx= 1, Band= 1
+BW = 0,TXStream = 2, RXStream = 2, scan(1)
+MtCmdSetTxRxPath: control_chl = 140,control_ch2=0, central_chl = 140, BW = 0,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(1), Channel_Band = 1
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 36,control_ch2=0, central_chl = 42 DBDCIdx= 1, Band= 1
+BW = 2,TXStream = 2, RXStream = 2, scan(0)
+MtCmdSetTxRxPath: control_chl = 36,control_ch2=0, central_chl = 42, BW = 2,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(0), Channel_Band = 1
+scan_ch_restore - End of SCAN(TYPE: 0, BandIdx: 1), restore to BW(2) channel 42, Total BSS[10]
+I/F(apcli1) Set_ApCli_Enable_Proc::(enable = 1)
+mt7915_apply_dpd_flatness_data: DPD Pre-Cal finished, load DPD Pre-Cal data
+MtCmdChannelSwitch: control_chl = 36,control_ch2=0, central_chl = 42 DBDCIdx= 1, Band= 1
+BW = 2,TXStream = 2, RXStream = 2, scan(0)
+MtCmdSetTxRxPath: control_chl = 36,control_ch2=0, central_chl = 42, BW = 2,TXStream = 2, RXStream = 2,RXPath = 3, BandIdx =1,  scan(0), Channel_Band = 1
