@@ -150,3 +150,4 @@ A header for SHA512 verification has the following layout:
 | 0x0000004A       | 0x02         | Unknown, set to 0x00 0x00
 | 0x0000004C       | 0x02         | FM fmid: 0x60 0x6E. Has to be match the "fmid" of the device.
 | 0x0000004E       | 0x02         | Header checksum. It must be set to that the sum of all words in the firware equals 0xFFFF. An overflow will increase the  checksum by 1. See function "UpdateHeaderInRecoveryImage".
+ 
