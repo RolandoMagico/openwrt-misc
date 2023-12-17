@@ -15,7 +15,7 @@ First of all, the OEM firmware starts with 16 bytes header and ends with 256 byt
 When removing the SHA512 header and signature from the firmware image, you get the encrypted firmware image wich starts with a header again.
 | Address (hex)    | Length (hex) | Data
 |------------------|--------------|-----------------------------------------------------------------
-| 0x00000000       | 0x10         | Header for AES-CBC decryption of the image, details below.
+| 0x00000000       | 0x10         | Header for AES-CBC decryption of the image, details [below](#aes-cbc-decryption-header).
 | 0x00000010       | 0x20         | IV for AES-CBC decryption as ASCII string.
 | 0x00000030       | 0x01         | Constant 0x0A (LF)
 | 0x00000031       | 0x08         | ASCII "Salted___" without trailing \0
