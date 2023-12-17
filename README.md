@@ -19,7 +19,7 @@ First of all, the OEM firmware starts with 16 bytes header and ends with 256 byt
 Example script for verification:
 - Remove the SHA512 verification header from the original firmware file:
 ```
-dd if=M32-REVA_1.03.01_HOTFIX.enc.bin of=Firmware.tmp1 bs=1 skip=16
+dd if=M32-REVA_1.03.01_HOTFIX.enc.bin iflag=skip_bytes of=Firmware.tmp1 bs=1M skip=16
 ```
 - Extract the SHA512 signature from the firmware:
 ```
@@ -27,7 +27,7 @@ dd if=Firmware.tmp1 of=Firmware.tmp1.sig bs=1 count=256 skip=$(( $(stat -c %s Fi
 ```
 - Remove the SHA512 signature from the firmware:
 ```
-dd if=Firmware.tmp1 of=Firmware.tmp2 bs=1 count=$(( $(stat -c %s Firmware.tmp1) - 256))
+dd if=Firmware.tmp1 iflag=count_bytes of=Firmware.tmp2 bs=1M count=$(( $(stat -c %s Firmware.tmp1) - 256))
 ```
 - Create digest for verification:
 ```
@@ -58,12 +58,12 @@ IV_STRING=$(cat Firmware.tmp3.IV)
 ```
 - Extract encrypted data from image:
 ```
-dd if=Firmware.tmp2 of=Firmware.tmp3.enc bs=1 skip=49
+dd if=Firmware.tmp2 iflag=skip_bytes of=Firmware.tmp3.enc bs=1M skip=49
 ```
 
 - Decrypt data:
 ```
-openssl aes-128-cbc -d -md sha256 -in Firmware.tmp3.enc -out Firmware.tmp4 -kfile=Key.firmware -iv $(IV_STRING)
+openssl aes-128-cbc -d -md sha256 -in Firmware.tmp3.enc -out Firmware.tmp4 -kfile=Key.firmware -iv $IV_STRING
 ```
 - Now ```Firmware.tmp4``` contains the decrypted data.
 
@@ -78,7 +78,7 @@ After decrypting the firmware image, a "Signed Recovery Image" is left. Like in 
 Example script for verification:
 - Remove the SHA512 verification header from the image:
 ```
-dd if=Firmware.tmp4 of=Firmware.tmp5 bs=1 skip=16
+dd if=Firmware.tmp4 iflag=skip_bytes of=Firmware.tmp5 bs=1M skip=16
 ```
 - Extract the SHA512 signature from the image:
 ```
@@ -86,7 +86,7 @@ dd if=Firmware.tmp5 of=Firmware.tmp5.sig bs=1 count=256 skip=$(( $(stat -c %s Fi
 ```
 - Remove the SHA512 signature from the image:
 ```
-dd if=Firmware.tmp5 of=Firmware.tmp6 bs=1 count=$(( $(stat -c %s Firmware.tmp5) - 256))
+dd if=Firmware.tmp5 iflag=count_bytes of=Firmware.tmp6 bs=1M count=$(( $(stat -c %s Firmware.tmp5) - 256))
 ```
 - Create digest for verification:
 ```
