@@ -77,7 +77,7 @@ After decrypting the firmware image, a "Signed Recovery Image" is left. Like in 
 
 Example script for verification:
 - Remove the SHA512 verification header from the image:
- ```
+```
 dd if=Firmware.tmp4 of=Firmware.tmp5 bs=1 skip=16
 ```
 - Extract the SHA512 signature from the image:
