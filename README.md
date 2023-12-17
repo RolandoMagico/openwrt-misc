@@ -1,4 +1,4 @@
-# D-Link M32 (EAGLE PRO AI AX3200 Smart Router)
+# D-Link R32 (EAGLE PRO AI AX3200 Smart Router)
 ## OEM Firmware Layout
 
 The following example is based on R32A1_FW103B01.bin where the firmware is "packed" multiple times with additional verification and decryption information. All required data for verification and decryption are included in the M32 GPL package from D-Link in the foler ```BPI-R2/meta-myproject/recipes-dlink/imgcrypto/files/919251a1_dlink-fw-encdec-keys-native.tar.gz/git/R32```:
