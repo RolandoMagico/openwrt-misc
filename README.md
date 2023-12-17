@@ -7,7 +7,7 @@ The following example is based on M32_REVA_FIRMWARE_v1.00B34.bin where the firmw
 First of all, the OEM firmware starts with 16 bytes header and ends with 256 bytes signature for SHA512 signature verification.
 | Address (hex)    | Length (hex) | Data
 |------------------|--------------|-----------------------------------------------------------------
-| 0x00000000       | 0x10         | Header for SHA512 verification of the image, details below.
+| 0x00000000       | 0x10         | Header for SHA512 verification of the image, details [below](#sha512-verification-header).
 | 0x00000010       | variable     | Encrypted firmware data
 | variable         | 0x100        | The signature for the SHA512 verification.
 
@@ -22,8 +22,16 @@ When removing the SHA512 header and signature from the firmware image, you get t
 | 0x00000039       | 0x08         | The salt for the firmware decryption.
 | 0x00000041       | variable     | The encrypted data.
 
+##### Signed Recovery Image
+After decrypting the firmware image, a "Signed Recovery Image" is left. Like in the overall firmware image, there is a SHA512 header in the beginning and a signature in the end.
+| Address (hex)    | Length (hex) | Data
+|------------------|--------------|-----------------------------------------------------------------
+| 0x00000000       | 0x10         | Header for SHA512 verification of the image, details [below](#sha512-verification-header).
+| 0x00000010       | variable     | Encrypted firmware data
+| variable         | 0x100        | The signature for the SHA512 verification.
+
 ##### Recovery Image
-After decrypting the firmware image, a "Recovery Image" is left. It's an image which can be flashed via the recovery web interface. The recovery image consists of one or more partitions where every partition starts with a header followed by the partition data.
+After removing the signature data, a "Recovery Image" is left. It's an image which can be flashed via the recovery web interface. The recovery image consists of one or more partitions where every partition starts with a header followed by the partition data.
 | Address (hex)    | Length (hex) | Data
 |------------------|--------------|-----------------------------------------------------------------
 | 0x00000000       | 0x50         | Partition header, see [below](#partition-header)
