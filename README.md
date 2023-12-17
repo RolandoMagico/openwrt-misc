@@ -37,7 +37,7 @@ openssl dgst -sha512 -binary -out Firmware.tmp2.dgst Firmware.tmp2
 ```
 openssl dgst -verify Key.pub -sha512 -binary -signature Firmware.tmp1.sig Firmware.tmp2.dgst
 ```
-- This should result in output ```Verified OK``` now Firmware.tmp2 contains the encrypted data.
+- This should result in output ```Verified OK```, now ```Firmware.tmp2``` contains the encrypted data.
 
 #### Encrypted Firmware data
 When removing the SHA512 header and signature from the firmware image, you get the encrypted firmware image wich starts with a header again.
@@ -49,6 +49,23 @@ When removing the SHA512 header and signature from the firmware image, you get t
 | 0x00000031       | 0x08         | ASCII "Salted___" without trailing \0
 | 0x00000039       | 0x08         | The salt for the firmware decryption.
 | 0x00000041       | variable     | The encrypted data.
+
+Example script for decryption:
+- Extract IV from image:
+```
+dd if=Firmware.tmp2 of=Firmware.tmp3.IV bs=1 skip=16 count=33
+IV_STRING=$(cat Firmware.tmp3.IV)
+```
+- Extract encrypted data from image:
+```
+dd if=Firmware.tmp2 of=Firmware.tmp3.enc bs=1 skip=49
+```
+
+- Decrypt data:
+```
+openssl aes-128-cbc -d -md sha256 -in Firmware.tmp3.enc -out Firmware.tmp4 -kfile=Key.firmware -iv $(IV_STRING)
+```
+- Now ```Firmware.tmp4``` contains the decrypted data.
 
 ##### Signed Recovery Image
 After decrypting the firmware image, a "Signed Recovery Image" is left. Like in the overall firmware image, there is a SHA512 header in the beginning and a signature in the end.
