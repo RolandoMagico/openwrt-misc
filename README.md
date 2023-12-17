@@ -26,9 +26,9 @@ When removing the SHA512 header and signature from the firmware image, you get t
 After decrypting the firmware image, a "Recovery Image" is left. It's an image which can be flashed via the recovery web interface. The recovery image consists of one or more partitions where every partition starts with a header followed by the partition data.
 | Address (hex)    | Length (hex) | Data
 |------------------|--------------|-----------------------------------------------------------------
-| 0x00000000       | 0x50         | Partition header
+| 0x00000000       | 0x50         | Partition header, see [below](#partition-header)
 | 0x00000050       | variable     | Partition data
-| variable         | 0x50         | Partition header
+| variable         | 0x50         | Partition header, see [below](#partition-header)
 | variable         | variable     | Partition data
 
 ##### AES-CBC Decryption Header
