@@ -18,8 +18,8 @@ First of all, the OEM firmware starts with 16 bytes header and ends with 256 byt
 
 Example script for verification:
 - Remove the SHA512 verification header from the original firmware file:
- ```
- dd if=M32-REVA_1.03.01_HOTFIX.enc.bin of=Firmware.tmp1 bs=1 skip=16
+```
+dd if=M32-REVA_1.03.01_HOTFIX.enc.bin of=Firmware.tmp1 bs=1 skip=16
 ```
 - Extract the SHA512 signature from the firmware:
 ```
@@ -74,6 +74,29 @@ After decrypting the firmware image, a "Signed Recovery Image" is left. Like in 
 | 0x00000000       | 0x10         | Header for SHA512 verification of the image, details [below](#sha512-verification-header).
 | 0x00000010       | variable     | Encrypted firmware data
 | variable         | 0x100        | The signature for the SHA512 verification.
+
+Example script for verification:
+- Remove the SHA512 verification header from the image:
+ ```
+dd if=Firmware.tmp4 of=Firmware.tmp5 bs=1 skip=16
+```
+- Extract the SHA512 signature from the image:
+```
+dd if=Firmware.tmp5 of=Firmware.tmp5.sig bs=1 count=256 skip=$(( $(stat -c %s Firmware.tmp5) - 256))
+```
+- Remove the SHA512 signature from the image:
+```
+dd if=Firmware.tmp5 of=Firmware.tmp6 bs=1 count=$(( $(stat -c %s Firmware.tmp5) - 256))
+```
+- Create digest for verification:
+```
+openssl dgst -sha512 -binary -out Firmware.tmp6.dgst Firmware.tmp6
+```
+- Verify image:
+```
+openssl dgst -verify Key.pub -sha512 -binary -signature Firmware.tmp5.sig Firmware.tmp6.dgst
+```
+- This should result in output ```Verified OK```, now ```Firmware.tmp6``` contains the recovery image.
 
 ##### Recovery Image
 After removing the signature data, a "Recovery Image" is left. It's an image which can be flashed via the recovery web interface. The recovery image consists of one or more partitions where every partition starts with a header followed by the partition data.
