@@ -2,7 +2,7 @@
 ## OEM Firmware Layout
 Compared to M32, R32 and M30, it looks like the firmware layout has changed. Having a look at M60A1_FW100B21.bin, it seems that the firmware image is an recovery image containing 2 partitions with partition headers. The content of the partitions itself is encrypted. The recovery images were not encrypted in previous devices. So the already existing scripts/tools don't work anymore for the M60. There are M60 keys in the GPL sources for the M32, which means that they now have to be used in a different way or the image encryption procedure has changed completely.
 
-##### Recovery Image
+### Recovery Image
 The recovery image consists of two partitions where every partition starts with a header followed by the partition data.
 | Address (hex)    | Length (hex) | Data
 |------------------|--------------|-----------------------------------------------------------------
@@ -14,7 +14,7 @@ The recovery image consists of two partitions where every partition starts with 
 The first partition has an erase length of 0 but a write length of 0x100. Not sure if it really contains data which is flashed or if it is some kind of additional information for decryption or the flash procedure itself.
 The second partition has an erase length of 0x02D00000 and a write length of 0x0238BBA0. The wirte length matches the remaining data length in the image, I assume D-Link switched also to UBI format like in M30.
 
-##### Partition Header
+#### Partition Header
 
 | Address (hex)    | Length (hex) | Data
 |------------------|--------------|-----------------------------------------------------------------
