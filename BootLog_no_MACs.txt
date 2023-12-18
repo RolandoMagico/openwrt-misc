@@ -1,0 +1,615 @@
+
+Format: Log Type - Time(microsec) - Message - Optional Info
+Log Type: B - Since Boot(Power On Reset),  D - Delta,  S - Statistic
+S - QC_IMAGE_VERSION_STRING=BOOT.BF.3.1.1-00126
+S - IMAGE_VARIANT_STRING=DAACANAZA
+S - OEM_IMAGE_VERSION_STRING=CRM
+S - Boot Config, 0x00000025
+S - Reset status Config, 0x00000000
+S - Core 0 Frequency, 0 MHz
+B -       261 - PBL, Start
+B -      1339 - bootable_media_detect_entry, Start
+B -      2612 - bootable_media_detect_success, Start
+B -      2626 - elf_loader_entry, Start
+B -      4036 - auth_hash_seg_entry, Start
+B -      6191 - auth_hash_seg_exit, Start
+B -     74251 - elf_segs_hash_verify_entry, Start
+B -    198498 - PBL, End
+B -    198523 - SBL1, Start
+B -    291987 - pm_device_init, Start
+D -         7 - pm_device_init, Delta
+B -    293489 - boot_flash_init, Start
+D -     87188 - boot_flash_init, Delta
+B -    384982 - boot_config_data_table_init, Start
+D -     13968 - boot_config_data_table_init, Delta - (419 Bytes)
+B -    401707 - clock_init, Start
+D -      7579 - clock_init, Delta
+B -    412724 - CDT version:2,Platform ID:8,Major ID:1,Minor ID:0,Subtype:6
+B -    416137 - sbl1_ddr_set_params, Start
+B -    421234 - cpr_init, Start
+D -         2 - cpr_init, Delta
+B -    425616 - Pre_DDR_clock_init, Start
+D -         4 - Pre_DDR_clock_init, Delta
+D -     13172 - sbl1_ddr_set_params, Delta
+B -    438927 - pm_driver_init, Start
+D -         2 - pm_driver_init, Delta
+B -    509635 - sbl1_wait_for_ddr_training, Start
+D -        28 - sbl1_wait_for_ddr_training, Delta
+B -    525033 - Image Load, Start
+D -    156076 - QSEE Image Loaded, Delta - (299560 Bytes)
+B -    681539 - Image Load, Start
+D -      2124 - SEC Image Loaded, Delta - (2048 Bytes)
+B -    691691 - Image Load, Start
+D -    188740 - APPSBL Image Loaded, Delta - (447011 Bytes)
+B -    880829 - QSEE Execution, Start
+D -        56 - QSEE Execution, Delta
+B -    887060 - SBL1, End
+D -    690539 - SBL1, Delta
+S - Flash Throughput, 2100 KB/s  (749038 Bytes,  356622 us)
+S - DDR Frequency, 672 MHz
+
+
+U-Boot 2012.07 [Chaos Calmer 15.05.1,unknown] (Jun 05 2020 - 12:19:39)
+
+CBT U-Boot ver: 1.0.3
+
+smem ram ptable found: ver: 1 len: 3
+DRAM:  256 MiB
+machid : 0x8010006
+NAND:  ID = 9590dac2
+Vendor = c2
+Device = da
+ONFI device found
+SF NAND unsupported id:ff:ff:ff:ffSF: Unsupported manufacturer ff
+ipq_spi: SPI Flash not found (bus/cs/speed/mode) = (0/0/48000000/0)
+256 MiB
+MMC:   qca_mmc: 0
+In:    serial
+Out:   serial
+Err:   serial
+machid: 8010006
+flash_type: 2
+
+Updating boot_count ... done
+
+Hit any key to stop autoboot:  0
+
+Memory test start,  banksize=0x2000000, data size=0x8000, test count per bank=64
+Memory test end, lapsed time = 3 seconds
+
+The test result is success
+
+
+NAND read: device 0 offset 0x780000, size 0x300000
+ 3145728 bytes read: OK
+## Booting kernel from FIT Image at 84000000 ...
+   Using 'config@1' configuration
+   Trying 'kernel@1' kernel subimage
+     Description:  ARM Linksys Linux-3.14.77
+     Type:         Kernel Image
+     Compression:  uncompressed
+     Data Start:   0x840000e4
+     Data Size:    2573024 Bytes = 2.5 MiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: 0x80208000
+     Entry Point:  0x80208000
+     Hash algo:    crc32
+     Hash value:   28c84a1d
+     Hash algo:    sha1
+     Hash value:   ebb658ed6148d85f67df719dfebc4f8e8992f7ba
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+## Flattened Device Tree from FIT Image at 84000000
+   Using 'config@1' configuration
+   Trying 'fdt@1' FDT blob subimage
+     Description:  ARM Linksys VelopJr device tree blob
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x842744f8
+     Data Size:    38870 Bytes = 38 KiB
+     Architecture: ARM
+     Hash algo:    crc32
+     Hash value:   ba1387f7
+     Hash algo:    sha1
+     Hash value:   5cce6018ad879a0bb0732c241a35245bd14bcb75
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+   Booting using the fdt blob at 0x842744f8
+   Loading Kernel Image ... OK
+OK
+   Loading Device Tree to 87062000, end 8706e7d5 ... OK
+Device nand2 not found!
+eth0 MAC Address from ART is not valid
+eth1 MAC Address from ART is not valid
+Using machid 0x8010006 from environment
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 3.14.77 (root@build-vm) (gcc version 4.8.3 (OpenWrt/Linaro GCC 4.8-2014.04 r35193) ) #1 SMP PREEMPT Mon Jul 13 04:29:49 PDT 2020
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine model: Linksys MR6350 WiFi AP router based on Qualcomm AP DK07.1-c1
+[    0.000000] Reserved memory: failed to reserve memory for node 'rsvd1@87000000': base 0x87000000, size 5 MiB
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] PERCPU: Embedded 8 pages/cpu @cfdc8000 s8448 r8192 d16128 u32768
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 62208
+[    0.000000] Kernel command line: init=/sbin/init rootfstype=squashfs ubi.mtd=rootfs root=mtd:squashfs rootwait rw clk_ignore_unused
+[    0.000000] PID hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000000] Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Memory: 240772K/250880K available (5016K kernel code, 419K rwdata, 1672K rodata, 208K init, 251K bss, 10108K reserved, 0K highmem)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xd0800000 - 0xff000000   ( 744 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xd0000000   ( 256 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0xc0208000 - 0xc0890264   (6689 kB)
+[    0.000000]       .init : 0xc0891000 - 0xc08c5100   ( 209 kB)
+[    0.000000]       .data : 0xc08c6000 - 0xc092edf4   ( 420 kB)
+[    0.000000]        .bss : 0xc092edf4 - 0xc096dd9c   ( 252 kB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:16 nr_irqs:16 16
+[    0.000000] Architected cp15 timer(s) running at 48.00MHz (virt).
+[    0.000008] sched_clock: 56 bits at 48MHz, resolution 20ns, wraps every 2863311552512ns
+[    0.000017] Switching to timer-based delay loop
+[    0.000349] Calibrating delay loop (skipped), value calculated using timer frequency.. 96.00 BogoMIPS (lpj=480000)
+[    0.000367] pid_max: default: 32768 minimum: 301
+[    0.000633] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000647] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.012750] CPU: Testing write buffer coherency: ok
+[    0.013133] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.013206] Setting up static identity map for 0x80213858 - 0x802138b0
+[    0.090654] CPU1: Booted secondary processor
+[    0.090702] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.110642] CPU2: Booted secondary processor
+[    0.110678] CPU2: thread -1, cpu 2, socket 0, mpidr 80000002
+[    0.130677] CPU3: Booted secondary processor
+[    0.130710] CPU3: thread -1, cpu 3, socket 0, mpidr 80000003
+[    0.130849] Brought up 4 CPUs
+[    0.130892] SMP: Total of 4 processors activated (384.00 BogoMIPS).
+[    0.130900] CPU: All CPU(s) started in SVC mode.
+[    0.141316] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[    0.141692] pinctrl core: initialized pinctrl subsystem
+[    0.142137] regulator-dummy: no parameters
+[    0.142800] NET: Registered protocol family 16
+[    0.144402] DMA: preallocated 2048 KiB pool for atomic coherent allocations
+[    0.144913] cpuidle: using governor ladder
+[    0.144924] cpuidle: using governor menu
+[    0.155534] hw-breakpoint: Debug register access (0xee003e17) caused undefined instruction on CPU 1
+[    0.155542] hw-breakpoint: Debug register access (0xee003e17) caused undefined instruction on CPU 2
+[    0.155549] hw-breakpoint: Debug register access (0xee003e17) caused undefined instruction on CPU 3
+[    0.155556] hw-breakpoint: CPU 2 failed to disable vector catch
+[    0.155589] hw-breakpoint: Debug register access (0xee003e17) caused undefined instruction on CPU 0
+[    0.158421] <CORE> glink_init: unable to create log context
+[    0.158905] i2c-msm-v2 78b7000.i2c: probing driver i2c-msm-v2
+[    0.159689] sps:sps is ready.
+[    0.166179] bio: create slab <bio-0> at 0
+[    0.167939] SD0 VccQ: 1800 <--> 3000 mV
+[    0.168465] SCSI subsystem initialized
+[    0.169166] msm_bus_fabric_init_driver
+[    0.169339] msm_bus_device 580000.ad-hoc-bus: Util-fact is missing, default to 100
+[    0.169358] msm_bus_device 580000.ad-hoc-bus: Vrail-comp is missing, default to 100
+[    0.169376] msm_bus_device 580000.ad-hoc-bus: Failed to get bus clk for bus4096 ctx1
+[    0.169418] msm_bus_device 580000.ad-hoc-bus: Util-fact is missing, default to 100
+[    0.169433] msm_bus_device 580000.ad-hoc-bus: Vrail-comp is missing, default to 100
+[    0.169448] msm_bus_device 580000.ad-hoc-bus: Failed to get bus clk for bus1024 ctx1
+[    0.195569] Bluetooth: Core ver 2.18
+[    0.195644] NET: Registered protocol family 31
+[    0.195656] Bluetooth: HCI device and connection manager initialized
+[    0.195674] Bluetooth: HCI socket layer initialized
+[    0.195689] Bluetooth: L2CAP socket layer initialized
+[    0.195730] Bluetooth: SCO socket layer initialized
+[    0.195938] 80000.qcom,pcie supply vreg-3.3 not found, using dummy regulator
+[    0.196003] 80000.qcom,pcie supply vreg-1.8 not found, using dummy regulator
+[    0.196069] 80000.qcom,pcie supply vreg-0.9 not found, using dummy regulator
+[    0.196121] 80000.qcom,pcie supply gdsc-vdd not found, using dummy regulator
+[    0.290494] msm_pcie_enable: msm_pcie_enable: PCIe: trigger the reset of endpoint of RC0.
+[    0.300484] msm_pcie_enable: msm_pcie_enable: PCIe RC0 PHY is ready!
+[    0.320485] msm_pcie_enable: msm_pcie_enable: PCIe: Release the reset of endpoint of RC0.
+[    0.460623] msm_pcie_enable: msm_pcie_enable: RC0:No. 1:LTSSM_STATE:0x0
+[    0.500676] msm_pcie_enable: msm_pcie_enable: RC0:No. 2:LTSSM_STATE:0x0
+[    0.540729] msm_pcie_enable: msm_pcie_enable: RC0:No. 3:LTSSM_STATE:0x0
+[    0.580781] msm_pcie_enable: msm_pcie_enable: RC0:No. 4:LTSSM_STATE:0x0
+[    0.620833] msm_pcie_enable: msm_pcie_enable: RC0:No. 5:LTSSM_STATE:0x0
+[    0.660884] msm_pcie_enable: msm_pcie_enable: PCIe: trigger the reset of endpoint of RC0.
+[    0.660898] msm_pcie_enable: msm_pcie_enable: PCIe RC0 link initialization failed
+[    0.660925] msm_pcie_enumerate: msm_pcie_enumerate: PCIe: failed to enable RC0.
+[    0.660937] msm_pcie_probe: msm_pcie_probe: PCIe: RC0 is not enabled during bootup; it will be enumerated upon WAKE signal.
+[    0.660948] msm_pcie_probe: msm_pcie_probe: PCIe: Driver probe failed for RC0:-1
+[    0.661383] msm_pcie: probe of 80000.qcom,pcie failed with error -1
+[    0.661671] Switched to clocksource arch_sys_counter
+[    0.663507] NET: Registered protocol family 2
+[    0.664781] TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.664831] TCP bind hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.664884] TCP: Hash tables configured (established 2048 bind 2048)
+[    0.664942] TCP: reno registered
+[    0.664958] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.664990] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.665347] NET: Registered protocol family 1
+[    0.666095] hw perfevents: enabled with ARMv7 Cortex-A7 PMU driver, 5 counters available
+[    0.666405]
+[    0.666405] Version Rollback Feature Disabled
+[    0.667995] futex hash table entries: 1024 (order: 4, 65536 bytes)
+[    0.677487] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.677505] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.
+[    0.678464] msgmni has been set to 470
+[    0.680258] Key type asymmetric registered
+[    0.680274] Asymmetric key parser 'x509' registered
+[    0.680314] io scheduler noop registered
+[    0.680324] io scheduler deadline registered (default)
+[    0.681261] tcsr 194b000.tcsr: setting usb hs phy mode select = e700e7
+[    0.681346] tcsr 1953000.ess_tcsr: setting ess interface select = 0
+[    0.681422] tcsr 1949000.tcsr: setting wifi_glb_cfg = 41000000
+[    0.681489] tcsr 1957000.tcsr: setting wifi_noc_memtype_m0_m2 = 2222222
+[    0.682460] Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+[    0.683458] msm_serial_hsl_probe: detected port #0 (ttyMSM0)
+[    0.683499] msm_serial_hsl_probe: Bus scaling is disabled
+[    0.683653] 78af000.serial: ttyMSM0 at MMIO 0x78af000 (irq = 139, base_baud = 115200) is a MSM
+[    0.683743] msm_hsl_console_setup: console setup on port #0
+[    1.458257] console [ttyMSM0] enabled
+[    1.462363] msm_serial_hsl_init: driver initialized
+[    1.467320] uart_tx_gpio is not available
+[    1.470761] uart_rx_gpio is not available
+[    1.474801] uart_cts_gpio is not available
+[    1.478833] uart_rfr_gpio is not available
+[    1.482937] Wakeup irq not specified.
+[    1.486565] BLSP UART: Bus scaling is disabled.
+[    1.491285] sps: BAM device 0x07884000 is not registered yet.
+[    1.496836] sps:BAM 0x07884000 is registered.
+[    1.501005] qca_serial_hs 78b0000.uart: qca_hs_probe: error creating tx logging context
+[    1.509143] qca_serial_hs 78b0000.uart: qca_hs_probe: error creating rx logging context
+[    1.517121] qca_serial_hs 78b0000.uart: qca_hs_probe: error creating usr logging context
+[    1.525505] 78b0000.uart: ttyQHS0 at MMIO 0x78b0000 (irq = 140, base_baud = 460800) is a MSM HS UART
+[    1.534651] qca_serial_hs module loaded
+[    1.540248] sps: BAM device 0x07984000 is not registered yet.
+[    1.545027] sps:BAM 0x07984000 is registered.
+[    1.549132] msm_nand_bam_init: msm_nand_bam_init: BAM device registered: bam_handle 0xcf0b5000
+[    1.558047] sps:BAM 0x07984000 (va:0xd0a60000) enabled: ver:0x19, number of pipes:7
+[    1.565771] msm_nand_version_check: nand_major:1, nand_minor:4, qpic_major:1, qpic_minor:4
+[    1.574080] msm_nand_flash_onfi_probe: Found an ONFI compliant device MX30LF2G18AC        ▒
+[    1.582138] msm_nand_scan: NAND Id: 0x9590dac2 Buswidth: 8Bits Density: 256 MByte
+[    1.589580] msm_nand_scan: pagesize: 2048 Erasesize: 131072 oobsize: 64 (in Bytes)
+[    1.597143] msm_nand_scan: BCH ECC: 4 Bit
+[    1.601135] msm_nand_scan: CFG0: 0x2a0408c0,      CFG1: 0x0804745c
+[    1.601135]             RAWCFG0: 0x280420c0,   RAWCFG1: 0x0005045d
+[    1.601135]           ECCBUFCFG: 0x00000203, ECCBCHCFG: 0x42040700
+[    1.601135]      BAD BLOCK BYTE: 0x000001d1
+[    1.623883] 16 ofpart partitions found on MTD device 7980000.qcom,nand
+[    1.630292] Creating 16 MTD partitions on "7980000.qcom,nand":
+[    1.636131] 0x000000000000-0x000000100000 : "0:SBL1"
+[    1.642923] 0x000000100000-0x000000200000 : "0:MIBIB"
+[    1.648738] 0x000000200000-0x000000300000 : "0:QSEE"
+[    1.654501] 0x000000300000-0x000000380000 : "0:CDT"
+[    1.659775] 0x000000380000-0x000000400000 : "0:APPSBLENV"
+[    1.665648] 0x000000400000-0x000000480000 : "0:ART"
+[    1.671005] 0x000000480000-0x000000680000 : "0:APPSBL"
+[    1.677609] 0x000000680000-0x000000700000 : "u_env"
+[    1.682856] 0x000000700000-0x000000740000 : "s_env"
+[    1.687901] 0x000000740000-0x000000780000 : "devinfo"
+[    1.693204] 0x000000780000-0x000005f80000 : "kernel"
+[    1.758839] 0x000000a80000-0x000005f80000 : "rootfs"
+[    1.822536] 0x000005f80000-0x00000b780000 : "alt_kernel"
+[    1.888551] 0x000006280000-0x00000b780000 : "alt_rootfs"
+[    1.952519] 0x00000b780000-0x00000b880000 : "sysdiag"
+[    1.958388] 0x00000b880000-0x00000ff00000 : "syscfg"
+[    2.012123] msm_nand_probe: NANDc phys addr 0x7980000, BAM phys addr 0x7984000, BAM IRQ 133
+[    2.019442] msm_nand_probe: Allocated DMA buffer at virt_addr 0xd0a7b000, phys_addr 0x8f0ba000
+[    2.029861] sps:BAM 0x07884000 (va:0xd0b40000) enabled: ver:0x19, number of pipes:12
+[    2.037058] m25p80 spi0.0: Failed to find sector-size
+[    2.053694] libphy: ipq40xx_mdio: probed
+[    2.060163] ipq40xx-mdio 90000.mdio: ipq40xx-mdio driver was registered
+[    2.065848] tun: Universal TUN/TAP device driver, 1.6
+[    2.070778] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    2.077085] PPP generic driver version 2.4.2
+[    2.081373] PPP BSD Compression module registered
+[    2.085903] PPP Deflate Compression module registered
+[    2.090920] NET: Registered protocol family 24
+[    2.095359] i2c /dev entries driver
+[    2.100444] Bluetooth: HCI UART driver ver 2.2
+[    2.103885] Bluetooth: HCI H4 protocol initialized
+[    2.108628] Bluetooth: HCI BCSP protocol initialized
+[    2.115380] hidraw: raw HID events driver (C) Jiri Kosina
+[    2.120841] u32 classifier
+[    2.122545]     Performance counters on
+[    2.126332]     input device check on
+[    2.129987] Netfilter messages via NETLINK v0.30.
+[    2.134696] nfnl_acct: registering with nfnetlink.
+[    2.139511] nf_conntrack version 0.5.0 (3762 buckets, 15048 max)
+[    2.146036] ctnetlink v0.93: registering with nfnetlink.
+[    2.150741] nf_conntrack_rtsp v0.7 loading
+[    2.154913] ip_set: protocol 6
+[    2.158024] gre: GRE over IPv4 demultiplexor driver
+[    2.162730] ip_gre: GRE over IPv4 tunneling driver
+[    2.169029] nf_nat_rtsp v0.7 loading
+[    2.171607] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    2.177151] TCP: cubic registered
+[    2.180925] NET: Registered protocol family 10
+[    2.186323] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[    2.191037] sit: IPv6 over IPv4 tunneling driver
+[    2.197258] NET: Registered protocol family 17
+[    2.200804] Bridge firewalling registered
+[    2.204712] Ebtables v2.0 registered
+[    2.208452] Bluetooth: RFCOMM TTY layer initialized
+[    2.213135] Bluetooth: RFCOMM socket layer initialized
+[    2.218228] Bluetooth: RFCOMM ver 1.11
+[    2.221970] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    2.227234] Bluetooth: BNEP filters: protocol multicast
+[    2.232471] Bluetooth: BNEP socket layer initialized
+[    2.237391] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    2.243319] Bluetooth: HIDP socket layer initialized
+[    2.248289] l2tp_core: L2TP core driver, V2.0
+[    2.252628] l2tp_ppp: PPPoL2TP kernel driver, V2.0
+[    2.257355] l2tp_netlink: L2TP netlink interface
+[    2.262000] 8021q: 802.1Q VLAN Support v1.8
+[    2.266294] Registering SWP/SWPB emulation handler
+[    2.272154] SD0 VccQ: disabling
+[    2.274263] regulator-dummy: disabling
+[    2.278413] UBI: attaching mtd11 to ubi0
+[    2.640595] UBI: scanning is finished
+[    2.650242] UBI: attached mtd11 (name "rootfs", size 85 MiB) to ubi0
+[    2.655599] UBI: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    2.662349] UBI: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    2.669018] UBI: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    2.675890] UBI: good PEBs: 680, bad PEBs: 0, corrupted PEBs: 0
+[    2.681792] UBI: user volume: 1, internal volumes: 1, max. volumes count: 128
+[    2.688897] UBI: max/mean erase counter: 1/0, WL threshold: 4096, image sequence number: 1751600957
+[    2.697937] UBI: available PEBs: 0, total reserved PEBs: 680, PEBs reserved for bad PEB handling: 40
+[    2.707073] UBI: background thread "ubi_bgt0d" started, PID 74
+[    2.709085] input: gpio_keys.9 as /devices/soc.1/gpio_keys.9/input/input0
+[    2.709341] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    2.712750] clk: Not disabling unused clocks
+[    2.734243] VFS: Mounted root (squashfs filesystem) readonly on device 31:16.
+[    2.740660] Freeing unused kernel memory: 208K (c0891000 - c08c5000)
+*********************************************************************************
+              _        _  __    _    __ _____ __   __ _____
+             | |      | ||  \  | |  / // ____]\ \ / // ____]TM
+             | |      | ||   \ | | / /| (___   \ V /| (____
+             | |      | || |\ \| |\ \  \____ \  \ /  \____ \
+             | |_____ | || | \   | \ \  ____) | | |   ____) |
+             |_______||_||_|  \__|  \_\[____ /  |_|  [_____/
+
+ (c) 2013 Belkin International, Inc. and/or its affiliates. All rights reserved.
+ Booting fiat (firmware version 1.1.2.202028)
+*********************************************************************************
+[utopia][init] System Initialization
+[utopia][init] Creating /proc
+[utopia][init] Creating /sys
+[utopia][init] Creating /dev
+[utopia][init] Creating /tmp
+[utopia][init] Allocating 60M for /tmp
+[utopia][init] Prepairing /dev/pts
+[utopia][init] Setting /tmp and /var permissions
+[utopia][init] Starting udev..
+Attempting mount of ubifs syscfg partition
+UBI device number 1, total 564 LEBs (71614464 bytes, 68.3 MiB), available 0 LEBs (0 bytes), LEB size 126976 bytes (124.0 KiB)
+[utopia][init] Using persistent syscfg data from /var/config/syscfg
+[utopia][init] Starting system logging
+[utopia][init] Starting sysevent subsystem
+[utopia][init] Starting blue ...
+combo_blink(blue)(700)
+[utopia][init] Enabling DesignWare USB3 DRD Core drivers
+[utopia][init] Loading QCA Ethernet, NSS and GMAC drivers
+net.netfilter.nf_conntrack_acct = 1
+[utopia][init] Setting any unset system values to default
+[utopia][init] no persistence config file (/var/config/pstcfg) found
+setting up MAC addresses for all interface based on xx:xx:xx:xx:xx:xx
+NTP Servers do not need to be updated
+[utopia][init] syscfg loaded removing tmp file
+checking for interactive script start up...
+no user scheduled tasks found...
+senq running
+/etc/init.d/service_senq.sh   Starting in mode 0
+1970-01-01 00:00:17: node-mode running
+Good block at 0x00000000
+Updating BootCount Page[8]:4000 ... Done
+
+attempting to sync sysinfo.cgi auth credentials
+[utopia][init] Loading Buttons drivers
+[utopia][init] Load WiFi cal data from MTD(mtd5) to FS.
+[utopia][init] Setup link to WiFi firmware and board data (EU)
+[utopia][init] Multi-region is not supported or not enabled
+[utopia][init] Cert region: EU
+[utopia][init] Using EU region for WiFi firmware and board data
+NSS Auto scaling disabled
+[utopia][init] Loading QCA Enhanced Connection manager
+[utopia][init] Initializing BTLE interface
+[utopia][init] Bluetooth Mac Address: xx xx xx xx xx xx
+[utopia][init] Cert Region: EU
+[utopia][init] BT PSR: /etc/pb-234-csr8x11-rev3.psr
+Device setup complete
+Loading PSKEY_HCI_LMP_LOCAL_VERSION ... done
+Loading PSKEY_LMP_REMOTE_VERSION ... done
+Loading 0x212c ... done
+Loading 0x212d ... done
+Loading 0x212e ... done
+Loading 0x212f ... done
+Loading 0x2130 ... done
+Loading 0x2131 ... done
+Loading 0x2132 ... done
+Loading 0x2133 ... done
+Loading 0x2134 ... done
+Loading 0x2135 ... done
+Loading 0x2136 ... done
+Loading 0x2137 ... done
+Loading 0x220b ... done
+Loading 0x222b ... done
+Loading 0x222c ... done
+Loading 0x2139 ... done
+Loading 0x213a ... done
+Loading 0x213b ... done
+Loading PSKEY_LC_MAX_TX_POWER ... done
+Loading PSKEY_HOST_INTERFACE ... done
+Loading 0x01ea ... done
+Loading PSKEY_ANA_FREQ ... done
+Loading PSKEY_ANA_FTRIM ... done
+Loading 0x22c8 ... done
+Loading 0x2175 ... done
+Device setup complete
+Device setup complete
+[utopia][init] BTLE interface ready to use
+inserting fpbypass.ko for QCA
+attempting to sync sysinfo.cgi auth credentials
+adding group for lldpd user
+
+nodes_jr login: Wed Nov 29 12:42:00 UTC 2023
+Starting devicedb ...
+wan, sysevent received: wan-start
+
+DeviceDB database version 3
+Options:
+    Daemonize       : yes
+    Server UDS Path   : /tmp/devicedb/server_link
+    Database File     : /tmp/devicedb/devicedb.db
+    DB Transient File : /tmp/devicedb/transient.db
+DeviceDB Daily Backup Cron job created
+No TopoDB persistence data to import
+TopoDB data not imported
+lldpd event lan_ipaddr 192.168.1.1 received.
+lldpd event lldpd-start  received.
+killall: lldpd: no process killed
+lldpd configuration already running
+setting root_accessible to 0 by default
+mosquitto aborting: not Master
+lldp updating callback scripts
+service_guardian.sh is called with lan-status
+Entry tsmb lan-status, 1
+subscriber running
+/etc/init.d/service_subscriber.sh lan-status starting MODE: 0
+/etc/init.d/service_subscriber.sh lan-status starting: Not Master; ignoring status change (mode: 0)
+ARP agent not started: not in master mode.
+lldpd event lldp::root_accessible 0 received.
+Starting ddd_ethernet_agent ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RTNETLINK answers: Device or resource busy
+backhaul_switching status event backhaul::media 0 received on backhaul_switching_mgr
+Backhaul media 0 received, but wifi status is not started. Will do backhaul check later
+lldpd event ETH::port_2_status down received.
+lldpd event ETH::port_3_status down received.
+lldpd event ETH::port_4_status down received.
+lldpd event ETH::port_5_status down received.
+lldpd event ETH::port_1_status down received.
+[utopia] Not setting ppp_clamp_mtu
+Lighttpd Model Base: MR6350
+Generating Rainier lighttpd config
+Build temporary www configuration directory:
+TSLIIHauhEfGE
+Power cycle Ethernet ports.
+nss_build_bypass is called with lan-started
+wifi, sysevent received: lan-started (Wed Nov 29 04:42:14 PST 2023)
+wifi, service_start()
+Registering Service myrouter._http._tcp.local port 80
+conntrack_parse running
+creating conntrack cron job
+ARP agent not started: not in master mode.
+Got a reply for myrouter._http._tcp.local.: Name now registered and active
+[utopia][init] Loading GMAC and WLAN drivers
+[utopia][init] Creating wifi devices
+ath0
+ath1
+ Multi-region is not supported or not enabled
+SKU is MR6350-EU
+Not ready for JNAP. Sleeping for 15 seconds...
+smart connect client, generating client device data
+[utopia] Not setting ppp_clamp_mtu on dslite protocol
+wan, sysevent received: phylink_wan_state
+wifi, wifi_physical_start(ath0)
+Auto channel
+wifi, wifi_virtual_start(ath0)
+wifi, wifi_user_start(ath0)
+mosquitto aborting: not Master
+/etc/init.d/service_subscriber.sh lan-status started MODE: 0
+/etc/init.d/service_subscriber.sh lan-status started: Not Master; ignoring status change (mode: 0)
+wifi_user, ath0 TxBF enabled
+wifi, primary AP: ath0 is up (Wed Nov 29 04:42:35 PST 2023)
+Entry tsmb lan-status, 1
+wifi, wifi_guest_start(ath0)
+wifi, guest ath2 is disabled, do not start wifi guest
+service_guardian.sh is called with lan-status
+wifi, smart::mode is unconfigured do not start smart connect setup and config wifi
+wifi, wifi_physical_start(ath1)
+List Flushed
+Following channels are blocked from Channel selection algorithm
+[52] [56] [60] [64] [116] [120] [124] [128]
+Auto channel
+wifi, wifi_virtual_start(ath1)
+wifi, wifi_user_start(ath1)
+===>RESET FIAT usb power
+backhaul_switching status event system_state-normal received
+Restarting nfqrecv service...
+wifi_user, ath1 TxBF enabled
+wifi_user, ath1 MU-MIMO enabled
+nss_build_bypass is called with ipv4_wan_ipaddr
+wifi, primary AP: ath1 is up (Wed Nov 29 04:42:40 PST 2023)
+wifi, wifi_guest_start(ath1)
+wifi, guest ath3 is disabled, do not start wifi guest
+wifi, start_hostapd()
+lldpd event ipv4_wan_ipaddr 0.0.0.0 received.
+getting geoip information for 0.0.0.0
+curl: (6) Could not resolve: freegeoip.net (Could not contact DNS servers)
+wifi, start hostapd (Wed Nov 29 04:42:41 PST 2023)
+Configuration file: /tmp/hostapd-ath0.conf
+Configuration file: /tmp/hostapd-ath1.conf
+ath0: Could not connect to kernel driver
+Using interface ath0 with hwaddr xx:xx:xx:xx:xx:xx and ssid "_LinksysSetupC8B"
+random: Only 15/20 bytes of strong random data available from /dev/random
+random: Not enough entropy pool available for secure operations
+WPA: Not enough entropy in random pool for secure operations - update keys later when the first station connects
+ath0: interface state UNINITIALIZED->ENABLED
+ath0: AP-ENABLED
+ath1: Could not connect to kernel driver
+Using interface ath1 with hwaddr xx:xx:xx:xx:xx:xx and ssid "_LinksysSetupC8B"
+random: Cannot read from /dev/random: Resource temporarily unavailable
+random: Only 15/20 bytes of strong random data available from /dev/random
+random: Not enough entropy pool available for secure operations
+WPA: Not enough entropy in random pool for secure operations - update keys later when the first station connects
+ath1: interface state UNINITIALIZED->ENABLED
+ath1: AP-ENABLED
+fastpath, sysevent received: qos_enabled
+Entry tsmb tsmb-stop, 1
+smart_connect, sysevent received: wifi-status starting
+nss_build_bypass is called with build_bypass
+killall: mdns_lookup: no process killed
+alljoyn service_init
+LookUpMaster call OK.
+mDNS lookup is on going...
+nss_build_bypass is called with guardian-configured
+Got a TERM signal, will terminate.
+Warning! nfqrecv encountered errors when doing recv(): Interrupted system call
+btsetup service
+btsetup: smart_connect::setup_status
+killall: nfqrecv: no process killed
+state_machine entering READY
+btsetup: Unconfigured mode and Peripheral role
+bluetoothd.init: /var/run/dbus created
+pub_devinfo_status:  Error: could not determine HOST_ADDR
+bluetoothd.init: dbus-daemon started
+pub_wlan_status:  Error: could not determine HOST_ADDR
+smart_connect, sysevent received: wifi-status started
+pub_wlan_status:  Error: could not determine HOST_ADDR
+hcisetup: Enabled LE advertising
+combo_solid(uxpurple)
+pub_wlan_status:  Error: could not determine HOST_ADDR
+ping: bad address 'www.linksys.com'
+[fw.sh] fwup_checked_after_boot: 0
+[fwupd] status details:"ERROR: Connecting server"
+[fw.sh] fwup_forced_update: 0
+Entry tsmb tsmb-stop, 1
+Entry tsmb tsmb-start, 1
+
