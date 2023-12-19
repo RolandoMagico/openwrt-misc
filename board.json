@@ -1,0 +1,50 @@
+[
+    {
+        "data": "firmware/AH/boardData_1_0_IPQ4019_DK04_2G.bin", 
+        "names": [
+            "bus=ahb,bmi-chip-id=0,bmi-board-id=20,variant=linksys-mr6350-ahm"
+        ]
+    }, 
+    {
+        "data": "firmware/AH/boardData_1_0_IPQ4019_DK04_5G.bin", 
+        "names": [
+            "bus=ahb,bmi-chip-id=0,bmi-board-id=21,variant=linksys-mr6350-ahm"
+        ]
+    },
+    {
+        "data": "firmware/EU/boardData_1_0_IPQ4019_DK04_2G.bin", 
+        "names": [
+            "bus=ahb,bmi-chip-id=0,bmi-board-id=20,variant=linksys-mr6350-eum"
+        ]
+    }, 
+    {
+        "data": "firmware/EU/boardData_1_0_IPQ4019_DK04_5G.bin", 
+        "names": [
+            "bus=ahb,bmi-chip-id=0,bmi-board-id=21,variant=linksys-mr6350-eum"
+        ]
+    },
+    {
+        "data": "firmware/FCC/boardData_1_0_IPQ4019_DK04_2G.bin", 
+        "names": [
+            "bus=ahb,bmi-chip-id=0,bmi-board-id=20,variant=linksys-mr6350-fcc"
+        ]
+    }, 
+    {
+        "data": "firmware/FCC/boardData_1_0_IPQ4019_DK04_5G.bin", 
+        "names": [
+            "bus=ahb,bmi-chip-id=0,bmi-board-id=21,variant=linksys-mr6350-fcc"
+        ]
+    },
+    {
+        "data": "firmware/IC/boardData_1_0_IPQ4019_DK04_2G.bin", 
+        "names": [
+            "bus=ahb,bmi-chip-id=0,bmi-board-id=20,variant=linksys-mr6350-ic"
+        ]
+    }, 
+    {
+        "data": "firmware/IC/boardData_1_0_IPQ4019_DK04_5G.bin", 
+        "names": [
+            "bus=ahb,bmi-chip-id=0,bmi-board-id=21,variant=linksys-mr6350-ic"
+        ]
+    }
+]
