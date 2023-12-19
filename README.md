@@ -4,6 +4,16 @@
 There are four screws at the bottom: 2 under the rubber feets, 2 under the label.
 After removing the screws, the white plastic part can be shifted out of the blue part. Be careful because the antennas are mounted on the side and the top of the white part.
 
+## Serial Interface
+The serial interface can be connected to the 4 pin holes on the side of the board.
+Pins (from front to rear):
+- 3.3V
+- RX
+- TX
+- GND
+
+Settings: 115200, 8N1
+
 ## OEM Firmware Layout
 
 The following example is based on M30A1_FW101B05(0725091522).bin where the firmware is "packed" multiple times with additional verification and decryption information. All required data for verification and decryption are included in the M32 GPL package from D-Link in the foler ```BPI-R2/meta-myproject/recipes-dlink/imgcrypto/files/919251a1_dlink-fw-encdec-keys-native.tar.gz/git/M30```:
