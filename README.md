@@ -149,7 +149,8 @@ A header for SHA512 verification has the following layout:
 | Address (hex)    | Length (hex) | Data
 |------------------|--------------|-----------------------------------------------------------------
 | 0x00000000       | 0x0C         | ASCII "DLK6E6010001" without trailing \0
-| 0x0000000C       | 0x04         | Constant 0x00 0x00 0xC8 0x62 (differs in different FW versions)
+| 0x0000000C       | 0x02         | Constant 0x00 0x00
+| 0x0000000E       | 0x02         | 2-Byte sum over the data area of the partition. If there is an overflow during calculation, the sum is increased by one.
 | 0x00000010       | 0x0C         | Hex 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x01 0x00
 | 0x0000001C       | 0x04         | Constant 0x6A 0x28 0xEE 0x0B (differs in different FW versions)
 | 0x00000020       | 0x04         | Erase start address of the partition (little endian format)
