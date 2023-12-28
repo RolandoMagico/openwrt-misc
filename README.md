@@ -22,3 +22,18 @@ Base on this information and the bootlog, there are the following addreses:
 - VCC3 MAC: MAC from CWMP Account + 1
 - LAN MAC: MAC from CWMP Account
 - WLAN MAC: MAC from CWMP Account + 2
+
+## Memory Layout
+Output of ```cat /proc/mtd```:
+```
+dev:    size   erasesize  name
+mtd0: 00800000 00020000 "fit0"
+mtd1: 00540000 00020000 "urlader"
+mtd2: 00800000 00020000 "nand-tffs"
+mtd3: 00800000 00020000 "fit1"
+mtd4: 062c0000 00020000 "ubi"
+mtd5: 02a05000 0001f000 "filesystem"
+mtd6: 02a05000 0001f000 "reserved-filesystem"
+mtd7: 0020f000 0001f000 "config"
+mtd8: 0043d000 0001f000 "nand-filesystem"
+```
