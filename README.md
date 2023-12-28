@@ -23,6 +23,10 @@ Base on this information and the bootlog, there are the following addreses:
 - LAN MAC: MAC from CWMP Account
 - WLAN MAC: MAC from CWMP Account + 2
 
+## Memory
+- 512MB RAM
+- 128MB flash
+
 ## Memory Layout
 Output of ```cat /proc/mtd```:
 ```
