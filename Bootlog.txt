@@ -1,0 +1,1285 @@
+Format: Log Type - Time(microsec) - Message - Optional Info
+Log Type: B - Since Boot(Power On Reset),  D - Delta,  S - Statistic
+S - QC_IMAGE_VERSION_STRING=BOOT.BF.3.3.1.1-00066
+S - IMAGE_VARIANT_STRING=MAACANAZA
+S - OEM_IMAGE_VERSION_STRING=2.19.0.0.0
+S - Boot Config, 0x000002c5
+S - Reset status Config, 0x00000000
+S - Content of WOnce Register, 0x00000000
+S - Reset Debug Register: 0x00600000
+S - Watchdog status: 0x00000004
+S - TCSR_BOOT_MISC_DETECT register, 0x00000000
+B -       127 - PBL, Start
+B -      1559 - bootable_media_detect_entry, Start
+B -      3524 - bootable_media_detect_success, Start
+B -      3527 - elf_loader_entry, Start
+B -      8479 - auth_hash_seg_entry, Start
+B -      8840 - auth_hash_seg_exit, Start
+B -    101681 - elf_segs_hash_verify_entry, Start
+B -    173424 - PBL, End
+B -    143685 - SBL1, Start
+B -    224144 - GCC [RstStat:0x0, RstDbg:0x600000] WDog Stat : 0x4
+B -    233172 - clock_init, Start
+D -      7259 - clock_init, Delta
+B -    241316 - boot_flash_init, Start
+D -     19672 - boot_flash_init, Delta
+B -    261080 - boot_config_data_table_init, Start
+D -      4544 - boot_config_data_table_init, Delta - (575 Bytes)
+B -    268674 - Boot Setting :  0x00000618
+B -    275232 - CDT version:2,Platform ID:8,Major ID:4,Minor ID:0,Subtype:1
+B -    282155 - sbl1_ddr_set_params, Start
+B -    283741 - Pre_DDR_clock_init, Start
+B -    289414 - Pre_DDR_clock_init, End
+B -    931470 - do ddr sanity test, Start
+D -        30 - do ddr sanity test, Delta
+B -    936136 - Image Load, Start
+D -     63410 - QSEE Image Loaded, Delta - (146632 Bytes)
+B -    999576 - Image Load, Start
+D -     66643 - QSEE 1 Image Loaded, Delta - (146632 Bytes)
+B -   1066280 - Selected TZ0: (6.14.0.0.0)
+B -   1071587 - Image Load, Start
+D -     63592 - QSEE Image Loaded, Delta - (146632 Bytes)
+B -   1136033 - Image Load, Start
+D -     13573 - DEVCFG Image Loaded, Delta - (13592 Bytes)
+B -   1149636 - Image Load, Start
+D -     74817 - APPSBL Image Loaded, Delta - (162064 Bytes)
+B -   1224514 - Image Load, Start
+D -     74999 - APPSBL 1 Image Loaded, Delta - (162064 Bytes)
+B -   1299574 - Selected EVA0 (7.3.0.0.0)
+B -   1305064 - Image Load, Start
+D -     71431 - APPSBL Image Loaded, Delta - (162064 Bytes)
+B -   1376587 - QSEE Execution, Start
+D -        30 - QSEE Execution, Delta
+B -   1383022 - SBL1, End
+D -   1241838 - SBL1, Delta
+S - Flash Throughput, 2399 KB/s  (940255 Bytes,  391854 us)
+S - DDR Frequency, 800 MHz
+S - Core 0 Frequency, 800 MHz
+B -   1401139 - SERIAL_NUM register, 0x13044bd6
+B -   1404159 - TCSR_BOOT_MISC_DETECT register before set, 0x00000000
+B -   1413339 - TCSR_BOOT_MISC_DETECT register after set, 0x00000000
+Building bad block table from 0 to 1024 of max blocks 2048
+
+(AVM) EVA Revision: 7.3.0.0.0 Git: 19689e1b Build: 1.11892
+(C) Copyright 2018 AVM Date: May  3 2022 Time: 09:51:46 (0) 3 0x0-0x46409
+
+[NAND:] 128MB WINBOND 2048 Pagesize 128k Blocksize 1024 Blocks HW
+[SYSTEM:] QCA ARMv8 SOC 0x1BF Version 1.1
+smem ram ptable found: ver: 1 len: 4
+cmbblk is stable 5
+PHY ID: 0x4D 0xD0C0
+
+Eva_AVM >...................................................................[    0.000000][0] Booting Linux on physical CPU 0x0
+[    0.000000][0] Initializing cgroup subsys cpuset
+[    0.000000][0] Initializing cgroup subsys cpu
+[    0.000000][0] Initializing cgroup subsys cpuacct
+[    0.000000][0] Linux version 4.4.271 (kbuild-team@core.avm.de) (gcc version 5.5.0 (Buildroot 2020.02.1-g53bf1c36) ) #1 SMP PREEMPT 2023-01-23
+[    0.000000][0] CPU: ARMv7 Processor [51af8014] revision 4 (ARMv7), cr=10c5383d
+[    0.000000][0] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000][0] Machine model: AVM FRITZ!Box 7510
+[    0.000000][0] Reserved memory: created CMA memory pool at 0x5ec00000, size 20 MiB
+[    0.000000][0] Reserved memory: initialized node wlan_cma_2G@0, compatible id shared-dma-pool
+[    0.000000][0] Memory policy: Data cache writealloc
+[    0.000000][0] [fw-info] Version 07.50 buildnr=102812 buildtype=1
+[    0.000000][0] [module-mem] Use 0x42400000-0x42682fff (mapped at 82400000-82682fff) for 7 modules
+[    0.000000][0] [module-mem] Using whitelist, set default strict_mode=1
+[    0.000000][0] psci: probing for conduit method from DT.
+[    0.000000][0] psci: PSCIv1.1 detected in firmware.
+[    0.000000][0] psci: Using standard PSCI v0.2 function IDs
+[    0.000000][0] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000][0] psci: SMC Calling Convention v1.1
+[    0.000000][0] PERCPU: Embedded 11 pages/cpu @9e72e000 s16268 r8192 d20596 u45056
+[    0.000000][0] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 118144
+[    0.000000][0] Kernel command line:  swiotlb=1
+[    0.000000][0] PID hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000000][0] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000][0] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000][0] Memory: 430680K/477184K available (6961K kernel code, 1708K rwdata, 2392K rodata, 1024K init, 4283K bss, 26024K reserved, 20480K cma-reserved, 0K highmem)
+[    0.000000][0] Virtual kernel memory layout:
+[    0.000000][0]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000][0]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+[    0.000000][0]     vmalloc : 0xa0800000 - 0xff800000   (1520 MB)
+[    0.000000][0]     lowmem  : 0x80000000 - 0xa0000000   ( 512 MB)
+[    0.000000][0]     pkmap   : 0x7fe00000 - 0x80000000   (   2 MB)
+[    0.000000][0]     modules : 0x7f000000 - 0x7fe00000   (  14 MB)
+[    0.000000][0]       .text : 0x81208000 - 0x81c226f8   (10346 kB)
+[    0.000000][0]       .init : 0x81d00000 - 0x81e00000   (1024 kB)
+[    0.000000][0]       .data : 0x81e00000 - 0x81fab000   (1708 kB)
+[    0.000000][0]        .bss : 0x81fad000 - 0x823dbf88   (4284 kB)
+[    0.000000][0] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000][0] Preemptible hierarchical RCU implementation.
+[    0.000000][0] Build-time adjustment of leaf fanout to 32.
+[    0.000000][0] RCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=2.
+[    0.000000][0] RCU: Adjusting geometry for rcu_fanout_leaf=32, nr_cpu_ids=2
+[    0.000000][0] NR_IRQS:16 nr_irqs:16 16
+[    0.000000][0] GICv2m: Failed to allocate v2m resource.
+[    0.000000][0] Architected cp15 timer(s) running at 24.00MHz (virt).
+[    0.000000][0] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000000][0] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[    0.000000][0] Switching to timer-based delay loop, resolution 41ns
+[    0.000617][0] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=96000)
+[    0.000660][0] pid_max: default: 32768 minimum: 301
+[    0.000789][0] Security Framework initialized
+[    0.000835][0] AppArmor: AppArmor initialized
+[    0.000932][0] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000962][0] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.001767][0] Initializing cgroup subsys io
+[    0.001818][0] Initializing cgroup subsys memory
+[    0.001871][0] Initializing cgroup subsys devices
+[    0.001926][0] Initializing cgroup subsys freezer
+[    0.001960][0] Initializing cgroup subsys net_cls
+[    0.001988][0] Initializing cgroup subsys pids
+[    0.002038][0] CPU: Testing write buffer coherency: ok
+[    0.002633][0] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.002747][0] Setting up static identity map for 0x41300000 - 0x41300058
+[    0.024469][0] MSM Memory Dump base table set up
+[    0.024530][0] MSM Memory Dump apps data table set up
+[    0.040439][1] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.040592][0] Brought up 2 CPUs
+[    0.040634][0] SMP: Total of 2 processors activated (96.00 BogoMIPS).
+[    0.040658][0] CPU: All CPU(s) started in SVC mode.
+[    0.041718][0] devtmpfs: initialized
+[    0.060475][0] VFP support v0.3: implementor 51 architecture 3 part 40 variant 3 rev 4
+[    0.060796][0] [rte_ipi] Available IPIs 6
+[    0.061240][0] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.061295][0] futex hash table entries: 512 (order: 3, 32768 bytes)
+[    0.062661][0] pinctrl core: initialized pinctrl subsystem
+[    0.064335][0] NET: Registered protocol family 16
+[    0.065775][0] DMA: preallocated 2048 KiB pool for atomic coherent allocations
+[    0.066409][0] console [avm0] enabled
+[    0.076539][0] cpuidle: using governor ladder
+[    0.088571][0] cpuidle: using governor menu
+[    0.088625][0] Creating Config Table
+[    0.089537][0] NET: Registered protocol family 42
+[    0.090721][0] [qcom:qtimer_probe] avm,clk-rate set to (192/10) MHz
+[    0.096385][0] qcom,gcc-ipq5018 1800000.gcc: Registered ipq5018 GCC clocks provider
+[    0.101983][0] [qcom_wdt] wdt_ipq40xx_probe ...
+[    0.102690][0] irq: no irq domain found for /soc/smp2p-wcss/slave-kernel !
+[    0.104329][0] irq: no irq domain found for /soc/smp2p-wcss/slave-kernel !
+[    0.106201][0] platform c000000.wifi: assigned reserved memory node wlan_cma_2G@0
+[    0.120605][0] hw-breakpoint: debug architecture 0x6 unsupported.
+[    0.123044][0] CPU: IPQ5018, SoC Version: 1.1
+[    0.124538][0] avm_alloc_page_extension node_extension_table[0] entries=131072 (size=524288)  alloced
+[    0.124834][0] [fdt_get_reserved_mem_resource] mem_count = 11; search name = "avm_reboot_string"
+[    0.124877][0] Reboot Status is: Power-On 
+[    0.126197][0] IPC logging disabled
+[    0.126229][0] IPC logging disabled
+[    0.126250][0] IPC logging disabled
+[    0.126272][0] IPC logging disabled
+[    0.126292][0] IPC logging disabled
+[    0.126787][0] sps:sps is ready.
+[    0.128216][0] console [pstore0] enabled
+[    0.128531][0] pstore: Registered ramoops as persistent store backend
+[    0.128567][0] ramoops: attached 0x100000@0x4a500000, ecc: 0/0
+[    0.152128][0] SCSI subsystem initialized
+[    0.152621][0] usbcore: registered new interface driver usbfs
+[    0.152741][0] usbcore: registered new interface driver hub
+[    0.152855][0] usbcore: registered new device driver usb
+[    0.152989][0] pps_core: LinuxPPS API ver. 1 registered
+[    0.153018][0] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.153071][0] PTP clock support registered
+[    0.153993][0] [avm_scm] avm_scm_probe ...
+[    0.156036][0] Advanced Linux Sound Architecture Driver Initialized.
+[    0.156838][0] AVM PA for Linux version 4.4.271 (kbuild-team@core.avm.de) (gcc version 5.5.0 (Buildroot 2020.02.1-g53bf1c36) ) #1 SMP PREEMPT 2023-01-23
+[    0.156838][0]  (early init)
+[    0.158054][0] NET: Registered protocol family 8
+[    0.158094][0] NET: Registered protocol family 20
+[    0.158316][0] TZ-pin nr 8 reprioritized to 60
+[    0.158355][0] TZ-pin nr 15 reprioritized to 60
+[    0.158391][0] TZ-pin nr 36 reprioritized to 60
+[    0.158437][0] TZ-pin nr 81 reprioritized to 60
+[    0.158525][0] TZ-pin nr 213 reprioritized to 60
+[    0.158555][0] TZ-pin nr 225 reprioritized to 60
+[    0.158580][0] TZ-pin nr 226 reprioritized to 60
+[    0.158605][0] TZ-pin nr 227 reprioritized to 60
+[    0.158630][0] TZ-pin nr 228 reprioritized to 60
+[    0.158655][0] TZ-pin nr 229 reprioritized to 60
+[    0.158680][0] TZ-pin nr 230 reprioritized to 60
+[    0.158704][0] TZ-pin nr 231 reprioritized to 60
+[    0.158729][0] TZ-pin nr 232 reprioritized to 60
+[    0.158754][0] TZ-pin nr 233 reprioritized to 60
+[    0.159058][1] [AVM_FIQ] FIQ disabled on CPU1 to install new vector!
+[    0.159092][0] [AVM_FIQ] FIQ disabled on CPU0 to install new vector!
+[    0.159118][0] [AVM_FIQ] Vector installed!
+[    0.159142][0] [avm_scm] Set FIQ handler address
+[    0.159172][1] [AVM_FIQ] FIQ enabled again on CPU1!
+[    0.159200][0] [AVM_FIQ] FIQ enabled again on CPU0!
+[    0.159241][0] [AVM_FIQ] (Version 1.0)(TZ 6.14.0.0.0)
+[    0.159394][0] clocksource: Switched to clocksource arch_sys_counter
+[    0.159998][0] AppArmor: AppArmor Filesystem Enabled
+[    0.164155][0] NET: Registered protocol family 2
+[    0.175665][0] TCP established hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.175754][0] TCP bind hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.175850][0] TCP: Hash tables configured (established 4096 bind 4096)
+[    0.175937][0] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.175984][0] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.176313][0] NET: Registered protocol family 1
+[    0.177383][0] hw perfevents: enabled with armv7_cortex_a7 PMU driver, 7 counters available
+[    0.179154][0] audit: initializing netlink subsys (disabled)
+[    0.179281][0] audit: type=2000 audit(0.172:1): initialized
+[    0.201371][0] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.201931][0] ANTFS Module: Version 2.50
+[    0.202200][0] jffs2: version 2.2 (NAND) (SUMMARY) (ZLIB) (LZO) (LZMA) (RTIME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.
+[    0.204580][0] fuse init (API version 7.23)
+[    0.213742][0] Key type asymmetric registered
+[    0.213791][0] Asymmetric key parser 'x509' registered
+[    0.213861][0] io scheduler noop registered
+[    0.213897][0] io scheduler deadline registered (default)
+[    0.218310][0] a0000000.pci supply vdda not found, using dummy regulator
+[    0.218452][0] a0000000.pci supply vdda_phy not found, using dummy regulator
+[    0.218536][0] a0000000.pci supply vdda_refclk not found, using dummy regulator
+[    0.218949][0] PCI host bridge /soc/pci@a0000000 ranges:
+[    0.219006][0]    IO 0xa0200000..0xa02fffff -> 0xa0200000
+[    0.219044][0]   MEM 0xa0300000..0xb02fffff -> 0xa0300000
+[    0.252121][0] PCI change magic executed
+[    0.460991][0] qcom-pcie a0000000.pci: link up
+[    0.461324][0] qcom-pcie a0000000.pci: PCI host bridge to bus 0001:00
+[    0.461366][0] pci_bus 0001:00: root bus resource [bus 00-ff]
+[    0.461400][0] pci_bus 0001:00: root bus resource [io  0x0000-0xfffff] (bus address [0xa0200000-0xa02fffff])
+[    0.461429][0] pci_bus 0001:00: root bus resource [mem 0xa0300000-0xb02fffff]
+[    0.461995][0] PCI: bus0: Fast back to back transfers disabled
+[    0.462034][0] pci 0001:00:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    0.467513][0] PCI: bus1: Fast back to back transfers disabled
+[    0.467731][0] pci 0001:00:00.0: BAR 8: assigned [mem 0xa0800000-0xa0ffffff]
+[    0.467771][0] pci 0001:00:00.0: BAR 9: assigned [mem 0xa0300000-0xa04fffff 64bit pref]
+[    0.467803][0] pci 0001:00:00.0: BAR 0: assigned [mem 0xa0500000-0xa0500fff 64bit]
+[    0.467840][0] pci 0001:00:00.0: BAR 7: assigned [io  0x1000-0x1fff]
+[    0.467879][0] pci 0001:01:00.0: BAR 0: assigned [mem 0xa0800000-0xa0ffffff]
+[    0.467920][0] pci 0001:00:00.0: PCI bridge to [bus 01]
+[    0.467951][0] pci 0001:00:00.0:   bridge window [io  0x1000-0x1fff]
+[    0.467981][0] pci 0001:00:00.0:   bridge window [mem 0xa0800000-0xa0ffffff]
+[    0.468011][0] pci 0001:00:00.0:   bridge window [mem 0xa0300000-0xa04fffff 64bit pref]
+[    0.468426][0] pcieport 0001:00:00.0: Signaling PME through PCIe PME interrupt
+[    0.468464][0] pci 0001:01:00.0: Signaling PME through PCIe PME interrupt
+[    0.468891][0] PCIe: RC0 enabled during bootup
+[    0.476880][0] TZ Log : Will warn on Access Violation, as paniconaccessviolation is not set
+[    0.478392][0] Registered Sucessfully 
+[    0.479616][0] msm_serial 78b0000.serial: msm_serial: detected port #1
+[    0.479862][0] msm_dectuart_probe: set dectuart_port to ttyMSM1
+[    0.479946][0] msm_serial 78b0000.serial: uartclk = 24000000
+[    0.480048][0] 78b0000.serial: ttyMSM1 at MMIO 0x78b0000 (irq = 24, base_baud = 1500000) is a MSM
+[    0.480758][0] msm_serial 78af000.serial: msm_serial: detected port #0
+[    0.481040][0] msm_serial 78af000.serial: uartclk = 1843199
+[    0.481129][0] 78af000.serial: ttyMSM0 at MMIO 0x78af000 (irq = 25, base_baud = 115199) is a MSM
+[    0.481180][0] msm_serial: console setup on port #0
+[    1.610616][0] console [ttyMSM0] enabled
+[    1.615992][0] msm_serial: driver initialized
+[    1.619910][0] msm_serial_hsl_init: driver initialized
+[    1.623913][0] [avm_power]avm_power_pm_qos_init
+[    1.629027][0] [loadcontrol] set auto - scale=1
+[    1.633106] [avm] configured: watchdog event debug 
+[    1.642627][0] Register push button event to receive the set_factory_kernel event
+[    1.651809][0] AVM Simple Profiling enabled Version 3.0
+[    1.651871][0] AVM_WATCHDOG: Watchdog Driver for AR7 Hardware (Version 1.0)
+[    1.656140][0] [qcom_wdt] ar7wdt_hw_init...
+[    1.663510][0] [avm_request_fiq_on] Virtual IRQ numbers are not supported. Use HWIRQ (35) for requested IRQ (37)
+[    1.667015][0] [qcom_wdt] [register_wdt_bark_irq] watchdog as fastirq(35) on all cpus registered with its default prio
+[    1.677438][0] [avm_request_fiq_on] Forcing HW-IRQ 36 instead
+[    1.687956][0] [qcom_wdt] [register_wdt_bark_irq] watchdog as fastirq(36) on all cpus registered with highest prio
+[    1.693737][0] [avm_request_fiq_on] Forcing HW-IRQ 213 instead
+[    1.704005][0] [qcom_wdt] [register_secure_wdt_bark_irq] secure watchdog as fastirq(213) on all cpus registered with highest prio
+[    1.719482][0] [qcom_wdt] [ar7wdt_hw_init] Wdt bark time: 320000, bite time: 640000
+[    1.721662][0] [qcom_wdt] [ar7wdt_hw_init] Secure watchdog: bark: 20s, bite time: 40s
+[    1.730260][0] avm_net_trace: Up and running.
+[    1.754885][0] brd: module loaded
+[    1.764846][0] loop: module loaded
+[    1.766093][0] zram: Added device: zram0
+[    1.769591][0] qcom,phase property not found in dts
+[    1.771237][0] QPIC platform data not populated
+[    1.775965][0] QPIC controller hw version Major:2, Minor:1
+[    1.780408][0] QPIC controller support serial nand.
+[    1.786304][0] nand: device found, Manufacturer ID: 0xef, Chip ID: 0xba
+[    1.790729][0] nand: Winbond W25N01GWZEJG SPI NAND 1G 1.8V
+[    1.797310][0] nand: 256 MiB, SLC, erase size: 128 KiB, page size: 2048, OOB size: 64
+[    1.803339][0] [TFFS3_Register_Panic_CB] registering panic callback for mtd qcom_nand.0
+[    1.810817][0] 5 ofpart partitions found on MTD device qcom_nand.0
+[    1.818579][0] Creating 5 MTD partitions on "qcom_nand.0":
+[    1.824912][0] 0x000000d40000-0x000001540000 : "fit0"
+[    1.843451][0] 0x000000000000-0x000000540000 : "urlader"
+[    1.854021][0] 0x000000540000-0x000000d40000 : "nand-tffs"
+[    1.866973][0] [TFFS3_Init] Called.
+[    1.867018][0] [TFFS3_CACHE_Configure] Setting up caching for backend nand
+[    1.869355][0] [TFFS3-CACHE] Caching module for TFFS 3.x
+[    1.876259][0] [TFFS3-NAND] NAND storage backend for TFFS 3.x on mtd2
+[    2.363182][0] random: nonblocking pool is initialized
+[    2.915904][0] [TFFS3-NAND] Initialisation successful, 64/64/64 NAND blocks active, fill rate 6%
+[    2.915975][0] [TFFS_Cache] Allocate segement buffer cache (size=2024)
+[    2.923848][0] tffs/panic: [TFFS] Error reading id=417: -2
+[    2.930154][0] tffs/panic: have_new_logentry: Error reading crashenv: -2
+[    2.935625][0] tffs/panic: [TFFS] Error reading id=417: -2
+[    2.942470][0] tffs/panic: have_new_logentry: Error reading crashenv: -2
+[    2.947973][0] TFFS: tiny flash file system driver. GPL (c) AVM Berlin (Version 3.0)
+[    2.954676][0] Adam2 environment variables API installed.
+[    2.962411][0] 0x000001540000-0x000001d40000 : "fit1"
+[    2.980740][0] 0x000001d40000-0x000008000000 : "ubi"
+[    3.070133][0] Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)
+[    3.077694][0] libphy: Fixed MDIO Bus: probed
+[    3.298569][0] qca-mdio 88000.mdio: Could not find phy-reset-gpio, idx 0
+[    3.298821][0] libphy: qca_mdio: probed
+[    3.309333][0] qca-mdio 88000.mdio: qca-mdio driver was registered
+[    3.419823][0] tun: Universal TUN/TAP device driver, 1.6
+[    3.419874][0] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    3.424625][0] PPP generic driver version 2.4.2
+[    3.430924][0] NET: Registered protocol family 24
+[    3.435008][0] PPTP driver version 0.8.5
+[    3.440049][0] cnss: INFO: IPC Logging is disabled!
+[    3.444525][0] cnss[2]: INFO: Platform driver probed successfully. plat 9dac8010 tgt 0xfffc
+[    3.451440][0] dwc3-qcom 8af8800.usb3: unable to get dbm device
+[    3.457608][0] i2c /dev entries driver
+[    3.464166][0] qcom-tsens 4a8000.thermal-sensor: tsens calibration failed
+[    3.467649][0] cpufreq: cpufreq_online: CPU0: Running at unlisted freq: 799999 KHz
+[    3.473390][0] cpufreq: cpufreq_online: CPU0: Unlisted initial frequency changed to: 800000 KHz
+[    3.481255][0] sdhci: Secure Digital Host Controller Interface driver
+[    3.489389][0] sdhci: Copyright(c) Pierre Ossman
+[    3.495973][0] sdhci-pltfm: SDHCI platform and OF driver helper
+[    3.506626][0] qcom-q6v5-wcss-pil cd00000.qcom_q6v5_wcss: ssr registeration success qcom_q6v5_wcss
+[    3.506812][0] remoteproc remoteproc0: cd00000.qcom_q6v5_wcss is available
+[    3.515991][0] of_graph_get_next_endpoint(): no port node found in /soc/csr@6001000
+[    3.522329][0] coresight-csr 6001000.csr: CSR initialized
+[    3.530088][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@6010000
+[    3.535617][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@6011000
+[    3.543011][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@6012000
+[    3.550675][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@6013000
+[    3.558286][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@6014000
+[    3.565927][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@6015000
+[    3.573578][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@6016000
+[    3.581235][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@6017000
+[    3.588865][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@6018000
+[    3.596469][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@6019000
+[    3.604136][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@601a000
+[    3.611762][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@601b000
+[    3.619455][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@601c000
+[    3.627011][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@601d000
+[    3.634690][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@601e000
+[    3.642321][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@601f000
+[    3.649966][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@6198000
+[    3.657725][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@6199000
+[    3.665355][0] of_graph_get_next_endpoint(): no port node found in /soc/cti@610c000
+[    3.673168] sps_register_bam_device : unable to create IPC Logging 0 for bam 0x06064000
+[    3.680269][0] sps_register_bam_device : unable to create IPC Logging 1 for bam 0x06064000sps_register_bam_device : unable to create IPC Logging 2 for bam 0x06064000
+[    3.696551][0] sps_register_bam_device : unable to create IPC Logging 3 for bam 0x06064000sps_register_bam_device : unable to create IPC Logging 4 for bam 0x06064000
+[    3.711317][0] sps:BAM 0x06064000 is registered.[    3.718589][0] coresight-tmc 6048000.tmc: TMC initialized
+[    3.723119][0] coresight-tmc 6047000.tmc: TMC initialized
+[    3.728395][0] coresight-funnel 6041000.funnel: FUNNEL initialized
+[    3.733596][0] coresight-funnel 6100000.funnel: FUNNEL initialized
+[    3.739764][0] coresight-funnel 6120000.funnel: FUNNEL initialized
+[    3.745851][0] coresight-funnel 6130000.funnel: FUNNEL initialized
+[    3.752035][0] coresight-funnel 61a1000.funnel: FUNNEL initialized
+[    3.759027][0] coresight-etm4x 619c000.etm: ETM 4.0 initialized
+[    3.764764][0] coresight-etm4x 619d000.etm: ETM 4.0 initialized
+[    3.770235][0] coresight-replicator-qcom 6046000.replicator: REPLICATOR 1.0 initialized
+[    3.776418][0] coresight-stm 6002000.stm: STM initialized
+[    3.785587][0] of_graph_get_next_endpoint(): no port node found in /soc/hwevent@6101000
+[    3.789313][0] coresight-hwevent 6101000.hwevent: Hardware Event driver initialized
+[    3.800879][0] ipq_lpass_probe init 
+[    3.891565][0] lpass_pcm_avm_driver_probe : Lpaif version : 0x50000000
+[    3.891803][0] AVM PA 2.138.1.10-release_move21-move21 for Linux Linux version 4.4.271 (kbuild-team@core.avm.de) (gcc version 5.5.0 (Buildroot 2020.02.1-g53bf1c36) ) #1 SMP PREEMPT 2023-01-23
+[    3.891803][0]  (late init)
+[    3.897497][0] nf_conntrack version 0.5.0 (7049 buckets, 28196 max)
+[    3.917511][0] gre: GRE over IPv4 demultiplexor driver
+[    3.923073][0] Initializing XFRM netlink socket
+[    3.928229][0] IPsec XFRM device driver
+[    3.933873][0] NET: Registered protocol family 10
+[    3.938513][0] sit: IPv6 over IPv4 tunneling driver
+[    3.942901][0] NET: Registered protocol family 17
+[    3.946318][0] Bridge broadcast ratelimiter registered
+[    3.950868][0] bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this.
+[    3.955946][0] Bridge firewalling registered
+[    3.968690][0] KOAM is loaded successfully.
+[    3.973187][0] l2tp_core: L2TP core driver, V2.0
+[    3.977082][0] l2tp_ppp: PPPoL2TP kernel driver, V2.0
+[    3.981924][0] l2tp_ip: L2TP IP encapsulation support (L2TPv3)
+[    3.987061][0] l2tp_netlink: L2TP netlink interface
+[    3.992657][0] l2tp_eth: L2TP ethernet pseudowire support (L2TPv3)
+[    3.997380][0] l2tp_ip6: L2TP IP encapsulation support for IPv6 (L2TPv3)
+[    4.003811][0] 8021q: 802.1Q VLAN Support v1.8
+[    4.010703][0] Registering SWP/SWPB emulation handler
+[    4.014788][0] [fdt_get_reserved_mem_resource] mem_count = 11; search name = "avm_sbl_boot_string"
+[    4.019865][0] SBL Boot Info Version 2.19.0.0.0 Boot TZ 0 Boot Eva 0
+[    4.028702] TZ0 Version 6.14.0.0.0 
+[    4.035266][0] TZ1 Version 6.14.0.0.0
+[    4.038571][0] EVA0 Version 7.3.0.0.0
+[    4.042235][0] EVA1 Version 7.3.0.0.0
+[    4.046046][0] [rte_ipi] Requested ipi RTE monitor (nr=9, prio=00, flags=0x00800001)
+[    4.049613][0] [rte_ipi] Requested ipi RTE linux (nr=10, prio=80, flags=0x00800000)
+[    4.057402][0] [fdt_get_reserved_mem_resource] mem_count = 11; search name = "avm_sbl_boot_string"
+[    4.067010][0] AppArmor: AppArmor sha1 policy hashing enabled
+[    4.074438][0] Could not find Env 'kernel_args' in the device tree
+[    4.286312][0] ubi0: attaching mtd4
+[    4.756505][0] ubi0: scanning is finished
+[    4.765341][0] ubi0: attached mtd4 (name "ubi", size 98 MiB)
+[    4.765389][0] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    4.770149][0] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    4.777142][0] ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    4.784250][0] ubi0: good PEBs: 790, bad PEBs: 0, corrupted PEBs: 0
+[    4.791278][0] ubi0: user volume: 4, internal volumes: 1, max. volumes count: 128
+[    4.797454][0] ubi0: max/mean erase counter: 5/3, WL threshold: 4096, image sequence number: 1745396165
+[    4.805086][0] ubi0: available PEBs: 0, total reserved PEBs: 790, PEBs reserved for bad PEB handling: 40
+[    4.814329][1] ubi0: background thread "ubi_bgt0d" started, PID 121
+[    4.825511][0] mtd: device 5 (filesystem) set to be root filesystem
+[    4.835000][0] hctosys: unable to open rtc device (rtc0)
+[    4.844974][0] ALSA device list:
+[    4.845017][0]   No soundcards found.
+[    4.852018][0] VFS: Mounted root (squashfs filesystem) readonly on device 31:5.
+[    4.855314][0] devtmpfs: mounted
+[    4.860454][0] Freeing unused kernel memory: 1024K
+starting pid 129, tty '': '/etc/boot.d/1'
+[    5.385693][1] hui: loading out-of-tree module taints kernel.
+[    5.390993][1] [hui] Initialize hardware user interface
+[    5.395820][1] [avm_connect][state_machine_init] starting event worker thread
+mknod: /dev/led: File exists
+[    5.440584][1] TFFS Name Table N
+[Supervisor] Info: start svlogd.service
+[Supervisor] Info: svlogd.service notified: ready
+[Supervisor] Info: start disable_ipv6.service
+[Supervisor] Info: start tffs.service
+[Supervisor] Info: disable_ipv6.service exit success
+
+Please press Enter to activate this console. ar7cfgctl[291]: load_config(ar7): file empty - factory default loaded
+ar7cfgctl[296]: load_config(ar7): file empty - factory default loaded
+ar7cfgctl[305]: load_config(ar7): file empty - factory default loaded
+ar7cfgctl[353]: load_config(ar7): file empty - factory default loaded
+ar7cfgctl[357]: load_config(ar7): file empty - factory default loaded
+ar7cfgctl[366]: load_config(ar7): file empty - factory default loaded
+P-Defaults: not configured - skip.
+[Supervisor] Info: tffs.service exit success
+[Supervisor] Info: start untrustedd.service
+00000007.114815 01.01.70/00:00:07 untrusted_api.c:183 Database is empty.
+[Supervisor] Info: untrustedd.service notified: ready
+[Supervisor] Info: start rekey.service
+firmwarecfg config_rekey: nop
+[Supervisor] Info: rekey.service exit success
+[Supervisor] Info: start environment.service
+ar7cfgctl[393]: load_config(ar7): file empty - factory default loaded
+ar7cfgctl[436]: load_config(ar7): file empty - factory default loaded
+ar7cfgctl[440]: load_config(ar7): file empty - factory default loaded
+ar7cfgctl[449]: load_config(ar7): file empty - factory default loaded
+[Supervisor] Info: environment.service exit success
+[Supervisor] Info: start bootslotctl.service
+[Supervisor] Info: start udev.service
+[Supervisor] Info: start udevadm.service
+[Supervisor] Info: start watchdog.service
+[    7.710351][0] AVM_WATCHDOG: System Init Ueberwachung 120 Sekunden
+[Supervisor] Info: watchdog.service exit success
+[Supervisor] Info: bootslotctl.service exit success
+[    7.886613][1] udevd[459]: starting version 3.2.5
+[    7.911714][1] udevd[459]: specified group 'tty' unknown
+[    7.912244][1] udevd[459]: specified group 'dialout' unknown
+[    7.916669][1] udevd[459]: specified group 'kmem' unknown
+[    7.922422][1] udevd[459]: specified group 'input' unknown
+[    7.927807][1] udevd[459]: specified group 'video' unknown
+[    7.933012][1] udevd[459]: specified group 'audio' unknown
+[    7.938599][1] udevd[459]: specified group 'lp' unknown
+[    7.943966][1] udevd[459]: specified group 'disk' unknown
+[    7.949050][1] udevd[459]: specified group 'cdrom' unknown
+[    7.954692][1] udevd[459]: specified group 'tape' unknown
+[    7.964698][1] udevd[459]: starting eudev-3.2.5
+[    8.509904][1] vrx518: Intel(R) SmartPHY DSL(VRX518) PCIe EP/ACA Driver - version 2.1.0-k
+[    8.509957][1] vrx518: Copyright (c) 2016 Intel Corporation.
+[    8.532015][1] vrx518 0001:01:00.0: enabling device (0140 -> 0142)
+[    9.012047][0] [0]system-load  88% loadavg 0.24 0.5 0.2 - softirqs:3.03% (vchan_complete 72%) pgstat: sum=107934 free=100698 slab=2505 alloc=2916/s fault=1868/s (sleep 2)
+[    9.815855][1] [1]system-load  76% loadavg 0.24 0.5 0.2 - task runtime:98% max:udevd 20%  pgstat: sum=107934 free=100698 slab=2505 alloc=2916/s fault=1868/s (sleep 2)
+[   12.869332][0] ssdk_switch_device_num_init[1326]:INFO:ess-switch dts node number: 1
+[   12.869409][0] ssdk_dt_get_switch_node[1129]:INFO:ess-switch DT exist!
+[   12.891460][0] ssdk_dt_parse_access_mode[1015]:INFO:switch_access_mode: local bus
+[   12.891523][0] ssdk_dt_parse_access_mode[1028]:INFO:switchreg_base_addr: 0x39c00000
+[   12.911453][0] ssdk_dt_parse_access_mode[1029]:INFO:switchreg_size: 0x200000
+[   12.911518][0] ssdk_dt_parse_mac_mode[357]:INFO:mac mode = 0xff (PORT_WRAPPER_MAX)
+[   12.939474][0] ssdk_dt_parse_mac_mode[363]:INFO:mac mode1 doesn't exit!
+[   12.939527][0] ssdk_dt_parse_mac_mode[373]:INFO:mac mode2 doesn't exit!
+[   12.951547][0] ssdk_dt_parse_port_bmp[870]:INFO:port_bmp doesn't exist!
+[   12.951613][0] ssdk_dt_parse_uniphy[396]:INFO:ess-uniphy DT exist!
+[   12.971461][0] ssdk_dt_parse_led[1102]:INFO:current dts led_source_num is 0
+[   12.971560][0] ssdk_plat_init start
+[   15.283436][0] ssdk_mp_reset_init[739]:INFO:MP reset successfully!
+[   15.283526][0] ssdk_gcc_clock_init[1033]:INFO:SSDK gcc clock init successfully!
+[   15.294473][0] mpge_phy_api_ops_init[1089]:INFO:qca probe mpge phy driver succeeded!
+[   15.296882][0] regi_init[4102]:INFO:Initializing SCOMPHY!
+[   19.031683][0] [0]system-load  76% loadavg 0.81 0.18 0.6 - task runtime:54% max:udevd 26%  pgstat: sum=105339 free=98072 slab=2536 alloc=335/s (sleep 1)
+[   19.991659][1] [1]system-load  31% loadavg 0.81 0.18 0.6 - task runtime:49% max:udevd 49%  pgstat: sum=105339 free=98072 slab=2536 alloc=327/s (sleep 0)
+[   21.407951][0] ssdk_switch_register[1957]:INFO:Chip version 0xee
+[   21.408023][0] qca_link_polling_select[1556]:INFO:link-polling-required node does not exist
+[   21.413062][0] ssdk_switch_register[1991]:INFO:polling is selected
+[   21.421126][0] regi_init[4126]:INFO:Initializing SCOMPHY Done!!
+[   21.428580][0] regi_init[4162]:INFO:qca-ssdk module init succeeded!
+[   21.449578][1] nss-dp 39c00000.dp1 eth0: Init NSS DP GMAC1 (base = 0x39c00000)
+[   21.449948][1] **********************************************************
+[   21.455768][1] * NSS Data Plane driver
+[   21.462598][1] **********************************************************
+[   21.720351] Set mem profile via device tree
+[   21.885567][0] nss_driver - fw of size 739132  bytes copied to load addr: 40000000, nss_id : 0
+[   21.886980] Supported Frequencies - 
+[   21.893314][0] 850 MHz 1 GHz 
+[   21.899138][0] 
+[   21.899950][0] 7f331000: set sdma 9d5a9c80
+[   21.901875][0] node size 2 # items 4
+[   21.905629][0] memory: 40000000 536870912 (avl 479846400) items 4 active_cores 1
+[   21.909339][0] addr/size storage words 2 2 # words 4 in DTS, ddr size 1000000
+[   21.916710][0] 7f331000: NSS core 0 DDR from 40000000 to 41000000
+[   21.923850][0] 7f331000: meminfo init succeed
+[   21.955780][1] <NSS-CRYPTO>:module loaded Build_ID - 180b42207fdda00e56702dfd02e0247662df3cb9 SoC=ipq50xx_64
+[   21.961757][0] node size 2 # items 4
+[   21.964732][0] memory: 40000000 536870912 (avl 479846400) items 4 active_cores 1
+[   21.968280][0] addr/size storage words 2 2 # words 4 in DTS, ddr size 1000000
+[   21.975663][0] 7f331000: nss core 0 booted successfully
+[Supervisor] Info: udevadm.service exit success
+[Supervisor] Info: start cortexa9.service
+SBL ACK done
+[TZ-Update]
+[tz-update] found MIBIB block at page 524288  (0x80000)
+[tz-update] 2 trustzones found. update index 0 first
+[tz-update] tz0 already up to date. version: 6.14.0.0.0
+[tz-update] tz1 already up to date. version: 6.14.0.0.0
+... tz not updated
+[Supervisor] Info: cortexa9.service exit success
+[Supervisor] Info: start capi-config.service
+[Supervisor] Info: start modules-load.service
+[Supervisor] Info: start piglet.service
+[   22.129878][1] 
+[   22.129878][1] [avm_debug] redirecting kernel-messages (/dev/debug)
+[   22.152048][1] Piglet_noemif: module license 'Proprietary.Copyright 2008-2019 by AVM
+[   22.152048][1] ' taints kernel.
+[   22.152121][1] Disabling lock debugging due to kernel taint
+[   22.154354][1] Could not find Env 'kernel_args' in the device tree
+[   22.154432][1] [piglet]use settings for 271(2 gpios from hw_config)
+[   22.154432][1] 
+[   22.154471][1] [piglet]no TDM-Check because Host-CPU is master
+[   22.175704][1] cprocfs: loaded
+[Supervisor] Info: capi-config.service exit success
+[   22.214402][0] cchardevice: loaded
+[   22.224989][0] cchardevice: device_create(kskbtracepoint): 235,0
+[   22.229847][0] kskbtracepoint: loaded
+[   22.244520][0] Loading eth_oam driver for WAN interface ptm0
+[   22.251327][0] eth_oam driver: given ethwan device not present; waiting for its registration
+[   22.256734][0] Init eth_oam driver succeeded
+[   22.260697][1] Could not find Env 'ptest' in the device tree
+[   22.263087][1] [piglet]patch_dectfw: patch_adress: 400000 max_len: 50 with Version 1 Len: 11
+[   22.263172][1] [piglet]patch_dectfw: RFPI tag found 0394d98380
+[   22.263206][1] [piglet]get_tag_value: error tag 9 to great (len 22 > 9)
+[   22.263236][1] [piglet]patch_dectfw: dectmode 20
+[   22.263668][1] [piglet]patch_dectfw: a3149000, totallen = 69869(110ed) crc=0xbb
+[   22.263740][1] [piglet]slow: dect_loader-bootmode
+[   23.264276][0] kdsld: init start (sizeof(struct sk_buff) = 464)
+[   23.264478][0] kdsld[0]: Initialisation of debughandles ...
+[   23.264690][0] kdsld[0]: Initialisation of debughandles [OK]
+[   23.264800][0] kdsld[0]: Initialisation of cmemstack ...
+[   23.264878][0] kdsld[0]: Initialisation of cmemstack [OK]
+[   23.264948][0] kdsld[0]: Initialisation of global ...
+[   23.269015][0] kdsld[0]: Initialisation of global [OK]
+[   23.269141][0] kdsld[0]: Initialisation of procfs ...
+[   23.269251][0] kdsld[0]: Initialisation of procfs [OK]
+[   23.269335][0] kdsld[0]: Initialisation of kmod_debugctl ...
+[   23.269427][0] kdsld[0]: Initialisation of kmod_debugctl [OK]
+[   23.269498][0] kdsld[0]: Initialisation of cenv ...
+[   23.269565][0] kdsld[0]: Initialisation of cenv [OK]
+[   23.269629][0] kdsld[0]: Initialisation of ctimer ...
+[   23.270619][0] kdsld[0]: Initialisation of ctimer [OK]
+[   23.274715][0] kdsld[0]: Initialisation of prefixtab ...
+[   23.274869][0] kdsld[0]: Initialisation of prefixtab [OK]
+[   23.274966][0] kdsld[0]: Initialisation of avmsgc ...
+[   23.276052][0] kdsld[0]: Initialisation of avmsgc [OK]
+[   23.276227][0] kdsld[0]: Initialisation of avmcounter ...
+[   23.281184][0] kdsld[0]: Initialisation of avmcounter [OK]
+[   23.281373][0] kdsld[0]: Initialisation of dsld_setup ...
+[   23.281780][0] kdsld[0]: Initialisation of dsld_setup [OK]
+[   23.281899][0] kdsld[0]: Initialisation of adsl_net ...
+[   23.295950][0] kdsld[0]: Initialisation of adsl_net [OK]
+[   23.296405][0] kdsld[0]: Initialisation of ppptty_net ...
+[   23.307248][0] kdsld[0]: Initialisation of ppptty_net [OK]
+[   23.307464][0] kdsld[0]: Initialisation of ingress_shaping ...
+[   23.318507][0] kdsld[0]: Initialisation of ingress_shaping [OK]
+[   23.318706][0] kdsld[0]: Initialisation of pppdp ...
+[   23.380337][0] kdsld[0]: Initialisation of pppdp [OK]
+[   23.401528][0] kdsld[0]: Initialisation of kmodcmddev ...
+[   23.401698][0] kdsld[0]: Initialisation of kmodcmddev [OK]
+[   23.401845][0] kdsld[0]: Initialisation of kdsldev ...
+[   23.402003][0] cchardevice: device_create(kdsld): 234,0
+[   23.402333][0] kdsld[0]: Initialisation of kdsldev [OK]
+[   23.402437][0] kdsld[0]: Initialisation of kavmcounterddev ...
+[   23.402572][0] cchardevice: device_create(kavmcounterd): 233,0
+[   23.402967][0] kdsld[0]: Initialisation of kavmcounterddev [OK]
+[   23.403073][0] kdsld[0]: Initialisation of kvpnd ...
+[   23.403237][0] cchardevice: device_create(kvpnd): 232,0
+[   23.407188][0] kdsld[0]: Initialisation of kvpnd [OK]
+[   23.407304][0] kdsld[0]: Initialisation of kdsluserdev ...
+[   23.407471][0] kdsld[0]: Initialisation of kdsluserdev [OK]
+[   23.407557][0] kdsld[0]: Initialisation of kdsltrafficdev ...
+[   23.407635][0] kdsld[0]: Initialisation of kdsltrafficdev [OK]
+[   23.407705][0] kdsld[0]: Initialisation of kdslmiscdev ...
+[   23.407836][0] kdsld[0]: Initialisation of kdslmiscdev [OK]
+[   23.407914][0] kdsld[0]: Initialisation of packettrace ...
+[   23.408076][0] cchardevice: device_create(kdsldptrace%d): 228,0
+[   23.408396][0] cchardevice: device_create(kdsldptrace%d): 228,1
+[   23.429333][0] cchardevice: device_create(kdsldptrace%d): 228,2
+[   23.429764][0] cchardevice: device_create(kdsldptrace%d): 228,3
+[   23.430091][0] cchardevice: device_create(kdsldptrace%d): 228,4
+[   23.430417][0] cchardevice: device_create(kdsldptrace%d): 228,5
+[   23.430760][0] cchardevice: device_create(kdsldptrace%d): 228,6
+[   23.431062][0] cchardevice: device_create(kdsldptrace%d): 228,7
+[   23.435032][0] cchardevice: device_create(kdsldptrace%d): 228,8
+[   23.435340][0] cchardevice: device_create(kdsldptrace%d): 228,9
+[   23.435830][0] cchardevice: device_create(kdsldptrace%d): 228,10
+[   23.436162][0] cchardevice: device_create(kdsldptrace%d): 228,11
+[   23.436465][0] cchardevice: device_create(kdsldptrace%d): 228,12
+[   23.440391][0] cchardevice: device_create(kdsldptrace%d): 228,13
+[   23.440788][0] cchardevice: device_create(kdsldptrace%d): 228,14
+[   23.441137][0] cchardevice: device_create(kdsldptrace%d): 228,15
+[   23.441458][0] cchardevice: device_create(kdsldptrace%d): 228,16
+[   23.441833][0] cchardevice: device_create(kdsldptrace%d): 228,17
+[   23.442142][0] cchardevice: device_create(kdsldptrace%d): 228,18
+[   23.446236][0] cchardevice: device_create(kdsldptrace%d): 228,19
+[   23.446819][0] cchardevice: device_create(kdsldptrace%d): 228,20
+[   23.447254][0] cchardevice: device_create(kdsldptrace%d): 228,21
+[   23.447834][0] cchardevice: device_create(kdsldptrace%d): 228,22
+[   23.452113][0] cchardevice: device_create(kdsldptrace%d): 228,23
+[   23.452568][0] cchardevice: device_create(kdsldptrace%d): 228,24
+[   23.453076][0] cchardevice: device_create(kdsldptrace%d): 228,25
+[   23.457207][0] cchardevice: device_create(kdsldptrace%d): 228,26
+[   23.457619][0] cchardevice: device_create(kdsldptrace%d): 228,27
+[   23.457989][0] cchardevice: device_create(kdsldptrace%d): 228,28
+[   23.458313][0] cchardevice: device_create(kdsldptrace%d): 228,29
+[   23.458603][0] cchardevice: device_create(kdsldptrace%d): 228,30
+[   23.458952][0] cchardevice: device_create(kdsldptrace%d): 228,31
+[   23.463143][0] cchardevice: device_create(kdsldptrace%d): 228,32
+[   23.463847][0] kdsld[0]: Initialisation of packettrace [OK]
+[   23.464024][0] kdsld[0]: Initialisation of nqos ...
+[   23.464248][0] cchardevice: device_create(knqos): 227,0
+[   23.469652][0] cchardevice: device_create(avmtrackd): 226,0
+[   23.473969][0] cchardevice: device_create(avmtrackdquery): 225,0
+[   23.474481][0] kdsld[0]: Initialisation of nqos [OK]
+[   23.474608][0] kdsld[0]: Initialisation of http_filter ...
+[   23.474765][0] userman: device registerd (userman_url) with major=224
+[   23.474854][0] kdsld[0]: Initialisation of http_filter [OK]
+[   23.474923][0] kdsld[0]: Initialisation of atmvcchook ...
+[   23.474991][0] kdsld[0]: Initialisation of atmvcchook [OK]
+[   23.475053][0] kdsld[0]: Initialisation of timer ...
+[   23.475123][0] kdsld[0]: Initialisation of timer [OK]
+[   23.475188][0] kdsld[0]: Initialisation of netdevice_notifier ...
+[   23.475317][0] kdsld[0]: Initialisation of netdevice_notifier [OK]
+[   23.475477][0] kdsld[0]: Initialisation of ttychannel_ldisc ...
+[   23.475576][0] kdsld[0]: ttychannel: ldisc 8 registered
+[   23.479436][0] kdsld[0]: Initialisation of ttychannel_ldisc [OK]
+[   23.479569][0] kdsld[0]: Initialisation of guestflt ...
+[   23.479820][0] kdsld[0]: Initialisation of guestflt [OK]
+[   23.479959][0] kdsld[0]: Initialisation of bridgeflt ...
+[   23.480174][0] cchardevice: device_create(bridgeflt): 223,0
+[   23.480624][0] kdsld[0]: Initialisation of bridgeflt [OK]
+[   23.480752][0] kdsld[0]: Initialisation of krextd ...
+[   23.480795][0] kdsld[0]: Initialisation of krextd:debughandles ...
+[   23.480844][0] kdsld[0]: Initialisation of krextd:debughandles [OK]
+[   23.480872][0] kdsld[0]: Initialisation of krextd:global ...
+[   23.480903][0] kdsld[0]: Initialisation of krextd:global [OK]
+[   23.480930][0] kdsld[0]: Initialisation of krextd:memcache ...
+[   23.485829][0] kdsld[0]: Initialisation of krextd:memcache [OK]
+[   23.485879][0] kdsld[0]: Initialisation of krextd:igmpcompr ...
+[   23.485917][0] kdsld[0]: Initialisation of krextd:igmpcompr [OK]
+[   23.485946][0] kdsld[0]: Initialisation of krextd:krextdev ...
+[   23.486088][0] cchardevice: device_create(krextd): 222,0
+[   23.486448][0] kdsld[0]: Initialisation of krextd:krextdev [OK]
+[   23.486491][0] kdsld[0]: Initialisation of krextd:krextdev_wland ...
+[   23.486591][0] cchardevice: device_create(krextd_wlan): 221,0
+[   23.490843][0] kdsld[0]: Initialisation of krextd:krextdev_wland [OK]
+[   23.490890][0] kdsld[0]: Initialisation of krextd:netdevice_notifier ...
+[   23.490967][0] kdsld[0]: Initialisation of krextd:netdevice_notifier [OK]
+[   23.491001][0] kdsld[0]: Initialisation of krextd:krextdprocfs ...
+[   23.491138][0] kdsld[0]: Initialisation of krextd:krextdprocfs [OK]
+[   23.491177][0] kdsld[0]: Initialisation of krextd:krextdtimer ...
+[   23.491218][0] kdsld[0]: Initialisation of krextd:krextdtimer [OK]
+[   23.491249][0] kdsld[0]: Initialisation of krextd [OK]
+[   23.491275][0] kdsld[0]: Initialisation of kdsldprocfs ...
+[   23.491353][0] kdsld[0]: Initialisation of kdsldprocfs [OK]
+[   23.491460][0] kdsld[0]: Initialisation of pcp ...
+[   23.492150][0] kdsld[0]: Initialisation of pcp [OK]
+[   23.492195][0] kdsld[0]: Initialisation [OK]
+[   23.580461][0] kspeedtest: kspeedtest_init: second timer started 
+[   23.580587][0] kspeedtest: Starting default task on discard port 9
+[   23.580732][0] kspeedtest: listening on port 9
+[   23.580762][0] kspeedtest: kspeedtest_init done
+[   23.908139][0] qca-nss-dtlsmgr module loaded (Build_ID - 180b42207fdda00e56702dfd02e0247662df3cb9 SoC=ipq50xx_64)
+[Supervisor] Info: modules-load.service exit success
+[Supervisor] Info: start devnodes.service
+[Supervisor] Info: devnodes.service exit success
+[Supervisor] Info: start apparmor.service
+[Supervisor] Info: start filesystem.service
+[Supervisor] Info: start qca-nss-dp-conf.service
+[   24.315990][1] audit: type=1400 audit(24.312:2): apparmor="STATUS" operation="profile_load" name="/sbin/nqcs" pid=582 comm="dd"
+0+1 records in
+0+1 records out
+[Supervisor] Info: apparmor.service exit success
+[   24.347928][0] UBIFS (ubi0:3): background thread "ubifs_bgt0_3" started, PID 586
+[   24.384265][0] UBIFS (ubi0:3): recovery needed
+[   24.536086][1] UBIFS (ubi0:3): recovery completed
+[   24.536248][1] UBIFS (ubi0:3): UBIFS: mounted UBI device 0, volume 3, name "avm_userdata"
+[   24.536291][1] UBIFS (ubi0:3): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[   24.536320][1] UBIFS (ubi0:3): FS size: 3174400 bytes (3 MiB, 25 LEBs), journal size 1015809 bytes (0 MiB, 6 LEBs)
+[   24.536346][1] UBIFS (ubi0:3): reserved for root: 149934 bytes (146 KiB)
+[   24.536376][1] UBIFS (ubi0:3): media format: w4/r0 (latest is w4/r0), UUID F154EB17-56F7-4E53-B04F-0189FF96D805, small LPT model
+[   24.541784] *[INFO] /dev/ubi0_3 mounted at /var/media/ftp
+tx-timer unmodified, ignoring
+[Supervisor] Info: qca-nss-dp-conf.service exit success
+[Supervisor] Info: filesystem.service exit success
+[Supervisor] Info: start default-files.service
+TAM: create directory /data/tam
+
+[   24.720326][0] [avm_power]pm_ressourceinfo_scriptparse: powerdevice_analog: norm_power_rate=100 act_rate=0 mul=141 div=10 offset=100 NormP=1510 mW -> SumNormP=1510 mW
+[   24.720562][0] [avm_power]pm_ressourceinfo_scriptparse: powerdevice_cpuclock: norm_power_rate=100 act_rate=100 mul=0 div=1 offset=0 NormP=0 mW -> SumNormP=1510 mW
+[   24.720744][0] [avm_power]pm_ressourceinfo_scriptparse: powerdevice_loadrate: norm_power_rate=100 act_rate=83 mul=29 div=10 offset=-17 NormP=273 mW -> SumNormP=1783 mW
+[   24.720848][0] [avm_power]pm_ressourceinfo_scriptparse: powerdevice_dspclock: norm_power_rate=100 act_rate=100 mul=0 div=1 offset=1500 NormP=1500 mW -> SumNormP=3283 mW
+[   24.720943][0] [avm_power]pm_ressourceinfo_scriptparse: powerdevice_systemclock: norm_power_rate=100 act_rate=100 mul=0 div=1 offset=2500 NormP=2500 mW -> SumNormP=5783 mW
+[   24.721032][0] [avm_power]pm_ressourceinfo_scriptparse: powerdevice_dect: norm_power_rate=100 act_rate=0 mul=200 div=78 offset=150 NormP=406 mW -> SumNormP=6189 mW
+[   24.721120][0] [avm_power]pm_ressourceinfo_scriptparse: powerdevice_usb_host: norm_power_rate=500 act_rate=0 mul=5 div=1 offset=0 NormP=2500 mW -> SumNormP=8689 mW
+[   24.721210][0] [avm_power]pm_ressourceinfo_scriptparse: powerdevice_dsl: norm_power_rate=100 act_rate=0 mul=15 div=1 offset=0 NormP=1500 mW -> SumNormP=10189 mW
+[   24.721296][0] [avm_power]pm_ressourceinfo_scriptparse: powerdevice_wlan: norm_power_rate=100 act_rate=0 mul=400 div=10 offset=500 NormP=4500 mW -> SumNormP=14689 mW
+[   24.721379][0] [avm_power]pm_ressourceinfo_scriptparse: powerdevice_ethernet: norm_power_rate=617 act_rate=16777216 mul=1 div=1 offset=50 NormP=667 mW -> SumNormP=15356 mW
+[Supervisor] Info: default-files.service exit success
+[Supervisor] Info: start config.service
+[Supervisor] Info: start debug.service
+[Supervisor] Info: start sysctl.service
+net.ipv4.tcp_min_snd_mss = 536
+vm.laptop_mode = 2
+vm.dirty_expire_centisecs = 100
+vm.dirty_writeback_centisecs = 100
+ar7cfgctl[606]: load_config(ar7): file empty - factory default loaded
+dev.nss.rps.enable = 1
+dev.nss.general.redirect = 1
+dev.nss.stats.non_zero_stats = 1
+dev.nss.general.logbuf = 128
+[   24.858843][0] Enabling NSS SPI Debug
+dev.nss.general.debug = 1
+[   24.859250][0] configuring additional NSS pbufs
+[INFO] have to stop cat /dev/debug.
+[   24.876313][0] sysrq: Changing Loglevel
+[   24.876392][0] sysrq: Loglevel set to 4
+[   24.876750][0] 
+[   24.876750][0] [avm_debug] redirecting kernel-messages (/dev/debug)
+[Supervisor] Info: config.service exit success
+[Supervisor] Info: debug.service exit success
+cat: read error: Broken pipe
+dev.nss.n2hcfg.extra_pbuf_core0 = 3100000
+dev.nss.n2hcfg.n2h_high_water_core0 = 30624
+dev.nss.n2hcfg.n2h_wifi_pool_buf = 8192
+kernel.panic_on_oops = 1
+vm.panic_on_oom = 2
+kernel.printk = 4
+net.ipv4.ip_forward = 1
+net.ipv4.tcp_min_tso_segs = 100
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.default.rp_filter = 1
+[Supervisor] Info: sysctl.service exit success
+[Supervisor] Info: piglet.service exit success
+[Supervisor] Info: start capi.service
+[Supervisor] Info: capi.service exit success
+[Supervisor] Info: start boxnotify.service
+[Supervisor] Info: start capitcp.service
+[Supervisor] Info: start psupport-init-prenet.service
+[Supervisor] Info: start run_clock.service
+[Supervisor] Info: start unexpected-reboot.service
+[Supervisor] Info: boxnotify.service exit success
+[Supervisor] Info: psupport-init-prenet.service exit success
+[Supervisor] Info: start net_basic.service
+[Supervisor] Info: unexpected-reboot.service exit success
+run_clock demon started
+
+[Supervisor] Info: run_clock.service exit success
+ar7cfgctl[645]: load_config(ar7): file empty - factory default loaded
+[Supervisor] Info: capitcp.service exit success
+[Supervisor] Info: net_basic.service exit success
+[Supervisor] Info: start avmipcd.service
+[Supervisor] Info: avmipcd.service notified: ready
+[Supervisor] Info: start avmcounterd.service
+[Supervisor] Info: start avmnexusd.service
+[Supervisor] Info: start bb_shm_manager.service
+[Supervisor] Info: start dsl.service
+[Supervisor] Info: start ctlmgr.service
+[Supervisor] Info: start l2tpv3d.service
+[Supervisor] Info: start multid.service
+[Supervisor] Info: start psetd.service
+[Supervisor] Info: start scgi_server.service
+[Supervisor] Info: start upnpd.service
+[Supervisor] Info: start vpnd.service
+ar7cfgctl[679]: load_config(ar7): file empty - factory default loaded
+ar7cfgctl[682]: load_config(ar7): file empty - factory default loaded
+avmcounterd[661]: startup.
+avmcounterd[661]: starting ... (avminit)
+avmcounterd[661]: load_config(ar7): file empty - factory default loaded
+avmcounterd[661]: rrd directory is '/var/tmp/rrd'.
+avmcounterd[661]: rrd backup directory is '/var/media/ftp/FRITZ/rrd'.
+avmcounterd[661]: calling rrdtool_init ...
+avmcounterd[661]: rrdtool_connect: /usr/bin/rrdtool not found - No such file or directory (2)
+ar7cfgget[685]: load_config(ar7): file empty - factory default loaded
+avmcounterd[661]: libso 'libethgstats.so' loaded.
+avmcounterd[661]: libso 'libprocmodules.so' loaded.
+avmcounterd[661]: module 'memory' registered (libprocmodules.so).
+avmcounterd[661]: module 'cpuusage' registered (libprocmodules.so).
+avmcounterd[661]: module 'temps' registered (libprocmodules.so).
+avmcounterd[661]: 2 libraries loaded
+avmcounterd[661]: verbose: DISABLED
+[Supervisor] Info: avmcounterd.service notified: ready
+l2tpv3d[666]: starting ... (avminit)
+l2tpv3d[666]: started.
+[Supervisor] Info: l2tpv3d.service notified: ready
+l2tpv3d[666]: verbose: DISABLED
+[dsl sus] dsl line test calib factory file available
+[Supervisor] Info: psetd.service exit success
+ar7cfgctl[727]: load_config(ar7): file empty - factory default loaded
+avmnexusd[662]: starting ... (avminit)
+DEBUG GUI --- Config Called: nil
+upnpd[670]: starting ... (avminit)
+multid[667]: HWRevision=271
+multid[667]: starting ... (avminit)
+[Supervisor] Info: avmnexusd.service notified: ready
+[Supervisor] Info: start deviceinfod.service
+upnpd[670]: load_config(ar7): file empty - factory default loaded
+multid[667]: startup ($Revision$$CompileDate: Jan  3 2023 11:15:02 $)
+avmnexusd[662]: verbose: DISABLED
+vpnd[671]: load_config(vpn): file empty - factory default loaded
+ar7cfgctl[737]: load_config(ar7): file empty - factory default loaded
+deviceinfod[740]: starting ... (avminit)
+multid[667]: load_config(ar7): file empty - factory default loaded
+DEBUG GUI --- Config written and returned: nil
+vpnd[671]: load_config(ar7): file empty - factory default loaded
+[dsl get xtse] ANNEX=B DSLMODE=0
+[dsl get xtse] setting ADSL Annex B/J and VDSL2 oISDN
+[dsl get xtse] 10 00 10 40 00 04 01 07
+[dsl sus] AVM MEI diag enabled
+multid[667]: load_config(vpn): file empty - factory default loaded
+ctlmgr[665]: starting ... (avminit)
+ctlmgr[665]: pcpc_create_ctx: no pcpserver found
+upnpd[670]: load_config(ar7): file empty - factory default loaded
+vpnd[671]: starting ... (avminit)
+[Supervisor] Info: ctlmgr.service notified: ready
+[Supervisor] Info: start cloudmsgd.service
+multid[667]: opt_without_tr069discover=0, tr069disc=0, AR7CFG->vinax_hsi_lan_ports=(null), multid.tcom_targetarch=0, multid.cpmac_no_ata_possible=0, pppoeiface=ptm0
+avmcounterd[661]: ethgstats_add_lanport(0,eth0): counter mac_rx_bytes_good not found
+avmcounterd[661]: ethgstats_add_lanport(0,eth0): counter mac_tx_bytes_good not found
+ctlmgr[665]: load_config(ar7): file empty - factory default loaded
+multid[667]: bridge_configured: nqos_bridge_active=0, bridge_port_set=0x0, igmp_flt_portset=0x0
+[Supervisor] Info: deviceinfod.service notified: ready
+deviceinfod[740]: verbose: DISABLED
+cloudmsgd[749]: starting ... (avminit)
+[dsl sus] loaded vr11 tc driver: vrx518_tc.ko
+[dsl sus] starting vr11 dsp...
+[dsl sus] ANNEX=B DSLMODE=0
+cloudmsgd[749]: load_config(ar7): file empty - factory default loaded
+[Supervisor] Info: upnpd.service notified: ready
+cloudmsgd[749]: pcpc_create_ctx: no pcpserver found
+upnpd[670]: verbose: DISABLED
+cloudmsgd[749]: verbose: DISABLED
+[Supervisor] Info: cloudmsgd.service notified: ready
+[Supervisor] Info: cloudmsgd.service exit success
+[dsl sus] loaded vr11 mei driver: /lib/modules/4.4.271/kernel/drivers/mei/drv_mei_cpe.ko with params: , avmDslDiagEnabled=1
+vpnd[671]: pcpc_create_ctx: no pcpserver found
+vpnd[671]: [main]: startup ($Revision$$CompileDate: Jan  3 2023 11:15:02 $)
+[Supervisor] Info: vpnd.service notified: ready
+[dsl sus] loaded vr11 dsl driver: /lib/modules/4.4.271/kernel/drivers/dsl/drv_dsl_cpe_api.ko with params: 
+[dsl sus] created vr11 dsl device node /dev/dsl_vr11/0 (major: 109, minor: 0)
+[dsl sus] created vr11 mei device node /dev/mei_cpe/0 (major: 219, minor: 0)
+[dsl sus] started dsl_control (configuration: -i10_00_10_40_00_04_01_07 -f/lib/modules/dsp_vr11/vr11-B-dsl.bin -n/etc/dsl/notify/dsl_notify.sh  )
+nohup: appending output to nohup.out
+ctlmgr[665]: load_config(user): file empty - factory default loaded
+ctlmgr[665]: load_config(voip): file empty - factory default loaded
+ctlmgr[665]: load_config(tr069): file empty - factory default loaded
+ctlmgr[665]: load_config(tr369): file empty - factory default loaded
+ctlmgr[665]: load_config(ahausr): file empty - factory default loaded
+[dsl_sus] started bbpd 
+0
+[DSL_REMOTE_MGMT MAIN][FORCE]avmDslRemoteMgmtIf_Init
+[DSL_REMOTE_MGMT DPM_KPI][FORCE]avmDpmRemoteMgmtInit
+ctlmgr[665]: load_config(ewnwstatus): file empty - factory default loaded
+multid[667]: flood ratelimiting on bridge lan is supported
+multid[667]: list[0]=lan
+[dsl sus] started dsl_monitor with rc=0
+[dsl sus] ....vr11 dsp started
+[Supervisor] Info: dsl.service exit success
+[Supervisor] Info: start inetd.service
+[Supervisor] Info: inetd.service exit success
+ar7cfgctl[853]: load_config(ar7): file empty - factory default loaded
+ctlmgr[665]: 27() (connecting to /var/rpc/configd): connect to /var/rpc/configd failed - No such file or directory (2)
+multid[667]: flood ratelimiting on bridge guest is supported
+multid[667]: lan: ULA: fd00::b2f2:8ff:fe95:416c
+multid[667]: mrouter: using IGMPv3 for upstream interface dsl
+multid[667]: mrouter: using IGMPv3 for other interfaces
+multid[667]: resolv.conf with 127.0.0.1 written
+ctlmgr[665]: WLANLIB: wlan_plugin_init:923: prj revision 0xde931eaa16220a45
+ctlmgr[665]: /etc/default/avm/wlan.cfg:3: member wps_mode not found in ST_topsection wlancfg
+ctlmgr[665]: /etc/default/avm/wlan.cfg:3: member wps_mode not in wlancfg, try to recover
+ctlmgr[665]: load_config(wlan): warning: converted - factory default loaded
+multid[667]: DHCPD on lan
+multid[667]: DHCPD on lan:0 skipped, is virtual interface
+ctlmgr[665]: libwlanparam: generating wlan.cfg with wpa-key '81030239189565309102' in wpa2 mode
+multid[667]: _reset_dns: interface not found (lan)
+ctlmgr[665]: 40() (connecting to /var/rpc/timer_if): connect to /var/rpc/timer_if failed - No such file or directory (2)
+ctlmgr[665]: WLANLIB: wlan_libs_nexus_init:274: Get Nexus info failed: try again later.
+multid[667]: mrouter: lan: vif 0 if_index 11
+multid[667]: interface lo up.
+multid[667]: interface lo carrier up
+multid[667]: list[0]=lan
+multid[667]: list[1]=guest
+multid[667]: br_get_interfaces(guest)=0
+multid[667]: netlink: bridge_mdb_add - Invalid argument (22)
+multid[667]: interface eth0 up.
+multid[667]: ULA Mode: dynamic
+multid[667]: radv: lan: activated
+multid[667]: DHCPD on lan
+multid[667]: interface lan up.
+multid[667]: DHCPD on lan
+multid[667]: interface lan carrier up
+multid[667]: interface guest up.
+multid[667]: interface guest carrier up
+[Supervisor] Info: multid.service notified: ready
+[Supervisor] Info: start ddnsd.service
+[Supervisor] Info: start dsld.service
+[Supervisor] Info: start pcpd.service
+multid[667]: verbose: DISABLED
+pcpd[859]: starting ... (avminit)
+pcpd[859]: Local v4 address: 192.168.178.1
+[Supervisor] Info: pcpd.service notified: ready
+pcpd[859]: verbose: DISABLED
+ddnsd[857]: starting ... (avminit)
+ddnsd[857]: load_config(ar7): file empty - factory default loaded
+ddnsd[857]: DDNS: missing account information!
+ddnsd[857]: load_config(tr069): file empty - factory default loaded
+ddnsd[857]: DDNS: no valid accounts
+ddnsd[857]: DDNSD: no accounts. shutdown ddnsd!
+[Supervisor] Info: ddnsd.service notified: ready
+ddnsd[857]: verbose: DISABLED
+[Supervisor] Info: ddnsd.service exit success
+dsld[858]: load_config(ar7): file empty - factory default loaded
+dsld[858]: set no arch
+dsld[858]: set no arch
+dsld[858]: startup ($Revision$$CompileDate: Jan  3 2023 11:15:02 $)
+dsld[858]: starting ... (avminit)
+dsld[858]: DSL Mac xx:xx:xx:xx:xx:xx
+dsld[858]: VOIP Mac xx:xx:xx:xx:xx:xx
+dsld[858]: VCC2 Mac xx:xx:xx:xx:xx:xx
+dsld[858]: VCC3 Mac xx:xx:xx:xx:xx:xx
+dsld[858]: voip: ppptarget voip disabled, ignored
+dsld[858]: interface lo carrier_up.
+dsld[858]: interface lan carrier_up.
+dsld[858]: interface guest carrier_up.
+dsld[858]: load_config(stat): file empty - factory default loaded
+[Supervisor] Info: dsld.service notified: ready
+[Supervisor] Info: start avmntpd.service
+dsld[858]: interface adsl carrier_up.
+dsld[858]: interface ppptty carrier_up.
+dsld[858]: <<< 220 vpnd ready.
+dsld[858]: >>> ipsecassoc proxyarp_update lan
+avmntpd[860]: starting ... (avminit)
+avmntpd[860]: load_config(ar7): file empty - factory default loaded
+[Supervisor] Info: avmntpd.service notified: ready
+[Supervisor] Info: start aha.service
+[Supervisor] Info: start avmspeechd.service
+[Supervisor] Info: start kpid.service
+[Supervisor] Info: start meshd.service
+[Supervisor] Info: start meshd_config.service
+[Supervisor] Info: start plcd.service
+[Supervisor] Info: start ptest_release.service
+avmntpd[860]: verbose: DISABLED
+[Supervisor] Info: start usb.service
+[Supervisor] Info: start wifi.service
+dsld[858]: interface lan carrier_down.
+dsld[858]: interface guest carrier_down.
+mount: mounting usbfs on /proc/bus/usb failed: No such file or directory
+[Supervisor] Info: usb.service exit success
+usb_late_start: delay 20 s
+[Supervisor] Info: ptest_release.service exit success
+[Supervisor] Info: start configd.service
+kpid: Sending section usb failed with error -1:
+sysfs_usb 1 {"sv":"gen/v1","kpi":{}}
+kpid: Sending section hwpa failed with error -1:
+sysfs_hwpa 1 {"sv":"gen/v1","kpi":{}}
+[Supervisor] Info: start voip.service
+kpid: Sending section system failed with error -1:
+sysfs_system 1 {"sv":"gen/v1","kpi":{"temperatures":{"tsens_tz_sensor2_median":null,"tsens_tz_sensor1_avg":null,"tsens_tz_sensor1_max":null,"tsens_tz_sensor1_min":null,"tsens_tz_sensor2_avg":null,"tsens_tz_sensor2_max":null,"tsens_tz_sensor2_min":null,"tsens_tz_sensor3_avg":null,"tsens_tz_sensor3_max":null,"tsens_tz_sensor3_min":null,"tsens_tz_sensor4_avg":null,"tsens_tz_sensor4_max":null,"tsens_tz_sensor4_min":null,"tsens_tz_sensor1_variance":null,"tsens_tz_sensor4_median":null,"tsens_tz_sensor2_variance":null,"tsens_tz_sensor1_median":null,"tsens_tz_sensor3_variance":null,"tsens_tz_sensor3_median":null,"tsens_tz_sensor4_variance":null}}}
+[AVM Speech - I] AVM Speech, Copyright (c) 2020 - 2022 AVM GmbH, Version 1.03.01
+[AVM Speech - I] Cache initialized, count of entries: 0 / 100
+[Supervisor] Info: avmspeechd.service notified: ready
+ctlmgr[665]: WLANLIB: wcsi_socket_connect:335: Establishing RPC connection failed with TIMEOUT
+[Supervisor] Info: configd.service exit success
+ctlmgr[665]: load_config(stat): file empty - factory default loaded
+plcd[866]: event=Opening the HomePlug library. str1= str2= str3=
+rc.wlan: Start WLAN...
+aicmd: avmipc_command: avmipc_stream_open failed (-1)
+plcd[866]: event=Service started. str1= str2= str3=
+[Supervisor] Info: meshd_config.service exit error
+ar7cfgctl[899]: load_config(ar7): file empty - factory default loaded
+WLAND:[00895]:01:00.42/[0042.430]:[ALW]Set level of module 'no_module_log' to level 'VERBOSE'.
+WLAND:[00895]:01:00.42/[0042.430]:[ALW]BUILD: Jan 20 2023, 11:20:15, build-type=1, C-standard=201112
+pbd[907]: pbd using normal watchdog
+[Supervisor] Info: wifi.service exit success
+ctlmgr[665]: load_config(vpn): file empty - factory default loaded
+telefon[911]: use clock_gettime(CLOCK_MONOTONIC)!
+telefon[911]: No S0NT!
+telefon[911]: NoOldMSNNames
+telefon: SIGCHLD PID 917 received!
+telefon[911]: INFO No MOH file '/data/tam/fx_moh' !
+telefon[911]: 16() (connecting to /var/rpc/timer_if): connect to /var/rpc/timer_if failed - No such file or directory (2)
+meshd: LOG: main: Hello from meshd version: 1.189.1.6-MOVE21-RC7-0-g7f222706
+meshd: verbose: DISABLED
+plcd[866]: event=Client connected. str1= str2= str3=
+plcd[866]: event=Client connected. str1= str2= str3=
+ctlmgr[665]: load_config(vpn): file empty - factory default loaded
+ctlmgr[665]: load_config(vpn): file empty - factory default loaded
+telefon: SIGCHLD PID 936 received!
+voipd[930]: starting ... (normal)
+telefon[921]: NoOldMSNNames
+telefon[921]: Stop DECT
+dsld[858]: avmipc: reload
+dsld[858]: ReConfig: restart dsld...
+[Supervisor] Info: dsld.service ExecReload exit success
+voipd[943]: internet: dns_context: internet (ref 1)
+voipd[943]: internet: dns_context: ipv4 only, dns, 0, 2/5 300, 1
+voipd[943]: internet: dns_context: 1 name server:
+voipd[943]: internet: dns_context: 127.0.0.1 0
+voipd[943]: internet: if  (0) nr 0 connection 0
+voipd[943]: internet: dnscctx internet stay online 0 natstate normal
+voipd[943]: internet: stackmode_off
+voipd[943]: internet: dns_context: internet (ref 1)
+voipd[943]: internet: dns_context: ipv4 only, dns, 0, 2/5 300, 1
+voipd[943]: internet: dns_context: 1 name server:
+voipd[943]: internet: dns_context: 127.0.0.1 0
+voipd[943]: voip: dns_context: voip (ref 1)
+voipd[943]: voip: dns_context: ipv4 only, sipdns, 0, 2/5 300, 1
+voipd[943]: voip: dns_context: 1 name server:
+voipd[943]: voip: dns_context: 127.0.0.1 0
+voipd[943]: voip: if  (0) nr -1 connection 0
+voipd[943]: voip: dnscctx voip stay online 0 natstate normal
+voipd[943]: voip: stackmode_off
+voipd[943]: voip: dns_context: voip (ref 1)
+voipd[943]: voip: dns_context: ipv4 only, sipdns, 0, 2/5 300, 1
+voipd[943]: voip: dns_context: 1 name server:
+voipd[943]: voip: dns_context: 127.0.0.1 0
+voipd[943]: mta: if mta0 (0) netmark 2
+voipd[943]: mta: dnscctx mta stay online 1 natstate no NAT
+voipd[943]: mta: ipv4 no sync
+voipd[943]: mta: ipv6 no sync
+voipd[943]: mta: stackmode_dual
+voipd[943]: mta: dns_context: mta (ref 1)
+voipd[943]: mta: dns_context: ipv4 only, none, 0, 2/5 300, 1
+voipd[943]: homenet: dns_context: homenet (ref 1)
+voipd[943]: homenet: dns_context: ipv4 only, none, 0, 2/5 300, 1
+voipd[943]: homenet: dns_context: 1 name server:
+voipd[943]: homenet: dns_context: 127.0.0.1 0
+voipd[943]: homenet: dns_context: from 127.0.0.1
+voipd[943]: homenet: dns_context: from ::1
+voipd[943]: homenet: if lan (11)
+voipd[943]: homenet: dnscctx homenet stay online 1 natstate no NAT
+voipd[943]: homenet: ipv4 connected
+voipd[943]: homenet: ipv6 connected
+voipd[943]: homenet: stackmode_dual
+voipd[943]: homenet: dns_context: homenet (ref 1)
+voipd[943]: homenet: dns_context: ipv4 only, none, 0, 2/5 300, 1
+voipd[943]: homenet: dns_context: 1 name server:
+voipd[943]: homenet: dns_context: 127.0.0.1 0
+voipd[943]: homenet: dns_context: from 127.0.0.1
+voipd[943]: homenet: dns_context: from ::1
+voipd[943]: homenet: dns_context: homenet (ref 1)
+voipd[943]: homenet: dns_context: ipv4 only, none, 0, 2/5 300, 1
+voipd[943]: homenet: dns_context: 1 name server:
+voipd[943]: homenet: dns_context: 127.0.0.1 0
+voipd[943]: vpn: if  (0) nr 0 connection 0
+voipd[943]: vpn: dnscctx homenet stay online 0 natstate normal
+voipd[943]: vpn: stackmode_off
+voipd[943]: homenet: dns_context: homenet (ref 1)
+voipd[943]: homenet: dns_context: ipv4 only, none, 0, 2/5 300, 1
+voipd[943]: homenet: dns_context: 1 name server:
+voipd[943]: homenet: dns_context: 127.0.0.1 0
+voipd[943]: tunnel: dns_context: tunnel (ref 1)
+voipd[943]: tunnel: dns_context: ipv4 only, none, 0, 2/5 300, 1
+voipd[943]: tunnel: dns_context: 1 name server:
+voipd[943]: tunnel: dns_context: 127.0.0.1 0
+voipd[943]: tunnel: if tun0 (0)
+voipd[943]: tunnel: dnscctx tunnel stay online 1 natstate no NAT
+voipd[943]: tunnel: ipv4 no sync
+voipd[943]: tunnel: ipv6 no sync
+voipd[943]: tunnel: stackmode_dual
+voipd[943]: tunnel: dns_context: tunnel (ref 1)
+voipd[943]: tunnel: dns_context: ipv4 only, none, 0, 2/5 300, 1
+voipd[943]: tunnel: dns_context: 1 name server:
+voipd[943]: tunnel: dns_context: 127.0.0.1 0
+voipd[943]: homenet: dns_context: homenet (ref 1)
+voipd[943]: homenet: dns_context: ipv4 only, none, 0, 2/5 300, 1
+voipd[943]: homenet: dns_context: 1 name server:
+voipd[943]: homenet: dns_context: 127.0.0.1 0
+voipd[943]: wireguard: if  (0) nr 0 connection 0
+voipd[943]: wireguard: dnscctx homenet stay online 0 natstate normal
+voipd[943]: wireguard: stackmode_off
+voipd[943]: homenet: dns_context: homenet (ref 1)
+voipd[943]: homenet: dns_context: ipv4 only, none, 0, 2/5 300, 1
+voipd[943]: homenet: dns_context: 1 name server:
+voipd[943]: homenet: dns_context: 127.0.0.1 0
+dsld[858]: avmipc: voipdready
+1970-01-01 01:00:46 voipd[930]: ready (2sec)
+[Supervisor] Info: voip.service exit success
+[Supervisor] Info: start voipkpid.service
+[Supervisor] Info: multid.service exit success
+avmnexusd[662]: 16([::]:53805) (dgram) 'nexus discovery': failed to send datagram from unspecified to [ff02::1]:53805 - Address not available (99)
+[Supervisor] Info: voipkpid.service exit success
+[Supervisor] Info: all Services loaded.
+usermand[974]: starting ... (normal)
+usermand[976]: load_config(userstat): file empty - factory default loaded
+usermand[976]: load_config(userstat): file empty - factory default loaded
+contfiltd[949]: starting ... (normal)
+multid[964]: stopped.
+[Supervisor] Info: start multid.service
+multid[989]: HWRevision=271
+multid[989]: starting ... (avminit)
+multid[989]: startup ($Revision$$CompileDate: Jan  3 2023 11:15:02 $)
+multid[989]: load_config(vpn): file empty - factory default loaded
+multid[989]: opt_without_tr069discover=0, tr069disc=0, AR7CFG->vinax_hsi_lan_ports=(null), multid.tcom_targetarch=0, multid.cpmac_no_ata_possible=0, pppoeiface=ptm0
+ctlmgr[665]: WLANLIB: wcsi_socket_connect:335: Establishing RPC connection failed with TIMEOUT
+multid[989]: bridge_configured: nqos_bridge_active=0, bridge_port_set=0x0, igmp_flt_portset=0x0
+dsld[858]: interface lan carrier_down.
+plcd[866]: 9(lan) (fd 9): packetsock_handle_one_packet: read failed - Network is down (100)
+plcd[866]: 10(lan) (fd 10): packetsock_handle_one_packet: read failed - Network is down (100)
+dsld[858]: interface lan carrier_down.
+dsld[858]: <<< 220 vpnd ready.
+dsld[858]: >>> ipsecassoc proxyarp_update lan
+dsld[858]: interface eth0 carrier_down.
+dsld[858]: interface eth0 carrier_down.
+multid[989]: list[0]=lan
+multid[989]: list[1]=guest
+multid[989]: br_get_interfaces(guest)=0
+dsld[858]: interface guest carrier_down.
+dsld[858]: interface guest carrier_down.
+multid[989]: lan: ULA: fd00::b2f2:8ff:fe95:416c
+dsld[858]: interface lan carrier_down.
+dsld[858]: interface lan carrier_down.
+dsld[858]: <<< 220 vpnd ready.
+dsld[858]: >>> ipsecassoc proxyarp_update lan
+multid[989]: guest: ULA: fd00::1:b2f2:8ff:fe95:416d
+dsld[858]: interface guest carrier_down.
+dsld[858]: interface guest carrier_down.
+multid[989]: mrouter: using IGMPv3 for upstream interface dsl
+multid[989]: mrouter: using IGMPv3 for other interfaces
+multid[989]: resolv.conf with 127.0.0.1 written
+multid[989]: DHCPD on lan
+multid[989]: DHCPD on lan:0 skipped, is virtual interface
+multid[989]: DHCPD on guest
+multid[989]: _reset_dns: interface not found (lan)
+multid[989]: _reset_dns: interface not found (guest)
+multid[989]: interface lo up.
+multid[989]: interface lo carrier up
+multid[989]: list[0]=lan
+multid[989]: list[1]=guest
+multid[989]: br_get_interfaces(guest)=0
+multid[989]: netlink: bridge_mdb_add - Invalid argument (22)
+multid[989]: interface eth0 up.
+multid[989]: interface adsl up.
+multid[989]: interface adsl carrier up
+multid[989]: interface ppptty up.
+multid[989]: interface ppptty carrier up
+multid[989]: ULA Mode: dynamic
+multid[989]: radv: lan: activated
+multid[989]: DHCPD on lan
+multid[989]: interface lan up.
+multid[989]: DHCPD on lan
+multid[989]: mrouter: lan: vif 0 if_index 11
+multid[989]: ULA Mode: dynamic
+multid[989]: radv: guest: activated
+multid[989]: DHCPD on guest
+multid[989]: interface guest up.
+multid[989]: DHCPD on guest
+multid[989]: mrouter: lan: vif 0 if_index 11
+multid[989]: mrouter: guest: vif 1 if_index 12
+dsld[858]: avmipc: multid ready
+dsld[858]: multid started
+[Supervisor] Info: multid.service notified: ready
+multid[989]: verbose: DISABLED
+[Supervisor] Info: start ddnsd.service
+ddnsd[998]: starting ... (avminit)
+ddnsd[998]: DDNS: missing account information!
+ddnsd[998]: DDNS: no valid accounts
+ddnsd[998]: DDNSD: no accounts. shutdown ddnsd!
+[Supervisor] Info: ddnsd.service notified: ready
+ddnsd[998]: verbose: DISABLED
+[Supervisor] Info: ddnsd.service exit success
+[Supervisor] Info: start cloudmsgd.service
+cloudmsgd[1004]: starting ... (avminit)
+[Supervisor] Info: cloudmsgd.service notified: ready
+cloudmsgd[1004]: verbose: DISABLED
+[Supervisor] Info: cloudmsgd.service exit success
+plcd[866]: event=A timer failed. Error code is %1. str1=-1 str2= str3=
+plcd[866]: event=Client disconnected. str1= str2= str3=
+plcd[866]: event=Client disconnected. str1= str2= str3=
+plcd[866]: event=Closing the HomePlug library. str1= str2= str3=
+plcd[866]: event=Opening the HomePlug library. str1= str2= str3=
+telefon[921]: 27() (connecting to /var/rpc/timer_if): connect to /var/rpc/timer_if failed - No such file or directory (2)
+ctlmgr[665]: 110() (connecting to /var/rpc/timer_if): connect to /var/rpc/timer_if failed - No such file or directory (2)
+dsld[858]: Signal: Terminated
+dsld[858]: egress shaping with fq_codel
+dsld[858]: ingress shaping with fq_codel
+dsld[858]: verbose: DISABLED
+dsld[858]: if_unsetup: ptm0: SIOCGIFFLAGS failed - No such device (19)
+dsld[858]: if_promisc: ptm0: SIOCGIFFLAGS failed - No such device (19)
+[Supervisor] Info: dsld.service exit success
+ctlmgr[665]: WLANLIB: wcsi_socket_connect:335: Establishing RPC connection failed with TIMEOUT
+dsld[1019]: stopped.
+[Supervisor] Info: start ddnsd.service
+ddnsd[1052]: starting ... (avminit)
+ddnsd[1052]: DDNS: missing account information!
+ddnsd[1052]: DDNS: no valid accounts
+ddnsd[1052]: DDNSD: no accounts. shutdown ddnsd!
+[Supervisor] Info: ddnsd.service notified: ready
+ddnsd[1052]: verbose: DISABLED
+[Supervisor] Info: ddnsd.service exit success
+[Supervisor] Info: start dsld.service
+dsld[1056]: set no arch
+dsld[1056]: set no arch
+dsld[1056]: startup ($Revision$$CompileDate: Jan  3 2023 11:15:02 $)
+dsld[1056]: starting ... (avminit)
+dsld[1056]: DSL Mac xx:xx:xx:xx:xx:xx
+dsld[1056]: VOIP Mac xx:xx:xx:xx:xx:xx
+dsld[1056]: VCC2 Mac xx:xx:xx:xx:xx:xx
+dsld[1056]: VCC3 Mac xx:xx:xx:xx:xx:xx
+dsld[1056]: kdsld_set_guest_ipv4_net: 192.168.179.0/255.255.255.0
+dsld[1056]: voip: ppptarget voip disabled, ignored
+dsld[1056]: interface lo carrier_up.
+dsld[1056]: interface adsl carrier_up.
+dsld[1056]: interface ppptty carrier_up.
+dsld[1056]: load_config(stat): file empty - factory default loaded
+[Supervisor] Info: dsld.service notified: ready
+dsld[1056]: <<< 220 vpnd ready.
+dsld[1056]: >>> ipsecassoc proxyarp_update lan
+[Supervisor] Info: start cloudmsgd.service
+cloudmsgd[1060]: starting ... (avminit)
+plcd[866]: event=Client connected. str1= str2= str3=
+plcd[866]: event=Client connected. str1= str2= str3=
+[Supervisor] Info: cloudmsgd.service notified: ready
+cloudmsgd[1060]: verbose: DISABLED
+[Supervisor] Info: cloudmsgd.service exit success
+[Supervisor] Info: upnpd.service ExecReload exit success
+[Supervisor] Info: start ddnsd.service
+ddnsd[1079]: starting ... (avminit)
+ddnsd[1079]: DDNS: missing account information!
+ddnsd[1079]: DDNS: no valid accounts
+ddnsd[1079]: DDNSD: no accounts. shutdown ddnsd!
+[Supervisor] Info: ddnsd.service notified: ready
+ddnsd[1079]: verbose: DISABLED
+[Supervisor] Info: ddnsd.service exit success
+[Supervisor] Info: start cloudmsgd.service
+cloudmsgd[1085]: starting ... (avminit)
+[Supervisor] Info: cloudmsgd.service notified: ready
+cloudmsgd[1085]: verbose: DISABLED
+[Supervisor] Info: cloudmsgd.service exit success
+dsld[1056]: interface wifi0 carrier_up.
+acfg_hostapd_modify_bss: Hostapd delete error
+dsld[1056]: interface ath0 carrier_up.
+dsld[1056]: interface lan carrier_up.
+nl80211: get DFS domain code
+nl80211: No DFS information available
+[Supervisor] Info: start smb2.service
+dsld[1056]: interface ath0 carrier_down.
+dsld[1056]: interface lan carrier_down.
+dsld[1056]: interface ath0 carrier_up.
+dsld[1056]: interface lan carrier_up.
+[Supervisor] Info: smb2.service exit success
+starting XHCI driver
+XHCI USB 3.0 Host with port_config:0 started
+XHCI Platform Driver started
+usb_late_start: done
+telefon: SIGCHLD PID 945 received!
+telefon: SIGCHLD PID 938 received!
+[aha: avm_home_trigger_remove] Error: No trigger shm found for 
+telefon: SIGCHLD PID 1307 received!
+telefon: SIGCHLD PID 1308 received!
