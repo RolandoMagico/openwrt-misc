@@ -1,6 +1,7 @@
 # Devolo Wifi 6 Repeater 5400
 
-# Device Information
+## Device Information
+- IPQ5018
 - 512MB RAM
 - 256 MB FLASH (GD5F1GQ5REYIG)
 
