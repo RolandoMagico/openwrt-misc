@@ -1,0 +1,911 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2024.02.17 20:16:43 =~=~=~=~=~=~=~=~=~=~=~=
+
+Format: Log Type - Time(microsec) - Message - Optional Info
+Log Type: B - Since Boot(Power On Reset),  D - Delta,  S - Statistic
+S - QC_IMAGE_VERSION_STRING=BOOT.BF.3.3.1.1-00066
+S - IMAGE_VARIANT_STRING=MAACANAZA
+S - OEM_IMAGE_VERSION_STRING=CRM
+S - Boot Config, 0x000002c5
+B -       127 - PBL, Start
+B -      1561 - bootable_media_detect_entry, Start
+B -      3656 - bootable_media_detect_success, Start
+B -      3660 - elf_loader_entry, Start
+B -      8821 - auth_hash_seg_entry, Start
+B -      9182 - auth_hash_seg_exit, Start
+B -    102527 - elf_segs_hash_verify_entry, Start
+B -    172101 - PBL, End
+B -    141611 - SBL1, Start
+B -    202977 - GCC [RstStat:0x0, RstDbg:0x600000] WDog Stat : 0x4
+B -    211090 - clock_init, Start
+D -      7381 - clock_init, Delta
+B -    218654 - boot_flash_init, Start
+D -     15036 - boot_flash_init, Delta
+B -    233752 - boot_config_data_table_init, Start
+D -      4697 - boot_config_data_table_init, Delta - (575 Bytes)
+B -    241529 - Boot Setting :  0x00000618
+B -    247721 - CDT version:2,Platform ID:8,Major ID:4,Minor ID:0,Subtype:1
+B -    254614 - sbl1_ddr_set_params, Start
+B -    256230 - Pre_DDR_clock_init, Start
+B -    261903 - Pre_DDR_clock_init, End
+B -    904111 - do ddr sanity test, Start
+D -        61 - do ddr sanity test, Delta
+B -    908808 - Image Load, Start
+D -    244397 - QSEE Image Loaded, Delta - (578956 Bytes)
+B -   1154059 - Image Load, Start
+D -     13939 - DEVCFG Image Loaded, Delta - (13592 Bytes)
+B -   1167997 - Image Load, Start
+D -    173423 - APPSBL Image Loaded, Delta - (411398 Bytes)
+B -   1341512 - QSEE Execution, Start
+D -        30 - QSEE Execution, Delta
+B -   1347978 - SBL1, End
+D -   1209020 - SBL1, Delta
+S - Flash Throughput, 2433 KB/s  (1005193 Bytes,  412994 us)
+S - DDR Frequency, 800 MHz
+S - Core 0 Frequency, 800 MHz
+
+
+U-Boot 2016.01 (May 17 2022 - 00:00:21 +0000)
+
+DRAM:  smem ram ptable found: ver: 1 len: 4
+512 MiB
+USB: Node Not found, skipping initi*9  QPIC controller support serial NAND
+ID = 41c841c8
+Vendor = c8
+Device = 41
+Serial Nand Device Found With ID : 0xc8 0x41
+Serial NAND device Manufacturer:GD5F1GQ5REYIG
+Device Size:256 MiB, Page size:2048, Spare Size:128, ECC:8-bit
+qpic_nand: changing oobsize to 80 from 128 bytes
+256 MiB
+MMC:   sdhci: Node Not found, skipping initialization
+
+PCI Link Intialized
+In:    serial@78AF000
+Out:   serial@78AF000
+Err:   serial@78AF000
+machid: 8040001
+eth0 MAC Address from ART is not valid
+eth1 MAC Address from ART is not valid
+Hit any key to stop autoboot:  1  0 
+### FwBootSource = FLASH
+A/B primary boot is 0
+ Booting from Flash.
+ubi0: attaching mtd1
+ubi0: scanning is finished
+ubi0: attached mtd1 (name "mtd=0", size 58 MiB)
+ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+ubi0: good PEBs: 464, bad PEBs: 0, corrupted PEBs: 0
+ubi0: user volume: 4, internal volumes: 1, max. volumes count: 128
+ubi0: max/mean erase counter: 2/0, WL threshold: 4096, image sequence number: 1468923543
+ubi0: available PEBs: 0, total reserved PEBs: 464, PEBs reserved for bad PEB handling: 20
+Read 0 bytes from volume kernel to 44000000
+No size specified -> Using max size (4014580)
+## Loading kernel from FIT Image at 44000000 ...
+   Using 'config@mp03.1' configuration
+   Trying 'kernel@1' kernel subimage
+     Description:  ARM OpenWrt Linux-4.4.60
+     Type:         Kernel Image
+     Compression:  lzma compressed
+     Data Start:   0x440000e4
+     Data Size:    2583197 Bytes = 2.5 MiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: 0x41208000
+     Entry Point:  0x41208000
+     Hash algo:    crc32
+     Hash value:   da6abdea
+     Hash algo:    sha1
+     Hash value:   75e7dc655e176a9f291bda0849704cf1898c5a12
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+## Loading fdt from FIT Image at 44000000 ...
+   Using 'config@mp03.1' configuration
+   Trying 'fdt@mp03.1' fdt subimage
+     Description:  ARM OpenWrt qcom-ipq50xx-mpxx device tree blob
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x442a2d90
+     Data Size:    58403 Bytes = 57 KiB
+     Architecture: ARM
+     Hash algo:    crc32
+     Hash value:   836fb37a
+     Hash algo:    sha1
+     Hash value:   6608d1cfc28b9d5c553f7a1a3847feb4b711857a
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+   Booting using the fdt blob at 0x442a2d90
+   Uncompressing Kernel Image ... OK
+   Loading Device Tree to 4a3ee000, end 4a3ff422 ... OK
+Using machid 0x8040001 from environment
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 4.4.60 (user@1d54fcb8a969) (gcc version 5.2.0 (OpenWrt GCC 5.2.0 d1b4887+r49254) ) #17 SMP PREEMPT Tue May 17 00:18:29 UTC 2022
+[    0.000000] CPU: ARMv7 Processor [51af8014] revision 4 (ARMv7), cr=10c0383d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine model: Qualcomm Technologies, Inc. IPQ5018/AP-MP03.1
+[    0.000000] Ignoring memory range 0x40000000 - 0x41000000
+[    0.000000] Reserved memory: created DMA memory pool at 0x4ea00000, size 16 MiB
+[    0.000000] Reserved memory: initialized node dma_pool1@4ea00000, compatible id shared-dma-pool
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.0 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000] PERCPU: Embedded 11 pages/cpu @9eb60000 s14400 r8192 d22464 u45056
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 105380
+[    0.000000] Kernel command line: ubi.mtd=rootfs root=mtd:ubi_rootfs rootfstype=squashfs rootwait swiotlb=1 coherent_pool=2M
+[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Memory: 412568K/425984K available (5262K kernel code, 329K rwdata, 1692K rodata, 1024K init, 353K bss, 13416K reserved, 0K cma-reserved, 0K highmem)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+[    0.000000]     vmalloc : 0x9f800000 - 0xff800000   (1536 MB)
+[    0.000000]     lowmem  : 0x80000000 - 0x9f000000   ( 496 MB)
+[    0.000000]     pkmap   : 0x7fe00000 - 0x80000000   (   2 MB)
+[    0.000000]     modules : 0x7f000000 - 0x7fe00000   (  14 MB)
+[    0.000000]       .text : 0x80208000 - 0x809cabec   (7947 kB)
+[    0.000000]       .init : 0x80a00000 - 0x80b00000   (1024 kB)
+[    0.000000]       .data : 0x80b00000 - 0x80b52758   ( 330 kB)
+[    0.000000]        .bss : 0x80b55000 - 0x80bad700   ( 354 kB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] Build-time adjustment of leaf fanout to 32.
+[    0.000000] RCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=2.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=32, nr_cpu_ids=2
+[    0.000000] NR_IRQS:16 nr_irqs:16 16
+[    0.000000] GICv2m: Node v2m: range[0xb00a000:0xb00affc], SPI[448:480]
+[    0.000000] GICv2m: Node v2m: range[0xb00b000:0xb00bffc], SPI[480:512]
+[    0.000000] Architected cp15 timer(s) running at 24.00MHz (virt).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000005] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[    0.000017] Switching to timer-based delay loop, resolution 41ns
+[    0.000500] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=240000)
+[    0.000516] pid_max: default: 32768 minimum: 301
+[    0.000630] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000641] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.001307] Initializing cgroup subsys io
+[    0.001331] Initializing cgroup subsys memory
+[    0.001367] Initializing cgroup subsys devices
+[    0.001383] Initializing cgroup subsys freezer
+[    0.001394] Initializing cgroup subsys net_cls
+[    0.001406] Initializing cgroup subsys pids
+[    0.001453] CPU: Testing write buffer coherency: ok
+[    0.001908] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.001977] Setting up static identity map for 0x41300000 - 0x41300058
+[    0.052419] MSM Memory Dump base table set up
+[    0.052451] MSM Memory Dump apps data table set up
+[    0.090463] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.090601] Brought up 2 CPUs
+[    0.090620] SMP: Total of 2 processors activated (96.00 BogoMIPS).
+[    0.090626] CPU: All CPU(s) started in SVC mode.
+[    0.104621] VFP support v0.3: implementor 51 architecture 3 part 40 variant 3 rev 4
+[    0.105020] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.105051] futex hash table entries: 512 (order: 3, 32768 bytes)
+[    0.105336] pinctrl core: initialized pinctrl subsystem
+[    0.106637] NET: Registered protocol family 16
+[    0.107988] DMA: preallocated 2048 KiB pool for atomic coherent allocations
+[    0.130257] cpuidle: using governor ladder
+[    0.160291] cpuidle: using governor menu
+[    0.160626] NET: Registered protocol family 42
+[    0.165716] qcom,gcc-ipq5018 1800000.gcc: Registered ipq5018 GCC clocks provider
+[    0.171366] irq: no irq domain found for /soc/smp2p-wcss/slave-kernel !
+[    0.184711] CPU: IPQ5018, SoC Version: 1.1
+[    0.186591] IPC logging disabled
+[    0.186601] IPC logging disabled
+[    0.186606] IPC logging disabled
+[    0.186611] IPC logging disabled
+[    0.186615] IPC logging disabled
+[    0.186895] sps:sps is ready.
+[    0.222671] pps_core: LinuxPPS API ver. 1 registered
+[    0.222685] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.222715] PTP clock support registered
+[    0.225601] clocksource: Switched to clocksource arch_sys_counter
+[    0.228258] NET: Registered protocol family 2
+[    0.229088] TCP established hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.229146] TCP bind hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.229221] TCP: Hash tables configured (established 4096 bind 4096)
+[    0.229281] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.229308] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.229522] NET: Registered protocol family 1
+[    0.237901] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.237927] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.
+[    0.243205] Key type asymmetric registered
+[    0.243231] Asymmetric key parser 'x509' registered
+[    0.243279] io scheduler noop registered
+[    0.243297] io scheduler deadline registered (default)
+[    0.246412] a0000000.pci supply vdda not found, using dummy regulator
+[    0.246509] a0000000.pci supply vdda_phy not found, using dummy regulator
+[    0.246561] a0000000.pci supply vdda_refclk not found, using dummy regulator
+[    0.247371] PCI host bridge /soc/pci@a0000000 ranges:
+[    0.247405]    IO 0xa0200000..0xa02fffff -> 0xa0200000
+[    0.247420]   MEM 0xa0300000..0xb02fffff -> 0xa0300000
+[    0.585604] qcom-pcie a0000000.pci: link up
+[    0.585872] qcom-pcie a0000000.pci: PCI host bridge to bus 0001:00
+[    0.585891] pci_bus 0001:00: root bus resource [bus 00-ff]
+[    0.585905] pci_bus 0001:00: root bus resource [io  0x0000-0xfffff] (bus address [0xa0200000-0xa02fffff])
+[    0.585917] pci_bus 0001:00: root bus resource [mem 0xa0300000-0xb02fffff]
+[    0.586376] PCI: bus0: Fast back to back transfers disabled
+[    0.586391] pci 0001:00:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    0.587459] PCI: bus1: Fast back to back transfers disabled
+[    0.587538] pci 0001:00:00.0: BAR 8: assigned [mem 0xa0400000-0xa05fffff]
+[    0.587552] pci 0001:00:00.0: BAR 9: assigned [mem 0xa0600000-0xa07fffff 64bit pref]
+[    0.587564] pci 0001:00:00.0: BAR 0: assigned [mem 0xa0300000-0xa0300fff 64bit]
+[    0.587580] pci 0001:00:00.0: BAR 7: assigned [io  0x1000-0x1fff]
+[    0.587595] pci 0001:01:00.0: BAR 0: assigned [mem 0xa0400000-0xa05fffff 64bit]
+[    0.587643] pci 0001:00:00.0: PCI bridge to [bus 01]
+[    0.587654] pci 0001:00:00.0:   bridge window [io  0x1000-0x1fff]
+[    0.587666] pci 0001:00:00.0:   bridge window [mem 0xa0400000-0xa05fffff]
+[    0.587678] pci 0001:00:00.0:   bridge window [mem 0xa0600000-0xa07fffff 64bit pref]
+[    0.587742] PCIe: RC0 enabled during bootup
+[    0.594120] TZ Log : Will warn on Access Violation, as paniconaccessviolation is not set
+[    0.594805] 58000.qcom,msm-eud: ttyEUD0 at MMIO 0x0 (irq = 122, base_baud = 0) is a EUD UART
+[    0.595411] Registered Sucessfully 
+[    0.596095] msm_serial 78af000.serial: msm_serial: detected port #0
+[    0.596152] msm_serial 78af000.serial: uartclk = 1843199
+[    0.596209] 78af000.serial: ttyMSM0 at MMIO 0x78af000 (irq = 20, base_baud = 115199) is a MSM
+[    0.596238] msm_serial: console setup on port #0
+[    1.371197] console [ttyMSM0] enabled
+[    1.376380] msm_serial: driver initialized
+[    1.379817] msm_serial_hsl_init: driver initialized
+[    1.705755] brd: module loaded
+[    1.807100] loop: module loaded
+[    1.827652] QPIC controller hw version Major:2, Minor:1
+[    1.827676] QPIC controller support serial nand.
+[    1.832032] nand: device found, Manufacturer ID: 0xc8, Chip ID: 0x41
+[    1.836580] nand: GigaDevice GD5F1GQ5REYIG SPI NAND 1G
+[    1.842874] nand: 128 MiB, SLC, erase size: 128 KiB, page size: 2048, OOB size: 128
+[    1.848270] 17 ofpart partitions found on MTD device qcom_nand.0
+[    1.855374] Creating 17 MTD partitions on "qcom_nand.0":
+[    1.861664] 0x000000000000-0x000000080000 : "0:SBL1"
+[    1.868556] 0x000000080000-0x000000100000 : "0:MIBIB"
+[    1.886255] 0x000000100000-0x000000140000 : "0:BOOTCONFIG"
+[    1.906243] 0x000000140000-0x000000180000 : "0:BOOTCONFIG1"
+[    1.926282] 0x000000180000-0x000000280000 : "0:QSEE"
+[    1.946286] 0x000000280000-0x000000380000 : "0:QSEE_1"
+[    1.966195] 0x000000380000-0x0000003c0000 : "0:DEVCFG"
+[    1.967507] 0x0000003c0000-0x000000400000 : "0:DEVCFG_1"
+[    1.986209] 0x000000400000-0x000000440000 : "0:CDT"
+[    2.006263] 0x000000440000-0x000000480000 : "0:CDT_1"
+[    2.026237] 0x000000480000-0x000000500000 : "0:APPSBLENV"
+[    2.046286] 0x000000500000-0x000000640000 : "0:APPSBL"
+[    2.066260] 0x000000640000-0x000000780000 : "0:APPSBL_1"
+[    2.086271] 0x000000780000-0x000000880000 : "0:ART"
+[    2.088223] 0x000000880000-0x000000900000 : "0:TRAINING"
+[    2.106194] 0x000000900000-0x000004300000 : "rootfs"
+[    2.166215] mtd: device 15 (rootfs) set to be root filesystem
+[    2.166487] mtdsplit: no squashfs found in "rootfs"
+[    2.170960] 0x000004300000-0x000007d00000 : "rootfs_1"
+[    2.217650] libphy: Fixed MDIO Bus: probed
+[    2.435635] qca-mdio 88000.mdio: Could not find phy-reset-gpio
+[    2.435819] libphy: qca_mdio: probed
+[    2.456061] qca-mdio 88000.mdio: qca-mdio driver was registered
+[    2.895642] qca-mdio 90000.mdio: Could not find phy-reset-gpio
+[    2.895843] libphy: qca_mdio: probed
+[    2.901143] qca-mdio 90000.mdio: qca-mdio driver was registered
+[    3.005912] cnss: INFO: IPC Logging is disabled!
+[    3.006417] cnss[27]: INFO: Platform driver probed successfully. plat 9dea0010 tgt 0x1104
+[    3.010110] cnss[2]: INFO: Platform driver probed successfully. plat 9deb8010 tgt 0xfffc
+[    3.018066] cnss[27]: INFO: PCI device 9e5b3000 probed successfully
+[    3.025971] i2c /dev entries driver
+[    3.033069] qcom-tsens 4a8000.thermal-sensor: tsens calibration failed
+[    3.056555] cpufreq: cpufreq_online: CPU0: Running at unlisted freq: 799999 KHz
+[    3.056658] cpufreq: cpufreq_online: CPU0: Unlisted initial frequency changed to: 800000 KHz
+[    3.062877] sdhci: Secure Digital Host Controller Interface driver
+[    3.071437] sdhci: Copyright(c) Pierre Ossman
+[    3.077367] sdhci-pltfm: SDHCI platform and OF driver helper
+[    3.082987] 
+[    3.082987] Version Rollback Feature Disabled
+[    3.089837] qcom-q6v5-wcss-pil cd00000.qcom_q6v5_wcss: ssr registeration success qcom_q6v5_wcss
+[    3.093257] remoteproc remoteproc0: cd00000.qcom_q6v5_wcss is available
+[    3.102286] of_graph_get_next_endpoint(): no port node found in /soc/csr@6001000
+[    3.108494] coresight-csr 6001000.csr: CSR initialized
+[    3.116244] of_graph_get_next_endpoint(): no port node found in /soc/cti@6010000
+[    3.121153] of_graph_get_next_endpoint(): no port node found in /soc/cti@6011000
+[    3.128728] of_graph_get_next_endpoint(): no port node found in /soc/cti@6012000
+[    3.136092] of_graph_get_next_endpoint(): no port node found in /soc/cti@6013000
+[    3.143414] of_graph_get_next_endpoint(): no port node found in /soc/cti@6014000
+[    3.150850] of_graph_get_next_endpoint(): no port node found in /soc/cti@6015000
+[    3.158219] of_graph_get_next_endpoint(): no port node found in /soc/cti@6016000
+[    3.165571] of_graph_get_next_endpoint(): no port node found in /soc/cti@6017000
+[    3.172939] of_graph_get_next_endpoint(): no port node found in /soc/cti@6018000
+[    3.180355] of_graph_get_next_endpoint(): no port node found in /soc/cti@6019000
+[    3.187755] of_graph_get_next_endpoint(): no port node found in /soc/cti@601a000
+[    3.195072] of_graph_get_next_endpoint(): no port node found in /soc/cti@601b000
+[    3.202471] of_graph_get_next_endpoint(): no port node found in /soc/cti@601c000
+[    3.209857] of_graph_get_next_endpoint(): no port node found in /soc/cti@601d000
+[    3.217224] of_graph_get_next_endpoint(): no port node found in /soc/cti@601e000
+[    3.224571] of_graph_get_next_endpoint(): no port node found in /soc/cti@601f000
+[    3.232006] of_graph_get_next_endpoint(): no port node found in /soc/cti@6198000
+[    3.239509] of_graph_get_next_endpoint(): no port node found in /soc/cti@6199000
+[    3.246887] of_graph_get_next_endpoint(): no port node found in /soc/cti@610c000
+[    3.254301] sps_register_bam_device : unable to create IPC Logging 0 for bam 0x06064000
+[    3.261317] sps_register_bam_device : unable to create IPC Logging 1 for bam 0x06064000sps_register_bam_device : unable to create IPC Logging 2 for bam 0x06064000
+[    3.276997] sps_register_bam_device : unable to create IPC Logging 3 for bam 0x06064000sps_register_bam_device : unable to create IPC Logging 4 for bam 0x06064000
+[    3.291496] sps:BAM 0x06064000 is registered.[    3.298671] coresight-tmc 6048000.tmc: TMC initialized
+[    3.302772] coresight-tmc 6047000.tmc: TMC initialized
+[    3.307992] coresight-funnel 6041000.funnel: FUNNEL initialized
+[    3.312914] coresight-funnel 6100000.funnel: FUNNEL initialized
+[    3.318784] coresight-funnel 6120000.funnel: FUNNEL initialized
+[    3.324615] coresight-funnel 6130000.funnel: FUNNEL initialized
+[    3.330576] coresight-funnel 61a1000.funnel: FUNNEL initialized
+[    3.337250] coresight-etm4x 619c000.etm: ETM 4.0 initialized
+[    3.342754] coresight-etm4x 619d000.etm: ETM 4.0 initialized
+[    3.348370] coresight-replicator-qcom 6046000.replicator: REPLICATOR 1.0 initialized
+[    3.354083] coresight-stm 6002000.stm: STM initialized
+[    3.362986] of_graph_get_next_endpoint(): no port node found in /soc/hwevent@6101000
+[    3.366357] coresight-hwevent 6101000.hwevent: Hardware Event driver initialized
+[    3.375533] NET: Registered protocol family 10
+[    3.395903] NET: Registered protocol family 17
+[    3.395986] bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this.
+[    3.399269] Bridge firewalling registered
+[    3.412099] 8021q: 802.1Q VLAN Support v1.8
+[    3.416224] Registering SWP/SWPB emulation handler
+[    3.437204] ubi0: attaching mtd15
+[    3.651246] ubi0: scanning is finished
+[    3.657246] ubi0: attached mtd15 (name "rootfs", size 58 MiB)
+[    3.657271] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    3.661964] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    3.668775] ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    3.675608] ubi0: good PEBs: 464, bad PEBs: 0, corrupted PEBs: 0
+[    3.682361] ubi0: user volume: 4, internal volumes: 1, max. volumes count: 128
+[    3.688628] ubi0: max/mean erase counter: 2/0, WL threshold: 4096, image sequence number: 1468923543
+[    3.695658] ubi0: available PEBs: 0, total reserved PEBs: 464, PEBs reserved for bad PEB handling: 20
+[    3.704967] ubi0: background thread "ubi_bgt0d" started, PID 102
+[    3.786180] hctosys: unable to open rtc device (rtc0)
+[    3.796548] VFS: Mounted root (squashfs filesystem) readonly on device 31:19.
+[    3.798018] Freeing unused kernel memory: 1024K (80a00000 - 80b00000)
+[    3.895163] random: nonblocking pool is initialized
+[    4.240845] init: Console is alive
+[    4.241058] init: - watchdog -
+[    5.274777] kmodloader: loading kernel modules from /etc/modules-boot.d/*
+[    5.306786] kmodloader: done loading kernel modules from /etc/modules-boot.d/*
+[    6.255841] init: - preinit -
+Before mount_root
+[    6.530259] UBIFS (ubi0:4): background thread "ubifs_bgt0_4" started, PID 122
+[    6.556331] UBIFS (ubi0:4): recovery needed
+[    6.627273] UBIFS (ubi0:4): recovery completed
+[    6.627426] UBIFS (ubi0:4): UBIFS: mounted UBI device 0, volume 4, name "rootfs_data"
+[    6.630627] UBIFS (ubi0:4): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[    6.638564] UBIFS (ubi0:4): FS size: 24252416 bytes (23 MiB, 191 LEBs), journal size 1269760 bytes (1 MiB, 10 LEBs)
+[    6.648422] UBIFS (ubi0:4): reserved for root: 1145500 bytes (1118 KiB)
+[    6.658660] UBIFS (ubi0:4): media format: w4/r0 (latest is w4/r0), UUID 6179446D-E7F8-4C88-A6FB-E52D9166D434, small LPT model
+[    6.669117] mount_root: switching to jffs2 overlay
+After mount_root
+131072+0 records in
+131072+0 records out
+131072 bytes (128.0KB) copied, 0.532660 seconds, 240.3KB/s
+131072+0 records in
+131072+0 records out
+131072 bytes (128.0KB) copied, 0.532364 seconds, 240.4KB/s
+ln: /lib/firmware/IPQ5018/caldata.bin: File exists
+ln: /lib/firmware/qcn9000/caldata_1.bin: File exists
+[    7.828032] procd: - early -
+[    7.828138] procd: - watchdog -
+[    8.525897] procd: - ubus -
+[    9.543947] procd: - init -
+Please press Enter to activate this console.
+[   10.352691] ubi: mtd15 is already attached to ubi0mount: can't read '/etc/fstab': No such file or directory
+BT FW mount is failed
+
+[   10.473295] ubi: mtd15 is already attached to ubi0 WIFI FW mount is successful
+kmodloader: loading kernel modules from /etc/modules.d/*
+[   12.686711] ssdk_switch_device_num_init[1159]:INFO:ess-switch dts node number: 1
+[   12.686749] ssdk_dt_get_switch_node[970]:INFO:ess-switch DT exist!
+[   12.693166] ssdk_dt_parse_access_mode[856]:INFO:switch_access_mode: local bus
+[   12.699191] ssdk_dt_parse_access_mode[869]:INFO:switchreg_base_addr: 0x39c00000
+[   12.706368] ssdk_dt_parse_access_mode[870]:INFO:switchreg_size: 0x200000
+[   12.713478] ssdk_dt_parse_mac_mode[295]:INFO:mac mode = 0xf
+[   12.720437] ssdk_dt_parse_mac_mode[301]:INFO:mac mode1 doesn't exit!
+[   12.725724] ssdk_dt_parse_mac_mode[310]:INFO:mac mode2 doesn't exit!
+[   12.732392] ssdk_dt_parse_phy_info[678]:INFO:port2's phy-reset-gpio is GPIO13
+[   12.738665] ssdk_dt_parse_port_bmp[757]:INFO:port_bmp doesn't exist!
+[   12.745707] ssdk_dt_parse_uniphy[332]:INFO:ess-uniphy DT exist!
+[   12.752107] ssdk_dt_parse_led[943]:INFO:current dts led_source_num is 0
+[   12.757768] ssdk_plat_init start
+[   15.165611] ssdk_mp_reset_init[739]:INFO:MP reset successfully!
+[   15.165669] ssdk_gcc_clock_init[1033]:INFO:SSDK gcc clock init successfully!
+[   15.172180] qca803x_phy_api_ops_init[2174]:INFO:qca probe qca803x phy driver succeeded!
+[   15.178045] mpge_phy_api_ops_init[1089]:INFO:qca probe mpge phy driver succeeded!
+[   15.188290] regi_init[3675]:INFO:Initializing SCOMPHY!
+[   16.319825] _adpt_mp_uniphy_clk_output_ctrl_set[236]:INFO:uniphy will output clock as 25000000Hz
+[   16.525598] hsl_port_phy_gpio_reset[685]:INFO:GPIO13 reset PHY done
+[   16.635991] ssdk_switch_register[1779]:INFO:Chip version 0xee
+[   16.636028] qca_link_polling_select[1383]:INFO:link-polling-required node does not exist
+[   16.640702] ssdk_switch_register[1813]:INFO:polling is selected
+[   16.648882] regi_init[3685]:INFO:Initializing SCOMPHY Done!!
+[   16.654974] regi_init[3708]:INFO:qca-ssdk module init succeeded!
+[   16.748239] **********************************************************
+[   16.748263] * NSS Data Plane driver
+[   16.755075] **********************************************************
+[   16.762617] l2tp_core: L2TP core driver, V2.0
+[   16.764676] l2tp_netlink: L2TP netlink interface
+[   17.083798] nss_driver - fw of size 760160  bytes copied to load addr: 40000000, nss_id : 0
+[   17.085335] Supported Frequencies - 
+[   17.091061] 850 MHz 1 GHz 
+[   17.096656] 
+[   17.097586] 7f2db480: set sdma 9dd9a200
+[   17.099376] node size 2 # items 4
+[   17.102505] memory: 40000000 536870912 (avl 439484416) items 4 active_cores 1
+[   17.106029] addr/size storage words 2 2 # words 4 in DTS, ddr size 1000000
+[   17.113089] 7f2db480: NSS core 0 DDR from 40000000 to 41000000
+[   17.119984] 7f2db480: meminfo init succeed
+[   17.168516] sit: IPv6 over IPv4 tunneling driver
+[   17.176334] nat46: module (version 8ff2ae59ec9840a7b8b45f976c51cae80abe0226) loaded.
+[   17.176876] node size 2 # items 4
+[   17.183145] memory: 40000000 536870912 (avl 439562240) items 4 active_cores 1
+[   17.186408] addr/size storage words 2 2 # words 4 in DTS, ddr size 1000000
+[   17.193514] 7f2db480: nss core 0 booted successfully
+[   17.220267] gre: GRE over IPv4 demultiplexor driver
+[   17.221927] ip_gre: GRE over IPv4 tunneling driver
+[   17.229638] ip6_gre: GRE over IPv6 tunneling driver
+[   17.242781] Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)
+[   17.269789] QCA Hy-Fi multicast installation successfully
+[   17.277878] PPP generic driver version 2.4.2
+[   17.326718] nss_lag_init[352]:LAG Manager Installed
+[   17.329166] NET: Registered protocol family 24
+[   17.334038] PPTP driver version 0.8.5
+[   17.350170] diag: IPC Logging disabled
+[   17.406609] TRACK: P[0]PMask[4]
+[   17.406634] TRACK: P[1]PMask[4]
+[   17.408942] TRACK: P[2]PMask[4]
+[   17.426224] TRACK: P[3]PMask[4]
+[   17.426297] nik 4097 info->svc_id
+[   17.448707] QCA multicast snooping installed successfully
+[   17.451001] <NSS-CRYPTO>:module loaded Build_ID - 05/17/22, 00:08:13 SoC=ipq50xx
+[   17.466682] cannot find nss-macsec0 node
+[   17.466796] cannot find nss-macsec1 node
+[   17.469730] cannot find nss-macsec2 node
+[   17.473571] nss_macsec init success
+[   17.507122] u32 classifier
+[   17.507143]     input device check on
+[   17.508711]     Actions configured
+[   17.514480] Mirror/redirect action on
+[   17.520006] l2tp_ppp: PPPoL2TP kernel driver, V2.0
+[   17.527530] nf_conntrack version 0.5.0 (6462 buckets, 25848 max)
+[   17.570859] xt_time: kernel timezone is -0000
+[   17.589833] Ebtables v2.0 registered
+[   17.592407] ip_tables: (C) 2000-2006 Netfilter Core Team
+[   17.603855] kmodloader: done loading kernel modules from /etc/modules.d/*
+[   25.141463] configuring additional NSS pbufs
+[   25.156598] additional pbufs of size 3100672 got added to NSS
+[   25.193403] mem_manager: module license 'Proprietary' taints kernel.
+[   25.193430] Disabling lock debugging due to kernel taint
+[   30.299866] wlan: [1555:I:RPTR] qca_multi_link_init_module: 
+[   30.299866] ******QCA Repeater Initialization Done***********
+***** starting cnssdaemon  -i integrated -i pci0 *****
+*****cnssdaemon pid=1625*********
+[   31.621082] cnss[27]: INFO: Setting daemon_support=1 for instance_id 0x27
+[   31.711272] cnss[2]: INFO: Setting daemon_support=1 for instance_id 0x2
+[   31.738259] cnss[27]: INFO: Setting cold_boot_support=1 for instance_id 0x27
+[   31.831042] cnss[2]: INFO: Setting cold_boot_support=1 for instance_id 0x2
+*********initiating cold boot calibration*************
+[   33.566431] wlan: [1710:I:ANY] =======ol_if_register_wifi3_0==========
+[   33.566472] wlan: [1710:I:ANY] osif_nss_register_module: NSS wifi ops registered for target_type:1 with soc_ops:7fdd0de0
+[   33.571943] wlan: [1710:I:ANY] ol_ath_wifi_ssr: ol_ath_wifi_ssr: SSR event 2 bus_type 1
+[   33.583035] remoteproc remoteproc0: powering up cd00000.qcom_q6v5_wcss
+[   33.615448] remoteproc remoteproc0: Booting fw image IPQ5018/q6_fw.mdt, size 1052
+[   34.520810] Subsystem error monitoring/handling services are up
+[   34.521402] remoteproc remoteproc0: remote processor cd00000.qcom_q6v5_wcss is now up
+[   34.525922] rpmsg_dev_probe: No pm domain
+[   34.534010] wlan: [1710:I:ANY] ol_ath_wifi_ssr: ol_ath_wifi_ssr: SSR event 3 bus_type 1
+[   34.537608] cnss[2]: INFO: Waiting for FW ready. Device: 0xfffc, FW ready timeout: 15 seconds
+[   34.545865] rpmsg_dev_probe: No pm domain
+[   34.555195] cnss[2]: INFO: QMI WLFW service connected, state: 0x1
+[   34.557938] diag: Receiving feature mask length more than Apps support
+[   34.558035] diag: In diag_send_feature_mask_update, control channel is not open, p: 2, 7f4a4b84
+[   34.573131] cnss[2]: INFO: device_id : 65532 mem mode : [1]
+[   34.579218] cnss[2]: INFO: platform name: Qualcomm Technologies, Inc. IPQ5018/AP-MP03.1
+[   34.595396] cnss[2]: INFO: Target capability: chip_id: 0x0, chip_family: 0x4, board_id: 0xff, soc_id: 0xffffffff, fw_version: 0x250282e9, fw_build_timestamp: 2021-08-05 01:53, otp_version: 0x0 eeprom_caldata_read_timeout 0s
+[   34.595460] cnss[2]: INFO: Boardid from dts:23,FW:ff
+[   34.628545] cnss[2]: INFO: BDF location : 0x4ba00000
+[   34.628581] cnss[2]: INFO: BDF IPQ5018/bdwlan.b23 size 131072
+[   34.633587] cnss[2]: INFO: per device BDF location : 0x4ba20000
+[   34.638563] cnss[2]: INFO: CALDATA IPQ5018/caldata.bin size 131072 offset 0x20000
+[   34.755611] cnss[2]: INFO: FW ready received for device 0xfffc
+[   34.757576] wlan: [1710:I:ANY] pld_ahb_wlan_enable: cnss_mode: Cold boot calibration
+[   34.760336] cnss[2]: INFO: Sending mode message, mode: COLDBOOT CALIBRATION(7), state: 0xf
+[   34.792289] wlan: [1710:I:ANY] ol_ath_wifi_ssr: ol_ath_wifi_ssr: SSR event 2 bus_type 0
+[   34.792396] cnss_pci 0001:01:00.0: BAR 0: assigned [mem 0xa0400000-0xa05fffff 64bit]
+[   34.799420] cnss_pci 0001:01:00.0: enabling device (0140 -> 0142)
+[   34.808056] cnss[27]: INFO: MHI IPC Logging is disabled!
+[   34.866425] cnss[2]: INFO: Coldboot Calibration completed successfully for device 0xfffc
+[   36.053439] wlan: [1710:I:ANY] ol_ath_wifi_ssr: ol_ath_wifi_ssr: SSR event 3 bus_type 0
+[   36.053484] cnss[27]: INFO: Waiting for FW ready. Device: 0x1104, FW ready timeout: 15 seconds
+[   36.069386] cnss[27]: INFO: QMI WLFW service connected, state: 0x11
+[   36.071418] cnss[27]: INFO: device_id : 4356 mem mode : [1]
+[   36.075544] cnss[27]: INFO: platform name: Qualcomm Technologies, Inc. IPQ5018/AP-MP03.1
+[   36.190528] cnss[27]: INFO: Target capability: chip_id: 0x0, chip_family: 0x0, board_id: 0xff, soc_id: 0xffffffff, fw_version: 0x250282e9, fw_build_timestamp: 2021-08-05 01:14, otp_version: 0x0 eeprom_caldata_read_timeout 0s
+[   36.191512] cnss[27]: INFO: Downloading BDF: qcn9000/bdwlan.ba0, size: 131072
+[   36.229337] cnss[27]: INFO: Downloading BDF: qcn9000/caldata_1.bin, size: 131072
+[   36.385611] cnss[27]: INFO: FW ready received for device 0x1104
+[   36.385664] wlan: [1710:I:ANY] pld_pcie_wlan_enable: pld_pcie_wlan_enable: Invalid wlan_cfg config
+[   36.390337] cnss[27]: INFO: Sending mode message, mode: COLDBOOT CALIBRATION(7), state: 0x1f
+[   36.508608] wlan: [1710:I:ANY] init_ath_pci_3_0: 6ath_ol_pci_wifi3.0 :  (Atheros/multi-bss)
+[   36.515341] wlan: [1723:I:ANY] ol_ath_wifi_ssr: ol_ath_wifi_ssr: SSR event 0 bus_type 1
+[   36.516514] cnss[2]: INFO: Sending mode message, mode: OFF(4), state: 0x7
+[   36.526110] cnss[2]: INFO: QMI WLFW service disconnected, state: 0x6
+[   36.539262] remoteproc remoteproc0: stopped remote processor cd00000.qcom_q6v5_wcss
+[   36.539887] wlan: [1723:I:ANY] ol_ath_wifi_ssr: ol_ath_wifi_ssr: SSR event 1 bus_type 1
+[   36.595998] wlan: [1723:I:ANY] ol_ath_wifi_ssr: ol_ath_wifi_ssr: SSR event 0 bus_type 0
+[   36.596058] cnss[27]: INFO: Coldboot Calbration wait started for Device: 0x1104, timeout: 60 seconds
+[   57.134704] cnss[27]: INFO: Coldboot Calibration completed successfully for device 0x1104
+[   57.165647] cnss[27]: INFO: Coldboot Calibration wait ended for device 0x1104
+[   57.165685] cnss[27]: INFO: Sending mode message, mode: OFF(4), state: 0x127
+[   57.174100] cnss[27]: INFO: QMI WLFW service disconnected, state: 0x126
+[   57.174139] cnss[27]: INFO: Shutting down QCN9000
+[   57.205886] Removing device for chan:LOOPBACK
+[   57.205913] mhi_reset_data_chan rp   (null) wp   (null)
+[   57.209259] mhi_reset_data_chan rp   (null) wp   (null)
+[   57.214466] Removing device for chan:DIAG
+[   57.219602] mhi_reset_data_chan rp a000d000 wp a000d120
+[   57.223738] mhi_reset_data_chan rp a000b000 wp a000b000
+[   57.228945] Removing device for chan:IPCR
+[   57.233932] mhi_reset_data_chan rp a00110b0 wp a00110a0
+[   57.238383] mhi_reset_data_chan rp a000f050 wp a000f050
+[   57.265764] wlan: [1723:I:ANY] ol_ath_wifi_ssr: ol_ath_wifi_ssr: SSR event 1 bus_type 0
+[   58.978492] wlan: [1743:I:ANY] =======ol_if_register_wifi3_0==========
+[   58.978533] wlan: [1743:I:ANY] osif_nss_register_module: NSS wifi ops registered for target_type:1 with soc_ops:7fdc9de0
+[   58.983949] wlan: [1743:I:ANY] ol_ath_wifi_ssr: ol_ath_wifi_ssr: SSR event 2 bus_type 1
+[   58.994986] remoteproc remoteproc0: powering up cd00000.qcom_q6v5_wcss
+[   59.002833] remoteproc remoteproc0: Booting fw image IPQ5018/q6_fw.mdt, size 1052
+[   59.070054] Subsystem error monitoring/handling services are up
+[   59.070544] remoteproc remoteproc0: remote processor cd00000.qcom_q6v5_wcss is now up
+[   59.075052] rpmsg_dev_probe: No pm domain
+[   59.083090] wlan: [1743:I:ANY] ol_ath_wifi_ssr: ol_ath_wifi_ssr: SSR event 3 bus_type 1
+[   59.086810] cnss[2]: INFO: Waiting for FW ready. Device: 0xfffc, FW ready timeout: 15 seconds
+[   59.095116] rpmsg_dev_probe: No pm domain
+[   59.104186] cnss[2]: INFO: QMI WLFW service connected, state: 0x1
+[   59.107697] diag: Receiving feature mask length more than Apps support
+[   59.117428] cnss[2]: INFO: device_id : 65532 mem mode : [1]
+[   59.119809] cnss[2]: INFO: platform name: Qualcomm Technologies, Inc. IPQ5018/AP-MP03.1
+[   59.126818] cnss[2]: INFO: Target capability: chip_id: 0x0, chip_family: 0x4, board_id: 0xff, soc_id: 0xffffffff, fw_version: 0x250282e9, fw_build_timestamp: 2021-08-05 01:53, otp_version: 0x0 eeprom_caldata_read_timeout 0s
+[   59.133647] cnss[2]: INFO: Boardid from dts:23,FW:ff
+[   59.153572] cnss[2]: INFO: BDF location : 0x4ba00000
+[   59.158409] cnss[2]: INFO: BDF IPQ5018/bdwlan.b23 size 131072
+[   59.164007] cnss[2]: INFO: per device BDF location : 0x4ba20000
+[   59.169104] cnss[2]: INFO: CALDATA IPQ5018/caldata.bin size 131072 offset 0x20000
+[   59.195621] cnss[2]: INFO: FW ready received for device 0xfffc
+[   59.195971] wlan: [1743:I:ANY] pld_ahb_wlan_enable: cnss_mode: Mission mode 
+[   59.200644] cnss[2]: INFO: Sending mode message, mode: MISSION(0), state: 0x7
+[   59.211620] wlan: [1743:I:ANY] qca_napi_create: qca_napi_create: napi instance 0 created on pipe 4
+[   59.214844] wlan: [1743:I:ANY] __ol_ath_attach: Allocated soc 99a00500
+[   59.223661] wlan: [1743:D:dfs] WLAN_DEBUG_DFS1 : dfs_psoc_obj_create_notification: DFS obj attach to psoc successfully
+[   59.230155] wlan: [1743:E:CONFIG] cfg_ini_parse_to_store: Failed to parse *.ini file @ QCA5018.ini; status:4
+[   59.241157] wlan: [1743:E:CONFIG] cfg_uint_item_handler: num_monitor_pdev0=1 - Out of range [0, 0]; Using 0
+[   59.250755] wlan: [1743:I:ANY] osif_nss_wifi_soc_setup: nss-wifili:#1 register wifili function for soc 
+[   59.260115] wlan: [1743:I:ANY] osif_nss_wifi_soc_setup: nss register id -1 nss config 3 Target Type 1d 
+[   59.269487] wlan: [1743:I:ANY] __ol_ath_attach: dev name soc0
+[   59.279203] wlan: [1743:I:ANY] ol_ath_soc_attach: WMI attached. wmi_handle 99a84c00 
+[   59.284743] wlan: [1743:I:atf] target_if_atf_open: User provided peer = 128,vdevs = 16,msdu_desc = 2496
+[   59.296125] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   59.301657] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   59.311748] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   59.321806] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   59.331948] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   59.341957] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   59.352015] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 7
+[   59.362083] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 7
+[   59.372157] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 7
+[   59.382220] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 7
+[   59.392290] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   59.402358] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   59.412428] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   59.422498] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 7
+[   59.432567] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 7
+[   59.442686] wlan: [1743:I:ANY] htc_wmi_init: HT Create . 99ac3000
+[   59.452707] wlan: [1743:I:ANY] htc_wmi_init: Skipping BMI Done
+[   59.458960] wlan: [1743:I:ANY] htc_wmi_init: host_enable 0
+[   59.473910] wlan: [1743:I:ANY] ol_target_init_complete: CDP soc attach success
+[   59.473948] wlan: [1743:I:ANY] ol_target_init_complete: Soc attach success NSS config 0 
+[   59.480252] wlan: [1743:I:ANY] htc_set_async_ep: htc_set_async_ep: htc_handle 99ac3000, ep 2, value 1
+[   59.489284] wlan: [898:I:TIF] init_deinit_atf_config_enable: Airtime Fairness: num_peers=0 num_active_peer=0
+[   59.497532] wlan: [898:I:TIF] HE_CAP Info = 9a08010d
+[   59.507372] wlan: [898:I:TIF] Num HW modes = 1
+[   59.512270] wlan: [898:I:TIF] Num PHY = 1
+[   59.516523] wlan: [898:I:TIF] FW Build Version (Ext.) = 0
+[   59.520576] wlan: [898:I:TIF] HDL Version: MajorVersion.MinorVersion = 0.0
+[   59.525992] wlan: [898:I:TIF] Preferred HW Mode = 0 Num Radios = 1
+[   59.532838] wlan: [898:W:TIF] add_11ax_mode_flags: 11AX wireless modes are not populated by the target in reg capabilities, adding 11AX wireless modes
+[   59.538949] wlan: [898:I:TIF] init_deinit_add_11ax_modes: hw_mode_id = 0 phy_id = 0 wireless modes = 0
+[   59.553520] wlan: [898:I:TIF] init_deinit_alloc_pdevs: CDP PDEV ATTACH success
+[   59.561795] wlan: [898:I:TIF] init_deinit_get_total_num_ema_vaps: num_radios: 1
+[   59.569071] wlan: [898:I:TIF] init_deinit_get_total_num_ema_vaps: ema_max_vap_cnt: 0
+[   59.576104] wlan: [898:I:TIF] init_deinit_get_total_num_vdevs_for_soc: num_vdevs: 9
+[   59.584088] wlan: [898:I:TIF] init_deinit_get_total_num_ema_vaps: num_radios: 1
+[   59.591459] wlan: [898:I:TIF] init_deinit_get_total_num_ema_vaps: ema_max_vap_cnt: 0
+[   59.598745] wlan: [898:I:TIF] init_deinit_get_total_num_vdevs_for_soc: num_vdevs: 9
+[   59.606748] wlan: [898:I:TIF] init_deinit_get_total_num_ema_vaps: num_radios: 1
+[   59.614093] wlan: [898:I:TIF] init_deinit_get_total_num_ema_vaps: ema_max_vap_cnt: 0
+[   59.621431] wlan: [898:I:TIF] init_deinit_get_total_num_vdevs_for_soc: num_vdevs: 9
+[   59.629387] wlan: [898:I:TIF] init_deinit_get_total_num_ema_vaps: num_radios: 1
+[   59.636797] wlan: [898:I:TIF] init_deinit_get_total_num_ema_vaps: ema_max_vap_cnt: 0
+[   59.644037] wlan: [898:I:TIF] init_deinit_get_total_num_vdevs_for_soc: num_vdevs: 9
+[   59.652054] wlan: [898:I:ANY] init_deinit_update_pdev_tgt_info: pdev id:0 wmi_handle:99a84c00
+[   59.665638] wlan: [898:I:ANY] init_deinit_update_pdev_tgt_info: Pdev = 0 Number of peers = 137 vdevs = 9
+[   59.668270] wlan: [898:I:TIF] init_deinit_update_pdev_tgt_info: CDP PDEV INIT success
+[   59.778012] wlan: [898:I:ANY] copy_fw_abi_version_tlv: copy_fw_abi_version_tlv: INIT_CMD version: 1, 0, 0x5f414351, 0x4c4d, 0x0, 0x0
+[   59.817577] wlan: [898:I:ANY] ready_extract_init_status_tlv: ready_extract_init_status_tlv:0
+[   59.817618] wlan: [898:I:ANY] dp_peer_map_attach_wifi3: dp_peer_map_attach_wifi3 max_peers 163, max_ast_index: 528
+[   59.825270] wlan: [1743:I:ANY] ol_ath_connect_htc: WMI is ready
+[   59.864480] wlan: [1743:I:ANY] ath_get_radio_index: Error: Could not match the device name : wifi%d
+[   59.864522] wlan: [1743:E:NSS] [nss-wifili]: pdev:98040500 radio_ifnum:28 scheme_id:1 radio_priority:0 
+[   59.877536] wlan: [1743:E:TIF] target_if_lro_hash_config: pdev with id 0 is NULL
+[   59.882178] wlan: [1743:I:ANY] ol_ath_soc_attach: connect HTC
+[   59.889375] wlan: [1743:I:ANY] ol_ath_soc_attach: bypasswmi : 0
+[   59.895020] wlan: [1743:I:MSCS] qca_mscs_module_init: 
+[   59.895020] ****QCA MSCS Initialization Done**** SoC 99a00500
+[   59.900794] wlan: [1743:I:ANY] ol_ath_soc_attach: UMAC attach
+[   59.911942] wlan: [1743:I:ANY] __ol_ath_attach: pdev_netdev name wifi0
+[   59.917505] wlan: [1743:I:ANY] __ol_ath_attach: Skip txrx_pdev_attach_target
+[   59.925007] wlan: [1743:I:ANY] __ol_ath_attach: BURSTING enabled by default
+[   59.931257] wlan: [1743:I:ANY] ol_ath_pdev_attach: interface_id 0
+[   59.937814] wlan: [1743:I:TIF] ol_ath_pdev_regdmn_init:  phy id = 0 Modes supported
+[   59.944035] wlan: [1743:I:TIF] ol_ath_pdev_regdmn_init:  11b = 1 11g = 1 11a = 0 11n = 1 11ac = 1 11ax = 1
+[   59.951518] wlan: [1743:I:TIF] ol_ath_pdev_regdmn_init:  Reg cap - phy_id = 0 supp_bnd = 1, modes = 680680c, lo_2g = 2312, hi_2g = 2732 lo_g5 = 0, hi_5g = 0
+[   59.961240] wlan: [1743:I:ANY] ol_ath_update_wireless_modes: wireless_modes = 680680c before update
+[   59.975383] wlan: [1743:I:ANY] ol_ath_update_wireless_modes: Wireless_modes = 680680c after update
+[   59.984150] wlan: [1743:I:ANY] ol_ath_update_ext_caps: 11ax 2G supported case
+[   59.993283] wlan: [1743:I:MBSSIE] ol_ath_assign_mbssid_ref_bssid: MBSSID reference bssid is 02:03:7f:12:ca:ca soc: soc0 pdev: wifi0
+[   60.000543] wlan: [1743:I:MBSSIE] ieee80211_mbss_attach: :>
+[   60.012047] wlan: [1743:I:MBSSIE] ieee80211_mbss_attach: :<
+[   60.017626] wlan: [1743:I:ANY] ol_resmgr_create: OL Resmgr Init-ed
+[   60.023391] wlan: [1743:I:ANY] acfg_attach: acfg_attach: 3323: Netlink socket created:99a87000
+[   60.029402] wlan: [1743:I:ANY] ol_ath_stats_attach: periodic_chan_stats: 1
+[   60.038413] wlan: [1743:I:ANY] wlan_scan_update_channel_list: num_chan: 11
+[   60.044907] wlan: [0:I:ANY] ol_ath_pdev_attach: Set global_ic[1], ptr:7fab53a8
+[   60.051701] wlan: [0:I:ANY] dp_lag_soc_enable: pdev(9b9ba408) Enabling DBDC Repeater 0  soc_lag 9de7a100
+[   60.058935] wlan: [0:I:ANY] dp_lag_pdev_set_primary_radio: pdev(9b9ba408) is_primary 0 
+[   60.058946] wlan: [0:E:NSS] [nss-wifili]: NSS Wifili DBDC Repeater enable message passed
+[   60.076517] wlan: [0:I:ANY] ol_ath_twt_enable_complete_event_handler: twt enabled
+[   60.079003] wlan: [1743:I:ANY] ol_ath_ucfg_set_rx_pkt_protocol_tagging: Set RX packet type TAG, opcode : 0, pkt_type : 18, metadata : 0xca0,pdev_id = 0, REO dest ring = 5
+[   60.079167] wlan: [1743:I:ANY] ol_ath_pri20_cfg_blockchanlist_parse: cfg block channel list is empty
+[   60.079191] wlan: [1743:I:ANY] ol_ath_configure_cong_ctrl_max_msdus: pdev_idx = 0 tx_desc_limit = 32768
+[   60.079262] wlan: [1743:I:ANY] __ol_ath_attach: needed_headroom reservation 60
+[   60.079276] wlan: [1743:I:ANY] ol_ath_enable_fraglist: Enabled Fraglist bit for the radio wifi0 features 41 
+[   60.079307] wlan: [1743:I:ANY] wlan_cfg80211_init: Number of 2G channels: 11 
+[   60.079763] wlan: [1743:I:ANY] ieee80211_cfg80211_radio_attach: ic: 0x98040500, wdev: 0x98057c6c, wiphy: 0x9c25b160, netdev: 0x98040000 
+[   60.082463] wlan: [1743:I:Dynamic Mode Change] ol_ath_check_and_reconfig_hw_mode: Running with HW mode = 0
+[   60.084263] wlan: [1743:E:QLD] qld_register: Handle or address is NULL
+[   60.084335] wlan: [1743:I:ANY] wlan_pdev_operation: num_radios=1, wifi_radios[0].sc = 98040500_radio_type = 2
+[   60.085324] wlan: [1743:I:ANY] ol_ath_wifi_ssr: ol_ath_wifi_ssr: SSR event 2 bus_type 0
+[   60.085389] cnss_pci 0001:01:00.0: BAR 0: assigned [mem 0xa0400000-0xa05fffff 64bit]
+[   60.085981] cnss[27]: INFO: MHI IPC Logging is disabled!
+[   60.689229] wlan: [1743:I:ANY] ol_ath_wifi_ssr: ol_ath_wifi_ssr: SSR event 3 bus_type 0
+[   60.689318] cnss[27]: INFO: Waiting for FW ready. Device: 0x1104, FW ready timeout: 15 seconds
+[   60.702309] cnss[27]: INFO: QMI WLFW service connected, state: 0x11
+[   60.715986] cnss[27]: INFO: device_id : 4356 mem mode : [1]
+[   60.716027] cnss[27]: INFO: platform name: Qualcomm Technologies, Inc. IPQ5018/AP-MP03.1
+[   60.724967] cnss[27]: INFO: Target capability: chip_id: 0x0, chip_family: 0x0, board_id: 0xff, soc_id: 0xffffffff, fw_version: 0x250282e9, fw_build_timestamp: 2021-08-05 01:14, otp_version: 0x0 eeprom_caldata_read_timeout 0s
+[   60.729210] cnss[27]: INFO: Downloading BDF: qcn9000/bdwlan.ba0, size: 131072
+[   60.776551] cnss[27]: INFO: Downloading BDF: qcn9000/caldata_1.bin, size: 131072
+[   60.915627] cnss[27]: INFO: FW ready received for device 0x1104
+[   60.916781] cnss[27]: INFO: Sending mode message, mode: MISSION(0), state: 0x17
+[   60.945450] wlan: [1743:I:ANY] qca_napi_create: qca_napi_create: napi instance 0 created on pipe 4
+[   60.945871] wlan: [1743:I:ANY] __ol_ath_attach: Allocated soc 96580500
+[   60.953509] wlan: [1743:D:dfs] WLAN_DEBUG_DFS1 : dfs_psoc_obj_create_notification: DFS obj attach to psoc successfully
+[   60.960645] wlan: [1743:E:CONFIG] cfg_uint_item_handler: num_vdevs_pdev0=16 - Out of range [1, 9]; Using 9
+[   60.970898] wlan: [1743:E:CONFIG] cfg_uint_item_handler: num_peers_pdev0=512 - Out of range [1, 128]; Using 128
+[   60.980264] wlan: [1743:E:CONFIG] cfg_uint_item_handler: num_monitor_pdev0=1 - Out of range [0, 0]; Using 0
+[   60.990267] wlan: [1743:E:QDF] CONFIG creation failed
+[   61.000009] wlan: [1743:I:ANY] osif_nss_wifi_soc_setup: nss-wifili:#1 register wifili function for soc 
+[   61.005103] wlan: [1743:I:ANY] osif_nss_wifi_soc_setup: nss register id -1 nss config 3 Target Type 1a 
+[   61.014395] wlan: [1743:I:ANY] __ol_ath_attach: dev name soc1
+[   61.024099] wlan: [1743:I:ANY] ol_ath_soc_attach: WMI attached. wmi_handle 9affcc00 
+[   61.029639] wlan: [1743:I:atf] target_if_atf_open: User provided peer = 128,vdevs = 16,msdu_desc = 2496
+[   61.041028] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   61.046644] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   61.056660] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   61.066942] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   61.076789] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   61.086927] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   61.096888] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 7
+[   61.106977] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 7
+[   61.117041] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 7
+[   61.127097] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 7
+[   61.137182] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   61.147233] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   61.157334] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 1
+[   61.167550] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 7
+[   61.177458] wlan: [1743:I:MBSSIE] ol_ath_sanitize_ema_vendor_ie_config: vendor_ie_size: 0 ven_ie_size_nibble: 7
+[   61.187582] wlan: [1743:I:ANY] htc_wmi_init: HT Create . 95f96000
+[   61.197586] wlan: [1743:I:ANY] htc_wmi_init: Skipping BMI Done
+[   61.203806] wlan: [1743:I:ANY] htc_wmi_init: host_enable 0
+[   61.213521] wlan: [1743:F:ANY] dp_config_full_mon_mode: Configure full monitor mode val: 1 
+[   61.221075] wlan: [1743:I:ANY] ol_target_init_complete: CDP soc attach success
+[   61.223246] wlan: [1743:I:ANY] ol_target_init_complete: Soc attach success NSS config 0 
+[   61.230757] wlan: [1743:I:ANY] htc_set_async_ep: htc_set_async_ep: htc_handle 95f96000, ep 2, value 1
+[   61.240258] wlan: [6:I:TIF] init_deinit_atf_config_enable: Airtime Fairness: num_peers=0 num_active_peer=0
+[   61.248112] wlan: [6:I:TIF] HE_CAP Info = 9a18010d
+[   61.257654] wlan: [6:I:TIF] Num HW modes = 1
+[   61.262201] wlan: [6:I:TIF] Num PHY = 1
+[   61.266633] wlan: [6:I:TIF] FW Build Version (Ext.) = 200
+[   61.270155] wlan: [6:I:TIF] HDL Version: MajorVersion.MinorVersion = 8.3
+[   61.275770] wlan: [6:I:TIF] Preferred HW Mode = 0 Num Radios = 1
+[   61.282567] wlan: [6:W:TIF] add_11ax_mode_flags: 11AX wireless modes are not populated by the target in reg capabilities, adding 11AX wireless modes
+[   61.288549] wlan: [6:I:TIF] init_deinit_add_11ax_modes: hw_mode_id = 0 phy_id = 0 wireless modes = 0
+[   61.302971] wlan: [6:I:TIF] init_deinit_alloc_pdevs: CDP PDEV ATTACH success
+[   61.310984] wlan: [6:I:TIF] init_deinit_get_total_num_ema_vaps: num_radios: 1
+[   61.317951] wlan: [6:I:TIF] init_deinit_get_total_num_ema_vaps: ema_max_vap_cnt: 0
+[   61.324978] wlan: [6:I:TIF] init_deinit_get_total_num_vdevs_for_soc: num_vdevs: 9
+[   61.332485] wlan: [6:I:TIF] init_deinit_get_total_num_ema_vaps: num_radios: 1
+[   61.340009] wlan: [6:I:TIF] init_deinit_get_total_num_ema_vaps: ema_max_vap_cnt: 0
+[   61.347128] wlan: [6:I:TIF] init_deinit_get_total_num_vdevs_for_soc: num_vdevs: 9
+[   61.354839] wlan: [6:I:TIF] init_deinit_get_total_num_ema_vaps: num_radios: 1
+[   61.362163] wlan: [6:I:TIF] init_deinit_get_total_num_ema_vaps: ema_max_vap_cnt: 0
+[   61.369238] wlan: [6:I:TIF] init_deinit_get_total_num_vdevs_for_soc: num_vdevs: 9
+[   61.376741] wlan: [6:I:TIF] init_deinit_get_total_num_ema_vaps: num_radios: 1
+[   61.384256] wlan: [6:I:TIF] init_deinit_get_total_num_ema_vaps: ema_max_vap_cnt: 0
+[   61.391383] wlan: [6:I:TIF] init_deinit_get_total_num_vdevs_for_soc: num_vdevs: 9
+[   61.398864] wlan: [6:I:ANY] init_deinit_update_pdev_tgt_info: pdev id:0 wmi_handle:9affcc00
+[   61.412948] wlan: [6:I:ANY] init_deinit_update_pdev_tgt_info: Pdev = 0 Number of peers = 137 vdevs = 9
+[   61.414526] wlan: [6:I:TIF] init_deinit_update_pdev_tgt_info: CDP PDEV INIT success
+[   61.524220] wlan: [6:I:ANY] copy_fw_abi_version_tlv: copy_fw_abi_version_tlv: INIT_CMD version: 1, 0, 0x5f414351, 0x4c4d, 0x0, 0x0
+[   61.846358] wlan: [6:I:ANY] ready_extract_init_status_tlv: ready_extract_init_status_tlv:0
+[   61.846401] wlan: [6:I:ANY] dp_peer_map_attach_wifi3: dp_peer_map_attach_wifi3 max_peers 163, max_ast_index: 528
+[   61.853729] wlan: [1743:I:ANY] ol_ath_connect_htc: WMI is ready
+[   61.893745] wlan: [1743:I:ANY] ath_get_radio_index: Error: Could not match the device name : wifi%d
+[   61.893787] wlan: [1743:E:NSS] [nss-wifili]: pdev:96240500 radio_ifnum:29 scheme_id:2 radio_priority:0 
+[   61.907341] wlan: [1743:E:TIF] target_if_lro_hash_config: pdev with id 0 is NULL
+[   61.913032] wlan: [1743:I:ANY] ol_ath_soc_attach: connect HTC
+[   61.919094] wlan: [1743:I:ANY] ol_ath_soc_attach: bypasswmi : 0
+[   61.925220] wlan: [1743:I:MSCS] qca_mscs_module_init: 
+[   61.925220] ****QCA MSCS Initialization Done**** SoC 96580500
+[   61.930259] wlan: [1743:I:ANY] ol_ath_soc_attach: UMAC attach
+[   61.941877] wlan: [1743:I:ANY] __ol_ath_attach: pdev_netdev name wifi1
+[   61.947261] wlan: [1743:I:ANY] __ol_ath_attach: Skip txrx_pdev_attach_target
+[   61.955724] wlan: [1743:I:ANY] __ol_ath_attach: BURSTING enabled by default
+[   61.960615] wlan: [1743:I:ANY] ol_ath_pdev_attach: interface_id 1
+[   61.967177] wlan: [1743:I:TIF] ol_ath_pdev_regdmn_init:  phy id = 0 Modes supported
+[   61.973361] wlan: [1743:I:TIF] ol_ath_pdev_regdmn_init:  11b = 0 11g = 0 11a = 1 11n = 1 11ac = 1 11ax = 1
+[   61.980884] wlan: [1743:I:TIF] ol_ath_pdev_regdmn_init:  Reg cap - phy_id = 0 supp_bnd = 2, modes = f97f9001, lo_2g = 0, hi_2g = 0 lo_g5 = 4900, hi_5g = 5920
+[   61.990576] wlan: [1743:I:ANY] ol_ath_update_wireless_modes: wireless_modes = f97f9001 before update
+[   62.004756] wlan: [1743:I:ANY] ol_ath_update_wireless_modes: Wireless_modes = f97f9001 after update
+[   62.014097] wlan: [1743:I:ANY] ol_ath_update_ext_caps: 11ax 5G supported case
+[   62.022854] wlan: [1743:I:MBSSIE] ol_ath_assign_mbssid_ref_bssid: MBSSID reference bssid is 02:03:7f:12:3b:3b soc: soc1 pdev: wifi1
+[   62.030187] wlan: [1743:I:MBSSIE] ieee80211_mbss_attach: :>
+[   62.041643] wlan: [1743:I:MBSSIE] ieee80211_mbss_attach: :<
+[   62.047228] wlan: [1743:I:ANY] ol_resmgr_create: OL Resmgr Init-ed
+[   62.052984] wlan: [1743:I:ANY] acfg_attach: acfg_attach: Offload using existing sock 99a87000
+[   62.058988] wlan: [1743:I:ANY] acfg_attach: Offload using existing sock 99a87000
+[   62.067622] wlan: [1743:I:ANY] ol_ath_stats_attach: periodic_chan_stats: 1
+[   62.077109] wlan: [1743:I:ANY] wlan_scan_update_channel_list: num_chan: 25
+[   62.081787] wlan: [0:I:ANY] ol_ath_pdev_attach: Set global_ic[2], ptr:7fab53a8
+[   62.088535] wlan: [0:I:ANY] dp_lag_soc_enable: pdev(9affec08) Enabling DBDC Repeater 0  soc_lag 96477bc0
+[   62.095815] wlan: [0:E:NSS] [nss-wifili]: NSS Wifili DBDC Repeater enable message passed
+[   62.105780] wlan: [0:I:ANY] dp_lag_pdev_set_primary_radio: pdev(9affec08) is_primary 0 
+[   62.114166] wlan: [0:I:ANY] ol_ath_twt_enable_complete_event_handler: twt enabled
+[   62.126855] wlan: [1743:I:ANY] ol_ath_ucfg_set_rx_pkt_protocol_tagging: Set RX packet type TAG, opcode : 0, pkt_type : 18, metadata : 0xca0,pdev_id = 0, REO dest ring = 5
+[   62.129062] wlan: [1743:I:ANY] ol_ath_pri20_cfg_blockchanlist_parse: cfg block channel list is empty
+[   62.144065] wlan: [1743:I:ANY] ol_ath_configure_cong_ctrl_max_msdus: pdev_idx = 0 tx_desc_limit = 32768
+[   62.153385] wlan: [1743:I:ANY] __ol_ath_attach: needed_headroom reservation 60
+[   62.162388] wlan: [1743:I:ANY] ol_ath_enable_fraglist: Enabled Fraglist bit for the radio wifi1 features 41 
+[   62.170030] wlan: [1743:I:ANY] ieee80211_cfg80211_radio_attach: ic: 0x96240500, wdev: 0x96257c6c, wiphy: 0x93c80960, netdev: 0x96240000 
+[   62.181875] wlan: [1743:I:Dynamic Mode Change] ol_ath_check_and_reconfig_hw_mode: Running with HW mode = 0
+[   62.193621] wlan: [1743:E:QLD] qld_register: Handle or address is NULL
+[   62.206113] wlan: [1743:I:ANY] wlan_pdev_operation: num_radios=2, wifi_radios[1].sc = 96240500_radio_type = 2
+[   62.207883] Event 0x3 is registered for RC 0
+[   62.218052] wlan: [1743:I:ANY] init_ath_pci_3_0: 6ath_ol_pci_wifi3.0 :  (Atheros/multi-bss)
+No Direct-Attach chipsets found.
+[   67.906942] ECM init
+[   67.907012] ECM database jhash random seed: 0x6bd7e976
+[   67.945668] ECM init complete
+[   68.649528] device eth0 entered promiscuous mode
+[   68.653552] br-lan: port 1(eth0) entered forwarding state
+[   68.653610] br-lan: port 1(eth0) entered forwarding state
+[   68.699379] device eth1 entered promiscuous mode
+[   68.699501] br-lan: port 2(eth1) entered forwarding state
+[   68.703087] br-lan: port 2(eth1) entered forwarding state
+[   69.645161] br-lan: port 1(eth0) entered disabled state
+[   69.648062] br-lan: port 2(eth1) entered disabled state
+lbd: stopping daemon
+[   70.891003] hyfi_netlink_receive:116:hyfi: Not attached to bridge br-lan
+[   71.467627] mc_attach: enabled snooping on br-lan.
+[   71.481588] mc_detach: disabled snooping on br-lan.
+qcawificfg80211 delos_wifi disable radio wifi0
+qcawificfg80211 delos_wifi disable radio wifi1
+[   73.519579] mc_attach: enabled snooping on br-lan.
+qcawificfg80211 delos_wifi: enable radio wifi0
+[   75.063419] S95done (3944): drop_caches: 3
+**** Platform Name: ap-mp03.1 *****
+Copy ART caldata from /dev/mtdblock13 to /tmp/virtual_art.bin
+[   76.947650] wlan: [4342:I:ANY] wlan_scan_update_channel_list: num_chan: 13
+[   76.947796] wlan: [4342:I:ANY] ieee80211_setctry_tryretaining_curchan: [442] Skipping current channel retention during set_country operation
+[   76.953460] wlan: [4342:I:ANY] number of channels: 2G = 13 5G = 0, 6G = 0
+[   76.966740] wlan: [4342:I:ANY] wlan_cfg80211_set_country: wlan_cfg80211_set_country: Country: DE ret: 0 
+[   77.750199] wlan: [4458:I:ANY] wlan_cfg80211_set_hwaddr: wlan_cfg80211_set_hwaddr :xx:xx:xx:xx:xx:xx ret: 0 
+[   77.803764] wlan: [4466:I:ANY] ol_ath_set_config_param: set TXBF_SND_PERIOD: val 100 stat 0
+[   77.964876] wlan: [0:I:ANY] ol_ath_set_config_param: Disconnect_timeout value: 10
+[   78.023696] wlan: [0:I:ANY] ol_ath_set_config_param: Reconfiguration_timeout value:60
+number of vifs: 
+qcawificfg80211 delos_wifi: enable radio wifi1
+[   81.796612] wlan: [5286:I:ANY] wlan_scan_update_channel_list: num_chan: 19
+[   81.797111] wlan: [5286:E:ANY] dfs_init_chan_state_array: channel state array initialized
+[   81.803914] wlan: [5286:I:ANY] wlan_scan_update_channel_list: num_chan: 19
+[   81.811171] wlan: [5286:I:ANY] ieee80211_setctry_tryretaining_curchan: [442] Skipping current channel retention during set_country operation
+[   81.817523] wlan: [5286:I:ANY] number of channels: 2G = 0 5G = 19, 6G = 0
+[   81.830238] wlan: [5286:I:ANY] wlan_cfg80211_set_country: wlan_cfg80211_set_country: Country: DE ret: 0 
+[   82.291419] wlan: [5324:I:ANY] wlan_cfg80211_set_hwaddr: wlan_cfg80211_set_hwaddr :xx:xx:xx:xx:xx:xx ret: 0 
+[   82.337891] wlan: [5327:I:ANY] ol_ath_set_config_param: set TXBF_SND_PERIOD: val 100 stat 0
+[   82.468395] wlan: [0:I:ANY] ol_ath_set_config_param: Disconnect_timeout value: 10
+[   82.512827] wlan: [0:I:ANY] ol_ath_set_config_param: Reconfiguration_timeout value:60
+number of vifs: 
+****** Starting QDSS for qcn9000 pci0 ********
+[   84.412688] coresight-funnel 6130000.funnel: FUNNEL inport 5 enabled
+[   84.413035] coresight-funnel 6041000.funnel: FUNNEL inport 7 enabled
+[   84.419428] coresight-tmc 6048000.tmc: TMC enabled
+[   84.424540] coresight-replicator-qcom 6046000.replicator: REPLICATOR enabled
+[   84.429438] coresight-tmc 6047000.tmc: TMC enabled
+[   84.436538] coresight-funnel 6041000.funnel: FUNNEL inport 7 enabled
+[   84.440964] coresight-stm 6002000.stm: STM tracing enabled
+***** QDSS Tracing Configuration completed *******
+****** Starting QDSS for Integrated ********
+lbd: stopping daemon
+[   95.293459] hyfi_netlink_receive:116:hyfi: Not attached to bridge br-lan
+[   95.638265] mc_detach: disabled snooping on br-lan.
+qcawificfg80211 delos_wifi disable radio wifi0
+qcawificfg80211 delos_wifi disable radio wifi1
+qcawificfg80211 delos_wifi: enable radio wifi0
+[   98.549209] wlan: [6537:I:ANY] wlan_scan_update_channel_list: num_chan: 13
+[   98.549342] wlan: [6537:I:ANY] ieee80211_setctry_tryretaining_curchan: [442] Skipping current channel retention during set_country operation
+[   98.555013] wlan: [6537:I:ANY] number of channels: 2G = 13 5G = 0, 6G = 0
+[   98.568206] wlan: [6537:I:ANY] wlan_cfg80211_set_country: wlan_cfg80211_set_country: Country: DE ret: 0 
+[   99.028516] wlan: [6567:I:ANY] wlan_cfg80211_set_hwaddr: wlan_cfg80211_set_hwaddr :xx:xx:xx:xx:xx:xx ret: -16 
+[   99.073952] wlan: [6570:I:ANY] ol_ath_set_config_param: set TXBF_SND_PERIOD: val 100 stat 0
+[   99.216676] wlan: [0:I:ANY] ol_ath_set_config_param: Disconnect_timeout value: 10
+[   99.282774] wlan: [0:I:ANY] ol_ath_set_config_param: Reconfiguration_timeout value:60
+number of vifs: 
+qcawificfg80211 delos_wifi: enable radio wifi1
+[  101.818289] wlan: [7234:I:ANY] wlan_scan_update_channel_list: num_chan: 19
+[  101.818768] wlan: [7234:E:ANY] dfs_init_chan_state_array: channel state array initialized
+[  101.825835] wlan: [7234:I:ANY] wlan_scan_update_channel_list: num_chan: 19
+[  101.832656] wlan: [7234:I:ANY] ieee80211_setctry_tryretaining_curchan: [442] Skipping current channel retention during set_country operation
+[  101.839297] wlan: [7234:I:ANY] number of channels: 2G = 0 5G = 19, 6G = 0
+[  101.852120] wlan: [7234:I:ANY] wlan_cfg80211_set_country: wlan_cfg80211_set_country: Country: DE ret: 0 
+[  102.313740] wlan: [7264:I:ANY] wlan_cfg80211_set_hwaddr: wlan_cfg80211_set_hwaddr :xx:xx:xx:xx:xx:xx ret: -16 
+[  102.359158] wlan: [7267:I:ANY] ol_ath_set_config_param: set TXBF_SND_PERIOD: val 100 stat 0
+[  102.492575] wlan: [0:I:ANY] ol_ath_set_config_param: Disconnect_timeout value: 10
+[  102.537494] wlan: [0:I:ANY] ol_ath_set_config_param: Reconfiguration_timeout value:60
+number of vifs: 
+****** Starting QDSS for qcn9000 pci0 ********
+****** Starting QDSS for Integrated ********
+[  105.257352] hyfi_netlink_receive:116:hyfi: Not attached to bridge br-lan
+[  105.696624] wlan: [7627:I:ANY] wlan_cfg80211_add_virtual_intf: proprietary mode 6 for interface: portal0 : clone params: 0x00000001 
+[  105.696725] wlan: [7627:I:MBSSIE] osif_mbssid_sanity_check: mbssid_sanity_ok: YES
+[  105.707994] wlan: [7627:I:ANY] osifp_create_wlan_vap: VDEV Create xx:xx:xx:xx:xx:xx
+[  105.715140] wlan: [7627:I:ANY] wlan_vap_create: devhandle=0x98040500, opmode=IEEE80211_M_HOSTAP, flags=0x1
+[  105.723236] wlan: [7627:I:ANY] ol_ath_vap_set_param: Setting SGI value: 1
+[  105.732422] wlan: [7627:I:ANY] ol_ath_vap_set_param: VDEV params:HE su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_muofdma:1|ul_muofdma:1|ul_mumimo:0|dl_muofdma_bfer:0
+[  105.739217] wlan: [7627:I:ANY] ol_ath_vap_set_param: he_bf_cap=0x33
+[  105.753611] wlan: [7627:I:ANY] ol_ath_vap_set_param: VDEV params: AC/VHT sounding mode:HE|SU/MU sounding mode:SU|Trig/Non-Trig sounding mode:Non-Trigged
+[  105.759930] wlan: [7627:I:ANY] MBO Initialized
+[  105.774257] wlan: [7627:I:ANY] OCE Initialized
+[  105.777899] wlan: [7627:I:ANY] osif_nss_ol_vap_create: NSS wifi offload VAP create IF 30 nss_id -1 
+[  105.782265] wlan: [7627:I:ANY] osif_nss_ol_vap_create: NSS radio_if 28
+[  105.791931] wlan: [0:I:ANY] osif_nss_vdev_cfg_callback: VDEV configuration success: 0
+[  105.797883] wlan: [7627:I:ANY] osif_nss_ol_vap_create: vap create 99067500 : if_num 30 
+[  105.805977] wlan: [7627:E:ANY] wlan_create_attach_vdev_rawsim_ctxt: simulation module not registerd
+[  105.825660] wlan: [7627:I:ANY] osif_create_vap_complete: TX Checksum:1|SG:1|TSO:1|LRO:0
+[  105.825696] wlan: [7627:I:ANY] WLAN-NSS: VAP NSS ops initialized 
+[  105.836896] wlan: [7627:I:ANY] VAP device portal0 created osifp: (99067500) os_if: (931d4000)
+[  105.873976] mc_attach: enabled snooping on br-lan.
+[  106.101891] wlan: [7664:I:ANY] DES SSID SET=devolo WiFi 6 Repeater 5400
+[  106.112448] 8021q: adding VLAN 0 to HW filter on device portal0
+[  106.146833] wlan: [5404:I:ANY] wlan_cfg80211_do_acs: vap-0(portal0):ACS Params
+[  106.146874] wlan: [5404:I:ANY] wlan_cfg80211_do_acs: ht_enabled:1|ht40_enabled:0|vht_enabled:0|hw_mode:0|chwidth:20|
+[  106.156182] wlan: [5404:E:ANY] ieee80211_acs_construct_scan_chan_list: Cannot find adjacent channels. Adding all chans - mode ( 0)
+[  110.280144] wlan: [1560:I:ANY] vap-0(portal0): ACS result PCH 6 freq 2437, SCH 0 freq 0, hw_mode 1 chwidth 20, vht_seg0 6 freq 2437, vht_seg1 0 freq 0
+[  110.282819] wlan: [5404:I:ANY] DES SSID SET=devolo WiFi 6 Repeater 5400
+[  110.292724] wlan: [5404:I:ANY] wlan_cfg80211_chan_to_phymode: band:0 width: 1 channel_cfreq: 2437 center_freq1: 2437 chandef.center_freq2: 0 flags: 0
+[  110.299190] wlan: [5404:I:ANY] HT Support:93123883 VHT Support:  (null) HE Support:931238c4
+[  110.312786] wlan: [5404:I:ANY] Max supported wireless mode: 3
+[  110.320900] wlan: [5404:I:ANY] Phymode: 23 
+[  110.327110] wlan: [5404:I:ANY] ieee80211_ucfg_set_freq_internal: 
+[  110.327110]  Channel is configured already!!
+[  110.330783] wlan: [5404:E:MBSSIE] ieee80211_ucfg_set_txvap: MBSSID is not enabled
