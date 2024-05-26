@@ -1,0 +1,2563 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2024.05.25 17:41:23 =~=~=~=~=~=~=~=~=~=~=~=
+
+U-Boot SPL 2018.09 (May 04 2023 - 03:57:23 +0000)
+Trying to boot from NAND
+
+Initializing NMBM ...
+Signature found at block 1023 [0x07fe0000]
+First info table with writecount 0 found in block 960
+Second info table with writecount 0 found in block 963
+NMBM has been successfully attached
+
+
+U-Boot 2018.09 (May 04 2023 - 03:57:23 +0000)
+
+CPU:   MediaTek MT7621AT ver 1, eco 4
+Clocks: CPU: 880MHz, DDR: 1200MHz, Bus: 220MHz, XTAL: 40MHz
+Model: MediaTek MT7621 reference board (NAND)
+DRAM:  128 MiB
+NAND:  128 MiB
+
+Initializing NMBM ...
+Signature found at block 1023 [0x07fe0000]
+First info table with writecount 0 found in block 960
+Second info table with writecount 0 found in block 963
+NMBM has been successfully attached
+
+Loading Environment from NMBM... OK
+In:    uartlite0@1e000c00
+Out:   uartlite0@1e000c00
+Err:   uartlite0@1e000c00
+Net:   
+Warning: eth@1e100000 (eth0) using random MAC address - 9a:25:90:31:29:9f
+eth0: eth@1e100000
+Hit any key to stop autoboot:  0 
+  *** U-Boot Boot Menu ***  Press UP/DOWN to move, ENTER to select     1. Startup system (Default)     2. Upgrade firmware     3. Upgrade bootloader     4. Upgrade bootloader (advanced mode)     5. Load image     0. U-Boot console  Hit any key to stop autoboot:  1  0 fw1_version=0, fw1_status=30
+fw2_version=0, fw2_status=0
+******** try booting from firmware1 count=0 ********
+fw1_length is NULL, skip check firmware1
+Loading FIT image at offset 0xd00000 to memory 0x80010000, size 0x368fa8 ...
+Automatic boot of image at addr 0x80010000 ...
+## Loading kernel from FIT Image at 80010000 ...
+   Using 'config@1' configuration
+   Trying 'kernel@1' kernel subimage
+     Description:  MIPS OpenWrt Linux-4.4.198
+     Type:         Kernel Image
+     Compression:  lzma compressed
+     Data Start:   0x800100e4
+     Data Size:    3563126 Bytes = 3.4 MiB
+     Architecture: MIPS
+     OS:           Linux
+     Load Address: 0x81001000
+     Entry Point:  0x81001000
+     Hash algo:    crc32
+     Hash value:   5d07ec23
+     Hash algo:    sha1
+     Hash value:   b807ec2df998584c30edc06d55dde4b68a26db4c
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+## Loading fdt from FIT Image at 80010000 ...
+   Using 'config@1' configuration
+   Trying 'fdt@1' fdt subimage
+     Description:  MIPS OpenWrt HC220-G5V1 device tree blob
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x80376098
+     Data Size:    11237 Bytes = 11 KiB
+     Architecture: MIPS
+     Hash algo:    crc32
+     Hash value:   3f030e43
+     Hash algo:    sha1
+     Hash value:   30c32d6d78bd8343bba0d9e742f527b713d2c9c8
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+   Booting using the fdt blob at 0x80376098
+   Uncompressing Kernel Image ... OK
+   Loading Device Tree to 87e67000, end 87e6cbe4 ... OK
+[    0.000000] Linux version 4.4.198 (compile@342f0d6254c6) (gcc version 5.4.0 (LEDE GCC 5.4.0 r0-a2bcb53c) ) #1 SMP Thu May 4 04:09:41 UTC 2023
+[    0.000000] SoC Type: MediaTek MT7621 ver:1 eco:4
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 revision is: 0001992f (MIPS 1004Kc)
+[    0.000000] MIPS: machine is MediaTek MT7621 RFB (NAND with NMBM)
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 08000000 @ 00000000 (usable)
+[    0.000000] Initrd not found or empty - disabling initrd
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000000000-0x0000000000ffffff]
+[    0.000000]   Normal   [mem 0x0000000001000000-0x0000000007ffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x0000000007ffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x0000000007ffffff]
+[    0.000000] VPE topology {2,2} total 4
+[    0.000000] Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+[    0.000000] MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+[    0.000000] PERCPU: Embedded 10 pages/cpu @81b3a000 s8544 r8192 d24224 u40960
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 32512
+[    0.000000] Kernel command line: console=ttyS0,115200 rootfstype=squashfs,jffs2
+[    0.000000] PID hash table entries: 512 (order: -1, 2048 bytes)
+[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Writing ErrCtl register=00012c00
+[    0.000000] Readback ErrCtl register=00012c00
+[    0.000000] Memory: 119296K/131072K available (7214K kernel code, 862K rwdata, 1848K rodata, 240K init, 228K bss, 11776K reserved, 0K cma-reserved)
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] NR_IRQS:256
+[    0.000000] clocksource: GIC: mask: 0xffffffffffffffff max_cycles: 0xcaf478abb4, max_idle_ns: 440795247997 ns
+[    0.000000] clocksource: MIPS: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 4343773742 ns
+[    0.000009] sched_clock: 32 bits at 440MHz, resolution 2ns, wraps every 4880645118ns
+[    0.008375] Calibrating delay loop... 586.13 BogoMIPS (lpj=2930688)
+[    0.070393] pid_max: default: 32768 minimum: 301
+[    0.075290] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.081816] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    4.709136] Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+[    4.709145] Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+[    4.709155] MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+[    4.709293] CPU1 revision is: 0001992f (MIPS 1004Kc)
+[    0.177571] Synchronize counters for CPU 1: done.
+[    4.498094] Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+[    4.498100] Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+[    4.498106] MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+[    4.498179] CPU2 revision is: 0001992f (MIPS 1004Kc)
+[    0.268032] Synchronize counters for CPU 2: done.
+[    4.588282] Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+[    4.588288] Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+[    4.588294] MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+[    4.588379] CPU3 revision is: 0001992f (MIPS 1004Kc)
+[    0.353219] Synchronize counters for CPU 3: done.
+[    0.357955] Brought up 4 CPUs
+[    0.361529] devtmpfs: initialized
+[    0.369100] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.378883] futex hash table entries: 1024 (order: 3, 32768 bytes)
+[    0.385173] pinctrl core: initialized pinctrl subsystem
+[    0.391077] NET: Registered protocol family 16
+[    0.430606] mt7621_gpio 1e000600.gpio: registering 32 gpios
+[    0.436205] mt7621_gpio 1e000600.gpio: registering 32 gpios
+[    0.441849] mt7621_gpio 1e000600.gpio: registering 32 gpios
+[    0.447893] mt7621-pci 1e140000.pcie: Failed to get gpio for PCIe1
+[    0.454031] mt7621-pci 1e140000.pcie: Failed to get gpio for PCIe2
+[    0.480144] ############################### mt7621_pcie_init 508 i:0 val:19 ################### 
+[    0.508866] ############################### mt7621_pcie_init 508 i:1 val:-2 ################### 
+[    0.537567] ############################### mt7621_pcie_init 508 i:2 val:-2 ################### 
+[    0.816718] ############################### mt7621_pcie_init 527 val:19 ################### 
+[    0.845074] ############################### mt7621_pcie_init 527 val:-2 ################### 
+[    0.873442] ############################### mt7621_pcie_init 527 val:-2 ################### 
+[    1.132218] PCIe port 2 link down
+[    1.135464] PCI coherence region base: 0x60000000, mask/settings: 0xf0000002
+[    1.144073] random: nonblocking pool is initialized
+[    1.177516] SCSI subsystem initialized
+[    1.181954] PCI host bridge to bus 0000:00
+[    1.186033] pci_bus 0000:00: root bus resource [mem 0x60000000-0x6fffffff]
+[    1.192802] pci_bus 0000:00: root bus resource [io  0x1e160000-0x1e16ffff]
+[    1.199649] pci_bus 0000:00: root bus resource [??? 0x00000000 flags 0x0]
+[    1.206372] pci_bus 0000:00: No busn resource found for root bus, will use [bus 00-ff]
+[    1.215035] pci 0000:00:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    1.222930] pci 0000:00:01.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    1.232220] pci 0000:00:00.0: BAR 8: assigned [mem 0x60000000-0x600fffff]
+[    1.238917] pci 0000:00:01.0: BAR 9: assigned [mem 0x60100000-0x602fffff pref]
+[    1.246109] pci 0000:00:00.0: BAR 1: assigned [mem 0x60300000-0x6030ffff]
+[    1.252814] pci 0000:00:01.0: BAR 1: assigned [mem 0x60310000-0x6031ffff]
+[    1.259578] pci 0000:01:00.0: BAR 0: assigned [mem 0x60000000-0x600fffff]
+[    1.266298] pci 0000:00:00.0: PCI bridge to [bus 01]
+[    1.271234] pci 0000:00:00.0:   bridge window [mem 0x60000000-0x600fffff]
+[    1.277970] pci 0000:02:00.0: BAR 0: assigned [mem 0x60100000-0x601fffff 64bit pref]
+[    1.285682] pci 0000:02:00.0: BAR 2: assigned [mem 0x60200000-0x60203fff 64bit pref]
+[    1.293348] pci 0000:02:00.0: BAR 4: assigned [mem 0x60204000-0x60204fff 64bit pref]
+[    1.301056] pci 0000:00:01.0: PCI bridge to [bus 02]
+[    1.305954] pci 0000:00:01.0:   bridge window [mem 0x60100000-0x602fffff pref]
+[    1.314724] clocksource: Switched to clocksource GIC
+[    1.322024] NET: Registered protocol family 2
+[    1.327194] TCP established hash table entries: 1024 (order: 0, 4096 bytes)
+[    1.334068] TCP bind hash table entries: 1024 (order: 1, 8192 bytes)
+[    1.340406] TCP: Hash tables configured (established 1024 bind 1024)
+[    1.346793] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    1.352540] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    1.359148] NET: Registered protocol family 1
+[    1.366543] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    1.372397] jffs2: version 2.2 (NAND) (ZLIB) (RTIME) (c) 2001-2006 Red Hat, Inc.
+[    1.379931] fuse init (API version 7.23)
+[    1.390758] io scheduler noop registered
+[    1.394600] io scheduler deadline registered (default)
+[    1.406542] Serial: 8250/16550 driver, 3 ports, IRQ sharing disabled
+[    1.414211] console [ttyS0] disabled
+[    1.417784] 1e000c00.uartlite: ttyS0 at MMIO 0x1e000c00 (irq = 33, base_baud = 3125000) is a 16550A
+[    1.426760] console [ttyS0] enabled
+[    1.426760] console [ttyS0] enabled
+[    1.433651] bootconsole [early0] disabled
+[    1.433651] bootconsole [early0] disabled
+[    1.458391] brd: module loaded
+[    1.465594] libphy: Fixed MDIO Bus: probed
+[    1.524971] libphy: mdio: probed
+[    1.529113] mtk_soc_eth 1e100000.ethernet: connected mac 0 to PHY at fixed-0:00 [uid=00000000, driver=Generic PHY]
+[    1.540293] mtk_soc_eth 1e100000.ethernet eth0: mediatek frame engine at 0xbe100000, irq 10
+[    1.549219] mtk_soc_eth 1e100000.ethernet: connected mac 1 to PHY at fixed-0:01 [uid=00000000, driver=Generic PHY]
+[    1.560393] mtk_soc_eth 1e100000.ethernet eth1: mediatek frame engine at 0xbe100000, irq 10
+[    1.569044] PPP generic driver version 2.4.2
+[    1.573678] PPP BSD Compression module registered
+[    1.578451] NET: Registered protocol family 24
+[    1.582932] PPTP driver version 0.8.5
+[    1.586907] MT7663: register mt_drv
+[    1.604784] MT7663: 
+
+=== pAd = c0281000, size = 5452320 ===
+
+[    1.612974] MT7663: <-- RTMPAllocAdapterBlock, Status=0
+[    1.618249] MT7663: pAd->PciHif.CSRBaseAddress =0xc0180000, csr_addr=0xc0180000!
+[    1.625669] MT7663: RTMPInitPCIeDevice():device_id=0x7663
+[    1.631081] MT7663: mt_pci_chip_cfg(): HWVer=0x8a10, FWVer=0x8a01, pAd->ChipID=0x7663
+[    1.638937] MT7663: mt7663_init()-->
+[    1.642530] MT7663: <--mt7663_init()
+[    1.647380] MT7663: <-- RTMPAllocTxRxRingMemory, Status=0
+[    1.652802] MT7663: get_wdev_by_idx: invalid idx(0)
+[    1.657718] MT7663: get_wdev_by_idx: invalid idx(0)
+[    1.662678] MT7663: get_wdev_by_idx: invalid idx(0)
+[    1.667583] MT7663: get_wdev_by_idx: invalid idx(0)
+[    1.672468] MT7663: get_wdev_by_idx: invalid idx(0)
+[    1.677362] MT7663: get_wdev_by_idx: invalid idx(0)
+[    1.683097] MT7663: get_wdev_by_idx: invalid idx(0)
+[    1.688698] mt7621_wdt 1e000100.wdt: Initialized
+[    1.693633] Mirror/redirect action on
+[    1.697377] u32 classifier
+[    1.700081]     Actions configured
+[    1.703490] Netfilter messages via NETLINK v0.30.
+[    1.708299] nf_conntrack version 0.5.0 (1864 buckets, 10240 max)
+[    1.714982] gre: GRE over IPv4 demultiplexor driver
+[    1.720129] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    1.725736] Initializing XFRM netlink socket
+[    1.730244] NET: Registered protocol family 10
+[    1.736517] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[    1.742216] sit: IPv6 over IPv4 tunneling driver
+[    1.748892] NET: Registered protocol family 17
+[    1.753375] NET: Registered protocol family 15
+[    1.757929] bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this.
+[    1.770564] Ebtables v2.0 registered
+[    1.774357] l2tp_core: L2TP core driver, V2.0
+[    1.778761] l2tp_ppp: PPPoL2TP kernel driver, V2.0
+[    1.783555] 8021q: 802.1Q VLAN Support v1.8
+[    1.789907] mtkmips-pinmux pinctrl: spi is already enabled
+[    1.795476] mtk-nand 1e003000.nand: Error applying setting, reverse things back
+[    1.803274] nand: device found, Manufacturer ID: 0xc8, Chip ID: 0xd1
+[    1.809645] nand: GD/ESMT PSU1GA30DT
+[    1.813221] nand: 128 MiB, SLC, erase size: 128 KiB, page size: 2048, OOB size: 64
+[    1.821438] Scanning device for bad blocks
+[    2.641371] nmbm nmbm: Signature found at block 1023 [0x07fe0000]
+[    2.650922] nmbm nmbm: First info table with writecount 0 found in block 960
+[    2.667830] nmbm nmbm: Second info table with writecount 0 found in block 963
+[    2.674982] nmbm nmbm: NMBM has been successfully attached
+[    2.680521] 10 ofpart partitions found on MTD device nmbm
+[    2.685928] Creating 10 MTD partitions on "nmbm":
+[    2.690636] 0x000000000000-0x000000080000 : "boot"
+[    2.696888] 0x000000080000-0x000000100000 : "boot_env"
+[    2.703386] 0x000000100000-0x000000700000 : "misc_ro"
+[    2.709883] 0x000000700000-0x000000d00000 : "misc_rw"
+[    2.716427] 0x000000d00000-0x000002300000 : "firmware1"
+[    2.869338] 2 fit-fw partitions found on MTD device firmware1
+[    2.875117] 0x000000d00000-0x000001080000 : "kernel"
+[    2.881555] 0x000001080000-0x000002300000 : "rootfs"
+[    2.888007] mtd: device 7 (rootfs) set to be root filesystem
+[    2.894741] 1 squashfs-split partitions found on MTD device rootfs
+[    2.900929] 0x000001de0000-0x000002300000 : "rootfs_data"
+[    2.907767] 0x000002300000-0x000003900000 : "firmware2"
+[    2.914441] 0x000003900000-0x000003f00000 : "bflag"
+[    2.920748] 0x000003f00000-0x000004500000 : "misc_rw_bak"
+[    2.927580] 0x000004500000-0x000004b00000 : "misc_isp"
+[    2.934109] 0x000000000000-0x000007800000 : "whole"
+[    2.974839] mt753x gsw: Switch is MediaTek MT7530 rev 1
+[    3.001554] libphy: mt753x_mdio: probed
+[    3.024484] VFS: Mounted root (squashfs filesystem) readonly on device 31:7.
+[    3.050596] devtmpfs: mounted
+[    3.054243] Freeing unused kernel memory: 240K
+[    3.058763] This architecture does not have kernel memory protection.
+starting pid 460, tty '': '/etc/init.d/rcS'
+[    4.857558] jffs2: Empty flash at 0x003a8eb0 ends at 0x003a9000
+[    5.427060] Register flash device: flash0
+[    5.441180] creat_domain_proc  ok
+[    5.444517] tp_domain init ok
+[    5.684695] led state -1->1
+[    5.745328] TP_DHCP_HOOK Module init
+[    5.752719] ip6_passthrough: module license 'Proprietary' taints kernel.
+[    5.759512] Disabling lock debugging due to kernel taint
+[    5.773283] device recognition register success
+mount: mounting usbfs on /proc/bus/usb/ failed: No such file or directory
+## Error: "console_tx_control" not defined
+## Error: "console_rx_control" not defined
+console_tx_control=0
+console_rx_control=0
+insmod: can't insert '/lib/modules/kmdir/kernel/drivers/net/mii.ko': No such file or directory
+[    6.236594] Ralink HW NAT Module Enabled
+[    6.241744] init PpeFoeBase = a0480000
+[    6.246156] eth0 ifindex =4
+[    6.248947] eth1 ifindex =5
+mknod: /dev/flash0: File exists
+Set: phy[0].reg[4] = 01e1
+Set: phy[1].reg[4] = 01e1
+Set: phy[2].reg[4] = 01e1
+Set: phy[3].reg[4] = 01e1
+Set: phy[4].reg[4] = 01e1
+userconfig exists, do nothing.
+[ oal_sys_GetConfigAddr ] 4188:  checking addr1 00100000 seq1:6
+
+[ findMtdNumFromName ] 233 - ERROR:  mtd num is :13
+
+[    8.870461] jffs2: Empty flash at 0x005d3de0 ends at 0x005d4000
+[ oal_sys_GetConfigAddr ] 4194:  checking addr2 001c0000 seq2:5
+
+[ oal_sys_readCfgFlash ] 4753 - ERROR:  Read config index:6
+
+[ dm_readFile ] 2308 - ERROR:  can not open xml file /var/tmp/pc/reduced_data_model.xml!, about to open file /etc/reduced_data_model.xml
+[ main ] 568 - ERROR:  RcS hook get configVersion 5a000002, dmVersion 5a000002
+rcS init done!
+
+Please press Enter to activate this console. [ initCpuMask ] 406 - ERROR:  before cpu mask 0000000F
+[ initCpuMask ] 421 - ERROR:  after cpu mask 0000000D
+[ dm_readFile ] 2308 - ERROR:  can not open xml file /var/tmp/pc/reduced_data_model.xml!, about to open file /etc/reduced_data_model.xml
+[ oal_sys_GetConfigAddr ] 4188:  checking addr1 00100000 seq1:6
+
+[ oal_sys_GetConfigAddr ] 4194:  checking addr2 001c0000 seq2:5
+
+[ oal_sys_readCfgFlash ] 4753 - ERROR:  Read config index:6
+
+[ dm_postHook ] 952 - ERROR:  X_TP_ConfigVersion 5a000002, X_TP_DMVersion 5a000002
+[ prepareDropbear_early ] 696:  num of CPU core = 4.
+[ prepareDropbear_early ] 706:  parent pid 600
+[ prepareDropbear_early ] 713:  start creating dropbear RSA key at CPU core 1.
+[ prepareDropbear_early ] 723:  child pre cpu mask 0000000D
+[ prepareDropbear_early ] 737:  child post cpu mask 00000002
+[ prepareDropbear_early ] 741 - ERROR:  Try create dropbear RSA key loop=0 ...
+[ readMiscFile ] 1148 - ERROR:  Can not open misc file /var/run/misc/misc_ro/0x0014F600 for read
+
+[ getCountry ] 506 - ERROR:  Get country error
+
+[ readMiscFile ] 1148 - ERROR:  Can not open misc file /var/run/misc/misc_ro/0x0014F160 for read
+
+[ oal_sys_readHwidFlash ] 5198 - ERROR:  read HwID from flash failed!
+[ oal_sys_readOemidFlash ] 5267 - ERROR:  read oemID from flash :D8954F39D62E8C650056B11A57AEAB2D
+[ oal_sys_readZoneFlash ] 5329 - ERROR:  read zone from flash :EU
+[   12.121831] MT7663: get_wdev_by_idx: invalid idx(0)
+Generating 2048 bit rsa key, this may take a while...
+[   12.151557] MT7663: get_wdev_by_idx: invalid idx(0)
+[ readMiscFile ] 1148 - ERROR:  Can not open misc file /var/run/misc/misc_ro/0x0014F160 for read
+
+[ oal_sys_readHwidFlash ] 5198 - ERROR:  read HwID from flash failed!
+[ oal_sys_readOemidFlash ] 5267 - ERROR:  read oemID from flash :D8954F39D62E8C650056B11A57AEAB2D
+[ oal_sys_readZoneFlash ] 5329 - ERROR:  read zone from flash :EU
+[ rsl_initDevInfo ] 1591:  === softwareVersion 0.14.0 2.0.0 v605e.0 Build 230504 Rel.17200n ===
+[ rsl_initDevInfo ] 1618:  === hardwareVersion HC220-G5 v1.0 00000000 ===
+[ rsl_initManagerServer ] 2245:  url(https://tauc-cwmp-server.tplinkcloud.com) belong to tplink cloud.
+[ oal_sys_getOldTZInfo ] 2438 - ERROR:  Open TZ file error!
+killall: dnsmasq: no process killed
+[   14.902179] MT7663: get_wdev_by_idx: invalid idx(0)
+[ rsl_time_ntpStart ] 451:  Current dns svr: 
+[   14.932084] MT7663: get_wdev_by_idx: invalid idx(0)
+[ rsl_time_ntpStart ] 451:  Current dns svr: 
+REG_ATA1_ADDR is 0x5091e3c2
+REG_ATA2_ADDR is 0x34e68001
+REG_ATWD_ADDR is 0xff00040c
+done.
+Wrong ifName eth0
+Set: phy[1].reg[0] = 1000
+[ rsl_setUpDev2BridgePortObj ] 795:  eth0.3 isWanConn=0 moveIntfToBr0=0 br0
+[   15.376366] device eth0.3 entered promiscuous mode
+[   15.381176] device eth0 entered promiscuous mode
+[ util_getObjFromFullpath ] 1327 - ERROR:  Failed to get object from fullPath, because oid is not equal.
+[ ethLink_isLowLayerWithSameIfname ] 429:  perror:1
+[   15.422861] MT7663: get_wdev_by_idx: invalid idx(0)
+[ oal_igmp_addProxyLanIf ] 248 - ERROR:  pAddIfMsg->addIfName:br0 pAddIfMsg->boundIfName:
+
+[   15.450375] MT7663: get_wdev_by_idx: invalid idx(0)
+[ oal_ip6_getIntfAddr ] 398 - ERROR:  Can't find interface: br0
+mldProxy# file: src/mld_ifinfo.c;line: 103; error = No such file or directory
+mldProxy# Err: get LLA failed
+[ wan_ipv6PassThroughSet ] 473:  Ipv6 passthrough: intfName().
+Set: phy[0].reg[0] = 1000
+[ rsl_setUpDev2BridgePortObj ] 795:  eth0.2 isWanConn=0 moveIntfToBr0=0 br0
+[   15.576597] device eth0.2 entered promiscuous mode
+Set: phy[3].reg[0] = 1000
+[ rsl_setUpDev2BridgePortObj ] 795:  eth0.5 isWanConn=0 moveIntfToBr0=0 br0
+[   15.637031] device eth0.5 entered promiscuous mode
+Set: phy[4].reg[0] = 1000
+[ rsl_setUpDev2BridgePortObj ] 795:  eth0.6 isWanConn=0 moveIntfToBr0=0 br0
+[   15.687995] device eth0.6 entered promiscuous mode
+[ wifi_addPreNetObjs ] 154 - ERROR:  band:2.4GHz has created public apObj, apObj.X_TP_APType:Public
+[ wifi_addPreNetObjs ] 164 - ERROR:  2.4GHz radio has created the public apObj, go next.
+[ wifi_addPreNetObjs ] 154 - ERROR:  band:5GHz has created public apObj, apObj.X_TP_APType:Public
+[ wifi_addPreNetObjs ] 164 - ERROR:  5GHz radio has created the public apObj, go next.
+[ wifi_setFactoryConfig ] 1942 - ERROR:  Dut is not in manufacturing mode!devInfoObj.X_TP_IsManufacture:0
+iptables: Bad rule (does a matching rule exist in that chain?).
+iptables: Bad rule (does a matching rule exist in that chain?).
+[ read_dhcpc_config ] 121: error, unable to open config file: /var/tmp/dconf/udhcpc.conf
+[   17.954538] MT7603: register rlt_drv
+[   17.964368] MT7603: 
+
+=== pAd = c1181000, size = 2241816 ===
+
+[   17.970442] MT7603: line:843 -->RTMPAllocTxRxRingMemory
+[   17.975779] MT7603: EXTRA_TX_RING[0]: AllocVa=a0539000 AllocPa=539000 total 96 bytes allocated
+[   17.984399] MT7603: EXTRA_TX_RING[1]: AllocVa=a053d000 AllocPa=53d000 total 96 bytes allocated
+[   17.993045] MT7603: EXTRA_TX_RING[2]: AllocVa=a053f000 AllocPa=53f000 total 96 bytes allocated
+[   18.001677] MT7603: EXTRA_TX_RING[3]: AllocVa=a0441000 AllocPa=441000 total 96 bytes allocated
+[   18.010305] MT7603: EXTRA_TX_RING[4]: AllocVa=a0443000 AllocPa=443000 total 96 bytes allocated
+[   18.018962] MT7603: EXTRA_TX_RING[5]: AllocVa=a0445000 AllocPa=445000 total 96 bytes allocated
+[   18.027627] MT7603: EXTRA_TX_RING[6]: AllocVa=a0447000 AllocPa=447000 total 96 bytes allocated
+[   18.036270] MT7603: EXTRA_TX_RING[7]: AllocVa=a0449000 AllocPa=449000 total 96 bytes allocated
+[   18.044917] <-- RTMPAllocTxRxRingMemory, Status=0, ErrorValue=0x
+[   18.051960] <-- RTMPAllocAdapterBlock, Status=0
+[   18.056505] MT7603: pAd->CSRBaseAddress =0xc1080000, csr_addr=0xc1080000!
+[   18.063303] MT7603: device_id =0x7603
+[   18.066987] MT7603: RtmpChipOpsHook(474): Not support for HIF_MT yet!
+[   18.073427] MT7603: mt7603_init()-->
+[   18.077037] MT7603: mt_bcn_buf_init(224): Not support for HIF_MT yet!
+[   18.083477] MT7603: <--mt7603_init()
+[   18.087070] MT7603: load_dev_l1profile()-->
+[   18.091525] MT7603: l1set_profile_path() profile update from /etc/wireless/mediatek/mt7603.dat to /var/Wireless/RT2860AP/mt7603.dat
+[   18.103443] MT7603: l1set_eeprom_offset() eeprom offset update from 0xc0000 to 0x0
+[   18.111057] MT7603: l1set_eeprom_size() eeprom size remain 0x200
+[   18.117106] MT7603: l1set_ifname() ifname rename from ra0 to ra
+[   18.123025] MT7603: l1set_ifname() ifname remain ra
+[   18.127943] MT7603: l1set_ifname() ifname remain ra
+[   18.132849] MT7603: l1set_ifname() ifname remain apcli
+[   18.138033] MT7603: l1set_single_sku_path() sku path update from /etc/Wireless/RT2860AP/SingleSKU.dat to /var/Wireless/RT2860AP/mt7603-sku.dat
+ifconfig: ioctl 0x8913 failed: No such device
+ifconfig: ioctl 0x8913 failed: No such device
+ifconfig: ioctl 0x8913 failed: No such device
+ifconfig: ioctl 0x8913 failed: No such device
+ifconfig: ioctl 0x8913 failed: No such device
+ifconfig: ioctl 0x8913 failed: No such device
+ifconfig: ioctl 0x8913 failed: No such device
+[   18.229593] MT7603: load_dev_l1profile()-->
+[   18.233945] MT7603: l1set_profile_path() profile remain /var/Wireless/RT2860AP/mt7603.dat
+[   18.242336] MT7603: l1set_eeprom_offset() eeprom offset remain 0x0
+[   18.248566] MT7603: l1set_eeprom_size() eeprom size remain 0x200
+[   18.254604] MT7603: l1set_ifname() ifname rename from ra0 to ra
+[   18.260536] MT7603: l1set_ifname() ifname remain ra
+[   18.265455] MT7603: l1set_ifname() ifname remain ra
+[   18.270362] MT7603: l1set_ifname() ifname remain apcli
+[   18.275546] MT7603: l1set_single_sku_path() profile remain /var/Wireless/RT2860AP/mt7603-sku.dat
+[   18.284430] MT7603: line:385 RTMPInitTxRxRingMemory
+[   18.289355] MT7603: TxRing[0]: total 64 entry initialized
+[   18.294790] MT7603: TxRing[1]: total 64 entry initialized
+[   18.300217] MT7603: TxRing[2]: total 64 entry initialized
+[   18.305652] MT7603: TxRing[3]: total 64 entry initialized
+[   18.311050] MT7603: EXTRA_TX_RING: RingBaseVa=a0539000 RingBasePaLow =539000
+[   18.318110] MT7603: EXTRA_TX_RING: BufBaseVa=a053c000 BufBasePaLow =53c000
+[   18.324996] MT7603: EXTRA_TX_RING: pTxRing=c11811a0 
+[   18.330703] MT7603: ExtraTxRing[0]: total 6 entry initialized
+[   18.336463] MT7603: EXTRA_TX_RING: RingBaseVa=a053d000 RingBasePaLow =53d000
+[   18.343514] MT7603: EXTRA_TX_RING: BufBaseVa=a053e000 BufBasePaLow =53e000
+[   18.350409] MT7603: EXTRA_TX_RING: pTxRing=c1181abc 
+[   18.356120] MT7603: ExtraTxRing[1]: total 6 entry initialized
+[   18.361865] MT7603: EXTRA_TX_RING: RingBaseVa=a053f000 RingBasePaLow =53f000
+[   18.368924] MT7603: EXTRA_TX_RING: BufBaseVa=a0440000 BufBasePaLow =440000
+[   18.375810] MT7603: EXTRA_TX_RING: pTxRing=c11823d8 
+[   18.381512] MT7603: ExtraTxRing[2]: total 6 entry initialized
+[   18.387265] MT7603: EXTRA_TX_RING: RingBaseVa=a0441000 RingBasePaLow =441000
+[   18.394316] MT7603: EXTRA_TX_RING: BufBaseVa=a0442000 BufBasePaLow =442000
+[   18.401209] MT7603: EXTRA_TX_RING: pTxRing=c1182cf4 
+[   18.406920] MT7603: ExtraTxRing[3]: total 6 entry initialized
+[   18.412665] MT7603: EXTRA_TX_RING: RingBaseVa=a0443000 RingBasePaLow =443000
+[   18.419729] MT7603: EXTRA_TX_RING: BufBaseVa=a0444000 BufBasePaLow =444000
+[   18.426611] MT7603: EXTRA_TX_RING: pTxRing=c1183610 
+[   18.432313] MT7603: ExtraTxRing[4]: total 6 entry initialized
+[   18.438068] MT7603: EXTRA_TX_RING: RingBaseVa=a0445000 RingBasePaLow =445000
+[   18.445130] MT7603: EXTRA_TX_RING: BufBaseVa=a0446000 BufBasePaLow =446000
+[   18.452004] MT7603: EXTRA_TX_RING: pTxRing=c1183f2c 
+[   18.457713] MT7603: ExtraTxRing[5]: total 6 entry initialized
+[   18.463458] MT7603: EXTRA_TX_RING: RingBaseVa=a0447000 RingBasePaLow =447000
+[   18.470525] MT7603: EXTRA_TX_RING: BufBaseVa=a0448000 BufBasePaLow =448000
+[   18.477407] MT7603: EXTRA_TX_RING: pTxRing=c1184848 
+[   18.483109] MT7603: ExtraTxRing[6]: total 6 entry initialized
+[   18.488864] MT7603: EXTRA_TX_RING: RingBaseVa=a0449000 RingBasePaLow =449000
+[   18.495924] MT7603: EXTRA_TX_RING: BufBaseVa=a044a000 BufBasePaLow =44a000
+[   18.502798] MT7603: EXTRA_TX_RING: pTxRing=c1185164 
+[   18.508518] MT7603: ExtraTxRing[7]: total 6 entry initialized
+[   18.514277] MT7603: TX_BCN DESC a0537000 size = 320
+[   18.519207] MT7603: RX[0] DESC a044b000 size = 1024
+[   18.524337] MT7603: RX[1] DESC a044c000 size = 1024
+[   18.529534] MT7603: EXTRA_TX_RING_6: hw_desc_base =4360 phy_addr=0x539000, Cnt addr:0x4364 =6!
+[   18.538161] MT7603: EXTRA_TX_RING_9: hw_desc_base =4390 phy_addr=0x53d000, Cnt addr:0x4394 =6!
+[   18.546785] MT7603: EXTRA_TX_RING_10: hw_desc_base =43a0 phy_addr=0x53f000, Cnt addr:0x43a4 =6!
+[   18.555504] MT7603: EXTRA_TX_RING_11: hw_desc_base =43b0 phy_addr=0x441000, Cnt addr:0x43b4 =6!
+[   18.564206] MT7603: EXTRA_TX_RING_12: hw_desc_base =43c0 phy_addr=0x443000, Cnt addr:0x43c4 =6!
+[   18.572916] MT7603: EXTRA_TX_RING_13: hw_desc_base =43d0 phy_addr=0x445000, Cnt addr:0x43d4 =6!
+[   18.581626] MT7603: EXTRA_TX_RING_14: hw_desc_base =43e0 phy_addr=0x447000, Cnt addr:0x43e4 =6!
+[   18.590334] MT7603: EXTRA_TX_RING_15: hw_desc_base =43f0 phy_addr=0x449000, Cnt addr:0x43f4 =6!
+[   18.604529] MT7603: E2pAccessMode=4
+[   18.609531] MT7603: cfg_mode=9
+[   18.612583] MT7603: cfg_mode=9
+[   18.615657] MT7603: wmode_band_equal(): Band Equal!
+[   18.623795] MT7603: APSDCapable[0]=0
+[   18.627384] MT7603: APSDCapable[1]=0
+[   18.630955] MT7603: APSDCapable[2]=0
+[   18.634526] MT7603: APSDCapable[3]=0
+[   18.638110] MT7603: APSDCapable[4]=0
+[   18.641681] MT7603: APSDCapable[5]=0
+[   18.645267] MT7603: APSDCapable[6]=0
+[   18.648842] MT7603: APSDCapable[7]=0
+[   18.652412] MT7603: APSDCapable[8]=0
+[   18.656003] MT7603: APSDCapable[9]=0
+[   18.659578] MT7603: APSDCapable[10]=0
+[   18.663236] MT7603: APSDCapable[11]=0
+[   18.666916] MT7603: APSDCapable[12]=0
+[   18.670576] MT7603: APSDCapable[13]=0
+[   18.674234] MT7603: APSDCapable[14]=0
+[   18.677906] MT7603: APSDCapable[15]=0
+[   18.681565] MT7603: default ApCliAPSDCapable[0]=0
+[   18.688106] MT7603: MAP_MODE=3
+[   19.239176] MT7603: Key1Str is Invalid key length(0) or Type(0)
+[   19.245278] MT7603: Key1Str is Invalid key length(0) or Type(0)
+[   19.251346] MT7603: Key1Str is Invalid key length(0) or Type(0)
+[   19.257428] MT7603: Key1Str is Invalid key length(0) or Type(0)
+[   19.264175] MT7603: Key2Str is Invalid key length(0) or Type(0)
+[   19.270259] MT7603: Key2Str is Invalid key length(0) or Type(0)
+[   19.276343] MT7603: Key2Str is Invalid key length(0) or Type(0)
+[   19.282412] MT7603: Key2Str is Invalid key length(0) or Type(0)
+[   19.289175] MT7603: Key3Str is Invalid key length(0) or Type(0)
+[   19.295290] MT7603: Key3Str is Invalid key length(0) or Type(0)
+[   19.301363] MT7603: Key3Str is Invalid key length(0) or Type(0)
+[   19.307457] MT7603: Key3Str is Invalid key length(0) or Type(0)
+[   19.314208] MT7603: Key4Str is Invalid key length(0) or Type(0)
+[   19.320295] MT7603: Key4Str is Invalid key length(0) or Type(0)
+[   19.326381] MT7603: Key4Str is Invalid key length(0) or Type(0)
+[   19.332452] MT7603: Key4Str is Invalid key length(0) or Type(0)
+[   19.349169] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   19.356216] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   19.472347] MT7603: 4e:MT7603: 84:MT7603: 3f:MT7603: 1a:MT7603: 0c:MT7603: 43:MT7603: f1:MT7603: 40:MT7603: 95:MT7603: cd:MT7603: cf:MT7603: 03:MT7603: d5:MT7603: cb:MT7603: b8:MT7603: 21:MT7603: 
+[   19.489984] MT7603: d6:MT7603: be:MT7603: 96:MT7603: 63:MT7603: 1d:MT7603: 12:MT7603: 2e:MT7603: da:MT7603: de:MT7603: e5:MT7603: 19:MT7603: 62:MT7603: bc:MT7603: 36:MT7603: c0:MT7603: 5a:MT7603: 
+[   19.507643] MT7603: 
+open DNS error: No such file or directory
+NTP server list:
+[   19.544829] MT7603: [PMF]Set_PMFMFPC_Proc:: apidx=0, Desired MFPC=0
+[   19.551112] MT7603: [PMF]Set_PMFMFPC_Proc:: apidx=1, Desired MFPC=0
+[   19.557391] MT7603: [PMF]Set_PMFMFPC_Proc:: apidx=2, Desired MFPC=0
+[   19.563659] MT7603: [PMF]Set_PMFMFPC_Proc:: apidx=3, Desired MFPC=0
+[   19.569940] MT7603: [PMF]Set_PMFMFPC_Proc:: apidx=4, Desired MFPC=0
+[   19.576218] MT7603: [PMF]Set_PMFMFPC_Proc:: apidx=5, Desired MFPC=0
+[   19.582608] MT7603: [PMF]Set_PMFMFPR_Proc:: apidx=0, Desired MFPR=0
+[   19.589008] MT7603: [PMF]Set_PMFSHA256_Proc:: apidx=0, Desired PMFSHA256=0
+[   19.596625] MT7603: pAd->reg_domain = 1
+[   19.600573] MT7603: SKUenable=1
+[   19.603988] MT7603: Smart Carrier Sense = 0
+[   19.609091] MT7603: FW Version:MT7603: CMT7603: LMT7603: 1MT7603: 7MT7603: 3MT7603: 7MT7603: 6MT7603: 6MT7603: _MT7603: RMT7603: 
+[   19.620902] MT7603: FW Build Date:MT7603: 2MT7603: 0MT7603: 1MT7603: 7MT7603: 1MT7603: 1MT7603: 1MT7603: 0MT7603: 1MT7603: 0MT7603: 5MT7603: 9MT7603: 3MT7603: 2MT7603: MT7603: 
+[   19.637032] MT7603: CmdAddressLenReq:(ret = 0)
+[   19.642066] MT7603: CmdFwStartReq: override = 1, address = 1048576
+[   19.648370] MT7603: CmdStartDLRsp: WiFI FW Download Success
+[   19.668053] MT7603: AsicDMASchedulerInit(): DMA Scheduler Mode=0(LMAC)
+[   19.674591] MT7603: AsicDMASchedulerInit:Read 0x45c4 =3fff8000 
+[   19.680554] MT7603: AsicDMASchedulerInit:Write 0x45c4 =1bf01bf 
+[   19.686498] MT7603: FwloadFlag=0
+[   19.689731] efuse_probe: efuse = 10000002
+[   19.693738] MT7603: RtmpChipOpsEepromHook::e2p_type=4, inf_Type=5
+[   19.699851] MT7603: RtmpEepromGetDefault::e2p_dafault=1
+[   19.705086] MT7603: RtmpChipOpsEepromHook: E2P type(4), E2pAccessMode = 4, E2P default = 1
+[   19.713351] MT7603: NVM is BIN mode
+[   19.717015] MT7603: 1. Phy Mode = 14
+[   19.724956] MT7603: rtmp_ee_load_from_bin::Load EEPROM Buffer from /var/run/misc/misc_ro/0x00180000!
+[   19.734212] MT7603: Cal Free IC!!
+[   19.737669] MT7603: @@@  NICReadEEPROMParameters : pAd->FWLoad=0 
+[   19.902347] MT7603: Country Region from e2p = ffff
+[   19.907187] tssi_1_target_pwr_g_band = 36
+[   19.911209] MT7603: 2. Phy Mode = 14
+[   19.914985] MT7603: 3. Phy Mode = 14
+[   19.918564] MT7603: NICInitPwrPinCfg(14): Not support for HIF_MT yet!
+[   19.925016] MT7603: NICInitializeAsic(588): Not support rtmp_mac_sys_reset () for HIF_MT yet!
+[   19.933541] MT7603: mt_mac_init()-->
+[   19.937133] MT7603: mt7603_init_mac_cr()-->
+[   19.941534] MT7603: AsicSetMacMaxLen(1927): Set the Max RxPktLen=1024!
+[   19.948080] MT7603: <--mt_mac_init()
+[   19.951801] MT7603: WTBL Segment 1 info:
+[   19.955817] MT7603: MemBaseAddr/FID:0x28000/0
+[   19.960348] MT7603: EntrySize/Cnt:32/128
+[   19.964440] MT7603: WTBL Segment 2 info:
+[   19.968459] MT7603: MemBaseAddr/FID:0x40000/0
+[   19.972986] MT7603: EntrySize/Cnt:64/128
+[   19.977091] MT7603: WTBL Segment 3 info:
+[   19.981096] MT7603: MemBaseAddr/FID:0x42000/64
+[   19.985728] MT7603: EntrySize/Cnt:64/128
+[   19.989825] MT7603: WTBL Segment 4 info:
+[   19.993830] MT7603: MemBaseAddr/FID:0x44000/128
+[   19.998557] MT7603: EntrySize/Cnt:32/128
+[   20.002736] MT7603: AntCfgInit(2753): Not support for HIF_MT yet!
+[   20.008962] MT7603: MCS Set = ff ff 00 00 00
+[   21.905968] MT7603: mt7603_switch_channel(): Switch to Ch#1(2T2R), BBP_BW=0
+[   24.196980] MT7603: mt7603_switch_channel(): Switch to Ch#2(2T2R), BBP_BW=0
+[   26.494634] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=0
+[   26.899286] MT7603: mt7603_switch_channel(): Switch to Ch#4(2T2R), BBP_BW=0
+[   27.309292] MT7603: mt7603_switch_channel(): Switch to Ch#5(2T2R), BBP_BW=0
+[   27.719261] MT7603: mt7603_switch_channel(): Switch to Ch#6(2T2R), BBP_BW=0
+[   28.129266] MT7603: mt7603_switch_channel(): Switch to Ch#7(2T2R), BBP_BW=0
+[   28.539269] MT7603: mt7603_switch_channel(): Switch to Ch#8(2T2R), BBP_BW=0
+[   28.949263] MT7603: mt7603_switch_channel(): Switch to Ch#9(2T2R), BBP_BW=0
+[   29.359275] MT7603: mt7603_switch_channel(): Switch to Ch#10(2T2R), BBP_BW=0
+[   29.769264] MT7603: mt7603_switch_channel(): Switch to Ch#11(2T2R), BBP_BW=0
+[   30.180364] MT7603: mt7603_switch_channel(): Switch to Ch#12(2T2R), BBP_BW=0
+[   30.589257] MT7603: mt7603_switch_channel(): Switch to Ch#13(2T2R), BBP_BW=0
+[   30.994819] MT7603: [PMF]ap_pmf_init:: apidx=0, MFPC=0, MFPR=0, SHA256=0
+[   31.110255] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   31.117223] MT7603: [PMF]ap_pmf_init:: apidx=1, MFPC=0, MFPR=0, SHA256=0
+[   31.123953] MT7603: [PMF]ap_pmf_init:: apidx=2, MFPC=0, MFPR=0, SHA256=0
+[   31.130710] MT7603: [PMF]ap_pmf_init:: apidx=3, MFPC=0, MFPR=0, SHA256=0
+[   31.246237] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   31.253151] MT7603: [PMF]ap_pmf_init:: apidx=4, MFPC=0, MFPR=0, SHA256=0
+[   31.368921] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   31.375864] MT7603: [PMF]ap_pmf_init:: apidx=5, MFPC=0, MFPR=0, SHA256=0
+[   31.491702] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   31.498657] MT7603: [PMF]ap_pmf_init:: apidx=6, MFPC=0, MFPR=0, SHA256=0
+[   31.614561] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   31.621587] MT7603: AsicSetRalinkBurstMode(4343): Not support for HIF_MT yet!
+[   31.628749] MT7603: RTMPSetPiggyBack(961): Not support for HIF_MT yet!
+[   31.646183] MT7603: mt7603_switch_channel(): Switch to Ch#1(2T2R), BBP_BW=0
+[   31.653156] MT7603: AsicSetTxPreamble(4330): Not support for HIF_MT yet!
+[   31.662115] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   31.671326] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   31.680533] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   31.689738] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   31.698976] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   31.706060] MT7603: The 8-BSSID mode is enabled, the BSSID byte5 MUST be the multiple of 8
+[   31.714403] MT7603: AsicSetPreTbtt(): bss_idx=0, PreTBTT timeout = 0xa0
+[   31.721052] MT7603: ap_ftkd> Initialize FT KDP Module...
+[   31.726380] MT7603: Main bssid = 50:91:e3:c2:34:e6
+[   31.731268] <==== rt28xx_init, Status=0
+[   31.743289] MT7603: @@@ ed_monitor_init : ===>
+[   31.747776] MT7603: @@@ ed_monitor_init : <===
+[   31.752229] MT7603: mt7603_set_ed_cca: TURN ON EDCCA mac 0x10618 = 0xd7c87d0f, EDCCA_Status=1
+[   31.760774] MT7603: WiFi Startup Cost (ra0): 13.530s
+[   31.765766] PpeDevRegHandler : ineterface ra0 register (0)
+[   31.782717] MT7603: The 8-BSSID mode is enabled, the BSSID byte5 MUST be the multiple of 8
+[   31.791075] PpeDevRegHandler : ineterface apcli0 register (1)
+[   31.796864] MT7603: [PMF]ApCli_Open:: MFPC=0, MFPR=0, SHA256=0
+[   31.928722] MT7603: The 8-BSSID mode is enabled, the BSSID byte5 MUST be the multiple of 8
+[   31.937112] ##### mbss_cr_enable, BssId = 4
+[   31.941303] PpeDevRegHandler : ineterface ra4 register (2)
+[   31.955744] MT7603: The 8-BSSID mode is enabled, the BSSID byte5 MUST be the multiple of 8
+[   31.964153] ##### mbss_cr_enable, BssId = 5
+[   31.968399] PpeDevRegHandler : ineterface ra5 register (3)
+[   32.018522] MT7603: Set_Map_Proc current MAP MODE is 3
+[   32.031891] MT7603: Set_MapR2_Proc: MAP R2 is enabled
+[   32.045327] MT7603: [Set_Bh_Bss_Proc]: ra0 DevOwnRole 0x20
+[   32.058949] MT7603: [Set_Fh_Bss_Proc]: ra0 DevOwnRole 0x20
+[   32.080825] MT7603: [Set_Fh_Bss_Proc]: ra4 DevOwnRole 0x0
+[   32.094322] MT7603: [Set_Bh_Bss_Proc]: ra4 DevOwnRole 0x44
+[   32.108052] MT7603: [Set_Fh_Bss_Proc]: ra5 DevOwnRole 0x0
+[   32.121695] MT7603: [Set_Bh_Bss_Proc]: ra5 DevOwnRole 0x48
+[   32.135573] MT7603: [Set_Fh_Bss_Proc]: ra6 DevOwnRole 0x0
+[   32.157388] MT7603: [Set_Bh_Sta_Proc]: apcli0 DevOwnRole 0x80
+[ map_attachSharedBuff ] 200 - ERROR:  Get map shared buffer error.
+[ oal_easymesh_getMAPDevices ] 1416 - ERROR:  Failed to attach map shared memory buffer.
+
+[ rsl_easymesh_updateMapDev ] 11509 - ERROR:  There are no APDevices saved in map shared memory.
+[ rsl_easymesh_checkChannels ] 13706 - ERROR:  Can not find Controller
+[   32.208239] MT7603: cfg_mode=9
+[   32.211325] MT7603: wmode_band_equal(): Band Equal!
+Interface doesn't accept private ioctl...
+set (8BE2): Invalid argument
+Interface doesn't accept private ioctl...
+set (8BE2): Invalid argument
+Interface doesn't accept private ioctl...
+set (8BE2): Invalid argument
+[   32.286946] MT7663: get_wdev_by_idx: invalid idx(0)
+[ prepareDropbear_early ] 753:  create dropbear RSA key success.
+[ prepareDropbear_early ] 760:  start creating dropbear DSS key at CPU core 1.
+[ prepareDropbear_early ] 764:  Try create dropbear DSS key lo[   32.314156] MT7663: op=0 ...
+get_wdev_by_idx: invalid idx(0)
+Generating 1024 bit dss key, this may take a while...
+[   32.326892] MT7663: get_wdev_by_idx: invalid idx(0)
+[ rsl_setUpDev2BridgePortObj ] 795:  ra5 isWanConn=0 moveIntfToBr0=0 br0
+[   33.375514] device ra5 entered promiscuous mode
+[   33.380168] br0: port 5(ra5) entered forwarding state
+[   33.385290] br0: port 5(ra5) entered forwarding state
+[ rsl_setUpDev2BridgePortObj ] 795:  ra4 isWanConn=0 moveIntfToBr0=0 br0
+[   33.410129] device ra4 entered promiscuous mode
+[   33.414904] br0: port 6(ra4) entered forwarding state
+[   33.420000] br0: port 6(ra4) entered forwarding state
+[ rsl_setUpDev2BridgePortObj ] 795:  ra3 isWanConn=0 moveIntfToBr0=0 br0
+[   33.444236] device ra3 entered promiscuous mode
+[ rsl_setUpDev2BridgePortObj ] 795:  ra2 isWanConn=0 moveIntfToBr0=0 br0
+[   33.468662] device ra2 entered promiscuous mode
+[ rsl_setUpDev2BridgePortObj ] 795:  ra1 isWanConn=0 moveIntfToBr0=0 br0
+[   33.492563] device ra1 entered promiscuous mode
+[ rsl_setUpDev2BridgePortObj ] 795:  ra0 isWanConn=0 moveIntfToBr0=0 br0
+[   33.516908] device ra0 entered promiscuous mode
+[   33.521582] br0: port 10(ra0) entered forwarding state
+[   33.526851] br0: port 10(ra0) entered forwarding state
+[   33.549679] device apcli0 entered promiscuous mode
+[   33.584850] MT7603: [   33.584880] MT7603: MlmeHandler() line:813  System halted, removed or MlmeRest, exit MlmeTask!(QNum = 1) 0 1 0 0
+
+[   33.597215] AsicSetPreTbtt(): bss_idx=0, PreTBTT timeout = 0x0
+[   33.603283] MT7603: RTMPSetPiggyBack(961): Not support for HIF_MT yet!
+[   33.610029] MT7603: ap_ftkd> Release FT KDP Module...
+[   33.615154] MT7603: [PMF]ap_pmf_init:: apidx=0, MFPC=0, MFPR=0, SHA256=0
+[   33.704710] MT7603: MlmeHandler() line:813  System halted, removed or MlmeRest, exit MlmeTask!(QNum = 1) 0 1 0 0
+[   33.839046] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   33.846039] MT7603: [PMF]ap_pmf_init:: apidx=1, MFPC=0, MFPR=0, SHA256=0
+[   33.852795] MT7603: [PMF]ap_pmf_init:: apidx=2, MFPC=0, MFPR=0, SHA256=0
+[   33.859580] MT7603: [PMF]ap_pmf_init:: apidx=3, MFPC=0, MFPR=0, SHA256=0
+[   34.083793] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   34.090769] MT7603: [PMF]ap_pmf_init:: apidx=4, MFPC=0, MFPR=0, SHA256=0
+[   34.339566] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   34.346537] MT7603: [PMF]ap_pmf_init:: apidx=5, MFPC=0, MFPR=0, SHA256=0
+[   34.597753] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   34.604727] MT7603: [PMF]ap_pmf_init:: apidx=6, MFPC=0, MFPR=0, SHA256=0
+[   34.855844] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   34.862930] MT7603: AsicSetRalinkBurstMode(4343): Not support for HIF_MT yet!
+[   34.870103] MT7603: RTMPSetPiggyBack(961): Not support for HIF_MT yet!
+[   34.888555] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=1
+[   34.895676] MT7603: AsicSetTxPreamble(4330): Not support for HIF_MT yet!
+[   34.907282] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   34.919134] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   34.931004] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   34.942947] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   34.954843] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   34.961922] MT7603: The 8-BSSID mode is enabled, the BSSID byte5 MUST be the multiple of 8
+[   34.970433] MT7603: AsicSetPreTbtt(): bss_idx=0, PreTBTT timeout = 0xa0
+[   34.977091] MT7603: ap_ftkd> Initialize FT KDP Module...
+[   34.982410] MT7603: Main bssid = 50:91:e3:c2:34:e6
+[   34.988852] MT7603: (ApCliCtrlDisconnectReqAction) 2. Before do ApCliLinkDown.
+[   35.006492] MT7603: AsicSetPreTbtt(): bss_idx=0, PreTBTT timeout = 0x0
+[   35.013121] MT7603: RTMPSetPiggyBack(961): Not support for HIF_MT yet!
+[   35.019813] MT7603: ap_ftkd> Release FT KDP Module...
+[   35.024918] MT7603: [PMF]ap_pmf_init:: apidx=0, MFPC=0, MFPR=0, SHA256=0
+[   35.275004] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   35.281988] MT7603: [PMF]ap_pmf_init:: apidx=1, MFPC=0, MFPR=0, SHA256=0
+[   35.288774] MT7603: [PMF]ap_pmf_init:: apidx=2, MFPC=0, MFPR=0, SHA256=0
+[   35.295614] MT7603: [PMF]ap_pmf_init:: apidx=3, MFPC=0, MFPR=0, SHA256=0
+[   35.546214] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   35.553155] MT7603: [PMF]ap_pmf_init:: apidx=4, MFPC=0, MFPR=0, SHA256=0
+[   35.795590] MT7663: get_wdev_by_idx: invalid idx(0)
+[   35.800953] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   35.808087] MT7603: [PMF]ap_pmf_init:: apidx=5, MFPC=0, MFPR=0, SHA256=0
+[ prepareDropbear_early ] 776:  create dropbear DSS key success.
+[ prepareDropbear_early ] 785:  parent pid 600
+[ prepareDropbear_early ] 793:  parent pre cpu mask 0000000D
+[ prepareDropbear_early ] 807:  parent post cpu mask 0000000F
+[   35.925331] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   35.932274] MT7603: [PMF]ap_pmf_init:: apidx=6, MFPC=0, MFPR=0, SHA256=0
+[   36.047950] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   36.055026] MT7603: AsicSetRalinkBurstMode(4343): Not support for HIF_MT yet!
+[   36.062165] MT7603: RTMPSetPiggyBack(961): Not support for HIF_MT yet!
+[   36.078542] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=1
+[   36.085586] MT7603: AsicSetTxPreamble(4330): Not support for HIF_MT yet!
+[   36.094494] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   36.103704] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   36.112904] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   36.122152] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   36.131350] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   36.138482] MT7603: The 8-BSSID mode is enabled, the BSSID byte5 MUST be the multiple of 8
+[   36.146932] MT7603: AsicSetPreTbtt(): bss_idx=0, PreTBTT timeout = 0xa0
+[   36.153560] MT7603: ap_ftkd> Initialize FT KDP Module...
+[   36.158940] MT7603: Main bssid = 50:91:e3:c2:34:e6
+[   36.174739] MT7603: AsicSetPreTbtt(): bss_idx=0, PreTBTT timeout = 0x0
+[   36.181306] MT7603: RTMPSetPiggyBack(961): Not support for HIF_MT yet!
+[   36.187933] MT7603: ap_ftkd> Release FT KDP Module...
+[   36.193008] MT7603: [PMF]ap_pmf_init:: apidx=0, MFPC=0, MFPR=0, SHA256=0
+[   36.308411] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   36.315396] MT7603: [PMF]ap_pmf_init:: apidx=1, MFPC=0, MFPR=0, SHA256=0
+[   36.322129] MT7603: [PMF]ap_pmf_init:: apidx=2, MFPC=0, MFPR=0, SHA256=0
+[   36.328875] MT7603: [PMF]ap_pmf_init:: apidx=3, MFPC=0, MFPR=0, SHA256=0
+[   36.444311] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   36.451238] MT7603: [PMF]ap_pmf_init:: apidx=4, MFPC=0, MFPR=0, SHA256=0
+[   36.566898] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   36.573814] MT7603: [PMF]ap_pmf_init:: apidx=5, MFPC=0, MFPR=0, SHA256=0
+[   36.689424] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   36.696348] MT7603: [PMF]ap_pmf_init:: apidx=6, MFPC=0, MFPR=0, SHA256=0
+[   36.811998] MT7603: [PMF]RTMPMakeRsnIeCap: RSNIE Capability MFPC=0, MFPR=0
+[   36.819011] MT7603: AsicSetRalinkBurstMode(4343): Not support for HIF_MT yet!
+[   36.826174] MT7603: RTMPSetPiggyBack(961): Not support for HIF_MT yet!
+[   36.842504] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=1
+[   36.849535] MT7603: AsicSetTxPreamble(4330): Not support for HIF_MT yet!
+[   36.858456] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   36.867672] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   36.876879] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   36.886105] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   36.895329] MT7603: AsicAddSharedKeyEntry(2093): Not support for HIF_MT yet!
+[   36.902394] MT7603: The 8-BSSID mode is enabled, the BSSID byte5 MUST be the multiple of 8
+[   36.910843] MT7603: AsicSetPreTbtt(): bss_idx=0, PreTBTT timeout = 0xa0
+[   36.917489] MT7603: ap_ftkd> Initialize FT KDP Module...
+[   36.922804] MT7603: Main bssid = 50:91:e3:c2:34:e6
+ifconfig: ioctl 0x8913 failed: No such device
+ifconfig: ioctl 0x8913 failed: No such device
+ifconfig: ioctl 0x8913 failed: No such device
+ifconfig: ioctl 0x8913 failed: No such device
+ifconfig: ioctl 0x8913 failed: No such device
+ifconfig: ioctl 0x8913 failed: No such device
+ifconfig: ioctl 0x8913 failed: No such device
+[   37.076220] MT7663: rai0: ===> main_virtual_if_open
+[   37.081140] MT7663: WLAN-Start wlNetget_wdev_by_idx: invalid idx(0)
+linkTool[   37.087491] MT7663: get_wdev_by_idx: invalid idx(0)
+
+[   37.093037] MT7663: get_wdev_by_idx: invalid idx(0)
+Waiting for Wire[   37.098124] MT7663: less Events fromget_wdev_by_idx: invalid idx(0)
+ interfaces...
+[   37.106496] MT7663: load l1profile succeed!
+swWlanChkAhbErr:[   37.111347] MT7663:  netlink to do
+get_wdev_by_idx: invalid idx(0)
+[   37.119054] MT7663: get_wdev_by_idx: invalid idx(0)
+[   37.123939] MT7663: driver_own()::Try to Clear FW Own...
+[   40.142124] MT7663: driver_own()::Success to clear FW Own
+[   40.149735] MT7663: APWdsInitialize():WdsEntry[0]
+[   40.154471] MT7663: APWdsInitialize():WdsEntry[1]
+[   40.159247] MT7663: APWdsInitialize():WdsEntry[2]
+[   40.163956] MT7663: APWdsInitialize():WdsEntry[3]
+[   40.171403] MT7663: RtmpOSFileOpen(): Error 2 opening /etc/Wireless/iNIC/iNIC_ap_2G.dat
+[   40.179459] MT7663: Open file "/etc/Wireless/iNIC/iNIC_ap_2G.dat" failed!
+[   40.187913] MT7663: E2pAccessMode=4
+[   40.191824] MT7663: SSID[0]=TP-Link_34E6, EdcaIdx=0
+[   40.196842] MT7663: SSID[1]=TP-Link_34E6_1, EdcaIdx=0
+[   40.202018] MT7663: SSID[2]=TP-Link_34E6_2, EdcaIdx=0
+[   40.207218] MT7663: SSID[3]=TP-Link_34E6_Guest, EdcaIdx=0
+[   40.212753] MT7663: SSID[4]=ebfeba452afea50db2697e0666665a, EdcaIdx=0
+[   40.219346] MT7663: SSID[5]=a2ca93aa488c52b4578a8e2cf84215, EdcaIdx=0
+[   40.225937] MT7663: SSID[6]=895292acce55edb97159c9a0006ea6, EdcaIdx=0
+[   40.232925] MT7663: cfg_mode=14
+[   40.236084] MT7663: cfg_mode=14
+[   40.239223] MT7663: cfg_mode=14
+[   40.242368] MT7663: wmode_band_equal(): Band Equal!
+[   40.247343] MT7663: auto_ch_select_set_cfg(): BandIdx0, AutoChannelAtBootup=1, AutoChannelAlg = 3
+[   40.256498] MT7663: RTMPChannelCfg:Warning:ACS Enable and the Channel of config parameter must set 0:
+[   40.265734] MT7663: BssIdx(0) wdev->channel=0
+[   40.270093] MT7663: RTMPChannelCfg:Warning:ACS Enable and the Channel of config parameter must set 0:
+[   40.279320] MT7663: BssIdx(1) wdev->channel=0
+[   40.283677] MT7663: RTMPChannelCfg:Warning:ACS Enable and the Channel of config parameter must set 0:
+[   40.292907] MT7663: BssIdx(2) wdev->channel=0
+[   40.297277] MT7663: RTMPChannelCfg:Warning:ACS Enable and the Channel of config parameter must set 0:
+[   40.306505] MT7663: BssIdx(3) wdev->channel=0
+[   40.310862] MT7663: RTMPChannelCfg:Warning:ACS Enable and the Channel of config parameter must set 0:
+[   40.320096] MT7663: BssIdx(4) wdev->channel=0
+[   40.324459] MT7663: RTMPChannelCfg:Warning:ACS Enable and the Channel of config parameter must set 0:
+[   40.333695] MT7663: BssIdx(5) wdev->channel=0
+[   40.338066] MT7663: RTMPChannelCfg:Warning:ACS Enable and the Channel of config parameter must set 0:
+[   40.347297] MT7663: BssIdx(6) wdev->channel=0
+[   40.351654] MT7663: Index0 Channel=36
+[   40.356536] MT7663: [TxPower] BAND0: 100
+[   40.360742] MT7663: [SKUenable] BAND0: 1
+[   40.364978] MT7663: [PERCENTAGEenable] BAND0: 1
+[   40.370497] MT7663: profile: FragThreshold[0]=2346
+[   40.375640] MT7663: APEdca0
+[   40.378609] MT7663: APEdca1
+[   40.381574] MT7663: APEdca2
+[   40.384539] MT7663: APEdca3
+[   40.396886] MT7663: DfsZeroWait Support=0/0
+[   40.401806] MT7663: DfsZeroWaitCacTime=255/255
+[   40.406820] MT7663: read_itxbf: ITxBfEn = 1
+[   40.411005] MT7663: read_itxbf: BSSID[0]
+[   40.414945] MT7663: read_itxbf: MBSS[0] ITxBfEn = 1
+[   40.419826] MT7663: read_itxbf: More BSSID[1]
+[   40.424182] MT7663: read_itxbf: More MBSS[1] ITxBfEn = 1
+[   40.429512] MT7663: read_itxbf: More BSSID[2]
+[   40.433870] MT7663: read_itxbf: More MBSS[2] ITxBfEn = 1
+[   40.439196] MT7663: read_itxbf: More BSSID[3]
+[   40.443552] MT7663: read_itxbf: More MBSS[3] ITxBfEn = 1
+[   40.448880] MT7663: read_itxbf: More BSSID[4]
+[   40.453234] MT7663: read_itxbf: More MBSS[4] ITxBfEn = 1
+[   40.458559] MT7663: read_itxbf: More BSSID[5]
+[   40.462916] MT7663: read_itxbf: More MBSS[5] ITxBfEn = 1
+[   40.468244] MT7663: read_itxbf: More BSSID[6]
+[   40.472602] MT7663: read_itxbf: More MBSS[6] ITxBfEn = 1
+[   40.477925] MT7663: read_itxbf: Common.ITxBfEn = 1
+[   40.482836] MT7663: read_etxbf: ETxBfEnCond = 1
+[   40.487380] MT7663: read_etxbf: BSSID[0]
+[   40.491299] MT7663: read_etxbf: MBSS[0] ETxBfEnCond = 1
+[   40.496535] MT7663: read_etxbf: More BSSID[1]
+[   40.500892] MT7663: read_etxbf: More MBSS[1] ETxBfEnCond = 1
+[   40.506560] MT7663: read_etxbf: More BSSID[2]
+[   40.510917] MT7663: read_etxbf: More MBSS[2] ETxBfEnCond = 1
+[   40.516601] MT7663: read_etxbf: More BSSID[3]
+[   40.520965] MT7663: read_etxbf: More MBSS[3] ETxBfEnCond = 1
+[   40.526641] MT7663: read_etxbf: More BSSID[4]
+[   40.531002] MT7663: read_etxbf: More MBSS[4] ETxBfEnCond = 1
+[   40.536676] MT7663: read_etxbf: More BSSID[5]
+[   40.541034] MT7663: read_etxbf: More MBSS[5] ETxBfEnCond = 1
+[   40.546705] MT7663: read_etxbf: More BSSID[6]
+[   40.551062] MT7663: read_etxbf: More MBSS[6] ETxBfEnCond = 1
+[   40.586870] MT7663: [PMF]Set_PMFMFPC_Proc:: apidx=0, Desired MFPC=0
+[   40.593141] MT7663: [PMF]Set_PMFMFPC_Proc:: apidx=1, Desired MFPC=0
+[   40.599422] MT7663: [PMF]Set_PMFMFPC_Proc:: apidx=2, Desired MFPC=0
+[   40.605700] MT7663: [PMF]Set_PMFMFPC_Proc:: apidx=3, Desired MFPC=0
+[   40.611967] MT7663: [PMF]Set_PMFMFPC_Proc:: apidx=4, Desired MFPC=0
+[   40.618245] MT7663: [PMF]Set_PMFMFPC_Proc:: apidx=5, Desired MFPC=0
+[   40.624641] MT7663: [PMF]Set_PMFMFPR_Proc:: apidx=0, Desired MFPR=0
+[   40.631051] MT7663: [PMF]Set_PMFSHA256_Proc:: apidx=0, Desired PMFSHA256=0
+[   40.638074] MT7663: MAP_MODE=3
+[   40.648407] MT7663: rtmp_read_wds_from_file(): WDS Profile
+[   40.654693] MT7663: APWdsInitialize():WdsEntry[0]
+[   40.659401] MT7663: APWdsInitialize():WdsEntry[1]
+[   40.664103] MT7663: APWdsInitialize():WdsEntry[2]
+[   40.668823] MT7663: APWdsInitialize():WdsEntry[3]
+[   40.673528] MT7663: WDS-Enable mode=0
+[   40.679853] MT7663: HT: WDEV[0] Ext Channel = BELOW
+[   40.714105] MT7663: pAd->reg_domain = 1
+[   40.723492] MT7663: WtcSetMaxStaNum: MaxStaNum:105, BssidNum:7, WdsNum:4, ApcliNum:1, MaxNumChipRept:16, MinMcastWcid:127
+[   40.734899] MT7663: Top Init Done!
+[   40.738317] MT7663: Use alloc_skb
+[   40.742590] MT7663: RX[0] DESC a0d71000 size = 2048
+[   40.748013] MT7663: RX[1] DESC a0d72000 size = 2048
+[   40.753051] MT7663: cut_through_init(): ct sw token number = 4095
+[   40.759696] MT7663: cut_through_token_list_init(): TokenList inited done!id_head/tail=0/4096
+[   40.768167] MT7663: cut_through_token_list_init(): 8418cb08,8418cb08
+[   40.775504] MT7663: cut_through_token_list_init(): TokenList inited done!id_head/tail=0/4096
+[   40.783949] MT7663: cut_through_token_list_init(): 8418cb18,8418cb18
+[   40.790361] MT7663: Hif Init Done!
+[   40.793763] MT7663: ctl->txq = c07ae644
+[   40.797613] MT7663: ctl->rxq = c07ae650
+[   40.801446] MT7663: ctl->ackq = c07ae65c
+[   40.805381] MT7663: ctl->kickq = c07ae668
+[   40.809391] MT7663: ctl->tx_doneq = c07ae674
+[   40.813657] MT7663: ctl->rx_doneq = c07ae680
+[   40.818001] MT7663: mt7663_fw_prepare():using E2 ROM patch
+[   40.823485] MT7663: mt7663_fw_prepare():using E2 firmware
+[   40.828910] MT7663: Parsing patch header
+[   40.832832] Built date: 2011301109d972a
+[   40.836840] 
+[   40.838330] Platform: 7663
+[   40.841133] HW/SW version: 0x6d702d31
+[   40.844919] Patch version: 0x3830328a
+[   40.848689] MT7663: Target address: 0xdc000, length: 204576
+[   40.854513] MT7663: patch is not ready && get semaphore success
+[   40.860472] MT7663: Start address = 0xdc000, DL length = 204576, Data mode = 0x80000000
+[   40.868611] MT7663: EventGenericEventHandler: CMD Success
+[   40.874074] MT7663: MtCmdAddressLenReq:(ret = 0)
+[   40.881076] MT7663: MtCmdPatchFinishReq
+[   40.885892] MT7663: EventGenericEventHandler: CMD Success
+[   40.891440] MT7663: release patch semaphore
+[   40.895668] MT7663: WfMcuHwInit: Before NICLoadFirmware, check ICapMode = 0
+[   40.902643] MT7663: Parsing CPU 0 fw tailer
+[   40.906855] Chip ID: 0x08
+[   40.909572] Eco version: 0x01
+[   40.912631] Region number: 0x03
+[   40.915894] Format version: 0x02
+[   40.919213] Format flag: 0x01
+[   40.922272] Ram version: 7663mp1827
+[   40.925899] Built date: 20201130111109
+[   40.929989] Common crc: 0x75954846
+[   40.933476] MT7663: Parsing tailer region 0
+[   40.937770] MT7663: Decomp crc: 0x0
+[   40.941523] MT7663: Decomp size: 0x0
+[   40.945204] MT7663: Decomp block size: 0x0
+[   40.949406] MT7663: Target address: 0x112c00
+[   40.953788] MT7663: Download size: 282256
+[   40.957907] Feature set: 0x27
+[   40.960967] MT7663: Parsing tailer region 1
+[   40.965163] MT7663: Decomp crc: 0x0
+[   40.968764] MT7663: Decomp size: 0x0
+[   40.972444] MT7663: Decomp block size: 0x0
+[   40.976650] MT7663: Target address: 0x2018400
+[   40.981171] MT7663: Download size: 72144
+[   40.985206] Feature set: 0x07
+[   40.988268] MT7663: Parsing tailer region 2
+[   40.992447] MT7663: Decomp crc: 0x0
+[   40.996035] MT7663: Decomp size: 0x0
+[   40.999697] MT7663: Decomp block size: 0x0
+[   41.003875] MT7663: Target address: 0x40100000
+[   41.008421] MT7663: Download size: 14720
+[   41.012427] Feature set: 0x07
+[   41.015506] MT7663: Release info: MT7663: header tag = 0, total length = 0
+[   41.022476] MT7663: Start address = 0x112c00, DL length = 282256, Data mode = 0x8000000f
+[   41.030759] MT7663: EventGenericEventHandler: CMD Success
+[   41.036220] MT7663: MtCmdAddressLenReq:(ret = 0)
+[   41.044115] MT7663: Start address = 0x2018400, DL length = 72144, Data mode = 0x8000000f
+[   41.052464] MT7663: EventGenericEventHandler: CMD Success
+[   41.057974] MT7663: MtCmdAddressLenReq:(ret = 0)
+[   41.063356] MT7663: Start address = 0x40100000, DL length = 14720, Data mode = 0x8000000f
+[   41.071729] MT7663: EventGenericEventHandler: CMD Success
+[   41.077271] MT7663: MtCmdAddressLenReq:(ret = 0)
+[   41.082053] MT7663: MtCmdFwStartReq: override = 0x1, address = 0x112c00
+[   41.130985] MT7663: EventGenericEventHandler: CMD Success
+[   41.136550] MT7663: MCU Init Done!
+[   41.139963] efuse_probe: efuse = 511161
+[   41.143976] MT7663: RtmpChipOpsEepromHook::e2p_type=4, inf_Type=5
+[   41.150100] MT7663: RtmpEepromGetDefault::e2p_dafault=1
+[   41.155358] MT7663: RtmpChipOpsEepromHook: E2P type(4), E2pAccessMode = 4, E2P default = 1
+[   41.163655] MT7663: NVM is BIN mode
+[   41.171506] MT7663: Load EEPROM Buffer from /var/run/misc/misc_ro/0x001A0000
+[   41.180438] MT7663: Cal Free IC!!
+[   41.183754] MT7663: mt7663_cal_free_data_get
+[   42.880455] MT7663: Country Region from e2p = 0
+[   42.885185] MT7663: mt7663_antenna_default_reset() todo
+[   42.890415] MT7663: RTMPReadTxPwrPerRate(444): Don't Support this now!
+[   42.896982] MT7663: RcRadioInit(): DbdcMode=0, ConcurrentBand=1
+[   42.902933] MT7663: RcRadioInit(): pRadioCtrl=87e56d7c,Band=0,rfcap=3,channel=1,PhyMode=2 extCha=0xf
+[   42.912094] MT7663: AntCfgInit(3021): Not support for HIF_MT yet!
+[   42.918330] MT7663: MtReadPwrLimitTable: RF_LOCKDOWN Feature OFF !!!
+[   42.924715] MT7663: MtReadPwrLimitTable: SKU Path: /var/Wireless/RT2860AP/mt7663-sku.dat
+[   42.934440] MT7663: MtReadPwrLimitTable: RF_LOCKDOWN Feature OFF !!!
+[   42.940841] MT7663: MtReadPwrLimitTable: SKU Path: /etc/mt7663-sku-bf.dat
+[   42.947748] MT7663: RtmpOSFileOpen(): Error 2 opening /etc/mt7663-sku-bf.dat
+[   42.954834] MT7663: --> Error opening file </etc/mt7663-sku-bf.dat>
+[   42.961102] MT7663: MtPwrLimitLoadParamHandle: Read Power Table Error!!
+[   42.967734] MT7663: EEPROM Init Done!
+[   42.971402] MT7663: mt_mac_init()-->
+[   42.975106] MT7663: mt_mac_pse_init(3005): Don't Support this now!
+[   42.981292] MT7663: mt7663_init_mac_cr()-->
+[   42.985581] MT7663: mt7663_init_mac_cr(): TMAC_TRCR0=0x82783c92
+[   42.991685] MT7663: MtAsicSetMacMaxLen(1075): Not support for HIF_MT yet!
+[   42.998509] MT7663: <--mt_mac_init()
+[   43.006903] MT7663: CmdRxHdrTransBLUpdateRsp::EventExtCmdResult.u4Status = 0x0
+[   43.015768] MT7663: CmdRxHdrTransBLUpdateRsp::EventExtCmdResult.u4Status = 0x0
+[   43.024687] MT7663: CmdRxHdrTransBLUpdateRsp::EventExtCmdResult.u4Status = 0x0
+[   43.032055] MT7663: MAC Init Done!
+[   43.035494] MT7663: MT7663BBPInit():BBP Initialization.....
+[   43.041066] MT7663: Band 0: valid=1, isDBDC=0, Band=2, CBW=1, CentCh/PrimCh=1/1, prim_ch_idx=0, txStream=2
+[   43.050825] MT7663: Band 1: valid=0, isDBDC=0, Band=0, CBW=0, CentCh/PrimCh=0/0, prim_ch_idx=0, txStream=0
+[   43.060585] MT7663: MT7663BBPInit() todo
+[   43.064507] MT7663: PHY Init Done!
+[   43.068037] MT7663: RtmpOSFileOpen(): Error 2 opening /etc/Wireless/iNIC/iNIC_ap_2G.dat
+[   43.076090] MT7663: Open file "/etc/Wireless/iNIC/iNIC_ap_2G.dat" failed!
+[   43.084718] MT7663: E2pAccessMode=4
+[   43.088602] MT7663: SSID[0]=TP-Link_34E6, EdcaIdx=0
+[   43.093908] MT7663: SSID[1]=TP-Link_34E6_1, EdcaIdx=0
+[   43.099162] MT7663: SSID[2]=TP-Link_34E6_2, EdcaIdx=0
+[   43.104386] MT7663: SSID[3]=TP-Link_34E6_Guest, EdcaIdx=0
+[   43.110058] MT7663: SSID[4]=ebfeba452afea50db2697e0666665a, EdcaIdx=0
+[   43.116683] MT7663: SSID[5]=a2ca93aa488c52b4578a8e2cf84215, EdcaIdx=0
+[   43.123280] MT7663: SSID[6]=895292acce55edb97159c9a0006ea6, EdcaIdx=0
+[   43.130401] MT7663: cfg_mode=14
+[   43.133546] MT7663: cfg_mode=14
+[   43.136716] MT7663: cfg_mode=14
+[   43.139862] MT7663: wmode_band_equal(): Band Equal!
+[   43.144842] MT7663: auto_ch_select_set_cfg(): BandIdx0, AutoChannelAtBootup=1, AutoChannelAlg = 3
+[   43.153971] MT7663: RTMPChannelCfg:Warning:ACS Enable and the Channel of config parameter must set 0:
+[   43.163214] MT7663: BssIdx(0) wdev->channel=0
+[   43.167588] MT7663: RTMPChannelCfg:Warning:ACS Enable and the Channel of config parameter must set 0:
+[   43.176820] MT7663: BssIdx(1) wdev->channel=0
+[   43.181329] MT7663: RTMPChannelCfg:Warning:ACS Enable and the Channel of config parameter must set 0:
+[   43.190651] MT7663: BssIdx(2) wdev->channel=0
+[   43.195192] MT7663: RTMPChannelCfg:Warning:ACS Enable and the Channel of config parameter must set 0:
+[   43.204459] MT7663: BssIdx(3) wdev->channel=0
+[   43.208842] MT7663: RTMPChannelCfg:Warning:ACS Enable and the Channel of config parameter must set 0:
+[   43.218078] MT7663: BssIdx(4) wdev->channel=0
+[   43.222464] MT7663: RTMPChannelCfg:Warning:ACS Enable and the Channel of config parameter must set 0:
+[   43.231721] MT7663: BssIdx(5) wdev->channel=0
+[   43.236179] MT7663: RTMPChannelCfg:Warning:ACS Enable and the Channel of config parameter must set 0:
+[   43.245420] MT7663: BssIdx(6) wdev->channel=0
+[   43.249777] MT7663: Index0 Channel=36
+[   43.254647] MT7663: [TxPower] BAND0: 100
+[   43.258874] MT7663: [SKUenable] BAND0: 1
+[   43.263084] MT7663: [PERCENTAGEenable] BAND0: 1
+[   43.268616] MT7663: profile: FragThreshold[0]=2346
+[   43.273738] MT7663: APEdca0
+[   43.276729] MT7663: APEdca1
+[   43.279695] MT7663: APEdca2
+[   43.282825] MT7663: APEdca3
+[   43.295432] MT7663: DfsZeroWait Support=0/0
+[   43.300356] MT7663: DfsZeroWaitCacTime=255/255
+[   43.305398] MT7663: read_itxbf: ITxBfEn = 1
+[   43.309583] MT7663: read_itxbf: BSSID[0]
+[   43.313531] MT7663: read_itxbf: MBSS[0] ITxBfEn = 1
+[   43.318433] MT7663: read_itxbf: More BSSID[1]
+[   43.322815] MT7663: read_itxbf: More MBSS[1] ITxBfEn = 1
+[   43.328177] MT7663: read_itxbf: More BSSID[2]
+[   43.332532] MT7663: read_itxbf: More MBSS[2] ITxBfEn = 1
+[   43.337941] MT7663: read_itxbf: More BSSID[3]
+[   43.342304] MT7663: read_itxbf: More MBSS[3] ITxBfEn = 1
+[   43.347635] MT7663: read_itxbf: More BSSID[4]
+[   43.351992] MT7663: read_itxbf: More MBSS[4] ITxBfEn = 1
+[   43.357321] MT7663: read_itxbf: More BSSID[5]
+[   43.361678] MT7663: read_itxbf: More MBSS[5] ITxBfEn = 1
+[   43.367006] MT7663: read_itxbf: More BSSID[6]
+[   43.371364] MT7663: read_itxbf: More MBSS[6] ITxBfEn = 1
+[   43.376691] MT7663: read_itxbf: Common.ITxBfEn = 1
+[   43.381602] MT7663: read_etxbf: ETxBfEnCond = 1
+[   43.386224] MT7663: read_etxbf: BSSID[0]
+[   43.390153] MT7663: read_etxbf: MBSS[0] ETxBfEnCond = 1
+[   43.395468] MT7663: read_etxbf: More BSSID[1]
+[   43.399934] MT7663: read_etxbf: More MBSS[1] ETxBfEnCond = 1
+[   43.405651] MT7663: read_etxbf: More BSSID[2]
+[   43.410031] MT7663: read_etxbf: More MBSS[2] ETxBfEnCond = 1
+[   43.415715] MT7663: read_etxbf: More BSSID[3]
+[   43.420102] MT7663: read_etxbf: More MBSS[3] ETxBfEnCond = 1
+[   43.425806] MT7663: read_etxbf: More BSSID[4]
+[   43.430187] MT7663: read_etxbf: More MBSS[4] ETxBfEnCond = 1
+[   43.435875] MT7663: read_etxbf: More BSSID[5]
+[   43.440315] MT7663: read_etxbf: More MBSS[5] ETxBfEnCond = 1
+[   43.445997] MT7663: read_etxbf: More BSSID[6]
+[   43.450354] MT7663: read_etxbf: More MBSS[6] ETxBfEnCond = 1
+[   43.486120] MT7663: [PMF]Set_PMFMFPC_Proc:: apidx=0, Desired MFPC=0
+[   43.492481] MT7663: [PMF]Set_PMFMFPC_Proc:: apidx=1, Desired MFPC=0
+[   43.498871] MT7663: [PMF]Set_PMFMFPC_Proc:: apidx=2, Desired MFPC=0
+[   43.505202] MT7663: [PMF]Set_PMFMFPC_Proc:: apidx=3, Desired MFPC=0
+[   43.511493] MT7663: [PMF]Set_PMFMFPC_Proc:: apidx=4, Desired MFPC=0
+[   43.517810] MT7663: [PMF]Set_PMFMFPC_Proc:: apidx=5, Desired MFPC=0
+[   43.524209] MT7663: [PMF]Set_PMFMFPR_Proc:: apidx=0, Desired MFPR=0
+[   43.530652] MT7663: [PMF]Set_PMFSHA256_Proc:: apidx=0, Desired PMFSHA256=0
+[   43.537702] MT7663: MAP_MODE=3
+[   43.548133] MT7663: rtmp_read_wds_from_file(): WDS Profile
+[   43.554394] MT7663: APWdsInitialize():WdsEntry[0]
+[   43.559117] MT7663: APWdsInitialize():WdsEntry[1]
+[   43.563819] MT7663: APWdsInitialize():WdsEntry[2]
+[   43.568543] MT7663: APWdsInitialize():WdsEntry[3]
+[   43.573244] MT7663: WDS-Enable mode=0
+[   43.579553] MT7663: HT: WDEV[0] Ext Channel = BELOW
+[   43.614202] MT7663: pAd->reg_domain = 1
+[   43.628274] MT7663: tx_pwr_comp_init():NotSupportYet!
+[   43.633587] MT7663: MtCmdSetMacTxRx:(ret = 0)
+[   43.638275] MT7663: asic_bss_beacon_init(): NotSupportedFunc for this arch(HIF_MT)!
+[   43.646077] MT7663: MtAsicSetChBusyStat(648): Not support for HIF_MT yet!
+[   43.652889] MT7663: AsicDisableSync(): NotSupportedFunc for this arch(HIF_MT)!
+[   43.660150] MT7663: MtAsicSetRalinkBurstMode(2221): Not support for HIF_MT yet!
+[   43.667536] MT7663: MtAsicSetPiggyBack(592): Not support for HIF_MT yet!
+[   43.674323] MT7663: WifiFwdSet::disabled=0
+[   43.678494] MT7663: AsicSetPreTbtt(): NotSupportedFunc for this arch(HIF_MT)!
+[   43.685658] MT7663: ap_ftkd> Initialize FT KDP Module...
+[   43.691063] MT7663: Main bssid = 00:00:00:00:00:00
+[   43.696025] MT7663: AsicSetRxFilter(): NotSupportedFunc for this arch(HIF_MT)!
+[   43.703608] MT7663: MtCmdSetMacTxRx:(ret = 0)
+[   43.708102] MT7663: AsicSetRxFilter(): NotSupportedFunc for this arch(HIF_MT)!
+[   43.715480] MT7663: MtCmdSetMacTxRx:(ret = 0)
+[   43.719919] INIT REDUCE TCP ACK, rai0
+[   43.723578] MT7663: <==== mt_wifi_init, Status=0
+[   43.728275] MT7663: TxBfModuleEnCtrl:It's not DBDC mode
+[   43.733589] MT7663: MtCmdEDCCACtrl: BandIdx: 0, EDCCACtrl: 1
+[   43.747438] MT7663: MSTA_Init (1) ---> ApCli
+[   43.751790] MT7663: Register MSTA IF (apclii0) , pAd->MSTANum = 1
+[   43.758054] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   43.762873] MT7663: 
+phy_mode=49, ch=0, wdev_type=2
+[   43.767866] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   43.772393] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   43.780772] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   43.785321] MT7663: mdpu_density=0, ampdu_factor=3
+[   43.791211] MT7663: WDS_Init():
+[   43.794621] MT7663: The new WDS interface MAC = 00:00:00:00:00:00
+[   43.800791] MT7663:   MacTabMatchWCID = 0
+[   43.804878] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   43.809702] MT7663: 
+phy_mode=49, ch=0, wdev_type=8
+[   43.814690] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   43.819224] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   43.827598] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   43.832128] MT7663: mdpu_density=0, ampdu_factor=3
+[   43.838132] MT7663: The new WDS interface MAC = 00:00:00:00:00:00
+[   43.844246] MT7663:   MacTabMatchWCID = 0
+[   43.848349] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   43.853165] MT7663: 
+phy_mode=49, ch=0, wdev_type=8
+[   43.858149] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   43.862675] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   43.871047] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   43.875594] MT7663: mdpu_density=0, ampdu_factor=3
+[   43.881547] MT7663: The new WDS interface MAC = 00:00:00:00:00:00
+[   43.887711] MT7663:   MacTabMatchWCID = 0
+[   43.891773] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   43.896607] MT7663: 
+phy_mode=49, ch=0, wdev_type=8
+[   43.901574] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   43.906119] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   43.914479] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   43.919028] MT7663: mdpu_density=0, ampdu_factor=3
+[   43.925128] MT7663: The new WDS interface MAC = 00:00:00:00:00:00
+[   43.931239] MT7663:   MacTabMatchWCID = 0
+[   43.935326] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   43.940143] MT7663: 
+phy_mode=49, ch=0, wdev_type=8
+[   43.945125] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   43.949655] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   43.958024] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   43.962553] MT7663: mdpu_density=0, ampdu_factor=3
+[   43.968480] MT7663: Total allocated 4 WDS interfaces!
+[   43.973555] MT7663: WtcSetMaxStaNum: MaxStaNum:105, BssidNum:7, WdsNum:4, ApcliNum:1, MaxNumChipRept:16, MinMcastWcid:127
+[   43.992890] MT7663: RedInit: set Driver/N9 RED Enable to 1.
+[   43.998707] MT7663: RedInit: RED Initiailize Done.
+[   44.003500] MT7663: cp_support_is_enabled: set Driver CP_SUPPORT to Mode 2.
+[   44.010639] MT7663: RTMP_COM_IoctlHandle -> CMD_RTPRIV_IOCTL_VIRTUAL_INF_UP
+[   44.017674] MT7663: wifi_sys_open(), wdev idx = 0
+[   44.022407] MT7663: wdev_attr_update(): wdevId0 = 50:91:e3:c2:34:e8
+[   44.028794] [RcGetHdevByPhyMode]-- channel 0 fix for rdev fetching
+[   44.035055] MT7663: [BuildChannelList] BandIdx = 0, PhyMode = 49, ChListNum = 19:
+[   44.042709] MT7663:  [RadarStateCheck] RD_NORMAL_MODE  
+[   44.048940] MT7663: phy_freq_adjust : no prim_ch value for adjust!
+[   44.055242] MT7663: Caller: wlan_operate_init+0x108/0x11c
+[   44.060667] MT7663: 
+phy_mode=49, ch=0, wdev_type=1
+[   44.065652] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   44.070182] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   44.078562] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   44.083092] MT7663: mdpu_density=5, ampdu_factor=3
+[   44.088596] MT7663: AP inf up for ra_0(func_idx) OmacIdx=0
+[   44.094116] MT7663: AsicRadioOnOffCtrl(): DbdcIdx=0 RadioOn
+[   44.101397] MT7663: ApAutoChannelAtBootUp----------------->
+[   44.107012] MT7663: ApAutoChannelAtBootUp: AutoChannelBootup[0] = 1
+[   44.113538] MT7663: AsicSetRxFilter(): NotSupportedFunc for this arch(HIF_MT)!
+[   44.120977] MT7663: MtCmdSetMacTxRx:(ret = 0)
+[   44.125565] MT7663: [AutoChSelBuildChannelListFor5G] ChListNum5G = 19
+[   44.132090] MT7663: AsicSwitchChannel(): 5G Channel:36, then must be Channel_Band:1 !!
+[   44.374729] MT7663: AsicSwitchChannel(): 5G Channel:40, then must be Channel_Band:1 !!
+[   44.614724] MT7663: AsicSwitchChannel(): 5G Channel:44, then must be Channel_Band:1 !!
+[   44.854708] MT7663: AsicSwitchChannel(): 5G Channel:48, then must be Channel_Band:1 !!
+[   45.094720] MT7663: ====================================================================
+[   45.102830] MT7663: Channel  36 : Busy Time =   1352, Skip Channel = FALSE, BwCap = TRUE
+[   45.110950] MT7663: Channel  40 : Busy Time =    675, Skip Channel = FALSE, BwCap = TRUE
+[   45.119056] MT7663: Channel  44 : Busy Time =   3089, Skip Channel = FALSE, BwCap = TRUE
+[   45.127172] MT7663: Channel  48 : Busy Time =    589, Skip Channel = FALSE, BwCap = TRUE
+[   45.135285] MT7663: ====================================================================
+[   45.143402] MT7663: Rule 3 Channel Busy time value : Select Primary Channel 48
+[   45.150640] MT7663: Rule 3 Channel Busy time value : Min Channel Busy = 3089
+[   45.157704] MT7663: Rule 3 Channel Busy time value : BW = 80
+[   45.163366] MT7663: [SelectClearChannelBusyTime] - band0 END
+[   45.169073] MT7663: ApAutoChannelAtBootUp : Auto channel selection: Selected channel = 48, IsAband = 1
+[   45.178406] MT7663:  AutoChSelUpdateChannel(): Update channel for wdev for this band PhyMode = 49, Channel = 48 
+[   45.189297] MT7663:  [RadarStateCheck] RD_NORMAL_MODE  
+[   45.195442] MT7663: AsicSwitchChannel(): 5G Channel:42, then must be Channel_Band:1 !!
+[   45.242657] MT7663: ApAutoChannelAtBootUp<-----------------
+[   45.248308] mt7663 mtk_band_steering_netlink_init 243 band steering netlink init ok
+[   45.256194] MT7663: [PMF]APPMFInit:: apidx=0, MFPC=0, MFPR=0, SHA256=0
+[   45.262888] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   45.267762] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   45.272861] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   45.277417] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   45.285877] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   45.290412] MT7663: mdpu_density=5, ampdu_factor=3
+[   45.295262] MT7663: Enable 20/40 BSSCoex Channel Scan(BssCoex=1)
+[   45.301290] MT7663: wifi_sys_linkup(), wdev idx = 0
+[   45.306193] MT7663: wtc_acquire_groupkey_wcid: Found a non-occupied wtbl_idx:135 for WDEV_TYPE:1
+ LinkToOmacIdx = 0, LinkToWdevType = 1
+[   45.431552] MT7663: bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO), CmdBssInfoBmcRate.u2BcTransmit= 8192, CmdBssInfoBmcRate.u2McTransmit = 128
+[   45.451429] MT7663: UpdateBeaconHandler, BCN_UPDATE_INIT, OmacIdx = 0
+[   45.457944] MT7663: MtCmdTxPowerSKUCtrl: fgTxPowerSKUEn: 1, BandIdx: 0
+[   45.464576] MT7663: MtCmdTxBfBackoffCtrl: fgTxBFBackoffEn: 0, BandIdx: 0
+[   45.471337] MT7663: MtCmdTxPowerPercentCtrl: fgTxPowerPercentEn: 1, BandIdx: 0
+[   45.478695] MT7663: AsicSetTxStream(): NotSupportedFunc for this arch(HIF_MT)!
+[   45.486043] MT7663: AsicSetRxStream(): NotSupportedFunc for this arch(HIF_MT)!
+[   45.503229] MT7663: apidx 0 for WscUUIDInit
+[   45.507476] MT7663: Generate UUID for apidx(0)
+[   45.523753] MT7663: apclii0: ===> msta_virtual_if_open
+[   45.528964] MT7663: RTMP_COM_IoctlHandle -> CMD_RTPRIV_IOCTL_VIRTUAL_INF_UP
+[   45.535955] MT7663: wifi_sys_open(), wdev idx = 7
+[   45.704922] MT7663: Caller: wlan_operate_init+0x108/0x11c
+[   45.710421] MT7663: 
+phy_mode=49, ch=48, wdev_type=2
+[   45.715558] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   45.720088] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   45.728565] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   45.733096] MT7663: mdpu_density=0, ampdu_factor=3
+[   45.738156] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   45.743074] MT7663: 
+phy_mode=49, ch=48, wdev_type=2
+[   45.748156] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   45.752843] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   45.761232] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   45.765827] MT7663: mdpu_density=0, ampdu_factor=3
+[   45.770661] MT7663: MSTA interface up for apcli0 func_idx=0 OmacIdx=1
+[   45.787455] MT7663: I/F(apcli0) Set_ApCli_Enable_Proc::(enable = 1)
+[   45.807824] MT7663: rai4: ===> mbss_virtual_if_open
+[   45.812741] MT7663: RTMP_COM_IoctlHandle -> CMD_RTPRIV_IOCTL_VIRTUAL_INF_UP
+[   45.819805] MT7663: wifi_sys_open(), wdev idx = 4
+[   45.824517] MT7663: wdev_attr_update(): wdevId4 = 52:91:e3:c2:34:e8
+[   45.831051] MT7663: Caller: wlan_operate_init+0x108/0x11c
+[   45.836566] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   45.841624] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   45.846171] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   45.854527] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   45.859072] MT7663: mdpu_density=0, ampdu_factor=3
+[   45.864569] MT7663: AP inf up for ra_4(func_idx) OmacIdx=20
+[   45.870209] MT7663: AsicRadioOnOffCtrl(): DbdcIdx=0 RadioOn
+[   45.877455] MT7663: ApAutoChannelAtBootUp----------------->
+[   45.883032] MT7663: ApAutoChannelAtBootUp: AutoChannelBootup[0] = 1
+[   45.889387] MT7663: AsicSetRxFilter(): NotSupportedFunc for this arch(HIF_MT)!
+[   45.896736] MT7663: MtCmdSetMacTxRx:(ret = 0)
+[   45.901105] MT7663: ApAutoChannelAtBootUp<-----------------
+[   45.906726] mt7663 mtk_band_steering_netlink_init 243 band steering netlink init ok
+[   45.914544] MT7663: [PMF]APPMFInit:: apidx=4, MFPC=0, MFPR=0, SHA256=0
+[   45.921213] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   45.926049] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   45.931103] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   45.935648] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   45.944003] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   45.948546] MT7663: mdpu_density=0, ampdu_factor=3
+[   45.953342] MT7663: Enable 20/40 BSSCoex Channel Scan(BssCoex=1)
+[   45.959389] MT7663: wifi_sys_linkup(), wdev idx = 4
+[   45.964274] MT7663: wtc_acquire_groupkey_wcid: Found a non-occupied wtbl_idx:134 for WDEV_TYPE:1
+ LinkToOmacIdx = 14, LinkToWdevType = 1
+[   46.089753] MT7663: bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO), CmdBssInfoBmcRate.u2BcTransmit= 8192, CmdBssInfoBmcRate.u2McTransmit = 8196
+[   46.109755] MT7663: UpdateBeaconHandler, BCN_UPDATE_INIT, OmacIdx = 14
+[   46.116353] MT7663: MtCmdTxPowerSKUCtrl: fgTxPowerSKUEn: 1, BandIdx: 0
+[   46.122912] MT7663: MtCmdTxBfBackoffCtrl: fgTxBFBackoffEn: 0, BandIdx: 0
+[   46.129656] MT7663: MtCmdTxPowerPercentCtrl: fgTxPowerPercentEn: 1, BandIdx: 0
+[   46.136924] MT7663: AsicSetTxStream(): NotSupportedFunc for this arch(HIF_MT)!
+[   46.144148] MT7663: AsicSetRxStream(): NotSupportedFunc for this arch(HIF_MT)!
+[   46.159906] MT7663: apidx 4 for WscUUIDInit
+[   46.164243] MT7663: Generate UUID for apidx(4)
+[   46.178254] MT7663: rai5: ===> mbss_virtual_if_open
+[   46.183166] MT7663: RTMP_COM_IoctlHandle -> CMD_RTPRIV_IOCTL_VIRTUAL_INF_UP
+[   46.190206] MT7663: wifi_sys_open(), wdev idx = 5
+[   46.194952] MT7663: wdev_attr_update(): wdevId5 = 52:91:e3:d2:34:e8
+[   46.361028] MT7663: Caller: wlan_operate_init+0x108/0x11c
+[   46.366495] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   46.371548] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   46.376085] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   46.384439] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   46.388989] MT7663: mdpu_density=0, ampdu_factor=3
+[   46.394477] MT7663: AP inf up for ra_5(func_idx) OmacIdx=21
+[   46.400104] MT7663: AsicRadioOnOffCtrl(): DbdcIdx=0 RadioOn
+[   46.407338] MT7663: ApAutoChannelAtBootUp----------------->
+[   46.412914] MT7663: ApAutoChannelAtBootUp: AutoChannelBootup[0] = 1
+[   46.419288] MT7663: AsicSetRxFilter(): NotSupportedFunc for this arch(HIF_MT)!
+[   46.426648] MT7663: MtCmdSetMacTxRx:(ret = 0)
+[   46.431019] MT7663: ApAutoChannelAtBootUp<-----------------
+[   46.436639] mt7663 mtk_band_steering_netlink_init 243 band steering netlink init ok
+[   46.444450] MT7663: [PMF]APPMFInit:: apidx=5, MFPC=0, MFPR=0, SHA256=0
+[   46.451107] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   46.455946] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   46.461107] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   46.465729] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   46.474221] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   46.478846] MT7663: mdpu_density=0, ampdu_factor=3
+[   46.483670] MT7663: Enable 20/40 BSSCoex Channel Scan(BssCoex=1)
+[   46.489721] MT7663: wifi_sys_linkup(), wdev idx = 5
+[   46.494604] MT7663: wtc_acquire_groupkey_wcid: Found a non-occupied wtbl_idx:133 for WDEV_TYPE:1
+ LinkToOmacIdx = 15, LinkToWdevType = 1
+[   46.620523] MT7663: bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO), CmdBssInfoBmcRate.u2BcTransmit= 8192, CmdBssInfoBmcRate.u2McTransmit = 8196
+[   46.640513] MT7663: UpdateBeaconHandler, BCN_UPDATE_INIT, OmacIdx = 15
+[   46.647107] MT7663: MtCmdTxPowerSKUCtrl: fgTxPowerSKUEn: 1, BandIdx: 0
+[   46.653736] MT7663: MtCmdTxBfBackoffCtrl: fgTxBFBackoffEn: 0, BandIdx: 0
+[   46.660619] MT7663: MtCmdTxPowerPercentCtrl: fgTxPowerPercentEn: 1, BandIdx: 0
+[   46.668005] MT7663: AsicSetTxStream(): NotSupportedFunc for this arch(HIF_MT)!
+[   46.675451] MT7663: AsicSetRxStream(): NotSupportedFunc for this arch(HIF_MT)!
+[   46.691244] MT7663: apidx 5 for WscUUIDInit
+[   46.695484] MT7663: Generate UUID for apidx(5)
+[   46.751843] MT7663: Set_Map_Proc: current MAP MODE 3
+[   46.765451] MT7663: Set_MapR2_Proc: MAP R2 is enabled
+[   46.778802] MT7663: Set_Bh_Bss_Proc rai0 bandIdx = 0 ,DevOwnRole 0x20
+[   46.793056] MT7663: Set_Fh_Bss_Proc rai0 wdev->MAPCfg.DevOwnRole 0x20
+[   46.815620] MT7663: Set_Fh_Bss_Proc rai4 wdev->MAPCfg.DevOwnRole 0x0
+[   46.830063] MT7663: Set_Bh_Bss_Proc rai4 bandIdx = 0 ,DevOwnRole 0x44
+[   46.844224] MT7663: Set_Fh_Bss_Proc rai5 wdev->MAPCfg.DevOwnRole 0x0
+[   46.858463] MT7663: Set_Bh_Bss_Proc rai5 bandIdx = 0 ,DevOwnRole 0x48
+[   46.872675] MT7663: Set_Fh_Bss_Proc rai6 wdev->MAPCfg.DevOwnRole 0x0
+[   46.894912] MT7663: Set_Bh_Sta_Proc apclii0 wdev->MAPCfg.DevOwnRole 0x80
+[ map_attachSharedBuff ] 200 - ERROR:  Get map shared buffer error.
+[ oal_easymesh_getMAPDevices ] 1416 - ERROR:  Failed to attach map shared memory buffer.
+
+[ rsl_easymesh_updateMapDev ] 11509 - ERROR:  There are no APDevices saved in map shared memory.
+[ rsl_easymesh_checkChannels ] 13706 - ERROR:  Can not find Controller
+[   46.946298] MT7663: cfg_mode=14
+[   46.949744] MT7663: Caller: wlan_operate_init+0x108/0x11c
+[   46.955228] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   46.960287] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   46.964830] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   46.973185] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   46.977729] MT7663: mdpu_density=5, ampdu_factor=3
+[   46.982570] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   46.987399] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   46.992453] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   46.996997] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.005367] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.009897] MT7663: mdpu_density=5, ampdu_factor=3
+[   47.014989] MT7663: Caller: wlan_operate_init+0x108/0x11c
+[   47.020411] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.025505] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.030040] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.038442] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.042976] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.047820] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.052625] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.057704] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.062237] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.070607] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.075155] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.080153] MT7663: Caller: wlan_operate_init+0x108/0x11c
+[   47.085611] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.090663] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.095200] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.103553] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.108093] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.112915] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.117742] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.122790] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.127331] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.135698] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.140228] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.145310] MT7663: Caller: wlan_operate_init+0x108/0x11c
+[   47.150732] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.155807] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.160337] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.168704] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.173236] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.178084] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.182884] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.187979] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.192509] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.200879] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.205430] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.210442] MT7663: Caller: wlan_operate_init+0x108/0x11c
+[   47.215902] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.220961] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.225506] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.233867] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.238415] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.243248] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.248071] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.253119] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.257666] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.266038] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.270568] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.278104] MT7663: Caller: wlan_operate_init+0x108/0x11c
+[   47.283545] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.288628] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.293157] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.301532] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.306077] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.310906] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.315730] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.320785] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.325332] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.333688] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.338241] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.343279] MT7663: Caller: wlan_operate_init+0x108/0x11c
+[   47.348736] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.353793] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.358340] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.366710] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.371240] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.376079] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.380888] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.385955] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.390488] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.398866] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.403397] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.416320] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.421228] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.426473] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.431123] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.439539] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.444070] MT7663: mdpu_density=5, ampdu_factor=3
+[   47.448911] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.453710] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.458791] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.463318] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.471702] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.476257] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.481183] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.486010] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.491137] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.495886] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.504263] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.508883] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.513698] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.518526] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.523605] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.528294] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.536773] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.541307] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.546147] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.550950] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.556023] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.560553] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.568927] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.573458] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.578292] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.583191] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.588273] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.592874] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.601370] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.605997] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.610843] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.615669] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.620722] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.625693] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.634089] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.638738] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.643556] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.648387] MT7663: 
+phy_mode=49, ch=48, wdev_type=2
+[   47.653435] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.657988] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.666373] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.670903] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.675751] MT7663: hc_radio_res_request(): wdev=8, hobj 0x87e57768 is not ready!
+[   47.683255] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.688167] MT7663: 
+phy_mode=49, ch=48, wdev_type=8
+[   47.693217] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.697960] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.706406] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.710985] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.715827] MT7663: hc_radio_res_request(): wdev=9, hobj 0x87e57790 is not ready!
+[   47.723333] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.728301] MT7663: 
+phy_mode=49, ch=48, wdev_type=8
+[   47.733373] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.738016] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.746401] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.750932] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.755775] MT7663: hc_radio_res_request(): wdev=10, hobj 0x87e577b8 is not ready!
+[   47.763369] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.768192] MT7663: 
+phy_mode=49, ch=48, wdev_type=8
+[   47.773241] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.777796] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.786172] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.790785] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.795632] MT7663: hc_radio_res_request(): wdev=11, hobj 0x87e577e0 is not ready!
+[   47.803333] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.808228] MT7663: 
+phy_mode=49, ch=48, wdev_type=8
+[   47.813328] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.817883] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.826370] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.830940] MT7663: mdpu_density=0, ampdu_factor=3
+[   47.843629] MT7663: hc_radio_res_request(): wdev=8, hobj 0x87e57768 is not ready!
+[   47.851222] MT7663: hc_radio_res_request(): wdev=9, hobj 0x87e57790 is not ready!
+[   47.858743] MT7663: hc_radio_res_request(): wdev=10, hobj 0x87e577b8 is not ready!
+[   47.866351] MT7663: hc_radio_res_request(): wdev=11, hobj 0x87e577e0 is not ready!
+[   47.889944] MT7663: SetPercentageCtrl: ucBandIdx = 0
+[   47.895009] MT7663: SetPercentageCtrl: TxPowerPercentEn = 1
+[   47.900662] MT7663: MtCmdTxPowerPercentCtrl: fgTxPowerPercentEn: 1, BandIdx: 0
+[   47.916508] MT7663: SetPowerDropCtrl: ucPowerDrop = 100
+[   47.938004] MT7663: Set_FragThreshold_Proc::set wdev0 FragThreshold=2346)
+[   47.968651] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   47.973493] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   47.978581] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   47.983108] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   47.991487] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   47.996026] MT7663: mdpu_density=5, ampdu_factor=3
+[   48.008862] MT7663: Caller: SetCommonHT+0xc4/0x130
+[   48.013704] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   48.018938] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   48.023468] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   48.032005] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   48.036604] MT7663: mdpu_density=5, ampdu_factor=3
+[   48.159107] MT7663: Set_RTSThreshold_Proc: set wdev0 rts length threshold=2347(0x92b)
+[   48.397135] MT7663: Set_RTSThreshold_Proc: set wdev4 rts length threshold=2347(0x92b)
+[   48.488901] MT7663: Set_RTSThreshold_Proc: set wdev5 rts length threshold=2347(0x92b)
+[ rsl_setUpDev2BridgePortObj ] 795:  rai5 isWanConn=0 moveIntfToBr0=0 br0
+[   48.569948] device rai5 entered promiscuous mode
+[   48.574816] br0: port 12(rai5) entered forwarding state
+[   48.580102] br0: port 12(rai5) entered forwarding state
+[ rsl_setUpDev2BridgePortObj ] 795:  rai4 isWanConn=0 moveIntfToBr0=0 br0
+[   48.602138] device rai4 entered promiscuous mode
+[   48.607029] br0: port 13(rai4) entered forwarding state
+[   48.612319] br0: port 13(rai4) entered forwarding state
+[ rsl_setUpDev2BridgePortObj ] 795:  rai3 isWanConn=0 moveIntfToBr0=0 br0
+brctl: bridge br0: Invalid argument
+[ rsl_setUpDev2BridgePortObj ] 795:  rai2 isWanConn=0 moveIntfToBr0=0 br0
+brctl: bridge br0: Invalid argument
+[ rsl_setUpDev2BridgePortObj ] 795:  rai1 isWanConn=0 moveIntfToBr0=0 br0
+brctl: bridge br0: Invalid argument
+[ rsl_setUpDev2BridgePortObj ] 795:  rai0 isWanConn=0 moveIntfToBr0=0 br0
+[   48.680697] device rai0 entered promiscuous mode
+[   48.685593] br0: port 14(rai0) entered forwarding state
+[   48.690886] br0: port 14(rai0) entered forwarding state
+[   48.710925] device apclii0 entered promiscuous mode
+[   48.736298] MT7663: [PMF]APPMFInit:: apidx=0, MFPC=0, MFPR=0, SHA256=0
+[   48.742957] MT7663: [   48.743120] MT7663: ExtEventBeaconLostHandler::FW LOG, Beacon lost (50:91:e3:c2:34:e8), Reason 0x10
+[   48.743135] MT7663:   Beacon lost - AP disabled!!!
+
+[   48.758863] wifi_sys_linkdown(), wdev idx = 0
+[   48.765882] MT7663: bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO), CmdBssInfoBmcRate.u2BcTransmit= 0, CmdBssInfoBmcRate.u2McTransmit = 0
+[   48.778350] MT7663: wmm_ctrl_release_entry(): Can't find HdevObj or Edca not required
+[   48.786234] MT7663: wifi_sys_close(), wdev idx = 0
+[   48.791715] MT7663: wifi_sys_open(), wdev idx = 0
+[   48.796448] MT7663: wdev_attr_update(): wdevId0 = 50:91:e3:c2:34:e8
+[   48.802781] MT7663: [BuildChannelList] BandIdx = 0, PhyMode = 49, ChListNum = 19:
+[   48.810519] MT7663: Caller: wlan_operate_init+0x108/0x11c
+[   48.815977] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   48.821034] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   48.825574] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   48.833929] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   48.838467] MT7663: mdpu_density=5, ampdu_factor=3
+[   48.843963] MT7663: wifi_sys_linkup(), wdev idx = 0
+[   48.848876] MT7663: wtc_acquire_groupkey_wcid: Found a non-occupied wtbl_idx:135 for WDEV_TYPE:1
+ LinkToOmacIdx = 0, LinkToWdevType = 1
+[   48.973469] MT7663: bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO), CmdBssInfoBmcRate.u2BcTransmit= 8192, CmdBssInfoBmcRate.u2McTransmit = 128
+[   48.996543] MT7663: UpdateBeaconHandler, BCN_UPDATE_INIT, OmacIdx = 0
+[   49.013403] MT7663: [PMF]APPMFInit:: apidx=4, MFPC=0, MFPR=0, SHA256=0
+[   49.020139] MT7663: [   49.020292] MT7663: ExtEventBeaconLostHandler::FW LOG, Beacon lost (52:91:e3:c2:34:e8), Reason 0x10
+[   49.020307] MT7663:   Beacon lost - AP disabled!!!
+
+[   49.036160] wifi_sys_linkdown(), wdev idx = 4
+[   49.043172] MT7663: bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO), CmdBssInfoBmcRate.u2BcTransmit= 0, CmdBssInfoBmcRate.u2McTransmit = 0
+[   49.055648] MT7663: wmm_ctrl_release_entry(): Can't find HdevObj or Edca not required
+[   49.063508] MT7663: wifi_sys_close(), wdev idx = 4
+[   49.069042] MT7663: wifi_sys_open(), wdev idx = 4
+[   49.073758] MT7663: wdev_attr_update(): wdevId4 = 52:91:e3:c2:34:e8
+[   49.080312] MT7663: Caller: wlan_operate_init+0x108/0x11c
+[   49.085825] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   49.090877] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   49.095426] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   49.103780] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   49.108364] MT7663: mdpu_density=0, ampdu_factor=3
+[   49.113849] MT7663: wifi_sys_linkup(), wdev idx = 4
+[   49.118863] MT7663: wtc_acquire_groupkey_wcid: Found a non-occupied wtbl_idx:134 for WDEV_TYPE:1
+ LinkToOmacIdx = 14, LinkToWdevType = 1
+[   49.244857] MT7663: bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO), CmdBssInfoBmcRate.u2BcTransmit= 8192, CmdBssInfoBmcRate.u2McTransmit = 8196
+[   49.268003] MT7663: UpdateBeaconHandler, BCN_UPDATE_INIT, OmacIdx = 14
+[   49.285011] MT7663: [PMF]APPMFInit:: apidx=5, MFPC=0, MFPR=0, SHA256=0
+[   49.291669] MT7663: [   49.291828] MT7663: ExtEventBeaconLostHandler::FW LOG, Beacon lost (52:91:e3:d2:34:e8), Reason 0x10
+[   49.291842] MT7663:   Beacon lost - AP disabled!!!
+
+[   49.307554] wifi_sys_linkdown(), wdev idx = 5
+[   49.314560] MT7663: bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO), CmdBssInfoBmcRate.u2BcTransmit= 0, CmdBssInfoBmcRate.u2McTransmit = 0
+[   49.327329] MT7663: wmm_ctrl_release_entry(): Can't find HdevObj or Edca not required
+[   49.335244] MT7663: wifi_sys_close(), wdev idx = 5
+[   49.340721] MT7663: wifi_sys_open(), wdev idx = 5
+[   49.345453] MT7663: wdev_attr_update(): wdevId5 = 52:91:e3:d2:34:e8
+[   49.351913] MT7663: Caller: wlan_operate_init+0x108/0x11c
+[   49.357360] MT7663: 
+phy_mode=49, ch=48, wdev_type=1
+[   49.362413] MT7663: ht_cap: ht_cap->HtCapInfo, 
+[   49.366951] MT7663: ldpc=1,ch_width=1,gf=0,sgi20=1,sgi40=1,tx_stbc=1,rx_stbc=1,amsdu_size=0
+[   49.375316] MT7663: ht_cap: ht_cap->HtCapParm, 
+[   49.379846] MT7663: mdpu_density=0, ampdu_factor=3
+[   49.385346] MT7663: wifi_sys_linkup(), wdev idx = 5
+[   49.390237] MT7663: wtc_acquire_groupkey_wcid: Found a non-occupied wtbl_idx:133 for WDEV_TYPE:1
+ LinkToOmacIdx = 15, LinkToWdevType = 1
+[   49.515319] MT7663: bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO), CmdBssInfoBmcRate.u2BcTransmit= 8192, CmdBssInfoBmcRate.u2McTransmit = 8196
+[   49.538535] MT7663: UpdateBeaconHandler, BCN_UPDATE_INIT, OmacIdx = 15
+[ oal_wifi_mtk_initEnd ] 8348 - ERROR:  wlNetlinkTool is already there. 
+
+[   49.559735] MT7663: CNTL in reset SYNC
+[   49.563508] MT7663: I/F(apcli0) Set_ApCli_Enable_Proc::(enable = 0)
+[   49.577933] MT7663: I/F(apcli0) Set_ApCli_Enable_Proc::(enable = 0)
+rm: can't remove '/var/tmp/os_print/tpApp/2_debug': No such file or directory
+[1454] May 04 01:00:49 Running in background
+sendto: No such file or directory
+line(593) Msg.type(2030) pid(600) errno(2) ret(-1)
+iptables: Bad rule (does a matching rule exist in that chain?).
+iptables: Bad rule (does a matching rule exist in that chain?).
+[   50.520636] tun: Universal TUN/TAP device driver, 1.6
+[   50.526327] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[   50.586829] PPP MPPE Compression module registered
+Set: phy[2].reg[0] = 1000
+[ getPidFromPidFile ] 133 - ERROR:  Cann't open file: /var/run/zebra.pid.
+[ getPidFromPidFile ] 133 - ERROR:  Cann't open file: /var/run/ripd.pid.
+[ getPidFromPidFile ] 133 - ERROR:  Cann't open file: /var/run/ripngd.pid.
+iptables: Bad rule (does a matching rule exist in that chain?).
+iptables: Bad rule (does a matching rule exist in that chain?).
+iptables: Bad rule (does a matching rule exist in that chain?).
+[   51.149623] nf_conntrack_rtsp v0.7 loading
+[   51.162717] nf_nat_rtsp v0.7 loading
+iptables: Bad rule (does a matching rule exist in that chain?).
+ip6tables: Bad rule (does a matching rule exist in that chain?).
+[ oal_sys_pctlLoadHistory ] 7530:  readLen: 128. 
+.....[   52.517010] read reg off:214 val:0
+.data.val = 0
+set offset 214 as 0 for sch rate control.
+[   52.528454] read reg off:214 val:0
+data.val = 0
+set offset 214 as 0 for sch rate control.
+.sch
+[   52.539902] read reg off:4 val:80000000
+data.val = 80000000
+set offset 4 as 0 for sch selection.
+rate
+[   52.551929] read reg off:4 val:0
+.data.val = 0
+set offset 4 as 8000000 for rate control.
+!!!!!weight
+[   52.563561] read reg off:4 val:8000000
+data.val = 8000000
+set offset 4 as 8000000 for max rate weight.
+.sch
+[   52.576300] read reg off:14 val:0
+data.val = 0
+set offset 14 as 0 for sch selection.
+rate
+[   52.587673] read reg off:14 val:0
+.data.val = 0
+set offset 14 as 8000000 for rate control.
+!!!!!weight
+[   52.599444] read reg off:14 val:8000000
+data.val = 8000000
+set offset 14 as 8000000 for max rate weight.
+.sch
+[   52.612356] read reg off:24 val:0
+data.val = 0
+set offset 24 as 0 for sch selection.
+rate
+[   52.623878] read reg off:24 val:0
+.data.val = 0
+set offset 24 as 8000000 for rate control.
+!!!!!weight
+[   52.635591] read reg off:24 val:8000000
+data.val = 8000000
+set offset 24 as 8000000 for max rate weight.
+.sch
+[   52.648622] read reg off:34 val:0
+data.val = 0
+set offset 34 as 0 for sch selection.
+rate
+[   52.660149] read reg off:34 val:0
+.data.val = 0
+set offset 34 as 8000000 for rate control.
+!!!!!weight
+[   52.671933] read reg off:34 val:8000000
+data.val = 8000000
+set offset 34 as 8000000 for max rate weight.
+.sch
+[   52.684762] read reg off:44 val:0
+data.val = 0
+set offset 44 as 0 for sch selection.
++rate
+[   52.696299] read reg off:44 val:0
+data.val = 0
+set offset 44 as 8000000 for rate control.
++!!!!!weight
+[   52.708119] read reg off:44 val:8000000
++data.val = 8000000
+set offset 44 as 8000000 for max rate weight.
+sch
+[   52.721300] read reg off:54 val:0
++data.val = 0
+set offset 54 as 0 for sch selection.
+rate
+[   52.732952] read reg off:54 val:0
++data.val = 0
+set offset 54 as 8000000 for rate control.
+
+.!!!!!weight
+[   52.744627] read reg off:54 val:8000000
+data.val = 8000000
+set offset 54 as 8000000 for max rate weight.
+sch
+[   52.757303] read reg off:64 val:0
+.data.val = 0
+set offset 64 as 0 for sch selection.
+rate
+[   52.769158] read reg off:64 val:0
+data.val = 0
+set offset 64 as 8000000 for rate control.
+.!!!!!weight
+[   52.780821] read reg off:64 val:8000000
+data.val = 8000000
+set offset 64 as 8000000 for max rate weight.
+sch
+[   52.793463] read reg off:74 val:0
+.data.val = 0
+set offset 74 as 0 for sch selection.
+rate
+[   52.804988] read reg off:74 val:0
+data.val = 0
+set offset 74 as 8000000 for rate control.
+.!!!!!weight
+[   52.816822] read reg off:74 val:8000000
++data.val = 8000000
+set offset 74 as 8000000 for max rate weight.
+sch
+[   52.829828] read reg off:84 val:0
++data.val = 0
+set offset 84 as 80000000 for sch selection.
+rate
+[   52.841324] read reg off:84 val:80000000
++data.val = 80000000
+set offset 84 as 88000000 for rate control.
+!!!!!weight
+[   52.853699] read reg off:84 val:88000000
++data.val = 88000000
+set offset 84 as 88000000 for max rate weight.
+sch
+[   52.866669] read reg off:94 val:0
++data.val = 0
+set offset 94 as 80000000 for sch selection.
+
+rate[   52.878116] read reg off:94 val:80000000
+
+data.val = 80000000
+set offset 94 as 88000000 for rate control.
+!!!!!weight
+[   52.889974] read reg off:94 val:88000000
+data.val = 88000000
+set offset 94 as 88000000 for max rate weight.
+sch[   52.902310] read reg off:a4 val:0
+
+data.val = 0
+set offset a4 as 80000000 for sch selection.
+rate[   52.913472] read reg off:a4 val:80000000
+
+data.val = 80000000
+set offset a4 as 88000000 for rate control.
+!!!!!weight[   52.925596] read reg off:a4 val:88000000
+
+data.val = 88000000
+set offset a4 as 88000000 for max rate weight.
+sch[   52.938002] read reg off:b4 val:0
+
+data.val = 0
+set offset b4 as 80000000 for sch selection.
+rate[   52.949107] read reg off:b4 val:80000000
+
+data.val = 80000000
+set offset b4 as 88000000 for rate control.
+!!!!!weight[   52.960897] read reg off:b4 val:88000000
+
+data.val = 88000000
+set offset b4 as 88000000 for max rate weight.
+sch[   52.973233] read reg off:c4 val:0
+
+data.val = 0
+set offset c4 as 80000000 for sch selection.
+rate[   52.984267] read reg off:c4 val:80000000
+
+data.val = 80000000
+set offset c4 as 88000000 for rate control.
+!!!!!weight[   52.996218] read reg off:c4 val:88000000
+
+data.val = 88000000
+set offset c4 as 88000000 for max rate weight.
+sch[   53.008498] read reg off:d4 val:0
+
+data.val = 0
+set offset d4 as 80000000 for sch selection.
+rate
+[   53.019723] read reg off:d4 val:80000000
+data.val = 80000000
+set offset d4 as 88000000 for rate control.
+!!!!!weight[   53.032032] read reg off:d4 val:88000000
+
+data.val = 88000000
+set offset d4 as 88000000 for max rate weight.
+sch[   53.044418] read reg off:e4 val:0
+
+data.val = 0
+set offset e4 as 80000000 for sch selection.
+rate[   53.055776] read reg off:e4 val:80000000
+
+data.val = 80000000
+set offset e4 as 88000000 for rate control.
+!!!!!weight[   53.067679] read reg off:e4 val:88000000
+
+data.val = 88000000
+set offset e4 as 88000000 for max rate weight.
+sch
+[   53.080347] read reg off:f4 val:0
+data.val = 0
+set offset f4 as 80000000 for sch selection.
+rate
+[   53.091587] read reg off:f4 val:80000000
+data.val = 80000000
+set offset f4 as 88000000 for rate control.
+!!!!!weight
+[   53.103441] read reg off:f4 val:88000000
+data.val = 88000000
+set offset f4 as 88000000 for max rate weight.
+[ rsl_initIqosObj ] 1204:  0#0,0,0,0
+[ readMiscFile ] 1148 - ERROR:  Can not open misc file /var/run/misc/misc_ro/0x0014F800 for read
+
+[ oal_sys_readISPFlagFlash ] 4558 - ERROR:  Read ISP FLAG error, set to 0xff
+
+[ readMiscFile ] 1148 - ERROR:  Can not open misc file /var/run/misc/misc_ro/0x0014F800 for read
+
+[ oal_sys_readISPFlagFlash ] 4558 - ERROR:  Read ISP FLAG error, set to 0xff
+
+++++++++++we are going to init cloud+++++++++++++++++
+mmmInit():Total mem size=51364, addr=0x0x7a7008.
+*************************************************************
+*************************MMM TABLE DUMP**********************
+-------------------------------------------------------------
+ poolhead(40)  poolnum  dynamictimes  chainhead  poolend     
+-------------------------------------------------------------
+ 0x7a7008        8          0         (nil)     0x7b38ac  
+-------------------------------------------------------------
+ index  poolhead(20)    size    blocks    free     usage  
+-------------------------------------------------------------
+  1     0x7a7030        32          256       256       0         
+  2     0x7a9448        64          128       128       0         
+  3     0x7ab660        128         64        64        0         
+  4     0x7ad778        256         32        32        0         
+  5     0x7af810        512         8         8         0         
+  6     0x7b0848        1024        4         4         0         
+  7     0x7b1870        2048        2         2         0         
+  8     0x7b2890        4096        1         1         0         
+-------------------------------------------------------------
+ index  chainnode(16)   magic    length    prev    next      
+-------------------------------------------------------------
+(nil)
+*************************************************************
+**************************************************
+********************config dump*******************
+--------------------------------------------------
+sef domain                      : n-deventry-gw.tplinkcloud.com
+sef port                        : 443
+cloud svr default port          : 443
+default svr                     : n-devs-gw.tplinkcloud.com
+default port                    : 443
+default valid time              : 172800
+heartbeat interval              : 235000
+request timeout                 : 5000
+reconnect timewait max          : 1024000
+reconnect cachedsvr max times   : 5
+reconnect defaultsvr max times  : 5
+reconnect random time min       : 2000
+reconnect random time max       : 256000
+short connect interval          : 259200000
+max message number              : 1000
+max client number               : 20
+service file                    : /tmp/cloud_service.cfg
+cer file                        : /etc/cloud/2048_newroot.cer
+ssl verify CN                   : 
+ssl verify time                 : 0
+**************************************************
+.[ rsl_modifyServiceType ] 1272 - ERROR:  --> X_TP_ConnType=LAN X_TP_ServiceType=Unknown
+[ rsl_modifyServiceType ] 1272 - ERROR:  --> X_TP_ConnType=PPP3G X_TP_ServiceType=Unknown
+[ rsl_modifyServiceType ] 1272 - ERROR:  --> X_TP_ConnType=DHCP4G X_TP_ServiceType=Unknown
+[ rsl_modifyServiceType ] 1272 - ERROR:  --> X_TP_ConnType=DHCP X_TP_ServiceType=Internet
+sh: write error: Invalid argument
+Sorry, rule does not exist.
+open DNS error: No such file or directory
+NTP server list:
+Sorry, rule does not exist.
+.Sorry, rule does not exist.
+.[May  4 2023-04:44:35][src/wportal_ctrl.c:main:421] enter!!!
+.Sorry, rule does not exist.
+[   53.684781] led state 1->3
+.Sorry, rule does not exist.
+Sorry, rule does not exist.
+.....## Error: "fw2_status" not defined
+.[   53.836550] QCA Hy-Fi multicast installation successfully
+..## Error: "fw1_version" not defined
+.killall: apsd: no process killed
+.## Error: "fw2_version" not defined
+....## Error: "fw_index" not defined
+.fw1_version=0, fw1_status=30
+fw2_version=0, fw2_status=0
+fw_index=1
+......[src/cloud_ddns.c:ddns_initSharedBuff:876] Start to init shared buffer.
+[src/cloud_downloadHandler.c:cloud_initPthreadDownloadHandler:1179] [src/cloud_downloadHandler.c:cloud_downloadHandler:905] Enter download handler, download firmware from cloud...
+
+init download handler success!
+
+[src/cloud_downloadHandler.c:cloud_downloadHandler:914] wait semaphore to download firmware to device...
+
+.....firmware1 confirm success
+..............[_parse_config:198]: Unknown nam[   54.520972] MT7603: e: tm_plc_inspecThe 8-BSSID mode is enabled, the BSSID byte5 MUST be the multiple of 8
+t_start
+[_parse[   54.531256] MT7603: _config:198]: UnThe 8-BSSID mode is enabled, the BSSID byte5 MUST be the multiple of 8
+known name: tm_p[   54.542272] MT7663: lc_inspect_inter[   54.542437] MT7663: val
+[_parse_conExtEventBeaconLostHandler::FW LOG, Beacon lost (52:91:e3:c2:34:e8), Reason 0x10
+fig:198]: Unknow[   54.542457] MT7663: n name: plc_repo  Beacon lost - AP disabled!!!
+rt_interval
+[_p
+arse_config:198][   54.564610] AsicSetPreTbtt(): NotSupportedFunc for this arch(HIF_MT)!
+: Unknown name: [   54.573992] MT7663: plc_entry_aging_MtAsicSetPiggyBack(592): Not support for HIF_MT yet!
+time
+[_parse_co[   54.583464] MT7663: nfig:198]: UnknoAsicDisableSync(): NotSupportedFunc for this arch(HIF_MT)!
+wn name: plc_rat[   54.593463] MT7663: e_good
+[_parse_asic_bss_beacon_exit(): NotSupportedFunc for this arch(HIF_MT)!
+config:198]: Unk[   54.604029] MT7663: nown name: wifi_[   54.604212] MT7663: ExtEventBeaconLostHandler::FW LOG, Beacon lost (52:91:e3:c2:34:e8), Reason 0x10
+lost_rate_to_plc[   54.604234] MT7663:   Beacon lost - AP disabled!!!
+
+[_parse_config
+:198]: Unknown n[   54.623920] wifi_sys_linkdown(), wdev idx = 4
+ame: plc_attached
+[awnd_mode_co[   54.633783] MT7663: nvert:1908]: ===bssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO), CmdBssInfoBmcRate.u2BcTransmit= 0, CmdBssInfoBmcRate.u2McTransmit = 0
+=====================srcMode:--, dstMode:--======================
+[awnd_get_group_id:602]: read factory config [   54.657020] MT7663: group info failwifi_sys_close(), wdev idx = 4
+
+[awnd_read_grou[   54.664334] MT7663: p_id:460]: =====ap_ftkd> Release FT KDP Module...
+===========empty[   54.671665] MT7663:  ssid or key====AsicSetPreTbtt(): NotSupportedFunc for this arch(HIF_MT)!
+================[   54.681285] MT7663: 
+[awnd_mode_conMtAsicSetPiggyBack(592): Not support for HIF_MT yet!
+vert:1908]: ====[   54.690795] MT7663: ================AsicDisableSync(): NotSupportedFunc for this arch(HIF_MT)!
+====srcMode:--, [   54.700812] MT7663: dstMode:HAP=====asic_bss_beacon_exit(): NotSupportedFunc for this arch(HIF_MT)!
+================[   54.711336] MT7663: =
+[awnd_loop_hawifi_sys_linkdown(), wdev idx = 5
+p_init:1755]: 
+[   54.719275] MT7663: ^^^^^^^^^^^^^^^^ExtEventBeaconLostHandler::FW LOG, Beacon lost (52:91:e3:d2:34:e8), Reason 0x10
+^^^^^^^^^^awnd_h[   54.730948] MT7663: ap_loop^^^^^^^^^  Beacon lost - AP disabled!!!
+^^^^^^^^^^^^^^^^[   54.738717] MT7663: ^^^^
+[awnd_set_ExtEventBeaconLostHandler::FW LOG, Beacon lost (52:91:e3:d2:34:e8), Reason 0x10
+all_ap_enable:10[   54.750319] MT7663: 61]: ==========a  Beacon lost - AP disabled!!!
+wnd stop all the backhaul ap
+apsd: main:68: Info: Loop avoidance initialized
+.May  4 01:00:54 [   54.764948] MT7663: apsd: main:68: IbssUpdateBmcMngRate (BSS_INFO_BROADCAST_INFO), CmdBssInfoBmcRate.u2BcTransmit= 0, CmdBssInfoBmcRate.u2McTransmit = 0
+nfo: Loop avoidance initialized
+apsd: main:68: Info: Path Sele[   54.784134] MT7663: ction initializewifi_sys_close(), wdev idx = 5
+d
+May  4 01:00:54 apsd: main:68: Info: Path Selection initialized
+.....+++++
+.[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+.LoadClientCert: Not using a device certificate for connections
+.[ dm_saveCfg ] 2629 - ERROR:  [ PID=1980 ] write usrconf to nor flash (note: please resure your flash-write necessary)
+..mapAgent ==> [000.000][ hal_multiap_mtk_driver_ioctl_init ] 3905 - INFO: Initialize ralink wext interface
+mapAgent ==> [000.001][ mtk_driver_event_init ] 1136 - INFO: init ralink Netlink interface
+mapAgent ==> [000.002][ initTp1905CliSrv ] 534 - INFO: tp1905 server path is /var/tmp/tp1905sockA
+mapAgent ==> [000.002][ map_initSharedBuff ] 1122 - INFO: Start to init shared buffer.
+mapAgent ==> [000.003][ map_initSharedBuff ] 1139 - INFO: Map Shared Memory size: 241904 bytes
+mapAgent ==> [000.005][ map_initTp1905 ] 082 - INFO: mac(52:91:E3:C2:34:E6), cfg_file(/var/tmp/map.conf), is_registrar(0), bMapController(0)map_whole_network(0), vlan_enable(0)
+procName is sigma_dut, keyWord is 
+...[ oal_sys_GetConfigAddr ] 4188:  checking addr1 00100000 seq1:6
+
+..[ oal_sys_GetConfigAddr ] 4194:  checking addr2 001c0000 seq2:5
+
+[ oal_sys_writeCfgFlash ] 4689 - ERROR:  Write config index:7 addr:1c0000
+
+...........+++++
+[ writeMiscFile ] 1007 - ERROR:  writeMiscFile, Write to 0x001c0000 length 0x17680, retLen 0x17680
+
+[ findDynDomainName ] 1021 - ERROR:  Cloud ddns is not available now.
+topic[/tpuc/tr369controller], response_topic[/tpuc/5091E3-Device2-2237087001719]
+agentid is :USP::5091E3C234E6
+DM_EXEC_Main start 
+MQTT: Connect to host tauc-mqtt-broker.tplinkcloud.com:8883, with keepalive[235]
+Failed to connect v5 with Lookup error. (15)
+HandleMqttError: Disconnect failed. Already disconnected?
+
+#file: ./src/http_alias.c;line: 529; error = No such file or directory
+#msg: Unknown page: /main/advanceLte.htm, skip it
+[src/cloud_client.c:initSigIntHandler:108] init signal handler success!
+
+[src/cloud_linkWrap.c:link_setCloudMode:154] notify cloud brd change link mode 11
+[src/cloud_client.c:cloudClientInit:166] Init cloud-client environment successful.
+
+[src/cloud_localMsgHandler.c:cloud_localMsgTask:113] Start cloud local message observer...
+
+********************config dump*******************
+----------------------status----------------------
+processid                     : 1961
+---------------------configure--------------------
+loglevel                      : 3
+verify host                   : n-device-api.tplinkcloud.com
+verify port                   : 0
+verify path                   : /v1/validate
+post connect timeout          : 20
+post transfer timeout         : 20
+get connect timeout           : 20
+get transfer timeout          : 20
+session debug                 : off
+cer file                      : /etc/cloud_https/2048new.cer
+cer type                      : 
+**************************************************
+[   56.594741] device eth1 entered promiscuous mode
+mapAgent ==> [001.914][ main ] 365 - INFO: Starting map (AL MAC = 52:91:e3:c2:34:e6) Map whole network = 0...
+[   57.809750] MT7603: mt7603_switch_channel(): Switch to Ch#1(2T2R), BBP_BW=0
+[   57.815991] MT7663: SYNC - sync_fsm_scan_req_action:[1198] LAST_CH: 0, BAND: 0
+[   57.816002] MT7663: AsicDisableSync(): NotSupportedFunc for this arch(HIF_MT)!
+[   57.816072] MT7663: AsicSwitchChannel(): 5G Channel:36, then must be Channel_Band:1 !!
+[   57.848329] MT7663: ExtEventBeaconLostHandler::FW LOG, Beacon lost (50:91:e3:c2:34:e8), Reason 0x10
+[   57.857416] MT7663:   Beacon lost - AP disabled!!!
+[   57.980396] MT7603: mt7603_switch_channel(): Switch to Ch#2(2T2R), BBP_BW=0
+[   57.994757] MT7663: AsicSwitchChannel(): 5G Channel:40, then must be Channel_Band:1 !!
+[   58.129295] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=0
+[   58.174738] MT7663: AsicSwitchChannel(): 5G Channel:44, then must be Channel_Band:1 !!
+[   58.279284] MT7603: mt7603_switch_channel(): Switch to Ch#4(2T2R), BBP_BW=0
+[   58.354825] MT7663: AsicSwitchChannel(): 5G Channel:48, then must be Channel_Band:1 !!
+[   58.429350] MT7603: mt7603_switch_channel(): Switch to Ch#5(2T2R), BBP_BW=0
+[   58.534749] MT7663: AsicSwitchChannel(): 5G Channel:52, then must be Channel_Band:1 !!
+[   58.579326] MT7603: mt7603_switch_channel(): Switch to Ch#6(2T2R), BBP_BW=0
+[   58.729356] MT7603: mt7603_switch_channel(): Switch to Ch#7(2T2R), BBP_BW=0
+[   58.879292] MT7603: mt7603_switch_channel(): Switch to Ch#8(2T2R), BBP_BW=0
+[   59.030464] MT7603: mt7603_switch_channel(): Switch to Ch#9(2T2R), BBP_BW=0
+[   59.037665] MT7663: AsicSwitchChannel(): 5G Channel:56, then must be Channel_Band:1 !!
+[   59.179304] MT7603: mt7603_switch_channel(): Switch to Ch#10(2T2R), BBP_BW=0
+[   59.214758] MT7663: AsicSwitchChannel(): 5G Channel:60, then must be Channel_Band:1 !!
+[   59.329360] MT7603: mt7603_switch_channel(): Switch to Ch#11(2T2R), BBP_BW=0
+[   59.394748] MT7663: AsicSwitchChannel(): 5G Channel:64, then must be Channel_Band:1 !!
+[   59.479338] MT7603: mt7603_switch_channel(): Switch to Ch#12(2T2R), BBP_BW=0
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[   59.629379] MT7603: mt7603_switch_channel(): Switch to Ch#13(2T2R), BBP_BW=0
+[   59.779323] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=1
+[   59.894746] MT7663: AsicSwitchChannel(): 5G Channel:100, then must be Channel_Band:1 !!
+ Write reg=7d00, value=77777
+[   60.394732] MT7663: AsicSwitchChannel(): 5G Channel:104, then must be Channel_Band:1 !!
+[   60.574753] MT7663: AsicSwitchChannel(): 5G Channel:108, then must be Channel_Band:1 !!
+[   60.754736] MT7663: AsicSwitchChannel(): 5G Channel:112, then must be Channel_Band:1 !!
+[   61.254743] MT7663: AsicSwitchChannel(): 5G Channel:116, then must be Channel_Band:1 !!
+[   61.754745] MT7663: AsicSwitchChannel(): 5G Channel:120, then must be Channel_Band:1 !!
+[   61.934737] MT7663: AsicSwitchChannel(): 5G Channel:124, then must be Channel_Band:1 !!
+[   62.114741] MT7663: AsicSwitchChannel(): 5G Channel:128, then must be Channel_Band:1 !!
+MQTT: Connect to host tauc-mqtt-broker.tplinkcloud.com:8883, with keepalive[235]
+Failed to connect v5 with Lookup error. (15)
+HandleMqttError: Disconnect failed. Already disconnected?
+
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[   62.614736] MT7663: AsicSwitchChannel(): 5G Channel:132, then must be Channel_Band:1 !!
+[   63.114789] MT7663: AsicSwitchChannel(): 5G Channel:136, then must be Channel_Band:1 !!
+[   63.294751] MT7663: AsicSwitchChannel(): 5G Channel:140, then must be Channel_Band:1 !!
+[   63.474776] MT7663: AsicSwitchChannel(): 5G Channel:42, then must be Channel_Band:1 !!
+[   63.523113] MT7663: scan_ch_restore - End of SCAN(TYPE: 0, BandIdx: 0), restore to BW(2) channel 42, Total BSS[17]
+[   63.533542] MT7663: AsicSetSyncModeAndEnable(): NotSupportedFunc for this arch(HIF_MT)!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[   65.835969] MT7603: RTMPIoctlGSCANBSSINFO(): Max Bss Table is 128, MAX_LEN is : 128
+[   65.843650] MT7603: RTMPIoctlGSCANBSSINFO(): Scan or not: 0
+[   65.849282] MT7603: RTMPIoctlGSCANBSSINFO(): ioctl->ifIndex=0, ioctl->if_Type=1024
+[   65.856871] MT7603: RTMPIoctlGSCANBSSINFO(): ifname = apcli0, MaxBssNum = 128, pAd->ScanTab is 10
+[awnd_get_scan_r[   65.866209] Max Bss Table is 128, MAX_LEN is : 256
+esult:785]: apcl[   65.872247] Scan or not: 0
+i0 get scan resu[   65.876361] MT7663: lts success. BssRTMPIoctlGSCANBSSINFO():  pAd->ScanTab is 17
+ Num: 10
+[awnd_get_scan_result:785]: apclii0 get scan results success. Bss Num: 17
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[ getGwRealtimeRate ] 1452 - ERROR:  updateApControllerSpeed failed
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[   71.909562] MT7603: mt7603_switch_channel(): Switch to Ch#1(2T2R), BBP_BW=0
+[   71.916316] MT7663: SYNC - sync_fsm_scan_req_action:[1198] LAST_CH: 0, BAND: 0
+[   71.916327] MT7663: AsicDisableSync(): NotSupportedFunc for this arch(HIF_MT)!
+[   71.916389] MT7663: AsicSwitchChannel(): 5G Channel:36, then must be Channel_Band:1 !!
+[   71.916727] MT7663: ExtEventBeaconLostHandler::FW LOG, Beacon lost (50:91:e3:c2:34:e8), Reason 0x10
+[   71.916734] MT7663:   Beacon lost - AP disabled!!!
+[   72.084746] MT7663: AsicSwitchChannel(): 5G Channel:40, then must be Channel_Band:1 !!
+[   72.093641] MT7603: mt7603_switch_channel(): Switch to Ch#2(2T2R), BBP_BW=0
+[   72.239304] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=0
+[   72.264751] MT7663: AsicSwitchChannel(): 5G Channel:44, then must be Channel_Band:1 !!
+[   72.389287] MT7603: mt7603_switch_channel(): Switch to Ch#4(2T2R), BBP_BW=0
+[   72.444727] MT7663: AsicSwitchChannel(): 5G Channel:48, then must be Channel_Band:1 !!
+[   72.539297] MT7603: mt7603_switch_channel(): Switch to Ch#5(2T2R), BBP_BW=0
+[   72.624745] MT7663: AsicSwitchChannel(): 5G Channel:52, then must be Channel_Band:1 !!
+[   72.689515] MT7603: mt7603_switch_channel(): Switch to Ch#6(2T2R), BBP_BW=0
+[   72.839307] MT7603: mt7603_switch_channel(): Switch to Ch#7(2T2R), BBP_BW=0
+[   72.989305] MT7603: mt7603_switch_channel(): Switch to Ch#8(2T2R), BBP_BW=0
+[   73.124788] MT7663: AsicSwitchChannel(): 5G Channel:56, then must be Channel_Band:1 !!
+[   73.139286] MT7603: mt7603_switch_channel(): Switch to Ch#9(2T2R), BBP_BW=0
+[   73.289275] MT7603: mt7603_switch_channel(): Switch to Ch#10(2T2R), BBP_BW=0
+[   73.304751] MT7663: AsicSwitchChannel(): 5G Channel:60, then must be Channel_Band:1 !!
+[   73.439284] MT7603: mt7603_switch_channel(): Switch to Ch#11(2T2R), BBP_BW=0
+[   73.484723] MT7663: AsicSwitchChannel(): 5G Channel:64, then must be Channel_Band:1 !!
+[   73.589303] MT7603: mt7603_switch_channel(): Switch to Ch#12(2T2R), BBP_BW=0
+[   73.739446] MT7603: mt7603_switch_channel(): Switch to Ch#13(2T2R), BBP_BW=0
+[   73.889306] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=1
+[   73.984736] MT7663: AsicSwitchChannel(): 5G Channel:100, then must be Channel_Band:1 !!
+[   74.484741] MT7663: AsicSwitchChannel(): 5G Channel:104, then must be Channel_Band:1 !!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[   74.664738] MT7663: AsicSwitchChannel(): 5G Channel:108, then must be Channel_Band:1 !!
+[   74.844814] MT7663: AsicSwitchChannel(): 5G Channel:112, then must be Channel_Band:1 !!
+[   75.344731] MT7663: AsicSwitchChannel(): 5G Channel:116, then must be Channel_Band:1 !!
+[   75.525029] MT7663: AsicSwitchChannel(): 5G Channel:120, then must be Channel_Band:1 !!
+[   75.704775] MT7663: AsicSwitchChannel(): 5G Channel:124, then must be Channel_Band:1 !!
+[   75.884787] MT7663: AsicSwitchChannel(): 5G Channel:128, then must be Channel_Band:1 !!
+[   76.064754] MT7663: AsicSwitchChannel(): 5G Channel:132, then must be Channel_Band:1 !!
+[   76.244729] MT7663: AsicSwitchChannel(): 5G Channel:136, then must be Channel_Band:1 !!
+[   76.424781] MT7663: AsicSwitchChannel(): 5G Channel:140, then must be Channel_Band:1 !!
+[   76.604788] MT7663: AsicSwitchChannel(): 5G Channel:42, then must be Channel_Band:1 !!
+[   76.652044] MT7663: scan_ch_restore - End of SCAN(TYPE: 0, BandIdx: 0), restore to BW(2) channel 42, Total BSS[18]
+[   76.662463] MT7663: AsicSetSyncModeAndEnable(): NotSupportedFunc for this arch(HIF_MT)!
+MQTT: Connect to host tauc-mqtt-broker.tplinkcloud.com:8883, with keepalive[235]
+Failed to connect v5 with Lookup error. (15)
+HandleMqttError: Disconnect failed. Already disconnected?
+
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[   79.955909] MT7603: RTMPIoctlGSCANBSSINFO(): Max Bss Table is 128, MAX_LEN is : 128
+[   79.963588] MT7603: RTMPIoctlGSCANBSSINFO(): Scan or not: 0
+[   79.969250] MT7603: RTMPIoctlGSCANBSSINFO(): ioctl->ifIndex=0, ioctl->if_Type=1024
+[   79.976859] MT7603: RTMPIoctlGSCANBSSINFO(): ifname = apcli0, MaxBssNum = 128, pAd->ScanTab is 15
+[awnd_get_scan_r[   79.986510] Max Bss Table is 128, MAX_LEN is : 256
+esult:785]: apcl[   79.992533] Scan or not: 0
+i0 get scan resu[   79.996676] MT7663: lts success. BssRTMPIoctlGSCANBSSINFO():  pAd->ScanTab is 18
+ Num: 15
+[awnd_get_scan_result:785]: apclii0 get scan results success. Bss Num: 18
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[ getGwRealtimeRate ] 1452 - ERROR:  updateApControllerSpeed failed
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[   86.029601] MT7603: mt7603_switch_channel(): Switch to Ch#1(2T2R), BBP_BW=0
+[   86.034320] MT7663: SYNC - sync_fsm_scan_req_action:[1198] LAST_CH: 0, BAND: 0
+[   86.034331] MT7663: AsicDisableSync(): NotSupportedFunc for this arch(HIF_MT)!
+[   86.034411] MT7663: AsicSwitchChannel(): 5G Channel:36, then must be Channel_Band:1 !!
+[   86.067186] MT7663: ExtEventBeaconLostHandler::FW LOG, Beacon lost (50:91:e3:c2:34:e8), Reason 0x10
+[   86.076282] MT7663:   Beacon lost - AP disabled!!!
+[   86.199300] MT7603: mt7603_switch_channel(): Switch to Ch#2(2T2R), BBP_BW=0
+[   86.214732] MT7663: AsicSwitchChannel(): 5G Channel:40, then must be Channel_Band:1 !!
+[   86.349296] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=0
+[   86.394724] MT7663: AsicSwitchChannel(): 5G Channel:44, then must be Channel_Band:1 !!
+[   86.499310] MT7603: mt7603_switch_channel(): Switch to Ch#4(2T2R), BBP_BW=0
+[   86.574779] MT7663: AsicSwitchChannel(): 5G Channel:48, then must be Channel_Band:1 !!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[   86.649311] MT7603: mt7603_switch_channel(): Switch to Ch#5(2T2R), BBP_BW=0
+[   86.754733] MT7663: AsicSwitchChannel(): 5G Channel:52, then must be Channel_Band:1 !!
+[   86.799343] MT7603: mt7603_switch_channel(): Switch to Ch#6(2T2R), BBP_BW=0
+[   86.950429] MT7603: mt7603_switch_channel(): Switch to Ch#7(2T2R), BBP_BW=0
+[   87.099272] MT7603: mt7603_switch_channel(): Switch to Ch#8(2T2R), BBP_BW=0
+[   87.249278] MT7603: mt7603_switch_channel(): Switch to Ch#9(2T2R), BBP_BW=0
+[   87.254735] MT7663: AsicSwitchChannel(): 5G Channel:56, then must be Channel_Band:1 !!
+[   87.409278] MT7603: mt7603_switch_channel(): Switch to Ch#10(2T2R), BBP_BW=0
+[   87.424810] MT7663: AsicSwitchChannel(): 5G Channel:60, then must be Channel_Band:1 !!
+[   87.559284] MT7603: mt7603_switch_channel(): Switch to Ch#11(2T2R), BBP_BW=0
+[   87.604818] MT7663: AsicSwitchChannel(): 5G Channel:64, then must be Channel_Band:1 !!
+[   87.709582] MT7603: mt7603_switch_channel(): Switch to Ch#12(2T2R), BBP_BW=0
+[   87.859304] MT7603: mt7603_switch_channel(): Switch to Ch#13(2T2R), BBP_BW=0
+[   88.009290] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=1
+[   88.104752] MT7663: AsicSwitchChannel(): 5G Channel:100, then must be Channel_Band:1 !!
+[   88.604746] MT7663: AsicSwitchChannel(): 5G Channel:104, then must be Channel_Band:1 !!
+[   88.784759] MT7663: AsicSwitchChannel(): 5G Channel:108, then must be Channel_Band:1 !!
+[   88.964740] MT7663: AsicSwitchChannel(): 5G Channel:112, then must be Channel_Band:1 !!
+[   89.464742] MT7663: AsicSwitchChannel(): 5G Channel:116, then must be Channel_Band:1 !!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[   89.644736] MT7663: AsicSwitchChannel(): 5G Channel:120, then must be Channel_Band:1 !!
+[   89.824873] MT7663: AsicSwitchChannel(): 5G Channel:124, then must be Channel_Band:1 !!
+[   90.004765] MT7663: AsicSwitchChannel(): 5G Channel:128, then must be Channel_Band:1 !!
+[   90.184748] MT7663: AsicSwitchChannel(): 5G Channel:132, then must be Channel_Band:1 !!
+[   90.364732] MT7663: AsicSwitchChannel(): 5G Channel:136, then must be Channel_Band:1 !!
+[   90.544746] MT7663: AsicSwitchChannel(): 5G Channel:140, then must be Channel_Band:1 !!
+[   90.724830] MT7663: AsicSwitchChannel(): 5G Channel:42, then must be Channel_Band:1 !!
+[   90.772648] MT7663: scan_ch_restore - End of SCAN(TYPE: 0, BandIdx: 0), restore to BW(2) channel 42, Total BSS[18]
+[   90.783083] MT7663: AsicSetSyncModeAndEnable(): NotSupportedFunc for this arch(HIF_MT)!
+[ getGwRealtimeRate ] 1452 - ERROR:  updateApControllerSpeed failed
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[   94.065961] MT7603: RTMPIoctlGSCANBSSINFO(): Max Bss Table is 128, MAX_LEN is : 128
+[   94.073777] MT7603: RTMPIoctlGSCANBSSINFO(): Scan or not: 0
+[   94.079453] MT7603: RTMPIoctlGSCANBSSINFO(): ioctl->ifIndex=0, ioctl->if_Type=1024
+[   94.087134] MT7603: RTMPIoctlGSCANBSSINFO(): ifname = apcli0, MaxBssNum = 128, pAd->ScanTab is 12
+[awnd_get_scan_r[   94.096805] Max Bss Table is 128, MAX_LEN is : 256
+esult:785]: apcl[   94.102828] Scan or not: 0
+i0 get scan resu[   94.106962] MT7663: lts success. BssRTMPIoctlGSCANBSSINFO():  pAd->ScanTab is 18
+ Num: 12
+[awnd_get_scan_result:785]: apclii0 get scan results success. Bss Num: 18
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[  100.139799] MT7603: mt7603_switch_channel(): Switch to Ch#1(2T2R), BBP_BW=0
+[  100.146497] MT7663: SYNC - sync_fsm_scan_req_action:[1198] LAST_CH: 0, BAND: 0
+[  100.146507] MT7663: AsicDisableSync(): NotSupportedFunc for this arch(HIF_MT)!
+[  100.146592] MT7663: AsicSwitchChannel(): 5G Channel:36, then must be Channel_Band:1 !!
+[  100.147059] MT7663: ExtEventBeaconLostHandler::FW LOG, Beacon lost (50:91:e3:c2:34:e8), Reason 0x10
+[  100.147065] MT7663:   Beacon lost - AP disabled!!!
+[  100.314743] MT7663: AsicSwitchChannel(): 5G Channel:40, then must be Channel_Band:1 !!
+[  100.319295] MT7603: mt7603_switch_channel(): Switch to Ch#2(2T2R), BBP_BW=0
+[  100.459319] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=0
+[  100.494754] MT7663: AsicSwitchChannel(): 5G Channel:44, then must be Channel_Band:1 !!
+[  100.609351] MT7603: mt7603_switch_channel(): Switch to Ch#4(2T2R), BBP_BW=0
+[  100.674729] MT7663: AsicSwitchChannel(): 5G Channel:48, then must be Channel_Band:1 !!
+[  100.759293] MT7603: mt7603_switch_channel(): Switch to Ch#5(2T2R), BBP_BW=0
+[  100.854732] MT7663: AsicSwitchChannel(): 5G Channel:52, then must be Channel_Band:1 !!
+[  100.909286] MT7603: mt7603_switch_channel(): Switch to Ch#6(2T2R), BBP_BW=0
+[  101.060394] MT7603: mt7603_switch_channel(): Switch to Ch#7(2T2R), BBP_BW=0
+[  101.209272] MT7603: mt7603_switch_channel(): Switch to Ch#8(2T2R), BBP_BW=0
+[  101.354731] MT7663: AsicSwitchChannel(): 5G Channel:56, then must be Channel_Band:1 !!
+[  101.359319] MT7603: mt7603_switch_channel(): Switch to Ch#9(2T2R), BBP_BW=0
+[  101.499378] MT7603: mt7603_switch_channel(): Switch to Ch#10(2T2R), BBP_BW=0
+[  101.544750] MT7663: AsicSwitchChannel(): 5G Channel:60, then must be Channel_Band:1 !!
+[awnd_get_group_id:602]: read factory config group info fail
+[a[  101.649337] MT7603: wnd_read_group_imt7603_switch_channel(): Switch to Ch#11(2T2R), BBP_BW=0
+d:460]: ================empty ssid or key====================
+[  101.724743] MT7663: AsicSwitchChannel(): 5G Channel:64, then must be Channel_Band:1 !!
+[  101.799292] MT7603: mt7603_switch_channel(): Switch to Ch#12(2T2R), BBP_BW=0
+[  101.949296] MT7603: mt7603_switch_channel(): Switch to Ch#13(2T2R), BBP_BW=0
+[  102.099310] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=1
+[  102.224741] MT7663: AsicSwitchChannel(): 5G Channel:100, then must be Channel_Band:1 !!
+[ getGwRealtimeRate ] 1452 - ERROR:  updateApControllerSpeed failed
+[  102.724749] MT7663: AsicSwitchChannel(): 5G Channel:104, then must be Channel_Band:1 !!
+[  102.904750] MT7663: AsicSwitchChannel(): 5G Channel:108, then must be Channel_Band:1 !!
+[  103.084747] MT7663: AsicSwitchChannel(): 5G Channel:112, then must be Channel_Band:1 !!
+[  103.584743] MT7663: AsicSwitchChannel(): 5G Channel:116, then must be Channel_Band:1 !!
+[  103.764750] MT7663: AsicSwitchChannel(): 5G Channel:120, then must be Channel_Band:1 !!
+[  103.944744] MT7663: AsicSwitchChannel(): 5G Channel:124, then must be Channel_Band:1 !!
+[  104.124751] MT7663: AsicSwitchChannel(): 5G Channel:128, then must be Channel_Band:1 !!
+[  104.304754] MT7663: AsicSwitchChannel(): 5G Channel:132, then must be Channel_Band:1 !!
+[  104.484762] MT7663: AsicSwitchChannel(): 5G Channel:136, then must be Channel_Band:1 !!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[  104.674822] MT7663: AsicSwitchChannel(): 5G Channel:140, then must be Channel_Band:1 !!
+[  104.854784] MT7663: AsicSwitchChannel(): 5G Channel:42, then must be Channel_Band:1 !!
+[  104.902033] MT7663: scan_ch_restore - End of SCAN(TYPE: 0, BandIdx: 0), restore to BW(2) channel 42, Total BSS[17]
+[  104.912488] MT7663: AsicSetSyncModeAndEnable(): NotSupportedFunc for this arch(HIF_MT)!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[  108.175898] MT7603: RTMPIoctlGSCANBSSINFO(): Max Bss Table is 128, MAX_LEN is : 128
+[  108.183576] MT7603: RTMPIoctlGSCANBSSINFO(): Scan or not: 0
+[  108.189244] MT7603: RTMPIoctlGSCANBSSINFO(): ioctl->ifIndex=0, ioctl->if_Type=1024
+[  108.196850] MT7603: RTMPIoctlGSCANBSSINFO(): ifname = apcli0, MaxBssNum = 128, pAd->ScanTab is 11
+[awnd_get_scan_r[  108.206276] Max Bss Table is 128, MAX_LEN is : 256
+esult:785]: apcl[  108.212304] Scan or not: 0
+i0 get scan resu[  108.216455] MT7663: lts success. BssRTMPIoctlGSCANBSSINFO():  pAd->ScanTab is 17
+ Num: 11
+[awnd_get_scan_result:785]: apclii0 get scan results success. Bss Num: 17
+
+starting pid 603, tty '': '/sbin/getty -L ttyS0 115200 vt100'
+
+HC220-G5 login: root[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+
+Password: 
+[ getGwRealtimeRate ] 1452 - ERROR:  updateApControllerSpeed failed
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[  114.249762] MT7603: mt7603_switch_channel(): Switch to Ch#1(2T2R), BBP_BW=0
+[  114.254405] MT7663: SYNC - sync_fsm_scan_req_action:[1198] LAST_CH: 0, BAND: 0
+[  114.254416] MT7663: AsicDisableSync(): NotSupportedFunc for this arch(HIF_MT)!
+[  114.254498] MT7663: AsicSwitchChannel(): 5G Channel:36, then must be Channel_Band:1 !!
+[  114.286755] MT7663: ExtEventBeaconLostHandler::FW LOG, Beacon lost (50:91:e3:c2:34:e8), Reason 0x10
+[  114.295859] MT7663:   Beacon lost - AP disabled!!!
+[  114.419307] MT7603: mt7603_switch_channel(): Switch to Ch#2(2T2R), BBP_BW=0
+[  114.434747] MT7663: AsicSwitchChannel(): 5G Channel:40, then must be Channel_Band:1 !!
+[  114.569298] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=0
+[  114.614729] MT7663: AsicSwitchChannel(): 5G Channel:44, then must be Channel_Band:1 !!
+[  114.719299] MT7603: mt7603_switch_channel(): Switch to Ch#4(2T2R), BBP_BW=0
+[  114.794742] MT7663: AsicSwitchChannel(): 5G Channel:48, then must be Channel_Band:1 !!
+[  114.869315] MT7603: mt7603_switch_channel(): Switch to Ch#5(2T2R), BBP_BW=0
+Login incorrect
+HC220-G5 login: [  114.974750] MT7663: AsicSwitchChannel(): 5G Channel:52, then must be Channel_Band:1 !!
+[  115.019279] MT7603: mt7603_switch_channel(): Switch to Ch#6(2T2R), BBP_BW=0
+[  115.170382] MT7603: mt7603_switch_channel(): Switch to Ch#7(2T2R), BBP_BW=0
+[  115.320371] MT7603: mt7603_switch_channel(): Switch to Ch#8(2T2R), BBP_BW=0
+[  115.469320] MT7603: mt7603_switch_channel(): Switch to Ch#9(2T2R), BBP_BW=0
+[  115.474747] MT7663: AsicSwitchChannel(): 5G Channel:56, then must be Channel_Band:1 !!
+[  115.629297] MT7603: mt7603_switch_channel(): Switch to Ch#10(2T2R), BBP_BW=0
+[  115.644746] MT7663: AsicSwitchChannel(): 5G Channel:60, then must be Channel_Band:1 !!
+[  115.779306] MT7603: mt7603_switch_channel(): Switch to Ch#11(2T2R), BBP_BW=0
+[  115.824740] MT7663: AsicSwitchChannel(): 5G Channel:64, then must be Channel_Band:1 !!
+[  115.929296] MT7603: mt7603_switch_channel(): Switch to Ch#12(2T2R), BBP_BW=0
+[  116.079299] MT7603: mt7603_switch_channel(): Switch to Ch#13(2T2R), BBP_BW=0
+[  116.229299] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=1
+[  116.324740] MT7663: AsicSwitchChannel(): 5G Channel:100, then must be Channel_Band:1 !!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[  116.824803] MT7663: AsicSwitchChannel(): 5G Channel:104, then must be Channel_Band:1 !!
+[  117.004753] MT7663: AsicSwitchChannel(): 5G Channel:108, then must be Channel_Band:1 !!
+[  117.184750] MT7663: AsicSwitchChannel(): 5G Channel:112, then must be Channel_Band:1 !!
+[  117.684750] MT7663: AsicSwitchChannel(): 5G Channel:116, then must be Channel_Band:1 !!
+[  117.864751] MT7663: AsicSwitchChannel(): 5G Channel:120, then must be Channel_Band:1 !!
+MQTT: Connect to host tauc-mqtt-broker.tplinkcloud.com:8883, with keepalive[235]
+Failed to connect v5 with Lookup error. (15)
+HandleMqttError: Disconnect failed. Already disconnected?
+
+[  118.044782] MT7663: AsicSwitchChannel(): 5G Channel:124, then must be Channel_Band:1 !!
+[  118.224765] MT7663: AsicSwitchChannel(): 5G Channel:128, then must be Channel_Band:1 !!
+[  118.404762] MT7663: AsicSwitchChannel(): 5G Channel:132, then must be Channel_Band:1 !!
+[  118.584803] MT7663: AsicSwitchChannel(): 5G Channel:136, then must be Channel_Band:1 !!
+[  118.764742] MT7663: AsicSwitchChannel(): 5G Channel:140, then must be Channel_Band:1 !!
+[  118.944762] MT7663: AsicSwitchChannel(): 5G Channel:42, then must be Channel_Band:1 !!
+[  118.991995] MT7663: scan_ch_restore - End of SCAN(TYPE: 0, BandIdx: 0), restore to BW(2) channel 42, Total BSS[17]
+[  119.002408] MT7663: AsicSetSyncModeAndEnable(): NotSupportedFunc for this arch(HIF_MT)!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[  122.285917] MT7603: RTMPIoctlGSCANBSSINFO(): Max Bss Table is 128, MAX_LEN is : 128
+[  122.293595] MT7603: RTMPIoctlGSCANBSSINFO(): Scan or not: 0
+[  122.299230] MT7603: RTMPIoctlGSCANBSSINFO(): ioctl->ifIndex=0, ioctl->if_Type=1024
+[  122.306812] MT7603: RTMPIoctlGSCANBSSINFO(): ifname = apcli0, MaxBssNum = 128, pAd->ScanTab is 15
+[awnd_get_scan_r[  122.316293] Max Bss Table is 128, MAX_LEN is : 256
+esult:785]: apcl[  122.322336] Scan or not: 0
+i0 get scan resu[  122.326454] MT7663: lts success. BssRTMPIoctlGSCANBSSINFO():  pAd->ScanTab is 17
+ Num: 15
+[awnd_get_scan_result:785]: apclii0 get scan results success. Bss Num: 17
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[ rsl_time_ntpStart ] 451:  Current dns svr: 
+[ getGwRealtimeRate ] 1452 - ERROR:  updateApControllerSpeed failed
+
+HC220-G5 login: [awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+admin
+Password: 
+[  128.359640] MT7603: mt7603_switch_channel(): Switch to Ch#1(2T2R), BBP_BW=0
+[  128.366040] MT7663: SYNC - sync_fsm_scan_req_action:[1198] LAST_CH: 0, BAND: 0
+[  128.366050] MT7663: AsicDisableSync(): NotSupportedFunc for this arch(HIF_MT)!
+[  128.366117] MT7663: AsicSwitchChannel(): 5G Channel:36, then must be Channel_Band:1 !!
+[  128.374143] MT7663: ExtEventBeaconLostHandler::FW LOG, Beacon lost (50:91:e3:c2:34:e8), Reason 0x10
+[  128.374149] MT7663:   Beacon lost - AP disabled!!!
+[  128.534783] MT7663: AsicSwitchChannel(): 5G Channel:40, then must be Channel_Band:1 !!
+[  128.539351] MT7603: mt7603_switch_channel(): Switch to Ch#2(2T2R), BBP_BW=0
+[  128.679296] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=0
+[  128.714735] MT7663: AsicSwitchChannel(): 5G Channel:44, then must be Channel_Band:1 !!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[  128.829316] MT7603: mt7603_switch_channel(): Switch to Ch#4(2T2R), BBP_BW=0
+[  128.894739] MT7663: AsicSwitchChannel(): 5G Channel:48, then must be Channel_Band:1 !!
+[  128.979291] MT7603: mt7603_switch_channel(): Switch to Ch#5(2T2R), BBP_BW=0
+[  129.074754] MT7663: AsicSwitchChannel(): 5G Channel:52, then must be Channel_Band:1 !!
+[  129.129313] MT7603: mt7603_switch_channel(): Switch to Ch#6(2T2R), BBP_BW=0
+[  129.279369] MT7603: mt7603_switch_channel(): Switch to Ch#7(2T2R), BBP_BW=0
+[  129.429317] MT7603: mt7603_switch_channel(): Switch to Ch#8(2T2R), BBP_BW=0
+
+[  129.574742] MT7663: AsicSwitchChannel(): 5G Channel:56, then must be Channel_Band:1 !!
+[  129.579298] MT7603: mt7603_switch_channel(): Switch to Ch#9(2T2R), BBP_BW=0
+[  129.719287] MT7603: mt7603_switch_channel(): Switch to Ch#10(2T2R), BBP_BW=0
+[  129.754735] MT7663: AsicSwitchChannel(): 5G Channel:60, then must be Channel_Band:1 !!
+[  129.869323] MT7603: mt7603_switch_channel(): Switch to Ch#11(2T2R), BBP_BW=0
+[  129.934761] MT7663: AsicSwitchChannel(): 5G Channel:64, then must be Channel_Band:1 !!
+[  130.019308] MT7603: mt7603_switch_channel(): Switch to Ch#12(2T2R), BBP_BW=0
+[  130.169298] MT7603: mt7603_switch_channel(): Switch to Ch#13(2T2R), BBP_BW=0
+[  130.319370] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=1
+[  130.434765] MT7663: AsicSwitchChannel(): 5G Channel:100, then must be Channel_Band:1 !!
+Login incorrect
+HC220-G5 login: [  130.934749] MT7663: AsicSwitchChannel(): 5G Channel:104, then must be Channel_Band:1 !!
+[  131.114757] MT7663: AsicSwitchChannel(): 5G Channel:108, then must be Channel_Band:1 !!
+[  131.294747] MT7663: AsicSwitchChannel(): 5G Channel:112, then must be Channel_Band:1 !!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[  131.794750] MT7663: AsicSwitchChannel(): 5G Channel:116, then must be Channel_Band:1 !!
+[  131.974769] MT7663: AsicSwitchChannel(): 5G Channel:120, then must be Channel_Band:1 !!
+[  132.154760] MT7663: AsicSwitchChannel(): 5G Channel:124, then must be Channel_Band:1 !!
+[  132.334751] MT7663: AsicSwitchChannel(): 5G Channel:128, then must be Channel_Band:1 !!
+
+HC220-G5 login: [  132.514762] MT7663: AsicSwitchChannel(): 5G Channel:132, then must be Channel_Band:1 !!
+[  132.694743] MT7663: AsicSwitchChannel(): 5G Channel:136, then must be Channel_Band:1 !!
+[  132.874769] MT7663: AsicSwitchChannel(): 5G Channel:140, then must be Channel_Band:1 !!
+[  133.054782] MT7663: AsicSwitchChannel(): 5G Channel:42, then must be Channel_Band:1 !!
+[  133.102012] MT7663: scan_ch_restore - End of SCAN(TYPE: 0, BandIdx: 0), restore to BW(2) channel 42, Total BSS[17]
+[  133.112423] MT7663: AsicSetSyncModeAndEnable(): NotSupportedFunc for this arch(HIF_MT)!
+root
+Password: [ getGwRealtimeRate ] 1452 - ERROR:  updateApControllerSpeed failed
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+
+[  136.395935] MT7603: RTMPIoctlGSCANBSSINFO(): Max Bss Table is 128, MAX_LEN is : 128
+[  136.403613] MT7603: RTMPIoctlGSCANBSSINFO(): Scan or not: 0
+[  136.409243] MT7603: RTMPIoctlGSCANBSSINFO(): ioctl->ifIndex=0, ioctl->if_Type=1024
+[  136.416834] MT7603: RTMPIoctlGSCANBSSINFO(): ifname = apcli0, MaxBssNum = 128, pAd->ScanTab is 13
+[awnd_get_scan_r[  136.426307] Max Bss Table is 128, MAX_LEN is : 256
+esult:785]: apcl[  136.432327] Scan or not: 0
+i0 get scan resu[  136.436455] MT7663: lts success. BssRTMPIoctlGSCANBSSINFO():  pAd->ScanTab is 17
+ Num: 13
+[awnd_get_scan_result:785]: apclii0 get scan results success. Bss Num: 17
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+
+Login incorrectprocess '/sbin/getty -L ttyS0 115200 vt100' (pid 603) exited. Scheduling for restart.
+
+Please press Enter to activate this console. [awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+
+starting pid 2295, tty '': '/sbin/getty -L ttyS0 115200 vt100'
+
+HC220-G5 login: [  142.469733] MT7603: mt7603_switch_channel(): Switch to Ch#1(2T2R), BBP_BW=0
+[  142.474340] MT7663: SYNC - sync_fsm_scan_req_action:[1198] LAST_CH: 0, BAND: 0
+[  142.474351] MT7663: AsicDisableSync(): NotSupportedFunc for this arch(HIF_MT)!
+[  142.474433] MT7663: AsicSwitchChannel(): 5G Channel:36, then must be Channel_Band:1 !!
+[  142.506661] MT7663: ExtEventBeaconLostHandler::FW LOG, Beacon lost (50:91:e3:c2:34:e8), Reason 0x10
+[  142.515753] MT7663:   Beacon lost - AP disabled!!!
+[  142.639312] MT7603: mt7603_switch_channel(): Switch to Ch#2(2T2R), BBP_BW=0
+[  142.654759] MT7663: AsicSwitchChannel(): 5G Channel:40, then must be Channel_Band:1 !!
+[  142.789301] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=0
+[  142.834790] MT7663: AsicSwitchChannel(): 5G Channel:44, then must be Channel_Band:1 !!
+[  142.939329] MT7603: mt7603_switch_channel(): Switch to Ch#4(2T2R), BBP_BW=0
+[  143.014747] MT7663: AsicSwitchChannel(): 5G Channel:48, then must be Channel_Band:1 !!
+[  143.089482] MT7603: mt7603_switch_channel(): Switch to Ch#5(2T2R), BBP_BW=0
+[  143.194780] MT7663: AsicSwitchChannel(): 5G Channel:52, then must be Channel_Band:1 !!
+[ CAFLatencyTest ] 476 - ERROR: [  143.239370] MT7603:  interface is emmt7603_switch_channel(): Switch to Ch#6(2T2R), BBP_BW=0
+pty string!
+[  143.389307] MT7603: mt7603_switch_channel(): Switch to Ch#7(2T2R), BBP_BW=0
+[  143.539309] MT7603: mt7603_switch_channel(): Switch to Ch#8(2T2R), BBP_BW=0
+[  143.689289] MT7603: mt7603_switch_channel(): Switch to Ch#9(2T2R), BBP_BW=0
+[  143.694750] MT7663: AsicSwitchChannel(): 5G Channel:56, then must be Channel_Band:1 !!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[  143.849306] MT7603: mt7603_switch_channel(): Switch to Ch#10(2T2R), BBP_BW=0
+[  143.864746] MT7663: AsicSwitchChannel(): 5G Channel:60, then must be Channel_Band:1 !!
+[  143.999311] MT7603: mt7603_switch_channel(): Switch to Ch#11(2T2R), BBP_BW=0
+[  144.044796] MT7663: AsicSwitchChannel(): 5G Channel:64, then must be Channel_Band:1 !!
+[  144.149342] MT7603: mt7603_switch_channel(): Switch to Ch#12(2T2R), BBP_BW=0
+[  144.299300] MT7603: mt7603_switch_channel(): Switch to Ch#13(2T2R), BBP_BW=0
+[  144.449301] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=1
+[  144.544742] MT7663: AsicSwitchChannel(): 5G Channel:100, then must be Channel_Band:1 !!
+[  145.044778] MT7663: AsicSwitchChannel(): 5G Channel:104, then must be Channel_Band:1 !!
+[  145.224856] MT7663: AsicSwitchChannel(): 5G Channel:108, then must be Channel_Band:1 !!
+[ getGwRealtimeRate ] 1452 - ERROR:  updateApControllerSpeed failed
+[  145.404777] MT7663: AsicSwitchChannel(): 5G Channel:112, then must be Channel_Band:1 !!
+[  145.904755] MT7663: AsicSwitchChannel(): 5G Channel:116, then must be Channel_Band:1 !!
+[  146.084748] MT7663: AsicSwitchChannel(): 5G Channel:120, then must be Channel_Band:1 !!
+[  146.264756] MT7663: AsicSwitchChannel(): 5G Channel:124, then must be Channel_Band:1 !!
+[  146.444753] MT7663: AsicSwitchChannel(): 5G Channel:128, then must be Channel_Band:1 !!
+[  146.624789] MT7663: AsicSwitchChannel(): 5G Channel:132, then must be Channel_Band:1 !!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[  146.804798] MT7663: AsicSwitchChannel(): 5G Channel:136, then must be Channel_Band:1 !!
+[  146.984746] MT7663: AsicSwitchChannel(): 5G Channel:140, then must be Channel_Band:1 !!
+[  147.164762] MT7663: AsicSwitchChannel(): 5G Channel:42, then must be Channel_Band:1 !!
+[  147.212001] MT7663: scan_ch_restore - End of SCAN(TYPE: 0, BandIdx: 0), restore to BW(2) channel 42, Total BSS[18]
+[  147.222449] MT7663: AsicSetSyncModeAndEnable(): NotSupportedFunc for this arch(HIF_MT)!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[  150.506057] MT7603: RTMPIoctlGSCANBSSINFO(): Max Bss Table is 128, MAX_LEN is : 128
+[  150.513866] MT7603: RTMPIoctlGSCANBSSINFO(): Scan or not: 0
+[  150.519572] MT7603: RTMPIoctlGSCANBSSINFO(): ioctl->ifIndex=0, ioctl->if_Type=1024
+[  150.527167] MT7603: RTMPIoctlGSCANBSSINFO(): ifname = apcli0, MaxBssNum = 128, pAd->ScanTab is 9
+[awnd_get_scan_r[  150.536395] Max Bss Table is 128, MAX_LEN is : 256
+esult:785]: apcl[  150.542416] Scan or not: 0
+i0 get scan resu[  150.546648] MT7663: lts success. BssRTMPIoctlGSCANBSSINFO():  pAd->ScanTab is 18
+ Num: 9
+[awnd_get_scan_result:785]: apclii0 get scan results success. Bss Num: 18
+
+HC220-G5 login: 
+HC220-G5 login: 
+HC220-G5 login: 
+HC220-G5 login: [awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+
+HC220-G5 login: 
+HC220-G5 login: 
+HC220-G5 login: 
+HC220-G5 login: 
+HC220-G5 login: 
+HC220-G5 login: [awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[ getGwRealtimeRate ] 1452 - ERROR:  updateApControllerSpeed failed
+
+HC220-G5 login: [  156.579689] MT7603: mt7603_switch_channel(): Switch to Ch#1(2T2R), BBP_BW=0
+[  156.586149] MT7663: SYNC - sync_fsm_scan_req_action:[1198] LAST_CH: 0, BAND: 0
+[  156.586159] MT7663: AsicDisableSync(): NotSupportedFunc for this arch(HIF_MT)!
+[  156.586239] MT7663: AsicSwitchChannel(): 5G Channel:36, then must be Channel_Band:1 !!
+[  156.586884] MT7663: ExtEventBeaconLostHandler::FW LOG, Beacon lost (50:91:e3:c2:34:e8), Reason 0x10
+
+[  156.586891] MT7663:   Beacon lost - AP disabled!!!
+HC220-G5 login: [  156.754756] MT7663: AsicSwitchChannel(): 5G Channel:40, then must be Channel_Band:1 !!
+[  156.759312] MT7603: mt7603_switch_channel(): Switch to Ch#2(2T2R), BBP_BW=0
+[  156.899316] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=0
+[  156.934947] MT7663: AsicSwitchChannel(): 5G Channel:44, then must be Channel_Band:1 !!
+
+HC220-G5 login: [  157.049344] MT7603: mt7603_switch_channel(): Switch to Ch#4(2T2R), BBP_BW=0
+[  157.114754] MT7663: AsicSwitchChannel(): 5G Channel:48, then must be Channel_Band:1 !!
+[  157.199297] MT7603: mt7603_switch_channel(): Switch to Ch#5(2T2R), BBP_BW=0
+
+HC220-G5 login: [  157.294769] MT7663: AsicSwitchChannel(): 5G Channel:52, then must be Channel_Band:1 !!
+[  157.349297] MT7603: mt7603_switch_channel(): Switch to Ch#6(2T2R), BBP_BW=0
+[  157.499330] MT7603: mt7603_switch_channel(): Switch to Ch#7(2T2R), BBP_BW=0
+
+HC220-G5 login: [  157.649299] MT7603: mt7603_switch_channel(): Switch to Ch#8(2T2R), BBP_BW=0
+[  157.794752] MT7663: AsicSwitchChannel(): 5G Channel:56, then must be Channel_Band:1 !!
+[  157.799349] MT7603: mt7603_switch_channel(): Switch to Ch#9(2T2R), BBP_BW=0
+
+HC220-G5 login: [  157.939333] MT7603: mt7603_switch_channel(): Switch to Ch#10(2T2R), BBP_BW=0
+[  157.974752] MT7663: AsicSwitchChannel(): 5G Channel:60, then must be Channel_Band:1 !!
+[  158.089388] MT7603: mt7603_switch_channel(): Switch to Ch#11(2T2R), BBP_BW=0
+[  158.154776] MT7663: AsicSwitchChannel(): 5G Channel:64, then must be Channel_Band:1 !!
+[  158.239325] MT7603: mt7603_switch_channel(): Switch to Ch#12(2T2R), BBP_BW=0
+[  158.389278] MT7603: mt7603_switch_channel(): Switch to Ch#13(2T2R), BBP_BW=0
+[  158.539349] MT7603: mt7603_switch_channel(): Switch to Ch#3(2T2R), BBP_BW=1
+[  158.654748] MT7663: AsicSwitchChannel(): 5G Channel:100, then must be Channel_Band:1 !!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
+[  159.154812] MT7663: AsicSwitchChannel(): 5G Channel:104, then must be Channel_Band:1 !!
+[  159.334771] MT7663: AsicSwitchChannel(): 5G Channel:108, then must be Channel_Band:1 !!
+[  159.514759] MT7663: AsicSwitchChannel(): 5G Channel:112, then must be Channel_Band:1 !!
+[  160.014756] MT7663: AsicSwitchChannel(): 5G Channel:116, then must be Channel_Band:1 !!
+[  160.194795] MT7663: AsicSwitchChannel(): 5G Channel:120, then must be Channel_Band:1 !!
+[  160.374753] MT7663: AsicSwitchChannel(): 5G Channel:124, then must be Channel_Band:1 !!
+[  160.554749] MT7663: AsicSwitchChannel(): 5G Channel:128, then must be Channel_Band:1 !!
+[  160.734748] MT7663: AsicSwitchChannel(): 5G Channel:132, then must be Channel_Band:1 !!
+[  160.914742] MT7663: AsicSwitchChannel(): 5G Channel:136, then must be Channel_Band:1 !!
+[  161.094749] MT7663: AsicSwitchChannel(): 5G Channel:140, then must be Channel_Band:1 !!
+[  161.274866] MT7663: AsicSwitchChannel(): 5G Channel:42, then must be Channel_Band:1 !!
+[  161.322152] MT7663: scan_ch_restore - End of SCAN(TYPE: 0, BandIdx: 0), restore to BW(2) channel 42, Total BSS[17]
+[  161.332602] MT7663: AsicSetSyncModeAndEnable(): NotSupportedFunc for this arch(HIF_MT)!
+[awnd_get_group_id:602]: read factory config group info fail
+[awnd_read_group_id:460]: ================empty ssid or key====================
