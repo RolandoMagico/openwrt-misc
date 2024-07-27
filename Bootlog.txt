@@ -1,0 +1,610 @@
+F0: 102B 0000
+
+F1: 5000 1006
+
+F6: 0000 0000
+
+V0: 0000 0000 [0001]
+
+00: 0000 0000
+
+BP: 0000 0041 [0000]
+
+G0: 0190 0000
+
+T0: 0000 024B [000F]
+
+Jump to BL
+
+
+
+U-Boot SPL 2014.04-rc1-00378-g199eba3 (Jun 04 2019 - 17:36:30)
+Hello, MT7629 E2
+SPM_PWR_STATUS(0x1000660c) = 0xb644, turn off cpu1.
+SPM_PWR_STATUS(0x1000660c) = 0xa644, turn off cpu1 done.
+RGU MODE:     4d
+RGU LENGTH:   ffe0
+RGU STA:      0
+RGU: g_rgu_satus:0
+PL P ON
+WDT does not trigger reboot
+RGU mtk_wdt_init:MTK_WDT_DEBUG_CTL(590200f3)
+PCDDR3 type with 1600MHz.
+R0 FINAL: WriteLeveling DQS:(2, 0) OEN:(1, 2) DQS0 delay =  29
+R0 FINAL: WriteLeveling DQS:(2, 0) OEN:(1, 2) DQS1 delay =  27
+R0 FINAL: GW best DQS0 P0 delay(2T, 0.5T, PI) = (0, 7, 31) [tap = 54]
+R0 FINAL: GW best DQS1 P0 delay(2T, 0.5T, PI) = (0, 7, 31) [tap = 54]
+R0 FINAL: RX Bit0 ( -3~ 35) 39 16,   Bit 8 ( -5~ 35) 41 15, 
+R0 FINAL: RX Bit1 ( -1~ 33) 35 16,   Bit 9 (  0~ 36) 37 18, 
+R0 FINAL: RX Bit2 ( -3~ 35) 39 16,   Bit10 ( -1~ 35) 37 17, 
+R0 FINAL: RX Bit3 ( -2~ 34) 37 16,   Bit11 ( -1~ 36) 38 17, 
+R0 FINAL: RX Bit4 ( -6~ 28) 35 11,   Bit12 ( -3~ 33) 37 15, 
+R0 FINAL: RX Bit5 ( -8~ 28) 37 10,   Bit13 ( -1~ 37) 39 18, 
+R0 FINAL: RX Bit6 ( -7~ 29) 37 11,   Bit14 ( -4~ 34) 39 15, 
+R0 FINAL: RX Bit7 ( -7~ 28) 36 10,   Bit15 ( -3~ 33) 37 15, 
+R0 FINAL: DATLAT = 15 [13 ~ 18]
+R0 FINAL: TX Bit 0 ( 34~ 56) 23 45,   Bit8 ( 33~ 57) 25 45, 
+R0 FINAL: TX Bit 1 ( 34~ 56) 23 45,   Bit9 ( 35~ 57) 23 46, 
+R0 FINAL: TX Bit 2 ( 33~ 56) 24 44,   Bit10 ( 34~ 57) 24 45, 
+R0 FINAL: TX Bit 3 ( 33~ 56) 24 44,   Bit11 ( 35~ 57) 23 46, 
+R0 FINAL: TX Bit 4 ( 31~ 56) 26 43,   Bit12 ( 33~ 57) 25 45, 
+R0 FINAL: TX Bit 5 ( 29~ 55) 27 42,   Bit13 ( 35~ 57) 23 46, 
+R0 FINAL: TX Bit 6 ( 31~ 56) 26 43,   Bit14 ( 33~ 57) 25 45, 
+R0 FINAL: TX Bit 7 ( 31~ 56) 26 43,   Bit15 ( 33~ 57) 25 45, 
+[MEM_TEST]  OK. 
+[EMI]rank0 size auto detect: 0x10000000
+Recognize SNAND: ID [c2 12 ], Device Name [MX35LF1GE4AB], Page Size [2048]B Spare Size [64]B Total Size [128]MB
+MTK SPI NAND: nand init Success!
+Actual U-Boot image size: 0x4cf8c
+image entry point: 0x41E00000
+
+
+U-Boot 2014.04-rc1-svn463 (Jul 26 2019 - 03:50:43)
+
+auto detection g_total_rank_size = 0x10000000
+DRAM:  256 MiB
+NAND:  Recognize SNAND: ID [c2 12 ], Device Name [MX35LF1GE4AB], Page Size [2048]B Spare Size [64]B Total Size [128]MB
+[mtk_snand] probe successfully!
+128 MiB
+In:    serial
+Out:   serial
+Err:   serial
+Net:   CBT LED init
+mtk_eth
+Uip activated
+  *** U-Boot SPI NAND ***  Press UP/DOWN to move or Press 1~8 to choose, ENTER to select     1. System Load Linux to SDRAM via TFTP.     2. System Load Linux Kernel then write to Flash via TFTP.     3. Boot system code via Flash.     4. System Load U-Boot then write to Flash via TFTP.     5. System Load U-Boot then write to Flash via Serial.     6. System Load CTP then write to Flash via TFTP.     7. Debugger load image then write to Flash.     8. System Load flashimage then write to Flash via TFTP.     U-Boot console  Hit any key to stop autoboot:  3  2  1  0 recovery_enable=1  run_num=2
+Recovery is enabled, do the recovery judgment 
+[ struct auto_recovery ] enabled:1, boot_part:1, boot_part_ready:3 
+
+NAND read: device 0 offset 0x7300000, size 0x40000
+ 262144 bytes read: OK
+auto_recovery_total_count=64
+boot_count:2, next_record:20
+
+Updating boot_count ... 
+header=0x20110811 , count=3 , checksum=20110814  ,auto_recovery->next_record=20 
+
+@@ mem_write offset=0x4201171c ,cmd=nand write 0x4201171c 0x730a000 C
+
+NAND write: device 0 offset 0x730a000, size 0xc
+ 12 bytes written: OK
+Now the bootimage value is[1]
+
+NAND read: device 0 offset 0x1c0000, size 0x2000
+ 8192 bytes read: OK
+[do_read_image_blks] This is a FIT image,img_size = 0x1bf450
+[do_read_image_blks] img_blks = 0x37f
+[do_read_image_blks] img_align_size = 0x1bf800
+
+NAND read: device 0 offset 0x1c0000, size 0x1bf800
+ 1832960 bytes read: OK
+bootm flag=0, states=70f
+## Loading kernel from FIT Image at 42007f1c ...
+   Using 'config@1' configuration
+   Trying 'kernel@1' kernel subimage
+     Description:  ARM OpenWrt Linux-4.4.146
+     Type:         Kernel Image
+     Compression:  lzma compressed
+     Data Start:   0x42008000
+     Data Size:    1813734 Bytes = 1.7 MiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: 0x40008000
+     Entry Point:  0x40008000
+     Hash algo:    crc32
+     Hash value:   70ffe646
+     Hash algo:    sha1
+     Hash value:   5de24c00efed314ed585803d7dcc59304ee5929d
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+## Loading fdt from FIT Image at 42007f1c ...
+   Using 'config@1' configuration
+   Trying 'fdt@1' fdt subimage
+     Description:  ARM OpenWrt MT7629-LYNX-RFB3 device tree blob
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x421c2e24
+     Data Size:    16930 Bytes = 16.5 KiB
+     Architecture: ARM
+     Hash algo:    crc32
+     Hash value:   5ea132d0
+     Hash algo:    sha1
+     Hash value:   83209e24c92bef0056e693f8276b2df7a00e5266
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+   Booting using the fdt blob at 0x421c2e24
+   Uncompressing Kernel Image ... OK
+   Loading Device Tree to 4fb54000, end 4fb5b221 ... OK
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 4.4.146 (root@build-vm) (gcc version 5.4.0 (LEDE GCC 5.4.0 unknown) ) #2 SMP Thu Oct 24 03:01:54 PDT 2019
+[    0.000000] CPU: ARMv7 Processor [410fc073] revision 3 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine model: MediaTek MT7629 RFB1 board
+[    0.000000] Looking for bootfrom properties... 
+[    0.000000] ^^^^^^ boot_from=1, bootfrom=1
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] On node 0 totalpages: 65024
+[    0.000000] free_area_init_node: node 0, pgdat c04dfbc0, node_mem_map cfdfa000
+[    0.000000]   Normal zone: 512 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 65024 pages, LIFO batch:15
+[    0.000000] [Power/hotplug] @@@### num_possible_cpus(): 2 ###@@@
+[    0.000000] [Power/hotplug] @@@### num_present_cpus(): 1 ###@@@
+[    0.000000] PERCPU: Embedded 12 pages/cpu @cfdd5000 s17600 r8192 d23360 u49152
+[    0.000000] pcpu-alloc: s17600 r8192 d23360 u49152 alloc=12*4096
+[    0.000000] pcpu-alloc: [0] 0 [0] 1 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 64512
+[    0.000000] Kernel command line: earlycon=uart8250,mmio32,0x11002000 console=ttyS0,115200n1 loglevel=8
+[    0.000000] PID hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000000] Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Memory: 252264K/260096K available (46K kernel code, 185K rwdata, 648K rodata, 256K init, 260K bss, 7832K reserved, 0K cma-reserved)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+[    0.000000]     vmalloc : 0xd0800000 - 0xff800000   ( 752 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xd0000000   ( 256 MB)
+[    0.000000]     modules : 0xbf000000 - 0xc0000000   (  16 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc0013d9c   (  48 kB)
+[    0.000000]       .init : 0xc049a000 - 0xc04da000   ( 256 kB)
+[    0.000000]       .data : 0xc04da000 - 0xc05084b4   ( 186 kB)
+[    0.000000]        .bss : 0xc05084b4 - 0xc0549724   ( 261 kB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] NR_IRQS:16 nr_irqs:16 16
+[    0.000000] Architected cp15 timer(s) running at 20.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x49cd42e20, max_idle_ns: 440795202120 ns
+[    0.000005] sched_clock: 56 bits at 20MHz, resolution 50ns, wraps every 4398046511100ns
+[    0.000014] Switching to timer-based delay loop, resolution 50ns
+[    0.000116] clocksource: apxgpt: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 191126044627 ns
+[    0.000266] Calibrating delay loop (skipped), value calculated using timer frequency.. 40.00 BogoMIPS (lpj=200000)
+[    0.000278] pid_max: default: 32768 minimum: 301
+[    0.000365] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000372] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000823] CPU: Testing write buffer coherency: ok
+[    0.001056] CPU0: update cpu_capacity 1024
+[    0.001066] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.001138] Setting up static identity map for 0x40008280 - 0x400082b4
+[    0.002091] [Power/hotplug] mt_smp_boot_secondary, cpu: 1
+[    0.002315] [Power/hotplug] platform_secondary_init, cpu: 1
+[    0.002348] CPU1: update cpu_capacity 1024
+[    0.002352] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.002416] Brought up 2 CPUs
+[    0.002430] SMP: Total of 2 processors activated (80.00 BogoMIPS).
+[    0.002435] CPU: All CPU(s) started in SVC mode.
+[    0.005791] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.005820] futex hash table entries: 512 (order: 3, 32768 bytes)
+[    0.005958] pinctrl core: initialized pinctrl subsystem
+[    0.006438] NET: Registered protocol family 16
+[    0.006679] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.030002] cpuidle: using governor menu
+[    0.034853] irq: no irq domain found for /pinctrl@10217000 !
+[    0.061758] SCSI subsystem initialized
+[    0.062051] usbcore: registered new interface driver usbfs
+[    0.062124] usbcore: registered new interface driver hub
+[    0.062195] usbcore: registered new device driver usb
+[    0.063473] rbus 18000000.wbsys: PCI host bridge to bus 0000:00
+[    0.063493] pci_bus 0000:00: root bus resource [mem 0x18000000-0x180fffff]
+[    0.063503] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.063531] pci 0000:00:00.0: [14c3:7629] type 00 class 0x000280
+[    0.063555] pci 0000:00:00.0: reg 0x10: [mem 0x18000000-0x1800000f 64bit]
+[    0.063564] pci 0000:00:00.0: reg 0x18: [mem 0x00000000-0x0000000f]
+[    0.063574] pci 0000:00:00.0: reg 0x1c: [mem 0x00000000-0x0000000f]
+[    0.063583] pci 0000:00:00.0: reg 0x20: [mem 0x00000000-0x0000000f]
+[    0.063592] pci 0000:00:00.0: reg 0x24: [mem 0x00000000-0x0000000f]
+[    0.063818] PCI: bus0: Fast back to back transfers disabled
+[    0.064127] clocksource: Switched to clocksource arch_sys_counter
+[    0.065279] NET: Registered protocol family 2
+[    0.065801] TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.065829] TCP bind hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.065858] TCP: Hash tables configured (established 2048 bind 2048)
+[    0.065911] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.065937] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.066096] NET: Registered protocol family 1
+[    0.066152] PCI: CLS 64 bytes, default 64
+[    0.072368] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.072499] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.
+[    0.074267] io scheduler noop registered (default)
+[    0.176574] mtk-pcie 1a140000.pcie: Port1 link down
+[    0.176861] mtk-pcie 1a140000.pcie: PCI host bridge to bus 0001:00
+[    0.176875] pci_bus 0001:00: root bus resource [??? 0x00000000 flags 0x0]
+[    0.176885] pci_bus 0001:00: root bus resource [mem 0x20000000-0x2fffffff]
+[    0.176894] pci_bus 0001:00: root bus resource [bus 00-ff]
+[    0.176917] PCI: bus0: Fast back to back transfers enabled
+[    0.177393] Serial: 8250/16550 driver, 3 ports, IRQ sharing disabled
+[    0.178229] console [ttyS0] disabled
+[    0.198402] 11002000.serial: ttyS0 at MMIO 0x11002000 (irq = 25, base_baud = 2500000) is a ST16650V2
+[    0.795729] console [ttyS0] enabled
+[    0.800140] mtk_rng 1020f000.rng: registered RNG driver
+[    0.800578] random: nonblocking pool is initialized
+[    0.810736] SCSI Media Changer driver v0.25 
+[    0.826096] Recognize NAND: ID [
+[    0.829159] c2 12 
+[    0.831179] ], [MX35LF1GE4AB], Page[2048]B, Spare [64]B Total [128]MB
+[    0.838001] nand: device found, Manufacturer ID: 0xc2, Chip ID: 0x12
+[    0.844369] nand: Macronix SNAND 128MiB 3,3V 8-bit
+[    0.849164] nand: 128 MiB, SLC, erase size: 128 KiB, page size: 2048, OOB size: 64
+[    0.856751] [NAND]select ecc bit:4, sparesize :64
+[    0.861503] 9 ofpart partitions found on MTD device MTK-SNAND
+[    0.867266] Creating 9 MTD partitions on "MTK-SNAND":
+[    0.872325] 0x000000000000-0x000000100000 : "Bootloader"
+[    0.879624] ---- bootfrom == 1 -----
+[    0.883207] $$$ in mtd_partition_split: firmware_partition = Kernel
+[    0.889346] 0x000000100000-0x000000140000 : "Config"
+[    0.895614] ---- bootfrom == 1 -----
+[    0.899196] $$$ in mtd_partition_split: firmware_partition = Kernel
+[    0.905332] 0x000000140000-0x0000001c0000 : "Factory"
+[    0.911960] ---- bootfrom == 1 -----
+[    0.915576] $$$ in mtd_partition_split: firmware_partition = Kernel
+[    0.921692] 0x0000001c0000-0x0000029c0000 : "Kernel"
+[    0.972736] ---- bootfrom == 1 -----
+[    0.976340] $$$ in mtd_partition_split: firmware_partition = Kernel
+[    0.985038] 2 fit-fw partitions found on MTD device Kernel
+[    0.990711] 0x0000001c0000-0x000000380000 : "kernel"
+[    0.998463] ---- bootfrom == 1 -----
+[    1.002046] $$$ in mtd_partition_split: firmware_partition = Kernel
+[    1.008184] 0x000000380000-0x0000029c0000 : "rootfs"
+[    1.057162] mtd: device 5 (rootfs) set to be root filesystem
+[    1.094187] 1 squashfs-split partitions found on MTD device rootfs
+[    1.100384] 0x000001f60000-0x0000029c0000 : "rootfs_data"
+[    1.118259] ---- bootfrom == 1 -----
+[    1.121842] $$$ in mtd_partition_split: firmware_partition = Kernel---- bootfrom == 1 -----
+[    1.130240] $$$ in mtd_partition_split: firmware_partition = Kernel
+[    1.136365] 0x0000029c0000-0x0000051c0000 : "Kernel2"
+[    1.187426] 0x0000051c0000-0x000005200000 : "devinfo"
+[    1.193514] 0x000005200000-0x000005300000 : "sysdiag"
+[    1.200494] 0x000005300000-0x000007300000 : "syscfg"
+[    1.242382] 0x000007300000-0x000007340000 : "s_env"
+[    1.248378] mtk-snand 1100d000.snfi: [mtk_snand] probe successfully!
+[    1.255236] mtk-nor 11014000.spi: unrecognized JEDEC id bytes: 00,  0,  0
+[    1.262070] mtk-nor: probe of 11014000.spi failed with error -2
+[    1.268369] libphy: Fixed MDIO Bus: probed
+[    1.273243] sean debug physpeed = 2500
+[    1.277031] sean debug physpeed = 2500
+[    1.303841] libphy: mdio: probed
+[    1.307483] mtk_soc_eth 1b100000.ethernet: generated random MAC address 7a:28:ba:6e:d2:33
+[    1.315976] mtk_soc_eth 1b100000.ethernet: path gmac1_sgmii in set_mux_gdm1_to_gmac1_esw updated = 1
+[    1.325151] mtk_soc_eth 1b100000.ethernet: path gmac1_sgmii in set_mux_gmac2_gmac0_to_gephy updated = 0
+[    1.334571] mtk_soc_eth 1b100000.ethernet: path gmac1_sgmii in set_mux_u3_gmac2_to_qphy updated = 0
+[    1.343630] mtk_soc_eth 1b100000.ethernet: mux mux_gmac1_gmac2_to_sgmii_rgmii isn't present on the SoC
+[    1.352969] mtk_soc_eth 1b100000.ethernet: path gmac1_sgmii in set_mux_gmac12_to_gephy_sgmii updated = 1
+[    1.362521] mtk_soc_eth 1b100000.ethernet: connected mac 0 to PHY at fixed-0:00 [uid=00000000, driver=Generic PHY]
+[    1.373398] mtk_soc_eth 1b100000.ethernet eth0: mediatek frame engine at 0xd0900000, irq 34
+[    1.381831] mtk_soc_eth 1b100000.ethernet: generated random MAC address ce:fe:03:d8:46:78
+[    1.390059] mtk_soc_eth 1b100000.ethernet: path gmac2_gephy in set_mux_gdm1_to_gmac1_esw updated = 0
+[    1.399222] mtk_soc_eth 1b100000.ethernet: path gmac2_gephy in set_mux_gmac2_gmac0_to_gephy updated = 1
+[    1.408639] mtk_soc_eth 1b100000.ethernet: path gmac2_gephy in set_mux_u3_gmac2_to_qphy updated = 0
+[    1.417705] mtk_soc_eth 1b100000.ethernet: mux mux_gmac1_gmac2_to_sgmii_rgmii isn't present on the SoC
+[    1.427036] mtk_soc_eth 1b100000.ethernet: path gmac2_gephy in set_mux_gmac12_to_gephy_sgmii updated = 1
+[    1.436714] mtk_soc_eth 1b100000.ethernet: connected mac 1 to PHY at mdio-bus:00 [uid=03a29471, driver=Generic PHY]
+[    1.447810] mtk_soc_eth 1b100000.ethernet eth1: mediatek frame engine at 0xd0900000, irq 34
+[    1.456204] netif_napi_add() called with weight 256 on device 
+[    1.462661] xhci-mtk 1a0c0000.usb: xHCI Host Controller
+[    1.467998] xhci-mtk 1a0c0000.usb: new USB bus registered, assigned bus number 1
+[    1.475562] xhci-mtk 1a0c0000.usb: hcc params 0x01403f98 hci version 0x110 quirks 0x00210010
+[    1.484056] xhci-mtk 1a0c0000.usb: irq 31, io mem 0x1a0c0000
+[    1.490423] hub 1-0:1.0: USB hub found
+[    1.494286] hub 1-0:1.0: 1 port detected
+[    1.498554] xhci-mtk 1a0c0000.usb: xHCI Host Controller
+[    1.503797] xhci-mtk 1a0c0000.usb: new USB bus registered, assigned bus number 2
+[    1.511317] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    1.519950] hub 2-0:1.0: USB hub found
+[    1.523746] hub 2-0:1.0: 1 port detected
+[    1.528252] usbcore: registered new interface driver usb-storage
+[    1.534304] i2c /dev entries driver
+[    1.538787] MTK_WDT_NONRST_REG(20000000)
+[    1.542965] mtk-wdt 10212000.watchdog: Watchdog enabled (timeout=31 sec, nowayout=0)
+[    1.555079] u32 classifier
+[    1.557792]     input device check on
+[    1.561482] Netfilter messages via NETLINK v0.30.
+[    1.566248] ip_set: protocol 6
+[    1.570093] NET: Registered protocol family 10
+[    1.575488] sit: IPv6 over IPv4 tunneling driver
+[    1.581400] NET: Registered protocol family 17
+[    1.585963] bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this.
+[    1.598640] Bridge firewalling registered
+[    1.602657] 8021q: 802.1Q VLAN Support v1.8
+[    1.606934] Registering SWP/SWPB emulation handler
+[    2.154421] mt753x gsw@0: Switch is MediaTek MT7531BE rev 1
+[    2.167984] libphy: mt753x_mdio: probed
+[    2.309778] switch phy cl45 w 2 0x1f 0x21 0x800b --> read back 0x800b
+[    2.317412] switch phy cl45 w 2 0x1f 0x24 0xc007 --> read back 0xc007
+[    2.325025] switch phy cl45 w 2 0x1f 0x25 0x0 --> read back 0x0
+[    2.332111] switch phy cl45 w 2 0x1f 0x26 0x8007 --> read back 0x8007
+[    2.339729] switch phy cl45 w 2 0x1f 0x27 0x3f --> read back 0x3f
+[    2.400177] iext_cal_result = 0x29
+[    2.409104] r50_cal_result  = 0x23
+[    2.412769] [1] - r50 final result l4r22[1] = 1212
+[    2.422608] [1] - tx_offset_final = 0x22
+[    2.438968] [1] - tx_offset_final_mdix = 0x26
+[    2.448520] [1] - tx_amp_final = 0x21
+[    2.456718] [1] - tx_amp_mdix_final = 0x23
+[    2.472465] r50_cal_result  = 0x23
+[    2.476149] [2] - r50 final result l4r22[2] = 1214
+[    2.491282] [2] - tx_offset_final = 0x27
+[    2.499304] [2] - tx_offset_final_mdix = 0x21
+[    2.514210] [2] - tx_amp_final = 0x1c
+[    2.527292] [2] - tx_amp_mdix_final = 0x1d
+[    2.543131] r50_cal_result  = 0x24
+[    2.546813] [3] - r50 final result l4r22[3] = 1213
+[    2.557673] [3] - tx_offset_final = 0x1d
+[    2.565681] [3] - tx_offset_final_mdix = 0x21
+[    2.581645] [3] - tx_amp_final = 0x19
+[    2.597139] [3] - tx_amp_mdix_final = 0x1a
+[    2.612064] r50_cal_result  = 0x24
+[    2.615742] [4] - r50 final result l4r22[4] = 1111
+[    2.624468] [4] - tx_offset_final = 0x21
+[    2.633614] [4] - tx_offset_final_mdix = 0x22
+[    2.645354] [4] - tx_amp_final = 0x1f
+[    2.654802] [4] - tx_amp_mdix_final = 0x25
+[    2.672379] R50_PAIR_A : 1e_174 = 0x81c
+[    2.676362] R50_PAIR_A : 1e_3a0 = 0x8
+[    2.689704] R50_PAIR_B : 1e_174 = 0x80a
+[    2.693672] R50_PAIR_B : 1e_3a1 = 0x8
+[    2.706331] R50_PAIR_C : 1e_175 = 0x91c
+[    2.710299] R50_PAIR_C : 1e_3a2 = 0x8
+[    2.721590] R50_PAIR_D : 1e_175 = 0x909
+[    2.725573] R50_PAIR_D : 1e_3a3 = 0x7
+[    2.733290] TX_OFFSET_PAIR_A : 1e_172 = 0x2220
+[    2.740586] TX_OFFSET_PAIR_B : 1e_172 = 0x221e
+[    2.748437] TX_OFFSET_PAIR_C : 1e_173 = 0x1d20
+[    2.756258] TX_OFFSET_PAIR_D : 1e_173 = 0x1d23
+[    2.768567] TX_AMP_PAIR_A : 1e_12 = 0xac34
+[    2.772797] TX_AMP_PAIR_A : 1e_16 = 0x702b
+[    2.782517] TX_AMP_PAIR_B : 1e_17 = 0x2d3b
+[    2.786761] TX_AMP_PAIR_B : 1e_18 = 0x1e2d
+[    2.794004] TX_AMP_PAIR_C : 1e_19 = 0x2b2b
+[    2.798247] TX_AMP_PAIR_C : 1e_20 = 0x2b2b
+[    2.804680] TX_AMP_PAIR_D : 1e_21 = 0x2828
+[    2.808910] TX_AMP_PAIR_D : 1e_22 = 0x2828
+[    2.813006] GE_TX_AMP END
+[    2.843210] mtk_soc_eth 1b100000.ethernet eth1: Link is Down
+[    2.848932] **** link down for cybertan
+[    2.852812] create file error
+[    2.855819] create file error
+[    2.859853] VFS: Mounted root (squashfs filesystem) readonly on device 31:5.
+[    2.867332] Freeing unused kernel memory: 256K
+[    2.871782] This architecture does not have kernel memory protection.
+*********************************************************************************
+              _        _  __    _    __ _____ __   __ _____
+             | |      | ||  \  | |  / // ____]\ \ / // ____]TM
+             | |      | ||   \ | | / /| (___   \ V /| (____
+             | |      | || |\ \| |\ \  \____ \  \ /  \____ \
+             | |_____ | || | \   | \ \  ____) | | |   ____) |
+             |_______||_||_|  \__|  \_\[____ /  |_|  [_____/
+
+ (c) 2013 Belkin International, Inc. and/or its affiliates. All rights reserved.
+ Booting waldorf (firmware version 3.0.0.197858) 
+*********************************************************************************
+[utopia][init] System Initialization
+[utopia][init] Creating /proc
+[utopia][init] Creating /sys
+[utopia][init] Creating /dev
+[utopia][init] Creating /tmp
+[utopia][init] Allocating 40M for /tmp
+[utopia][init] Prepairing /dev/pts
+[utopia][init] Setting /tmp and /var permissions
+[utopia][init] Starting udev..
+[    3.570293] mod_bdutil: Unknown symbol eth_led_turn_on (err 0)
+[    3.576236] mod_bdutil: Unknown symbol ralink_gpio_led_set (err 0)
+[    3.582432] mod_bdutil: Unknown symbol eth_led_turn_off (err 0)
+insmod: can't insert '/lib/modules/4.4.146//mod_bdutil.ko': unknown symbol in module, or unknown parameter
+insmod: can't insert 'ip_tunnel.ko': No such file or directory
+insmod: can't insert 'tunnel4.ko': No such file or directory
+insmod: can't insert 'tunnel6.ko': No such file or directory
+insmod: can't insert 'nfnetlink.ko': No such file or directory
+insmod: can't insert 'xt_NFLOG.ko': unknown symbol in module, or unknown parameter
+/etc/system/wait: line 51: can't create /proc/sys/net/ipv4/netfilter/ip_conntrack_max: nonexistent directory
+[utopia][init] Error: /cgroup mount point not found.
+Attempting mount of ubifs syscfg partition
+UBI device number 0, total 256 LEBs (32505856 bytes, 31.0 MiB), available 0 LEBs (0 bytes), LEB size 126976 bytes (124.0 KiB)
+[utopia][init] Using persistent syscfg data from /var/config/syscfg
+[utopia][init] Starting system logging
+[utopia][init] Starting sysevent subsystem
+net.netfilter.nf_conntrack_acct = 1
+[utopia][init] Setting any unset system values to default
+[utopia][init] no persistence config file (/var/config/pstcfg) found
+setting up MAC addresses for all interface based on E8:9F:80:C6:F6:3D
+NTP Servers do not need to be updated
+setting up MAC addresses for all interface based on E8:9F:80:C6:F6:3D
+*** Model (EA7500) vs Firmware image (EA7500v3) mismatch ***
+SetPVID: port:4 pvid:2
+
+port:4 pvid:2,vlancap: max_port:7 maxvid:4095
+
+SetPVID: port:5 pvid:2
+
+port:5 pvid:2,vlancap: max_port:7 maxvid:4095
+
+ Write reg=2004, value=ff0003
+ Write reg=2104, value=ff0003
+ Write reg=2204, value=ff0003
+ Write reg=2304, value=ff0003
+ Write reg=2404, value=ff0003
+ Write reg=2504, value=ff0003
+ Write reg=2604, value=ff0003
+start vlan now...
+checking for interactive script start up...
+
+Updating BootCount Page[21]:A800 ... Done
+
+attempting to sync sysinfo.cgi auth credentials
+--dxp-- uevent device_fd = 3
+Thu Oct 11 06:00:00 UTC 2012
+ Write reg=7c14, value=11110110
+ Write reg=7c10, value=11111111
+ Write reg=7c14, value=11111111
+ Write reg=7c18, value=111
+Set: port0 dev1Fh_reg21h = 0x8008
+Set: port0 dev1Fh_reg24h = 0xC007
+Set: port0 dev1Fh_reg25h = 0x003F
+Set: port0 dev1Fh_reg2Ah = 0xC007
+Set: port0 dev1Fh_reg2Bh = 0x0000
+Value at 0x10217310 (0xb6f17310): 0x11111111
+Written 0x1; Readback 0x11111111
+Value at 0x10217320 (0xb6fce320): 0x22211111
+Written 0x2; Readback 0x22211111
+wan, sysevent received: wan-start
+
+
+(mt7629) login: SetPVID: port:4 pvid:2
+
+port:4 pvid:2,vlancap: max_port:7 maxvid:4095
+
+SetPVID: port:5 pvid:2
+
+port:5 pvid:2,vlancap: max_port:7 maxvid:4095
+
+ Write reg=2004, value=ff0003
+ Write reg=2104, value=ff0003
+ Write reg=2204, value=ff0003
+ Write reg=2304, value=ff0003
+ Write reg=2404, value=ff0003
+ Write reg=2504, value=ff0003
+ Write reg=2604, value=ff0003
+start vlan now...
+wifi, sysevent received: lan-started
+wifi, service_start()
+Lighttpd Model Base: EA7500
+Generating Rainier lighttpd config
+wifi, wifi_onetime_setting
+Build temporary www configuration directory: 
+wifi, loading Wi-Fi driver
+TSLIIHauhEfGE
+Multiple power table is not supported on boards that cert_region=EU
+Channel list is available. Do nothing
+wifi cache: saving wl0 physical settings
+wifi cache: saving wl1 physical settings
+wifi cache: saving wl0 virtual settings
+wifi cache: saving wl1 virtual settings
+wifi cache: saving wl0 guest settings
+Power cycle Ethernet ports.
+wifi cache: saving wl1 guest settings
+wifi cache: saving wl0 simpletap settings
+wifi cache: saving wl1 simpletap settings
+Multi-region is not supported or not enabled
+Cert region: EU
+MT7603E SingleSKU: /etc/SingleSKU.dat_CE
+Multi-region is not supported or not enabled
+Cert region: EU
+wifi, Multi-region is not supported or not enabled
+wifi, Cert region: EU
+killall: iwevent: no process killed
+Waiting for Wireless Events from interfaces...
+wifi, Multi-region is not supported or not enabled
+wifi, Cert region: EU
+Registering Service myrouter._http._tcp.local port 80
+wifi, ETxBfEnCond 0
+wifi, MU-MIMO disabled
+wifi, PMF enabled
+wifi, HT_RDG 1
+wifi, 256QAM enabled
+wifi, BGProtection 0
+wifi, ra0 setting rts thresh
+wifi, HT_STBC 0
+wifi, VHT_STBC 0
+wifi, ra0 htduplicate enabled
+wifi, ra0 setting framentation thresh
+wifi, DFS disabled
+iptables: Chain already exists.
+iptables: Chain already exists.
+Reading configuration from file /etc/miniupnpd.conf
+Pthread(wscDevNLHandle)Now waiting for the netlink socket incoming message!
+[utopia] Not setting ppp_clamp_mtu
+wifi, TxBurst 1
+Got a reply for myrouter._http._tcp.local.: Name now registered and active
+wifi, Multi-region is not supported or not enabled
+wifi, Cert region: EU
+wifi, ETxBfEnCond 0
+wifi, MU-MIMO disabled
+wifi, PMF enabled
+wifi, HT_RDG 1
+wifi, 256QAM disabled
+wifi, rai0 VhtBw=1 (80 MHz)
+wifi, rai0 setting rts thresh
+wifi, HT_STBC 1
+wifi, VHT_STBC 0
+wifi, rai0 htduplicate enabled
+wifi, rai0 setting framentation thresh
+wifi, DFS enabled
+iptables: Chain already exists.
+iptables: Chain already exists.
+Reading configuration from file /etc/miniupnpd.conf
+Pthread(wscDevNLHandle)Now waiting for the netlink socket incoming message!
+wifi, TxBurst 1
+/usr/sbin/mini_httpd: started as root without requesting chroot(), warning only
+wifi, wifi_physical_start(ra0)
+wifi, wifi_virtual_start(ra0)
+wifi, wifi_user_start(ra0)
+Not ready for JNAP. Sleeping for 15 seconds...
+init devinfo!
+[utopia] Not setting ppp_clamp_mtu on dslite protocol
+Warning: Driver for device ra0 has been compiled with an ancient version
+of Wireless Extension, while this program support version 11 and later.
+Some things may be broken...
+
+wifi, ra0 is up
+wan, sysevent received: phylink_wan_state
+wifi, wifi_guest_start(ra0)
+wifi, guest or user vap is disabled, do not start wifi guest ra1
+wifi, wifi_physical_start(rai0)
+insmod: can't insert '/lib/modules/4.4.146//mtkhnat.ko': File exists
+wifi, wifi_virtual_start(rai0)
+Restarting nfqrecv service...
+wifi, wifi_user_start(rai0)
+file_sharing, smp wifi
+wifi, rai0 is up
+wifi, wifi_guest_start(rai0)
+wifi, guest or user vap is disabled, do not start wifi guest rai1
+route: SIOCADDRT: File exists
+wifi, restart wscd
+killall: wscd: no process killed
+iptables: Chain already exists.
+iptables: Chain already exists.
+Reading configuration from file /etc/miniupnpd.conf
+Pthread(wscDevNLHandle)Now waiting for the netlink socket incoming message!
+find: /mnt/sd*/: No such file or directory
+find: /mnt/sd*/: No such file or directory
+find: /mnt/sd*/: No such file or directory
+find: /mnt/sd*/: No such file or directory
+find: /mnt/sd*/: No such file or directory
+find: /mnt/sd*/: No such file or directory
+insmod: can't insert '/lib/modules/4.4.146//mtkhnat.ko': File exists
+insmod: can't insert '/lib/modules/4.4.146//mtkhnat.ko': File exists
+[fw.sh] fwup_checked_after_boot: 0
+[fwupd] status details:"ERROR: Connecting server"
+[fw.sh] fwup_forced_update: 0
+iptables: Chain already exists.
+iptables: Chain already exists.
+Reading configuration from file /etc/miniupnpd.conf
+Pthread(wscDevNLHandle)Now waiting for the netlink socket incoming message!
+wifi, smp wifi
+file_sharing, smp wifi
+find: /mnt/sd*/: No such file or directory
+find: /mnt/sd*/: No such file or directory
+find: /mnt/sd*/: No such file or directory
+Starting smbd ... 
+[fw.sh] fwup_checked_after_boot: 0
+[fwupd] status details:"ERROR: Connecting server"
+[fw.sh] fwup_forced_update: 0
